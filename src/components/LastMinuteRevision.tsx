@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { allUnits, getUnitById } from '../data/units';
 import { 
   Zap, Clock, Play, Pause, RotateCcw, CheckSquare, Square, 
-  Sparkles, CheckCircle2, ShieldCheck, Flame 
+  Hash, CheckCircle2, ShieldCheck, Flame 
 } from 'lucide-react';
 
 const nightBeforeChecklist = [
@@ -157,8 +157,8 @@ export const LastMinuteRevision: React.FC = () => {
 
         {/* Crucial Numbers */}
         <div className="glass-card rounded-2xl p-5 border-l-4 border-l-amber-500 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-amber-600 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5" /> High-Yield Numbers
+          <span className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+            <Hash className="w-3.5 h-3.5" /> High-Yield Numbers
           </span>
           <div className="space-y-2 text-xs">
             {unit.cheatSheet.importantNumbers.map((num, i) => (

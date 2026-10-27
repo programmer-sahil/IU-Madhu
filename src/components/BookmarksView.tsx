@@ -68,7 +68,7 @@ export const BookmarksView: React.FC<BookmarksViewProps> = ({ onNavigateToUnit }
           {filtered.map(item => (
             <div
               key={item.id}
-              className="glass-card rounded-xl p-4 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4 hover:border-indigo-400 transition-all text-xs"
+              className="premium-card rounded-[14px] p-4 flex items-center justify-between gap-4 hover:border-indigo-400 dark:hover:border-indigo-500/50 transition-all text-xs"
             >
               <div className="flex items-center gap-3">
                 <span className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${

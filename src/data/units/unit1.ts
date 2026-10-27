@@ -391,6 +391,92 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       keywords: ['Evaluate', 'Direct', 'Monitor'],
       commonMistakes: 'Writing "Evaluate, Deliver and Monitor" or "Execute, Direct, Manage". The "D" stands strictly for Direct, not Deliver or Deploy.',
       selfCheckChecklist: ['Correctly identified Evaluate, Direct, Monitor']
+    },
+    {
+      id: 'q1-5',
+      unit: 1,
+      question: 'Case Study: Enterprise Governance Failure and ICFR Transformation at FinGlobal AG. FinGlobal AG, a publicly traded European financial services enterprise, suffered a severe operational disruption during quarter-end financial closing. An emergency audit revealed that development engineers held direct, unmonitored administrative write access to production database ledgers, bypassing the formal change approval process. Formulate a comprehensive 20-mark Master’s response addressing the governance failure, applying ISO/IEC 38500 and COBIT governance vs management responsibilities, analyzing SOX Section 404 ICFR and ITGC implications, classifying internal controls by category and type, applying the canonical risk formula, and detailing board-level corrective recommendations.',
+      marks: 20,
+      priority: 'POSSIBLE LONG QUESTION',
+      suggestedTimeMinutes: 35,
+      examinerExpectation: 'A comprehensive, multi-layered Master’s response structured into all nine academic dimensions: Introduction & Problem Formulation, Governance vs Management (ISO 38500 / COBIT), Framework Application, Risk Formula & Control Architecture (Categories vs Types), Statutory Compliance & ITGCs (SOX 404), ITSM Interface (ITIL V4), Executive Accountability, Practical Remediation, and Strategic Conclusion.',
+      modelAnswer: `COMPREHENSIVE MASTER'S-LEVEL CASE STUDY SOLUTION: FINGLOBAL AG
+
+1. Introduction & Central Problem Formulation:
+FinGlobal AG exhibits a catastrophic breakdown across both corporate governance and operational IT controls. Developers possessing unmonitored administrative write access to production financial databases violates the fundamental principle of Segregation of Duties (SoD), invalidates the integrity of the general ledger, and directly compromises Internal Control over Financial Reporting (ICFR). This is not merely a technical failure; it exposes executive management to severe civil and regulatory liability under SOX Section 404 and corporate governance codes.
+
+2. Enterprise Governance vs Management Analysis (ISO/IEC 38500 & COBIT 2019):
+- Governing Body (Supervisory Board) Failure: The Board failed in its fiduciary governance mandate under the Evaluate, Direct, and Monitor (EDM) triad. Specifically:
+  * Evaluate: Failed to evaluate stakeholder risk exposure arising from rapid software release cycles versus financial data integrity.
+  * Direct: Failed to establish enforceable corporate policies requiring strict segregation of duties between development and production environments.
+  * Monitor: Failed to oversee independent compliance reporting (MEA02 - Managed System of Internal Control), relying on passive management reassurances.
+- Executive Management (CEO, CIO, CTO) Failure: Executives failed across Plan, Build, Run, and Monitor (PBRM). Under APO13 (Managed Security) and BAI06 (Managed IT Changes), management permitted operational convenience to override standard control baselines.
+
+3. Framework Application & Alignment Cascade:
+Using the COBIT 2019 Goals Cascade, the breakdown traces as follows:
+- Stakeholder Need: Sustainable business continuity, accurate financial reporting, and regulatory compliance.
+- Enterprise Goal: EG07 (Compliance with external laws and regulations) and EG01 (Portfolio of competitive products/services).
+- Alignment Goal: AG05 (Delivery of I&T services in line with business requirements) and AG11 (Quality of financial and operational management information).
+- Governance/Management Objectives: Direct operational failures in EDM03 (Risk Optimization), APO12 (Managed Risk), BAI06 (Managed IT Changes), and DSS05 (Managed Security Services).
+
+4. Risk Formulation & Internal Control Architecture:
+- Canonical Risk Calculation:
+  Risk = Threat × Vulnerability × Asset Value
+  * Threat: Unauthorized or erroneous alteration of financial ledgers by internal personnel or compromised developer credentials.
+  * Vulnerability: Direct administrative production database access without Multi-Factor Authentication (MFA), dual authorization, or audit logging.
+  * Asset Value: Multi-million euro regulatory exposure, stock market devaluation, and loss of banking licenses.
+  Because both Vulnerability and Asset Value are extremely high, Inherent Risk is critical.
+- Control Taxonomy Breakdown:
+  * Administrative Controls (Failed): Information security policy failed to mandate formal Segregation of Duties (SoD) and quarterly User Access Reviews (UAR).
+  * Physical Controls: Server rooms secured, but irrelevant to logical database exposure.
+  * Technical / Logical Controls (Failed): Lack of Role-Based Access Control (RBAC), lack of Privileged Access Management (PAM) vaulting, and absence of database transaction log immutability.
+  * Control Types Needed: Preventative (MFA, automated pipeline blocking direct write access), Detective (automated SIEM alerts for unauthorized SQL execution), and Corrective (database rollback and forensic ledger reconciliation).
+
+5. Statutory Compliance & IT General Controls (SOX Section 404):
+Under SOX Section 404, FinGlobal AG's management must attest to the effectiveness of ICFR:
+- The identified deficiencies constitute a "Material Weakness" in IT General Controls (ITGCs), specifically within:
+  * Access to Programs and Data: Direct write access without segregation of duties.
+  * Program Changes: Developers deploying changes directly into production without independent review or Change Advisory Board (CAB) authorization.
+- Legal Consequence: External auditors must issue an adverse opinion on internal controls. The CEO and CFO face potential civil enforcement and criminal penalties under Section 906 for certifying inaccurate control disclosures.
+
+6. Service Management & Operational Controls (ITIL V4):
+- Change Enablement: Production changes must be classified as Normal Changes, requiring peer code review, automated testing in a staging environment, CAB risk assessment, and automated deployment via CI/CD pipelines without human write access.
+- Incident & Problem Management: Deploy emergency database restoration as an Incident workaround, but initiate a formal Problem ticket to identify root causes and log a Known Error in the KEDB.
+
+7. Executive Recommendations & Practical Remediation:
+1. Immediate Remediation (Days 1–7):
+   - Revoke all developer direct write access to production databases.
+   - Enforce Privileged Access Management (PAM) with just-in-time (JIT) elevation and session recording for emergency DBAs.
+2. Short-Term Governance Overhaul (Days 8–60):
+   - Conduct a 100% User Access Review (UAR) across all financial systems to eradicate Access Creep.
+   - Implement an automated CI/CD release pipeline where code merges require two independent approvals (four-eyes principle) and deployment is handled exclusively by service accounts.
+3. Long-Term Board Oversight (Ongoing):
+   - Establish a dedicated Board IT Governance & Risk Sub-Committee under EDM01.
+   - Commission an independent SOC 2 Type 2 attestation and ISO/IEC 27001 surveillance audit to re-establish market credibility.
+
+8. Conclusion:
+Enterprise governance is not an operational burden but the foundational safeguard of corporate value. By enforcing the strict separation of governance (EDM) from management (PBRM), establishing rigorous ITGCs, and embedding compliance into automated value streams, FinGlobal AG protects both shareholder value and statutory compliance.`,
+      answerStructure: [
+        '1. Executive Summary & Problem Formulation (ICFR, SoD, database write access).',
+        '2. Governance vs Management Analysis (ISO 38500 / COBIT: Board EDM vs Executive PBRM).',
+        '3. Framework Alignment (COBIT Goals Cascade & relevant objectives).',
+        '4. Risk Formula & Control Architecture (Categories vs Types, Inherent vs Residual).',
+        '5. Statutory Compliance & ITGCs (SOX 404, Material Weakness, executive liability).',
+        '6. ITIL V4 Service Management Integration (Change Enablement, KEDB).',
+        '7. Time-phased Remediation Roadmap (Immediate, Short-Term, Board Oversight).',
+        '8. Concluding Synthesis on Value and Compliance.'
+      ],
+      keywords: ['Enterprise Governance of IT', 'ISO/IEC 38500', 'COBIT 2019', 'Evaluate, Direct, Monitor (EDM)', 'Plan, Build, Run, Monitor (PBRM)', 'SOX Section 404', 'Internal Control over Financial Reporting (ICFR)', 'IT General Controls (ITGC)', 'Access to Programs and Data', 'Program Change Management', 'Risk = Threat × Vulnerability × Asset Value', 'Administrative Controls', 'Technical Controls', 'Preventative Controls', 'Segregation of Duties (SoD)', 'Privileged Access Management (PAM)', 'User Access Review'],
+      commonMistakes: 'Treating the scenario as a routine bug without recognizing the board-level governance failure, confusing control categories with types, or failing to identify SOX 404 material weaknesses in ITGCs.',
+      selfCheckChecklist: [
+        'Structured response across all 8 major Master’s analytical dimensions',
+        'Contrasted Board EDM with Executive PBRM under ISO 38500 / COBIT',
+        'Calculated risk using Threat × Vulnerability × Asset Value',
+        'Categorized controls (Administrative, Physical, Technical) and types (Preventative, Detective, Corrective)',
+        'Analyzed SOX 404 ICFR and ITGC domains (Access, Changes, Operations)',
+        'Integrated ITIL V4 Change Enablement and Problem Management',
+        'Provided actionable, time-phased recommendations'
+      ]
     }
   ],
 
@@ -506,11 +592,11 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       question: 'Which of the following correctly pairs the organizational body with its primary mandate according to modern IT governance frameworks?',
       options: {
         A: 'Board of Directors -> Plan, Build, Run, Monitor (PBRM)',
-        B: 'Executive Management -> Evaluate, Direct, Monitor (EDM)',
-        C: 'Board of Directors -> Evaluate, Direct, Monitor (EDM)',
+        B: 'Board of Directors -> Evaluate, Direct, Monitor (EDM)',
+        C: 'Executive Management -> Evaluate, Direct, Monitor (EDM)',
         D: 'Audit Committee -> Plan, Build, Deliver, Manage (PBDM)'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'B',
       explanation: 'The Board of Directors (governing body) is accountable for Governance, which centers on Evaluating stakeholder needs, Directing strategic priorities, and Monitoring performance (EDM). Executive management is responsible for Management (PBRM).',
       memoryTip: 'EDM = Board / Governance. PBRM = Executives / Management.',
       difficulty: 'Foundation'
@@ -522,11 +608,11 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       question: 'In COBIT and ISO/IEC 38500, what does the letter "D" in the governance triad "EDM" specifically stand for?',
       options: {
         A: 'Deliver',
-        B: 'Direct',
-        C: 'Deploy',
+        B: 'Deploy',
+        C: 'Direct',
         D: 'Develop'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'In the EDM triad, D stands strictly for "Direct". The governing body directs management by setting strategic priorities, policies, and risk boundaries. Delivery is an operational management activity.',
       memoryTip: 'The Board DIRECTS, it never DELIVERS.',
       difficulty: 'Foundation'
@@ -539,10 +625,10 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       options: {
         A: 'Technical category, Corrective type',
         B: 'Physical category, Detective type',
-        C: 'Administrative category, Preventative type',
-        D: 'Logical category, Compensatory type'
+        C: 'Logical category, Compensatory type',
+        D: 'Administrative category, Preventative type'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'D',
       explanation: 'Security awareness training is established via organizational policy and education, making it an Administrative (or organizational) control. Its intent is to prevent employees from falling for phishing or making human errors, making it a Preventative control.',
       memoryTip: 'Training = Administrative mechanism; stops mistakes before they happen = Preventative.',
       difficulty: 'Intermediate'
@@ -554,11 +640,11 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       question: 'When an organization cannot segregate duties between software developers and production database administrators due to extreme staff shortage, what kind of control is deployed to provide equivalent assurance?',
       options: {
         A: 'Directive control',
-        B: 'Compensatory (compensating) control',
-        C: 'Deterrent control',
+        B: 'Deterrent control',
+        C: 'Compensatory (compensating) control',
         D: 'Physical control'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'A compensatory control is an alternative safeguard designed to mitigate risk when primary controls (such as segregation of duties) cannot be implemented, providing equivalent assurance (e.g., automated independent log audits).',
       memoryTip: 'Compensatory = compensating for a missing standard control.',
       difficulty: 'Foundation'
@@ -570,11 +656,11 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       question: 'Why did Section 404 of the Sarbanes-Oxley Act (SOX) have a monumental impact on IT governance?',
       options: {
         A: 'It mandated the adoption of open-source operating systems for financial reporting.',
-        B: 'It made CEOs and CFOs personally liable for Internal Control over Financial Reporting (ICFR), which relies heavily on IT General Controls.',
-        C: 'It required all IT departments to report directly to the U.S. Department of Justice.',
+        B: 'It required all IT departments to report directly to the U.S. Department of Justice.',
+        C: 'It made CEOs and CFOs personally liable for Internal Control over Financial Reporting (ICFR), which relies heavily on IT General Controls.',
         D: 'It outlawed cloud computing for all publicly traded financial institutions.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'SOX Section 404 requires corporate leadership to attest to the effectiveness of ICFR. Because financial processing is digital, IT General Controls (change management, logical access, operations) became legally enforceable under threat of criminal penalties.',
       memoryTip: 'SOX 404 = ICFR attestation + ITGCs = Board-level priority.',
       difficulty: 'Intermediate'
@@ -586,11 +672,11 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       question: 'In the Plan-Do-Check-Act (PDCA) cycle, what occurs during the "Act" stage?',
       options: {
         A: 'Initial execution of standard operating procedures.',
-        B: 'Auditing system logs against predefined baselines.',
-        C: 'Implementing corrective and preventive actions to close identified gaps and drive continual improvement.',
+        B: 'Implementing corrective and preventive actions to close identified gaps and drive continual improvement.',
+        C: 'Auditing system logs against predefined baselines.',
         D: 'Defining the high-level governance vision and business objectives.'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'B',
       explanation: 'In PDCA, "Check" is where monitoring, measuring, and auditing take place. "Act" (or Adjust) is where management takes corrective actions to remediate findings, close performance gaps, and refine the management system.',
       memoryTip: 'Check = Audit & Measure. Act = Remediate & Improve.',
       difficulty: 'Foundation'
@@ -602,11 +688,11 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       question: 'Which of the following is NOT one of the six core principles of ISO/IEC 38500?',
       options: {
         A: 'Responsibility',
-        B: 'Human Behavior',
-        C: 'Continuous Deployment',
+        B: 'Continuous Deployment',
+        C: 'Human Behavior',
         D: 'Conformance'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'B',
       explanation: 'The six principles of ISO/IEC 38500 are: Responsibility, Strategy, Acquisition, Performance, Conformance, and Human Behavior. Continuous Deployment is a DevOps software engineering technique, not a governance principle.',
       memoryTip: 'ISO 38500: Responsibility, Strategy, Acquisition, Performance, Conformance, Human Behavior.',
       difficulty: 'Intermediate'
@@ -617,12 +703,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Why-What-How Approach',
       question: 'In the Why-What-How approach to IT governance, which element describes the operational frameworks, management practices, and technical tools?',
       options: {
-        A: 'The WHY',
+        A: 'The HOW',
         B: 'The WHAT',
-        C: 'The HOW',
+        C: 'The WHY',
         D: 'The WHO'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'A',
       explanation: 'WHY explains business drivers and motivation; WHAT defines governance objectives and strategic policies; HOW details operational execution, frameworks (COBIT, ITIL), and technical tools.',
       memoryTip: 'Why = Drivers. What = Objectives/Policies. How = Frameworks & Execution.',
       difficulty: 'Foundation'
@@ -633,12 +719,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Control Types',
       question: 'An automated Intrusion Detection System (IDS) alerts a security analyst that an unauthorized IP address attempted SQL injection. What type of control is the IDS acting as in this scenario?',
       options: {
-        A: 'Preventative control',
-        B: 'Detective control',
+        A: 'Detective control',
+        B: 'Preventative control',
         C: 'Directive control',
         D: 'Compensating control'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'An Intrusion Detection System (IDS) identifies and alerts on events that have occurred or are occurring, functioning as a Detective control. An Intrusion Prevention System (IPS) that actively blocks the packet would be Preventative.',
       memoryTip: 'IDS = Detects (Detective). IPS = Prevents (Preventative).',
       difficulty: 'Intermediate'
@@ -665,12 +751,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Control Types',
       question: 'A warning banner displayed upon server login stating "Unauthorized access is prohibited and will be prosecuted to the full extent of the law" is primarily an example of a:',
       options: {
-        A: 'Deterrent control',
+        A: 'Compensatory control',
         B: 'Corrective control',
-        C: 'Compensatory control',
+        C: 'Deterrent control',
         D: 'Technical corrective control'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'A deterrent control aims to discourage potential attackers or violators by clearly communicating the consequences and making them reconsider their malicious action.',
       memoryTip: 'Warning signs & banners = Deterrent.',
       difficulty: 'Foundation'
@@ -681,12 +767,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Internal Control Shortcomings',
       question: 'Which of the following represents an inherent limitation of any internal control system?',
       options: {
-        A: 'Controls cannot be applied to relational databases.',
-        B: 'Management override, human error, and collusion can bypass even well-designed controls.',
+        A: 'Management override, human error, and collusion can bypass even well-designed controls.',
+        B: 'Controls cannot be applied to relational databases.',
         C: 'Internal controls only apply to publicly traded US companies.',
         D: 'ISO standards forbid automated technical controls.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'All internal control frameworks (including COSO) acknowledge inherent limitations: controls cannot eliminate risk entirely because human error, management override, and collusion among employees can subvert them.',
       memoryTip: 'Human error + Collusion + Management Override = Core control limitations.',
       difficulty: 'Intermediate'
@@ -697,12 +783,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Control Types',
       question: 'Restoring data from a verified, immutable backup after a database corruption incident is an example of what control type?',
       options: {
-        A: 'Preventative control',
+        A: 'Corrective control',
         B: 'Detective control',
-        C: 'Corrective control',
+        C: 'Preventative control',
         D: 'Directive control'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'A',
       explanation: 'A corrective control comes into effect after an incident or error has occurred to remediate damage and return the system to a known good operational state.',
       memoryTip: 'Restoration & patching = Corrective.',
       difficulty: 'Foundation'
@@ -730,11 +816,11 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       question: 'What is the primary purpose of an IT Balanced Scorecard in IT governance measurement?',
       options: {
         A: 'To eliminate the need for financial balance sheets.',
-        B: 'To evaluate IT performance across multiple perspectives (financial, customer, internal processes, learning/growth) aligned with business strategy.',
+        B: 'To replace external financial auditing under SOX.',
         C: 'To calculate the exact hourly wages of software engineers.',
-        D: 'To replace external financial auditing under SOX.'
+        D: 'To evaluate IT performance across multiple perspectives (financial, customer, internal processes, learning/growth) aligned with business strategy.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'The IT Balanced Scorecard translates business-IT strategy into measurable indicators across four balanced perspectives: Corporate Contribution (Financial), Customer/User Orientation, Operational Excellence (Internal Processes), and Future Orientation (Learning & Growth).',
       memoryTip: 'Scorecard balances financial with operational, customer, and future growth.',
       difficulty: 'Mastery'
@@ -746,11 +832,11 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       question: 'A security guard stationed at the entrance of a Tier IV enterprise data center is an example of a:',
       options: {
         A: 'Technical preventative control',
-        B: 'Physical control',
-        C: 'Administrative detective control',
+        B: 'Administrative detective control',
+        C: 'Physical control',
         D: 'Logical directive control'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'A security guard provides a tangible, real-world physical barrier to unauthorized building entry, categorizing it directly as a Physical control.',
       memoryTip: 'Guards, fences, locks = Physical category.',
       difficulty: 'Foundation'
@@ -778,11 +864,11 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       question: 'When implementing IT governance in a large corporation, what is typically the most significant cultural barrier to success?',
       options: {
         A: 'Excessive availability of commercial frameworks.',
-        B: 'Siloed thinking between business units and IT, accompanied by lack of executive sponsorship.',
+        B: 'High clock speeds of enterprise server processors.',
         C: 'Over-compliance with open-source software licenses.',
-        D: 'High clock speeds of enterprise server processors.'
+        D: 'Siloed thinking between business units and IT, accompanied by lack of executive sponsorship.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Effective IT governance requires deep relational mechanisms. Lack of active executive sponsorship and entrenched silos between business leadership and IT are universally recognized as the primary reasons governance implementations stall.',
       memoryTip: 'Governance fails when business and IT remain disconnected silos without executive backing.',
       difficulty: 'Intermediate'
@@ -793,12 +879,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Control Types',
       question: 'A formalized written Acceptable Use Policy (AUP) that instructs employees on mandatory handling of corporate laptops is an example of a:',
       options: {
-        A: 'Directive control',
-        B: 'Technical corrective control',
+        A: 'Technical corrective control',
+        B: 'Directive control',
         C: 'Physical preventative control',
         D: 'Compensatory detective control'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'B',
       explanation: 'Directive controls prescribe specific required actions and behavioral boundaries through rules, guidelines, and formal policies.',
       memoryTip: 'Policies directing human behavior = Directive controls.',
       difficulty: 'Foundation'
@@ -811,10 +897,10 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       options: {
         A: 'The external software contractor',
         B: 'The Junior Systems Administrator',
-        C: 'The Board of Directors (Governing Body)',
-        D: 'The IT Helpdesk Manager'
+        C: 'The IT Helpdesk Manager',
+        D: 'The Board of Directors (Governing Body)'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'D',
       explanation: 'Ultimate legal and fiduciary accountability for the organization’s direction, risk oversight, and asset preservation rests squarely with the Board of Directors.',
       memoryTip: 'Ultimate accountability always sits with the Board of Directors.',
       difficulty: 'Foundation'
@@ -825,12 +911,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Control Types',
       question: 'Biometric fingerprint scanners that prevent unauthorized individuals from unlocking a server room door are classified as:',
       options: {
-        A: 'Physical category and Preventative type',
+        A: 'Technical category and Corrective type',
         B: 'Administrative category and Detective type',
-        C: 'Technical category and Corrective type',
+        C: 'Physical category and Preventative type',
         D: 'Logical category and Compensatory type'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'The scanner controls physical access to a room (Physical category) and stops unauthorized entry before it occurs (Preventative type). Note that while biometric sensors use electronics, their operational purpose is physical access control.',
       memoryTip: 'Door locks & biometric barriers = Physical category + Preventative type.',
       difficulty: 'Intermediate'
@@ -842,11 +928,11 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       question: 'Under ISO/IEC 38500, what are the three main tasks that the governing body must continuously perform?',
       options: {
         A: 'Plan, Build, Run',
-        B: 'Evaluate, Direct, Monitor',
+        B: 'Identify, Protect, Defend',
         C: 'Detect, Respond, Recover',
-        D: 'Identify, Protect, Defend'
+        D: 'Evaluate, Direct, Monitor'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'ISO/IEC 38500 defines the governance cycle of the governing body as: Evaluate (current and future IT use), Direct (preparation and implementation of plans/policies), and Monitor (conformance to plans and performance).',
       memoryTip: 'ISO 38500 governing body task triad = Evaluate, Direct, Monitor (EDM).',
       difficulty: 'Foundation'
@@ -857,12 +943,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'IT Governance Drivers',
       question: 'Which of the following is an INTERNAL driver for establishing enterprise IT governance?',
       options: {
-        A: 'Statutory compliance with the GDPR',
+        A: 'High IT project failure rates and lack of transparency in IT spending',
         B: 'Sarbanes-Oxley Act auditor requirements',
-        C: 'High IT project failure rates and lack of transparency in IT spending',
+        C: 'Statutory compliance with the GDPR',
         D: 'Mandatory industry regulations from banking supervisory authorities'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'A',
       explanation: 'Internal drivers originate within the organization—such as runaway IT project costs, lack of business-IT alignment, and operational inefficiencies. External drivers include statutory laws (SOX, GDPR) and market regulations.',
       memoryTip: 'Internal = internal costs, efficiency, culture; External = laws & regulations.',
       difficulty: 'Intermediate'
@@ -874,11 +960,11 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       question: 'Which of the following is considered one of the core domains of IT General Controls (ITGC) under SOX compliance audits?',
       options: {
         A: 'Graphic user interface color palette',
-        B: 'Program Change Management',
+        B: 'Marketing brochure design',
         C: 'Employee social media popularity',
-        D: 'Marketing brochure design'
+        D: 'Program Change Management'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'The core domains of ITGCs evaluated by auditors are: 1. Logical Access Controls, 2. Program Change Management, 3. Program Development, and 4. Computer Operations.',
       memoryTip: 'Core ITGCs: Access, Changes, Development, Operations.',
       difficulty: 'Intermediate'
@@ -889,12 +975,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Control Taxonomy',
       question: 'A nightly script that compares financial transaction totals between two independent databases and logs an exception report if a variance is found is an example of a:',
       options: {
-        A: 'Technical Detective control',
+        A: 'Administrative Directive control',
         B: 'Physical Preventative control',
-        C: 'Administrative Directive control',
+        C: 'Technical Detective control',
         D: 'Deterrent Compensatory control'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'The script executes logically in software (Technical) and functions by uncovering and logging discrepancies after transaction processing (Detective).',
       memoryTip: 'Automated script finding errors = Technical + Detective.',
       difficulty: 'Intermediate'
@@ -906,11 +992,11 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       question: 'In academic IT governance literature, governance mechanisms are categorized into structures, processes, and relational mechanisms. An IT Strategy Committee at the Board level is an example of a:',
       options: {
         A: 'Relational mechanism',
-        B: 'Structural mechanism',
-        C: 'Process mechanism',
+        B: 'Process mechanism',
+        C: 'Structural mechanism',
         D: 'Technical mechanism'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'Structural mechanisms refer to organizational units, roles, committees, and reporting lines (e.g., Board IT committee, CIO role). Process mechanisms include strategic planning and portfolio management. Relational mechanisms involve collaboration, shared learning, and culture.',
       memoryTip: 'Committees & roles = Structural; Workflows = Process; Collaboration = Relational.',
       difficulty: 'Mastery'
@@ -921,12 +1007,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Deming Cycle & ISMS',
       question: 'Which international standard structure is explicitly architected around the Deming Plan-Do-Check-Act (PDCA) continual improvement cycle?',
       options: {
-        A: 'ISO/IEC 27001 (Information Security Management Systems)',
-        B: 'TCP/IP Model',
+        A: 'TCP/IP Model',
+        B: 'ISO/IEC 27001 (Information Security Management Systems)',
         C: 'IEEE 802.11 Wi-Fi standard',
         D: 'ASCII character encoding standard'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'B',
       explanation: 'ISO management standards—especially ISO/IEC 27001 and ISO 20000—are fundamentally grounded in the Plan-Do-Check-Act continual improvement philosophy.',
       memoryTip: 'ISO 27001 ISMS uses PDCA for continual improvement.',
       difficulty: 'Foundation'
@@ -937,12 +1023,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Governance vs Management',
       question: 'If executive management launches a major multi-million euro cloud migration without consulting the Board, which governance failure has occurred?',
       options: {
-        A: 'Management overrode the governing body’s duty to Evaluate and Direct strategic investments.',
-        B: 'The Board failed to write the software code.',
+        A: 'The Board failed to write the software code.',
+        B: 'Management overrode the governing body’s duty to Evaluate and Direct strategic investments.',
         C: 'The helpdesk failed to log an operational ticket.',
         D: 'The organization violated the Deming cycle.'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'B',
       explanation: 'Strategic decisions involving massive capital expenditure and enterprise risk exposure fall directly under the Board’s governance mandate to Evaluate, Direct, and approve.',
       memoryTip: 'Major strategic investments require Board evaluation and direction.',
       difficulty: 'Intermediate'
@@ -953,12 +1039,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Control Types',
       question: 'Requiring two separate senior managers to approve wire transfers over €50,000 ("four-eyes principle") is an example of what type of control?',
       options: {
-        A: 'Detective control',
-        B: 'Preventative control',
+        A: 'Preventative control',
+        B: 'Detective control',
         C: 'Corrective control',
         D: 'Deterrent control'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Dual authorization (four-eyes principle) actively prevents an unauthorized or fraudulent transaction from executing unless both parties authorize it.',
       memoryTip: 'Four-eyes principle stops unauthorized actions = Preventative.',
       difficulty: 'Foundation'
@@ -969,12 +1055,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Value Creation in EGIT',
       question: 'According to COBIT and EGIT principles, enterprise value from IT investments is realized through:',
       options: {
-        A: 'Maximizing the purchase of proprietary server hardware.',
-        B: 'Benefits realization, Risk optimization, and Resource optimization.',
+        A: 'Benefits realization, Risk optimization, and Resource optimization.',
+        B: 'Maximizing the purchase of proprietary server hardware.',
         C: 'Eliminating all forms of business risk entirely.',
         D: 'Delegating all corporate decisions to external cloud providers.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Enterprise Governance of IT creates value by balancing three fundamental pillars: 1. Benefits Realization, 2. Risk Optimization, and 3. Resource Optimization.',
       memoryTip: 'Value Creation = Benefits Realization + Risk Optimization + Resource Optimization.',
       difficulty: 'Mastery'
@@ -985,12 +1071,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Control Types',
       question: 'Which of the following is the best example of a DIRECTIVE control in an IT organization?',
       options: {
-        A: 'A password complexity policy requiring 14 characters, numbers, and symbols.',
+        A: 'An antivirus scanner moving malware to quarantine.',
         B: 'A firewall dropping packets with invalid TCP flags.',
         C: 'A halon gas fire suppression system in a data center.',
-        D: 'An antivirus scanner moving malware to quarantine.'
+        D: 'A password complexity policy requiring 14 characters, numbers, and symbols.'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'D',
       explanation: 'A formal policy that mandates required behavior (such as password requirements) directs human actions, making it a Directive control.',
       memoryTip: 'Policies and mandates = Directive controls.',
       difficulty: 'Intermediate'
@@ -1001,12 +1087,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Segregation of Duties',
       question: 'Why is Segregation of Duties (SoD) considered a vital administrative control in IT environments?',
       options: {
-        A: 'It prevents computer processors from overheating.',
-        B: 'It ensures that no single individual has end-to-end control to perpetrate and conceal fraud or unauthorized errors.',
+        A: 'It ensures that no single individual has end-to-end control to perpetrate and conceal fraud or unauthorized errors.',
+        B: 'It prevents computer processors from overheating.',
         C: 'It eliminates the need for software license agreements.',
         D: 'It reduces the total number of staff required in an IT department.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Segregation of Duties divides critical tasks among different individuals so that accidental errors or intentional fraud cannot be executed and hidden by a single person.',
       memoryTip: 'SoD prevents single-point fraud and concealment.',
       difficulty: 'Foundation'
@@ -1017,12 +1103,12 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       topic: 'Control Testing',
       question: 'In internal auditing of IT controls, what is the distinction between "Design Effectiveness" and "Operating Effectiveness"?',
       options: {
-        A: 'Design effectiveness refers to UI aesthetics, while operating effectiveness refers to code efficiency.',
-        B: 'Design effectiveness assesses whether the control is properly formulated to prevent/detect risk; operating effectiveness tests whether the control functioned consistently as designed over time.',
+        A: 'Design effectiveness assesses whether the control is properly formulated to prevent/detect risk; operating effectiveness tests whether the control functioned consistently as designed over time.',
+        B: 'Design effectiveness refers to UI aesthetics, while operating effectiveness refers to code efficiency.',
         C: 'Design effectiveness tests physical locks, while operating effectiveness tests software.',
         D: 'There is no difference in audit methodology.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Auditors first test Design Effectiveness (if properly followed, will this control achieve its objective?). Then they test Operating Effectiveness (did the control actually operate consistently throughout the audit period?).',
       memoryTip: 'Design = Is the blueprint sound? Operating = Did it actually work in practice?',
       difficulty: 'Mastery'
@@ -1051,10 +1137,10 @@ Material weaknesses in ITGCs can prevent an auditor from issuing an unqualified 
       options: {
         A: 'Plan',
         B: 'Do',
-        C: 'Check',
-        D: 'Act'
+        C: 'Act',
+        D: 'Check'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'D',
       explanation: 'Auditing, comparing records against standards, and verifying whether controls functioned as intended is the essence of the "Check" stage in PDCA.',
       memoryTip: 'Auditing & verifying = Check.',
       difficulty: 'Foundation'

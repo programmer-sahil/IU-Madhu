@@ -5,7 +5,7 @@ import { useProgress } from '../hooks/useProgress';
 import confetti from 'canvas-confetti';
 import { 
   Timer, Play, Pause, CheckCircle2, AlertTriangle, ArrowRight, ArrowLeft, 
-  RotateCcw, Award, FileText, CheckSquare, Square, Eye, Sparkles 
+  RotateCcw, Award, FileText, CheckSquare, Square, Eye, Target 
 } from 'lucide-react';
 
 export const MockExamView: React.FC = () => {
@@ -502,11 +502,11 @@ export const MockExamView: React.FC = () => {
                       </p>
                     </div>
 
-                    <div className="p-4 rounded-xl bg-indigo-50/70 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 space-y-1 text-xs">
-                      <span className="font-bold text-indigo-700 dark:text-indigo-300 uppercase tracking-wider block flex items-center gap-1">
-                        <Sparkles className="w-3.5 h-3.5" /> Model Answer:
+                    <div className="p-4 rounded-[14px] bg-indigo-50/70 dark:bg-[#151E31] border border-indigo-200 dark:border-indigo-900/60 space-y-1 text-xs">
+                      <span className="font-bold text-indigo-700 dark:text-[#A5B4FC] uppercase tracking-wider block flex items-center gap-1.5">
+                        <Target className="w-3.5 h-3.5 text-indigo-500" /> Model Answer:
                       </span>
-                      <p className="text-slate-800 dark:text-slate-200 whitespace-pre-line leading-relaxed">
+                      <p className="text-slate-800 dark:text-[#F8FAFC] whitespace-pre-line leading-relaxed">
                         {task.modelAnswer}
                       </p>
                     </div>

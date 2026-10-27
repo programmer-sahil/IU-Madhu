@@ -3,7 +3,7 @@ import { UnitId, CheatSheetData } from '../types';
 import { allUnits, getUnitById } from '../data/units';
 import { 
   Zap, BookMarked, Hash, Layers, GitCompare, AlertOctagon, 
-  Key, ArrowRight, Printer, Sparkles 
+  Key, ArrowRight, Printer 
 } from 'lucide-react';
 
 interface CheatSheetViewProps {
@@ -152,11 +152,11 @@ export const CheatSheetView: React.FC<CheatSheetViewProps> = ({ initialUnit = 1 
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
             {cs.coreDefinitions.map((cd, i) => (
-              <div key={i} className="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 space-y-1">
-                <span className="font-bold text-slate-900 dark:text-white block">
+              <div key={i} className="p-3.5 rounded-[12px] bg-slate-50 dark:bg-[#151E31]/70 border border-slate-200/80 dark:border-slate-800 space-y-1">
+                <span className="font-bold text-slate-900 dark:text-[#F8FAFC] block">
                   {cd.term}
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="text-slate-600 dark:text-[#CBD5E1] leading-relaxed">
                   {cd.definition}
                 </p>
               </div>

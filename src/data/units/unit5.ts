@@ -500,11 +500,11 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       question: 'Which of the following is NOT one of the six activities of the ITIL V4 Service Value Chain (SVC)?',
       options: {
         A: 'Plan',
-        B: 'Obtain / Build',
-        C: 'Evaluate, Direct and Monitor',
+        B: 'Evaluate, Direct and Monitor',
+        C: 'Obtain / Build',
         D: 'Deliver and Support'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'B',
       explanation: 'The six activities are Plan, Improve, Engage, Design & Transition, Obtain/Build, and Deliver & Support. "Evaluate, Direct and Monitor" (EDM) is a COBIT governance domain, not an ITIL SVC activity.',
       memoryTip: 'SVC activities = PIEDOD. EDM belongs to COBIT.',
       difficulty: 'Foundation'
@@ -516,11 +516,11 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       question: 'Which Service Value Chain activity ensures that service components are available when and where they are needed, and that they meet agreed specifications?',
       options: {
         A: 'Engage',
-        B: 'Obtain / Build',
+        B: 'Design and Transition',
         C: 'Plan',
-        D: 'Design and Transition'
+        D: 'Obtain / Build'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Obtain/Build ensures that service components (software code, servers, licenses) are acquired or constructed and made available to specification.',
       memoryTip: 'Acquiring & developing components = Obtain / Build.',
       difficulty: 'Foundation'
@@ -532,11 +532,11 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       question: 'What is the primary objective of Incident Management in ITIL V4?',
       options: {
         A: 'To conduct detailed code audits and find root causes.',
-        B: 'To restore normal service operation as quickly as possible and minimize business impact.',
-        C: 'To discipline the developers who wrote the faulty code.',
+        B: 'To discipline the developers who wrote the faulty code.',
+        C: 'To restore normal service operation as quickly as possible and minimize business impact.',
         D: 'To calculate depreciation of computing assets.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'Incident Management is strictly focused on restoring normal service operations as quickly as possible, often using workarounds.',
       memoryTip: 'Incident Management = Rapid restoration of normal service.',
       difficulty: 'Foundation'
@@ -547,12 +547,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'Problem Management',
       question: 'In ITIL V4, what is a "Known Error"?',
       options: {
-        A: 'An error message displayed in red font on the screen.',
-        B: 'A problem that has been analyzed for root cause and has a documented workaround.',
+        A: 'A problem that has been analyzed for root cause and has a documented workaround.',
+        B: 'An error message displayed in red font on the screen.',
         C: 'A typo in an employee contract.',
         D: 'An incident that the helpdesk intentionally refuses to answer.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'A Known Error is defined as a problem where the root cause has been successfully identified and a documented workaround exists in the KEDB.',
       memoryTip: 'Known Error = Root cause analyzed + Workaround documented.',
       difficulty: 'Foundation'
@@ -563,12 +563,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'Change Types',
       question: 'A routine, pre-authorized, low-risk software patch that follows a proven procedure is classified under ITIL Change Enablement as a:',
       options: {
-        A: 'Normal Change',
-        B: 'Standard Change',
+        A: 'Standard Change',
+        B: 'Normal Change',
         C: 'Emergency Change',
         D: 'Major Change'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Standard Changes are low risk, routine, recurring, and pre-authorized; they do not require individual Change Advisory Board (CAB) review.',
       memoryTip: 'Pre-authorized, low risk, routine = Standard Change.',
       difficulty: 'Foundation'
@@ -579,12 +579,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'Four Dimensions',
       question: 'Which of the Four Dimensions of Service Management covers contracts, agreements, and relationships with cloud vendors and external service providers?',
       options: {
-        A: 'Organizations and People',
+        A: 'Partners and Suppliers',
         B: 'Information and Technology',
-        C: 'Partners and Suppliers',
+        C: 'Organizations and People',
         D: 'Value Streams and Processes'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'A',
       explanation: 'Partners and Suppliers encompasses an organization’s relationships with other organizations involved in the design, development, deployment, and delivery of services.',
       memoryTip: 'Vendor contracts & cloud providers = Partners and Suppliers.',
       difficulty: 'Foundation'
@@ -596,11 +596,11 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       question: 'Can an enterprise organization obtain an accredited certification stating that the organization is "ITIL Certified"?',
       options: {
         A: 'Yes, any enterprise can be ITIL certified by passing an audit.',
-        B: 'No, organizations cannot be certified under ITIL; accredited certification applies only to ISO/IEC 20000-1 (ITIL only certifies individuals).',
+        B: 'Yes, if they implement all 34 practices.',
         C: 'Yes, but only for financial institutions in the EU.',
-        D: 'Yes, if they implement all 34 practices.'
+        D: 'No, organizations cannot be certified under ITIL; accredited certification applies only to ISO/IEC 20000-1 (ITIL only certifies individuals).'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'ITIL is a best-practice framework and does not certify organizations. Formal organizational certification is achieved under ISO/IEC 20000-1.',
       memoryTip: 'Organizations = ISO 20000-1. Individuals = ITIL.',
       difficulty: 'Foundation'
@@ -612,11 +612,11 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       question: 'How many management practices are defined in ITIL V4, and how are they categorized?',
       options: {
         A: '40 practices across 5 domains',
-        B: '34 practices: 14 General Management, 17 Service Management, 3 Technical Management',
+        B: '7 practices corresponding to the 7 Guiding Principles',
         C: '26 processes across 5 lifecycle stages',
-        D: '7 practices corresponding to the 7 Guiding Principles'
+        D: '34 practices: 14 General Management, 17 Service Management, 3 Technical Management'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'ITIL V4 defines 34 practices: 14 General Management Practices, 17 Service Management Practices, and 3 Technical Management Practices.',
       memoryTip: '34 practices in ITIL V4 (14 General + 17 Service + 3 Technical).',
       difficulty: 'Intermediate'
@@ -628,11 +628,11 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       question: 'Which ITIL V4 Guiding Principle advises: "Do not start from scratch and build something new without considering what is already available to be leveraged"?',
       options: {
         A: 'Focus on value',
-        B: 'Start where you are',
-        C: 'Keep it simple and practical',
+        B: 'Keep it simple and practical',
+        C: 'Start where you are',
         D: 'Optimize and automate'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: '"Start where you are" emphasizes investigating and reusing existing functional processes and assets rather than discarding everything.',
       memoryTip: 'Reuse existing assets = Start where you are.',
       difficulty: 'Foundation'
@@ -675,12 +675,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'Quality Frameworks',
       question: 'Six Sigma focuses on process improvement by eliminating defects using which 5-step cycle?',
       options: {
-        A: 'Plan-Do-Check-Act',
-        B: 'Define, Measure, Analyze, Improve, Control (DMAIC)',
+        A: 'Define, Measure, Analyze, Improve, Control (DMAIC)',
+        B: 'Plan-Do-Check-Act',
         C: 'Evaluate, Direct, Monitor, Assess, Report',
         D: 'Identify, Protect, Detect, Respond, Recover'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Six Sigma quality improvement uses the DMAIC methodology: Define, Measure, Analyze, Improve, Control.',
       memoryTip: 'Six Sigma = DMAIC.',
       difficulty: 'Foundation'
@@ -692,11 +692,11 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       question: 'What is "FitSM" primarily designed for?',
       options: {
         A: 'Managing fitness gym memberships.',
-        B: 'Providing a lightweight, pragmatic, freely available ITSM standard for federated and smaller IT environments.',
+        B: 'Automating high-frequency financial trading.',
         C: 'Replacing the US Constitution in federal data centers.',
-        D: 'Automating high-frequency financial trading.'
+        D: 'Providing a lightweight, pragmatic, freely available ITSM standard for federated and smaller IT environments.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'FitSM is a lightweight, simplified standard for IT service management specifically tailored for federated or smaller organizations.',
       memoryTip: 'FitSM = Lightweight, pragmatic ITSM.',
       difficulty: 'Intermediate'
@@ -707,12 +707,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'Service Catalog',
       question: 'What is the difference between the "Customer-Facing" service catalog and the "Technical/Supporting" service catalog?',
       options: {
-        A: 'Customer-facing displays service details, prices, and deliverables in business terms; technical catalog details underlying infrastructure, CIs, and vendor dependencies.',
+        A: 'There is only one view permitted under ISO 20000.',
         B: 'Customer catalog is printed on paper, while technical catalog is in code.',
-        C: 'There is only one view permitted under ISO 20000.',
+        C: 'Customer-facing displays service details, prices, and deliverables in business terms; technical catalog details underlying infrastructure, CIs, and vendor dependencies.',
         D: 'Customer-facing catalog is only for retail consumers.'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'The customer-facing view presents services in business-oriented language with pricing and SLAs; the technical view maps supporting servers, software, and CIs.',
       memoryTip: 'Customer catalog = Business terms; Technical catalog = Supporting CIs and infrastructure.',
       difficulty: 'Intermediate'
@@ -755,12 +755,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'Service Desk Swarming',
       question: 'In modern incident management, what does "Swarming" refer to?',
       options: {
-        A: 'A DDoS attack flooding the service desk with spam.',
-        B: 'Multiple specialists with varied competencies coming together immediately to collectively solve complex incidents, avoiding tiered escalations.',
+        A: 'Multiple specialists with varied competencies coming together immediately to collectively solve complex incidents, avoiding tiered escalations.',
+        B: 'A DDoS attack flooding the service desk with spam.',
         C: 'Routing all tickets to an offshore call center.',
         D: 'Replacing all human analysts with chatbots.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Swarming is an agile incident technique where cross-functional engineers collaborate simultaneously on a difficult incident until resolved, bypassing tiered handoffs.',
       memoryTip: 'Cross-functional team tackling an incident together = Swarming.',
       difficulty: 'Intermediate'
@@ -772,11 +772,11 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       question: 'What are the primary input and output of the ITIL V4 Service Value System (SVS)?',
       options: {
         A: 'Input: Hardware; Output: Electricity',
-        B: 'Input: Opportunity and Demand; Output: Co-created Value',
-        C: 'Input: ISO Audit; Output: Certification Fine',
+        B: 'Input: ISO Audit; Output: Certification Fine',
+        C: 'Input: Opportunity and Demand; Output: Co-created Value',
         D: 'Input: Bug report; Output: Patch'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'The ITIL SVS is triggered by Opportunity and Demand on the left, and delivers Co-created Value on the right.',
       memoryTip: 'SVS: Demand/Opportunity goes in -> Value comes out.',
       difficulty: 'Foundation'
@@ -819,12 +819,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'ISO 20000 Clause Structure',
       question: 'ISO/IEC 20000-1:2018 adopts which standardized high-level structure common to all modern ISO management standards?',
       options: {
-        A: 'Annex SL (High-Level Structure - HLS)',
+        A: 'ITIL V3 Lifecycle Stages',
         B: 'COBIT Core Model',
-        C: 'ITIL V3 Lifecycle Stages',
+        C: 'Annex SL (High-Level Structure - HLS)',
         D: 'Waterfall SDLC'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'Modern ISO standards (ISO 27001, ISO 9001, ISO 20000-1) share the Annex SL High-Level Structure (HLS), ensuring seamless integration across management systems.',
       memoryTip: 'All modern ISO standards share Annex SL (High-Level Structure).',
       difficulty: 'Mastery'
@@ -835,12 +835,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'Guiding Principle: Keep it Simple',
       question: 'The Guiding Principle "Keep it simple and practical" recommends that:',
       options: {
-        A: 'No software should contain more than 100 lines of code.',
-        B: 'If an activity, process, or metric does not contribute to value creation, it should be eliminated.',
+        A: 'If an activity, process, or metric does not contribute to value creation, it should be eliminated.',
+        B: 'No software should contain more than 100 lines of code.',
         C: 'Organizations should not use encryption because it is complex.',
         D: 'All staff should communicate using single-syllable words.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: '"Keep it simple and practical" advises using the minimum number of steps needed to achieve objectives, eliminating non-value-adding bureaucratic steps.',
       memoryTip: 'Eliminate non-value-adding steps = Keep it simple and practical.',
       difficulty: 'Foundation'
@@ -851,12 +851,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'Service Level Agreements (SLAs)',
       question: 'A documented agreement between an IT service provider and a customer that identifies both required services and the expected level of performance is called an:',
       options: {
-        A: 'SLA (Service Level Agreement)',
+        A: 'Impressum',
         B: 'OLA (Operational Level Agreement)',
         C: 'Underpinning Contract (UC)',
-        D: 'Impressum'
+        D: 'SLA (Service Level Agreement)'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'D',
       explanation: 'An SLA is the formal agreement between service provider and customer defining service scope, quality, and targets (availability, response times).',
       memoryTip: 'Provider-to-Customer agreement = SLA.',
       difficulty: 'Foundation'
@@ -867,12 +867,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'Operational Level Agreement (OLA)',
       question: 'In contrast to an SLA, what is an Operational Level Agreement (OLA)?',
       options: {
-        A: 'An agreement between internal organizational teams (e.g., between the Service Desk and Network Engineering) supporting the SLA.',
+        A: 'A consumer terms-of-service checkbox.',
         B: 'A contract with an external cloud vendor.',
-        C: 'A consumer terms-of-service checkbox.',
+        C: 'An agreement between internal organizational teams (e.g., between the Service Desk and Network Engineering) supporting the SLA.',
         D: 'An intellectual property patent license.'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'An OLA is an internal agreement between different internal departments (e.g. IT support and facilities) that underpins the customer-facing SLA.',
       memoryTip: 'Internal department-to-department agreement = OLA.',
       difficulty: 'Intermediate'
@@ -899,12 +899,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'Technical Management Practices',
       question: 'How many practices are classified as "Technical Management Practices" in ITIL V4?',
       options: {
-        A: '3',
+        A: '17',
         B: '7',
         C: '14',
-        D: '17'
+        D: '3'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'D',
       explanation: 'There are exactly 3 Technical Management Practices: Deployment Management, Infrastructure and Platform Management, and Software Development and Management.',
       memoryTip: '3 Technical Management Practices (Deployment, Infrastructure, Software).',
       difficulty: 'Mastery'
@@ -915,12 +915,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'Continual Improvement Practice',
       question: 'In ITIL V4, what is the role of the "Continual Improvement Register" (CIR)?',
       options: {
-        A: 'A database of employee reprimands.',
-        B: 'A structured database or document used to record, track, prioritize, and manage improvement opportunities across the organization.',
+        A: 'A structured database or document used to record, track, prioritize, and manage improvement opportunities across the organization.',
+        B: 'A database of employee reprimands.',
         C: 'A list of deprecated hardware awaiting disposal.',
         D: 'A log of all customer telephone calls.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'The Continual Improvement Register (CIR) is the tool used to document, prioritize, and manage improvement initiatives across the enterprise.',
       memoryTip: 'CIR = Structured repository of all improvement ideas and initiatives.',
       difficulty: 'Intermediate'
@@ -931,12 +931,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'Configuration Item (CI)',
       question: 'In Service Configuration Management, any component that needs to be managed in order to deliver an IT service is formally known as a:',
       options: {
-        A: 'Configuration Item (CI)',
+        A: 'Design Factor',
         B: 'Known Error',
-        C: 'Design Factor',
+        C: 'Configuration Item (CI)',
         D: 'Service Level Target'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'A Configuration Item (CI) is any hardware, software, document, or service component tracked in the Configuration Management Database (CMDB).',
       memoryTip: 'Tracked service component = Configuration Item (CI).',
       difficulty: 'Foundation'
@@ -948,11 +948,11 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       question: 'What is the traditional purpose of a Change Advisory Board (CAB)?',
       options: {
         A: 'To write software patches for operating systems.',
-        B: 'To support the Change Authority by assessing high-impact, normal changes for business risk, resource conflicts, and scheduling clashes.',
+        B: 'To conduct external financial audits.',
         C: 'To approve employee vacation requests.',
-        D: 'To conduct external financial audits.'
+        D: 'To support the Change Authority by assessing high-impact, normal changes for business risk, resource conflicts, and scheduling clashes.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'The CAB brings together relevant stakeholders to evaluate the business impact, risk, and scheduling feasibility of proposed Normal changes.',
       memoryTip: 'CAB evaluates risk and scheduling of Normal Changes.',
       difficulty: 'Foundation'
@@ -979,12 +979,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'SVC Engage Activity',
       question: 'Which Service Value Chain activity handles user satisfaction surveys, SLA negotiations, and capturing customer feedback?',
       options: {
-        A: 'Obtain / Build',
-        B: 'Engage',
+        A: 'Engage',
+        B: 'Obtain / Build',
         C: 'Plan',
         D: 'Deliver and Support'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'The Engage activity fosters good relationships, transparency, and two-way interaction with all external and internal stakeholders.',
       memoryTip: 'Stakeholder relationships, feedback & surveys = Engage.',
       difficulty: 'Foundation'
@@ -995,12 +995,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'SVC Deliver and Support Activity',
       question: 'Handling day-to-day user tickets, operating server backups, and monitoring system uptime are part of which Service Value Chain activity?',
       options: {
-        A: 'Deliver and Support',
+        A: 'Design and Transition',
         B: 'Plan',
-        C: 'Design and Transition',
+        C: 'Deliver and Support',
         D: 'Obtain / Build'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'Deliver and Support covers day-to-day operations, service delivery, monitoring, and resolving user issues according to agreed standards.',
       memoryTip: 'Daily operations and support tickets = Deliver and Support.',
       difficulty: 'Foundation'
@@ -1011,12 +1011,12 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       topic: 'Guiding Principle: Optimize and Automate',
       question: 'The Guiding Principle "Optimize and automate" dictates that before automating a process, the organization must:',
       options: {
-        A: 'First optimize and streamline the process to eliminate inefficiencies, because automating a broken process merely accelerates failure.',
-        B: 'Purchase the most expensive robotic automation software.',
+        A: 'Purchase the most expensive robotic automation software.',
+        B: 'First optimize and streamline the process to eliminate inefficiencies, because automating a broken process merely accelerates failure.',
         C: 'Fire the human staff immediately.',
         D: 'Obtain written approval from the United Nations.'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'B',
       explanation: 'Automating an inefficient or broken process amplifies inefficiency. Therefore, ITIL insists on optimizing first, then automating.',
       memoryTip: 'Optimize first, then automate.',
       difficulty: 'Intermediate'
@@ -1060,11 +1060,11 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       question: 'Can an internal IT department of a non-IT manufacturing firm become ISO/IEC 20000-1 certified?',
       options: {
         A: 'No, only commercial IT software vendors can be certified.',
-        B: 'Yes, any internal or external service provider can define an SMS scope and achieve accredited ISO 20000-1 certification.',
+        B: 'Only if all servers are physically based in Geneva, Switzerland.',
         C: 'Only if the firm has over 50,000 employees.',
-        D: 'Only if all servers are physically based in Geneva, Switzerland.'
+        D: 'Yes, any internal or external service provider can define an SMS scope and achieve accredited ISO 20000-1 certification.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'ISO/IEC 20000-1 applies to any service provider, whether internal (in-house IT department) or external (outsourced managed service provider).',
       memoryTip: 'Both internal IT departments and external MSPs can be ISO 20000 certified.',
       difficulty: 'Intermediate'
@@ -1076,11 +1076,11 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       question: 'If a workaround successfully restores an application to working order, why is the problem record NOT closed?',
       options: {
         A: 'Because workarounds are illegal under ISO standards.',
-        B: 'Because a workaround only masks or reduces the symptom; the underlying root cause still exists and can cause future incidents until permanently patched.',
+        B: 'Because helpdesks must bill additional hours.',
         C: 'Because auditors deduct points for closing tickets.',
-        D: 'Because helpdesks must bill additional hours.'
+        D: 'Because a workaround only masks or reduces the symptom; the underlying root cause still exists and can cause future incidents until permanently patched.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'A workaround temporarily mitigates impact, but the underlying root cause remains unaddressed. The problem remains open as a Known Error until fixed.',
       memoryTip: 'Workarounds fix symptoms; root cause remains until permanent fix.',
       difficulty: 'Intermediate'
@@ -1092,11 +1092,11 @@ The four dimensions are profoundly interdependent. A balanced approach ensures t
       question: 'Which Guiding Principle warns that no service, practice, department, or supplier stands alone, and that outcomes require an end-to-end integration of all elements?',
       options: {
         A: 'Focus on value',
-        B: 'Think and work holistically',
-        C: 'Keep it simple and practical',
+        B: 'Keep it simple and practical',
+        C: 'Think and work holistically',
         D: 'Start where you are'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: '"Think and work holistically" recognizes that no part of an organization works in isolation, requiring end-to-end visibility across all four dimensions.',
       memoryTip: 'Integration across all elements = Think and work holistically.',
       difficulty: 'Foundation'

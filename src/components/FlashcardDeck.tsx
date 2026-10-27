@@ -3,7 +3,7 @@ import { Flashcard, UnitId } from '../types';
 import { getAllFlashcards, allUnits } from '../data/units';
 import { useProgress } from '../hooks/useProgress';
 import { 
-  Check, X, RotateCw, Shuffle, Sparkles, Bookmark, BookmarkCheck,
+  Check, X, RotateCw, Shuffle, Lightbulb, Bookmark, BookmarkCheck,
   ChevronLeft, ChevronRight, Layers, Award
 } from 'lucide-react';
 
@@ -156,25 +156,25 @@ export const FlashcardDeck: React.FC<FlashcardDeckProps> = ({ initialUnit }) => 
         <div className="perspective-1000">
           <div
             onClick={() => setIsFlipped(prev => !prev)}
-            className={`cursor-pointer min-h-[300px] w-full rounded-3xl p-8 relative transition-transform duration-500 transform-style-3d glass-card shadow-lg flex flex-col justify-between border ${
+            className={`cursor-pointer min-h-[300px] sm:min-h-[340px] w-full rounded-[22px] p-6 sm:p-8 relative transition-transform duration-500 transform-style-3d shadow-card-dark flex flex-col justify-between border ${
               isFlipped 
-                ? 'rotate-y-180 border-indigo-400/80 dark:border-indigo-500/60 bg-gradient-to-br from-indigo-50/90 via-white to-purple-50/90 dark:from-indigo-950/70 dark:via-slate-900 dark:to-purple-950/70' 
-                : 'border-slate-200/80 dark:border-slate-800/80 bg-white/90 dark:bg-slate-900/90'
+                ? 'rotate-y-180 border-indigo-400/80 dark:border-indigo-500/60 bg-white dark:bg-[#151E31]' 
+                : 'border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#111827]'
             }`}
           >
             {/* Front Side */}
             <div className={`space-y-4 ${isFlipped ? 'hidden' : 'block'}`}>
               <div className="flex items-center justify-between">
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
+                <span className="px-2.5 py-1 rounded-[6px] text-xs font-semibold bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-[#A5B4FC] border border-indigo-200/60 dark:border-indigo-800/60 font-mono text-[11px]">
                   Unit {currentCard.unit} • {currentCard.category}
                 </span>
-                <span className="text-xs text-slate-400 flex items-center gap-1 font-mono">
-                  <RotateCw className="w-3.5 h-3.5" /> Click to Flip
+                <span className="text-xs text-slate-400 flex items-center gap-1 font-mono text-[11px]">
+                  <RotateCw className="w-3.5 h-3.5" /> Tap to Flip
                 </span>
               </div>
 
-              <div className="py-8 text-center">
-                <h4 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">
+              <div className="py-8 sm:py-12 text-center">
+                <h4 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-[#F8FAFC] tracking-tight font-heading">
                   {currentCard.front}
                 </h4>
               </div>
@@ -187,8 +187,8 @@ export const FlashcardDeck: React.FC<FlashcardDeckProps> = ({ initialUnit }) => 
             {/* Back Side */}
             <div className={`space-y-4 ${isFlipped ? 'block rotate-y-180' : 'hidden'}`}>
               <div className="flex items-center justify-between">
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300">
-                  Explanation & Definition
+                <span className="px-2.5 py-1 rounded-[6px] text-xs font-semibold bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-[#A5B4FC] border border-indigo-200/60 dark:border-indigo-800/60 text-[11px]">
+                  Academic Definition & Recall
                 </span>
                 <button
                   onClick={(e) => {
@@ -200,10 +200,10 @@ export const FlashcardDeck: React.FC<FlashcardDeckProps> = ({ initialUnit }) => 
                       unit: currentCard.unit
                     });
                   }}
-                  className="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-400"
+                  className="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-400 hover:text-indigo-500"
                 >
                   {isBookmarked(currentCard.id) ? (
-                    <BookmarkCheck className="w-4 h-4 text-indigo-600" />
+                    <BookmarkCheck className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                   ) : (
                     <Bookmark className="w-4 h-4" />
                   )}
@@ -211,31 +211,31 @@ export const FlashcardDeck: React.FC<FlashcardDeckProps> = ({ initialUnit }) => 
               </div>
 
               <div className="py-4">
-                <p className="text-sm md:text-base text-slate-800 dark:text-slate-100 font-medium leading-relaxed whitespace-pre-line">
+                <p className="text-xs sm:text-sm md:text-base text-slate-800 dark:text-[#F8FAFC] font-normal leading-relaxed whitespace-pre-line">
                   {currentCard.back}
                 </p>
                 {currentCard.examTip && (
-                  <div className="mt-4 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200/80 dark:border-amber-800/80 text-xs text-amber-900 dark:text-amber-200 font-semibold flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-amber-600 shrink-0" />
+                  <div className="mt-4 p-3.5 rounded-[12px] bg-amber-500/10 border border-amber-500/30 text-xs text-amber-900 dark:text-amber-200 font-medium flex items-center gap-2">
+                    <Lightbulb className="w-4 h-4 text-amber-500 shrink-0" />
                     <span>Exam Tip: {currentCard.examTip}</span>
                   </div>
                 )}
               </div>
 
               <div className="text-center text-xs text-slate-400 italic">
-                Click to flip back
+                Tap to flip back
               </div>
             </div>
           </div>
         </div>
       ) : null}
 
-      {/* Bottom Know It / Need Revision Buttons */}
+      {/* Bottom Know It / Need Revision Buttons (Thumb-friendly touch targets) */}
       {filteredCards.length > 0 && (
         <div className="flex items-center justify-between gap-3 pt-2">
           <button
             onClick={handlePrev}
-            className="p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100"
+            className="p-3.5 rounded-[10px] bg-white dark:bg-[#151E31] border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-[#CBD5E1] hover:bg-slate-100 min-h-[48px] min-w-[48px] flex items-center justify-center transition-colors"
             title="Previous Card"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -244,24 +244,24 @@ export const FlashcardDeck: React.FC<FlashcardDeckProps> = ({ initialUnit }) => 
           <div className="flex-1 flex gap-3">
             <button
               onClick={handleNeedRevision}
-              className="flex-1 py-3 px-4 rounded-xl text-xs font-bold bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-200 border border-amber-200 dark:border-amber-800 hover:bg-amber-100 flex items-center justify-center gap-2 transition-all"
+              className="flex-1 py-3 px-4 rounded-[10px] text-xs font-semibold bg-amber-500/10 hover:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30 flex items-center justify-center gap-2 transition-all min-h-[48px]"
             >
-              <X className="w-4 h-4 text-amber-600" />
-              Need Revision
+              <X className="w-4 h-4 text-amber-500" />
+              Review Again
             </button>
 
             <button
               onClick={handleKnowIt}
-              className="flex-1 py-3 px-4 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm flex items-center justify-center gap-2 transition-all"
+              className="flex-1 py-3 px-4 rounded-[10px] text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm flex items-center justify-center gap-2 transition-all min-h-[48px]"
             >
               <Check className="w-4 h-4" />
-              Know It!
+              Know It
             </button>
           </div>
 
           <button
             onClick={handleNext}
-            className="p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100"
+            className="p-3.5 rounded-[10px] bg-white dark:bg-[#151E31] border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-[#CBD5E1] hover:bg-slate-100 min-h-[48px] min-w-[48px] flex items-center justify-center transition-colors"
             title="Next Card"
           >
             <ChevronRight className="w-5 h-5" />

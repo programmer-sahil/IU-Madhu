@@ -496,11 +496,11 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       question: 'Which BSI Standard defines the concrete IT-Grundschutz methodology and implementation approaches (Basic, Core, Standard)?',
       options: {
         A: 'BSI Standard 200-1',
-        B: 'BSI Standard 200-2',
-        C: 'BSI Standard 200-3',
+        B: 'BSI Standard 200-3',
+        C: 'BSI Standard 200-2',
         D: 'BSI Standard 100-4'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'BSI Standard 200-2 specifies the IT-Grundschutz methodology, detailing the 6-step process and the three protection approaches.',
       memoryTip: 'BSI 200-2 = IT-Grundschutz Methodology.',
       difficulty: 'Foundation'
@@ -513,10 +513,10 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       options: {
         A: 'BSI Standard 200-1',
         B: 'BSI Standard 200-2',
-        C: 'BSI Standard 200-3',
-        D: 'BSI Standard 200-4'
+        C: 'BSI Standard 200-4',
+        D: 'BSI Standard 200-3'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'D',
       explanation: 'BSI Standard 200-3 governs risk analysis based on IT-Grundschutz, applied whenever assets have High/Very High requirements or un-modelled threats.',
       memoryTip: 'BSI 200-3 = Risk Analysis.',
       difficulty: 'Foundation'
@@ -529,10 +529,10 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       options: {
         A: 'BSI Standard 200-1',
         B: 'BSI Standard 200-3',
-        C: 'BSI Standard 100-4 / 200-4',
-        D: 'BSI Standard 38500'
+        C: 'BSI Standard 38500',
+        D: 'BSI Standard 100-4 / 200-4'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'D',
       explanation: 'BSI Standard 100-4 (and the updated BSI 200-4) establishes guidelines for Emergency Management and Business Continuity Management.',
       memoryTip: 'BSI 100-4 / 200-4 = Emergency Management / BCM.',
       difficulty: 'Foundation'
@@ -544,11 +544,11 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       question: 'What are the THREE official protection requirement categories recognized under BSI IT-Grundschutz?',
       options: {
         A: 'Low, Medium, High',
-        B: 'Normal, High (Hoch), Very High (Sehr Hoch)',
-        C: 'Tier 1, Tier 2, Tier 3',
+        B: 'Tier 1, Tier 2, Tier 3',
+        C: 'Normal, High (Hoch), Very High (Sehr Hoch)',
         D: 'Basic, Standard, Crown Jewel'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'BSI recognizes strictly three protection categories: Normal, High (Hoch), and Very High (Sehr Hoch). There is no "Low" category.',
       memoryTip: 'Normal, High, Very High. No "Low" in BSI!',
       difficulty: 'Foundation'
@@ -559,12 +559,12 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       topic: 'Maximum Principle',
       question: 'According to the Maximum Principle (Maximumprinzip), how is the protection requirement of a physical server determined?',
       options: {
-        A: 'By averaging the requirements of all applications running on it.',
-        B: 'The server inherits the HIGHEST protection requirement of any application or business process running on it.',
+        A: 'The server inherits the HIGHEST protection requirement of any application or business process running on it.',
+        B: 'By averaging the requirements of all applications running on it.',
         C: 'The server is automatically assigned "Normal" unless an auditor intervenes.',
         D: 'The server adopts the lowest requirement to minimize operational costs.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'The Maximum Principle dictates that an IT component inherits the highest protection requirement among all applications it supports.',
       memoryTip: 'Maximum Principle: Highest hosted requirement wins.',
       difficulty: 'Foundation'
@@ -576,11 +576,11 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       question: 'An enterprise hosts 100 administrative customer portals on a single database server. While each portal individually has a "Normal" availability requirement, a server crash would take down all 100 simultaneously, threatening corporate insolvency. What principle applies?',
       options: {
         A: 'Distribution Effect (lowering requirements to Normal)',
-        B: 'Accumulation Effect (elevating availability requirement to High or Very High)',
+        B: 'Principle of Least Privilege',
         C: 'Averaging Principle (leaving requirement unchanged)',
-        D: 'Principle of Least Privilege'
+        D: 'Accumulation Effect (elevating availability requirement to High or Very High)'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'The Accumulation Effect (Kumulationseffekt) occurs when multiple individually manageable risks aggregate on one component, creating catastrophic cumulative damage that elevates protection requirements.',
       memoryTip: 'Concentration of many normal risks into catastrophic loss = Accumulation Effect.',
       difficulty: 'Intermediate'
@@ -591,12 +591,12 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       topic: 'Distribution Effect',
       question: 'A mission-critical payment application with a "Very High" availability requirement is deployed across three active-active, geographically separated redundant data centers. Why may the availability requirement for an individual server node be reduced to "Normal"?',
       options: {
-        A: 'Due to the Accumulation Effect',
-        B: 'Due to the Distribution Effect',
+        A: 'Due to the Distribution Effect',
+        B: 'Due to the Accumulation Effect',
         C: 'Because German law waives compliance for payment processors',
         D: 'Because the Maximum Principle forbids high availability'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'The Distribution Effect (Verteilungseffekt) allows a downward adjustment of a single component’s protection requirement when redundancy or clustering ensures the overall service suffers no outage.',
       memoryTip: 'Redundancy reduces individual component requirement = Distribution Effect.',
       difficulty: 'Intermediate'
@@ -624,11 +624,11 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       question: 'In the BSI IT-Grundschutz implementation process, what is the FIRST step?',
       options: {
         A: 'Determination of Protection Requirements',
-        B: 'Structural Analysis (Strukturanalyse)',
-        C: 'Modelling',
+        B: 'Modelling',
+        C: 'Structural Analysis (Strukturanalyse)',
         D: 'Supplementary Risk Analysis'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'Step 1 is Structural Analysis (Strukturanalyse), where the enterprise creates an inventory of all business processes, applications, IT systems, networks, and rooms.',
       memoryTip: 'Step 1 = Structural Analysis (Inventory everything).',
       difficulty: 'Foundation'
@@ -639,12 +639,12 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       topic: 'BSI 6-Step Process',
       question: 'In which step of the BSI IT-Grundschutz implementation process is the "Soll-Ist-Vergleich" (Target-Actual comparison) performed?',
       options: {
-        A: 'Step 1: Structural Analysis',
+        A: 'Step 4: IT-Grundschutz Check',
         B: 'Step 3: Modelling',
-        C: 'Step 4: IT-Grundschutz Check',
+        C: 'Step 1: Structural Analysis',
         D: 'Step 6: Implementation Planning'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'A',
       explanation: 'Step 4 is the IT-Grundschutz Check, where the target requirements in the mapped modules (Soll) are compared against active measures (Ist) to find gaps.',
       memoryTip: 'Step 4 IT-Grundschutz Check = Soll-Ist-Vergleich.',
       difficulty: 'Foundation'
@@ -656,11 +656,11 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       question: 'The Core Protection (Kern-Absicherung) approach under BSI 200-2 is characterized by:',
       options: {
         A: 'Applying minimal basic measures across all enterprise assets.',
-        B: 'Focusing comprehensive security measures and high protection specifically on the enterprise’s most mission-critical assets ("Crown Jewels").',
+        B: 'Ignoring physical security to focus solely on software.',
         C: 'Outsourcing all IT security to public cloud providers.',
-        D: 'Ignoring physical security to focus solely on software.'
+        D: 'Focusing comprehensive security measures and high protection specifically on the enterprise’s most mission-critical assets ("Crown Jewels").'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Core Protection focuses resources on the organization’s "Crown Jewels"—the vital business processes and assets whose compromise threatens enterprise survival.',
       memoryTip: 'Core Protection (Kern-Absicherung) = Protecting the Crown Jewels.',
       difficulty: 'Foundation'
@@ -687,12 +687,12 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       topic: 'Modelling Step',
       question: 'What occurs during Step 3 ("Modelling") of the BSI IT-Grundschutz workflow?',
       options: {
-        A: 'IT assets identified in the structural analysis are mapped to appropriate modules from the IT-Grundschutz Compendium.',
-        B: 'External hackers are hired to conduct penetration tests.',
+        A: 'External hackers are hired to conduct penetration tests.',
+        B: 'IT assets identified in the structural analysis are mapped to appropriate modules from the IT-Grundschutz Compendium.',
         C: 'The Board of Directors calculates the annual dividend.',
         D: 'Network cables are physically measured and rewired.'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'B',
       explanation: 'Modelling involves mapping real-world IT components (servers, switches, applications) to standardized building blocks (modules) in the IT-Grundschutz Compendium.',
       memoryTip: 'Modelling = Mapping assets to Compendium modules.',
       difficulty: 'Foundation'
@@ -719,12 +719,12 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       topic: 'BSI 200-1 Harmonization',
       question: 'With which international standard is BSI Standard 200-1 fundamentally harmonized and compatible?',
       options: {
-        A: 'ISO/IEC 27001',
+        A: 'PCI-DSS',
         B: 'IEEE 802.3',
-        C: 'PCI-DSS',
+        C: 'ISO/IEC 27001',
         D: 'COSO 1992'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'BSI 200-1 establishes ISMS requirements fully compatible with ISO/IEC 27001, allowing organizations to obtain both ISO 27001 and BSI certifications seamlessly.',
       memoryTip: 'BSI 200-1 is harmonized with ISO/IEC 27001.',
       difficulty: 'Foundation'
@@ -768,11 +768,11 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       question: 'In BSI 100-4 / 200-4 Emergency Management, what is the primary purpose of a Business Impact Analysis (BIA)?',
       options: {
         A: 'To calculate corporate income tax deductions.',
-        B: 'To identify critical business processes, assess the financial/operational consequences of outages over time, and establish Recovery Time Objectives (RTO).',
-        C: 'To discipline negligent employees.',
+        B: 'To discipline negligent employees.',
+        C: 'To identify critical business processes, assess the financial/operational consequences of outages over time, and establish Recovery Time Objectives (RTO).',
         D: 'To select colors for marketing logos.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'BIA identifies critical business processes, evaluates downtime impact over time, and establishes Maximum Tolerable Outage (MTO) and Recovery Time Objectives (RTO).',
       memoryTip: 'BIA = Downtime impact over time & RTO determination.',
       difficulty: 'Intermediate'
@@ -847,12 +847,12 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       topic: 'Structural Analysis Infrastructure',
       question: 'Why does BSI Structural Analysis include physical rooms (e.g., server rooms, archives, offices)?',
       options: {
-        A: 'To verify compliance with German interior decorating laws.',
-        B: 'Because environmental and physical threats (fire, water, physical theft) directly jeopardize the IT systems housed within those rooms.',
+        A: 'Because environmental and physical threats (fire, water, physical theft) directly jeopardize the IT systems housed within those rooms.',
+        B: 'To verify compliance with German interior decorating laws.',
         C: 'To calculate commercial property tax.',
         D: 'Physical rooms are excluded from modern IT-Grundschutz.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Structural analysis covers physical infrastructure (rooms, buildings) because physical security directly affects the CIA of the hosted IT systems.',
       memoryTip: 'Infrastructure rooms protect hardware against physical & environmental threats.',
       difficulty: 'Foundation'
@@ -879,12 +879,12 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       topic: 'Basic Protection Approach',
       question: 'What is the primary objective of the "Basic Protection" (Basis-Absicherung) approach in BSI 200-2?',
       options: {
-        A: 'Achieving the highest possible security maturity across all systems.',
-        B: 'Establishing a quick, foundational baseline of basic safeguards across all systems to eliminate gross vulnerabilities before pursuing full standard protection.',
+        A: 'Establishing a quick, foundational baseline of basic safeguards across all systems to eliminate gross vulnerabilities before pursuing full standard protection.',
+        B: 'Achieving the highest possible security maturity across all systems.',
         C: 'Replacing all human staff with firewalls.',
         D: 'Certifying the enterprise for US DoD contracts.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Basis-Absicherung enables organizations to quickly deploy fundamental baseline safeguards across all assets, securing the perimeter before transitioning to standard protection.',
       memoryTip: 'Basis-Absicherung = Rapid baseline across everything.',
       difficulty: 'Foundation'
@@ -895,12 +895,12 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       topic: 'Maximum Principle Limitation',
       question: 'Why is "Averaging" protection requirements (e.g., claiming a Normal system and a Very High system result in High) strictly forbidden in BSI methodology?',
       options: {
-        A: 'Because BSI lacks a division formula.',
-        B: 'Because averaging under-protects the most critical asset, leaving it vulnerable to catastrophic breach.',
+        A: 'Because averaging under-protects the most critical asset, leaving it vulnerable to catastrophic breach.',
+        B: 'Because BSI lacks a division formula.',
         C: 'Because German law requires all numbers to be integers.',
         D: 'Because averaging is only allowed under ISO 9001.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Averaging would compromise security: protecting a Very High asset with merely "High" controls exposes it to existential failure.',
       memoryTip: 'Never average! The highest requirement must be protected.',
       difficulty: 'Foundation'
@@ -928,11 +928,11 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       question: 'When performing the Soll-Ist comparison in Step 4, what are the standard assessment classifications for each requirement?',
       options: {
         A: 'Red, Yellow, Green',
-        B: 'Ja (Yes / Implemented), Nein (No / Unimplemented), Teilweise (Partially implemented), Entbehrlich (Dispensable)',
+        B: 'High, Medium, Low',
         C: 'Pass, Fail, Deferred',
-        D: 'High, Medium, Low'
+        D: 'Ja (Yes / Implemented), Nein (No / Unimplemented), Teilweise (Partially implemented), Entbehrlich (Dispensable)'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'BSI IT-Grundschutz evaluates requirements as: Ja (Yes), Nein (No), Teilweise (Partially), or Entbehrlich (Dispensable/Not applicable).',
       memoryTip: 'Ja, Nein, Teilweise, Entbehrlich.',
       difficulty: 'Mastery'
@@ -944,11 +944,11 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       question: 'In BSI Standard 200-3, risk assessment evaluates risk through which two primary dimensions?',
       options: {
         A: 'Bandwidth and Storage',
-        B: 'Frequency / Likelihood of occurrence (Häufigkeit) and Impact / Extent of damage (Schadensausmaß)',
+        B: 'Software lines of code and Developer salary',
         C: 'Hardware age and Vendor market share',
-        D: 'Software lines of code and Developer salary'
+        D: 'Frequency / Likelihood of occurrence (Häufigkeit) and Impact / Extent of damage (Schadensausmaß)'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'BSI 200-3 assesses risk using a standard risk matrix combining Likelihood of occurrence (Häufigkeit) and Extent of damage (Schadensausmaß).',
       memoryTip: 'Likelihood (Häufigkeit) × Extent of Damage (Schadensausmaß).',
       difficulty: 'Foundation'
@@ -959,12 +959,12 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       topic: 'Disaster Recovery Metrics',
       question: 'In Business Continuity and Disaster Recovery under BSI 200-4, what does "Recovery Time Objective" (RTO) signify?',
       options: {
-        A: 'The maximum acceptable age of restored data backup files.',
-        B: 'The targeted duration of time within which a business process or IT service must be restored after a disaster.',
+        A: 'The targeted duration of time within which a business process or IT service must be restored after a disaster.',
+        B: 'The maximum acceptable age of restored data backup files.',
         C: 'The total cost of purchasing replacement servers.',
         D: 'The amount of time taken to notify law enforcement.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'RTO defines the maximum acceptable duration of time to restore an IT system or process to operational status following an incident. RPO defines acceptable data loss.',
       memoryTip: 'RTO = Time to restore. RPO = Point in time / data loss limit.',
       difficulty: 'Intermediate'
@@ -992,11 +992,11 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       question: 'If a virtual machine host server supports three virtual machines with Integrity requirements of: VM1 = Normal, VM2 = High, VM3 = Normal, what is the host server’s baseline Integrity requirement?',
       options: {
         A: 'Normal',
-        B: 'High',
+        B: 'Intermediate',
         C: 'Very High',
-        D: 'Intermediate'
+        D: 'High'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Under the Maximum Principle, the host inherits the highest requirement among its hosted VMs, which is High (from VM2).',
       memoryTip: 'Maximum Principle: Highest hosted VM dictates host requirement.',
       difficulty: 'Foundation'
@@ -1007,12 +1007,12 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       topic: 'BSI Certificate',
       question: 'Can an organization obtain an accredited ISO/IEC 27001 certificate based on IT-Grundschutz (ISO 27001 auf der Basis von IT-Grundschutz)?',
       options: {
-        A: 'No, BSI certification is strictly prohibited from using ISO labels.',
-        B: 'Yes, fulfilling Standard Protection under BSI IT-Grundschutz qualifies an organization for an accredited ISO 27001 certificate issued by BSI.',
+        A: 'Yes, fulfilling Standard Protection under BSI IT-Grundschutz qualifies an organization for an accredited ISO 27001 certificate issued by BSI.',
+        B: 'No, BSI certification is strictly prohibited from using ISO labels.',
         C: 'Only if the enterprise is owned by the German Federal Ministry of Defence.',
         D: 'Only if no cloud computing is used.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'BSI operates an accredited scheme where successful audit of Standard-Absicherung awards an "ISO 27001 Certificate on the basis of IT-Grundschutz".',
       memoryTip: 'BSI issues ISO 27001 certificates on the basis of IT-Grundschutz.',
       difficulty: 'Intermediate'
@@ -1039,12 +1039,12 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       topic: 'Step 5 Supplementary Risk Analysis',
       question: 'Why does BSI IT-Grundschutz use "Supplementary Risk Analysis" rather than starting with a full risk analysis from scratch for every asset?',
       options: {
-        A: 'To save time and cost by relying on proven, pre-packaged standard safeguards for normal risks, focusing deep analysis only where risks are exceptionally high.',
-        B: 'Because BSI standards do not allow mathematical calculations.',
+        A: 'Because BSI standards do not allow mathematical calculations.',
+        B: 'To save time and cost by relying on proven, pre-packaged standard safeguards for normal risks, focusing deep analysis only where risks are exceptionally high.',
         C: 'To prevent external auditors from reading system logs.',
         D: 'Because German law bans risk assessments for small companies.'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'B',
       explanation: 'IT-Grundschutz solves the inefficiency of full risk assessments by pre-defining proven controls for normal risks, reserving custom risk analysis (BSI 200-3) for high-exposure items.',
       memoryTip: 'Pre-packaged standard controls save time; risk analysis reserved for high-risk assets.',
       difficulty: 'Intermediate'
@@ -1056,11 +1056,11 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       question: 'During emergency operational planning or rapid compliance remediation, why must Core Requirements (Basis-Anforderungen) be deployed first?',
       options: {
         A: 'Because they are legally copyrighted by BSI.',
-        B: 'Because they address fundamental existential vulnerabilities without which any advanced controls are completely ineffective.',
+        B: 'Because they do not require software.',
         C: 'Because they are always free of charge.',
-        D: 'Because they do not require software.'
+        D: 'Because they address fundamental existential vulnerabilities without which any advanced controls are completely ineffective.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Core requirements form the indispensable baseline foundation. If core requirements (e.g., basic patching, backups) are missing, advanced safeguards fail.',
       memoryTip: 'Core requirements are the indispensable foundation.',
       difficulty: 'Foundation'
@@ -1072,11 +1072,11 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       question: 'What is the key prerequisite for triggering the Accumulation Effect in an IT architecture?',
       options: {
         A: 'Every asset must have a Very High protection requirement.',
-        B: 'Multiple independent business processes or applications must share a single IT resource, such that their combined simultaneous loss causes disproportionate cumulative damage.',
+        B: 'All applications must use the same programming language.',
         C: 'The company must have at least 1,000 servers.',
-        D: 'All applications must use the same programming language.'
+        D: 'Multiple independent business processes or applications must share a single IT resource, such that their combined simultaneous loss causes disproportionate cumulative damage.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Accumulation requires shared reliance on a single component where simultaneous disruption causes aggregate damage far exceeding individual losses.',
       memoryTip: 'Concentration of multiple dependencies on a single shared asset.',
       difficulty: 'Intermediate'
@@ -1088,11 +1088,11 @@ Prioritizing identified security deficiencies, allocating budget and technical p
       question: 'Before an auditor permits the use of the Distribution Effect to lower an availability requirement, what must the enterprise demonstrate?',
       options: {
         A: 'A signed letter from the CEO promising no outages.',
-        B: 'Verifiable technical redundancy, automatic failover mechanisms, and validated disaster recovery testing proving that an individual node’s loss causes no service disruption.',
-        C: 'That the software is open-source.',
+        B: 'That the software is open-source.',
+        C: 'Verifiable technical redundancy, automatic failover mechanisms, and validated disaster recovery testing proving that an individual node’s loss causes no service disruption.',
         D: 'That all servers are located in the same room.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'The Distribution Effect cannot be assumed theoretically; the enterprise must prove functional redundancy, clustering, and validated failover.',
       memoryTip: 'Proven redundancy & tested failover required for Distribution Effect.',
       difficulty: 'Intermediate'

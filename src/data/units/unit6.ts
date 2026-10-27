@@ -553,11 +553,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'Under GDPR Article 33, within what timeframe must a Data Controller notify the competent Supervisory Authority after becoming aware of a personal data breach?',
       options: {
         A: '24 hours',
-        B: '48 hours',
-        C: '72 hours',
+        B: '72 hours',
+        C: '48 hours',
         D: '14 calendar days'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'B',
       explanation: 'Article 33 requires notification to the supervisory authority without undue delay and, where feasible, not later than 72 hours after becoming aware.',
       memoryTip: 'GDPR breach notification = 72 hours.',
       difficulty: 'Foundation'
@@ -569,11 +569,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'What is the maximum administrative fine for severe GDPR infringements (Tier 2, such as violating core principles or data subject rights) under Article 83(5)?',
       options: {
         A: 'Up to €5 million or 1% of turnover',
-        B: 'Up to €10 million or 2% of total worldwide annual turnover, whichever is lower',
-        C: 'Up to €20 million or 4% of total worldwide annual turnover of preceding financial year, whichever is higher',
+        B: 'Up to €20 million or 4% of total worldwide annual turnover of preceding financial year, whichever is higher',
+        C: 'Up to €10 million or 2% of total worldwide annual turnover, whichever is lower',
         D: 'Fixed fine of €100,000 per breached record'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'B',
       explanation: 'Tier 2 penalties reach up to €20 million OR 4% of total worldwide annual turnover of preceding financial year, whichever is higher.',
       memoryTip: 'Max GDPR Fine = €20 million or 4% turnover (whichever is greater).',
       difficulty: 'Foundation'
@@ -601,11 +601,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'Why does pseudonymised personal data remain fully within the regulatory scope of the GDPR?',
       options: {
         A: 'Because the EU Commission owns the decryption algorithms.',
-        B: 'Because pseudonymisation is reversible, meaning the data subject can still be re-identified using separate key information.',
-        C: 'Because pseudonymisation is banned under German law.',
+        B: 'Because pseudonymisation is banned under German law.',
+        C: 'Because pseudonymisation is reversible, meaning the data subject can still be re-identified using separate key information.',
         D: 'It does not; pseudonymised data is completely exempt from GDPR.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'Pseudonymisation separates identifiers from data, but remains reversible with key data. Therefore, it remains personal data subject to GDPR.',
       memoryTip: 'Pseudonymisation is reversible -> Still personal data under GDPR.',
       difficulty: 'Foundation'
@@ -616,12 +616,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'German E-Commerce',
       question: 'In German e-commerce distance selling (§ 312g BGB), how long is the statutory consumer Right of Withdrawal (Widerrufsrecht)?',
       options: {
-        A: '7 business days',
-        B: '14 calendar days',
+        A: '14 calendar days',
+        B: '7 business days',
         C: '30 calendar days',
         D: '90 days'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Consumers have a statutory right to withdraw from online purchases within 14 calendar days without giving any reason.',
       memoryTip: 'Right of Withdrawal = 14 calendar days.',
       difficulty: 'Foundation'
@@ -632,12 +632,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'German E-Commerce Penalty',
       question: 'What occurs if an online merchant in Germany fails to properly inform a consumer about their statutory Right of Withdrawal prior to purchase?',
       options: {
-        A: 'The merchant’s server is seized by the police.',
-        B: 'The withdrawal period is extended by 12 months (lasting 12 months and 14 days).',
+        A: 'The withdrawal period is extended by 12 months (lasting 12 months and 14 days).',
+        B: 'The merchant’s server is seized by the police.',
         C: 'The consumer must pay double the purchase price.',
         D: 'The contract becomes completely invalid immediately.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Under § 356(3) BGB, failure to provide statutory withdrawal instructions extends the withdrawal window by 12 months.',
       memoryTip: 'Failure to instruct = 12-month extension to withdrawal right.',
       difficulty: 'Intermediate'
@@ -665,11 +665,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'What is the maximum duration of protection for a German Utility Model (Gebrauchsmuster)?',
       options: {
         A: '3 years',
-        B: '10 years',
+        B: '50 years',
         C: '20 years',
-        D: '50 years'
+        D: '10 years'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'A German Utility Model (Gebrauchsmuster, or "petty patent") provides protection for a maximum of 10 years.',
       memoryTip: 'Utility Model (Gebrauchsmuster) max term = 10 years.',
       difficulty: 'Foundation'
@@ -682,10 +682,10 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       options: {
         A: '20 years from release date',
         B: '50 years from creation',
-        C: '70 years after the death of the author (post mortem auctoris)',
-        D: 'Indefinitely until registered'
+        C: 'Indefinitely until registered',
+        D: '70 years after the death of the author (post mortem auctoris)'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'D',
       explanation: 'Copyright lasts for the life of the author plus 70 years after their death (post mortem auctoris).',
       memoryTip: 'Copyright = Life + 70 years post-mortem.',
       difficulty: 'Foundation'
@@ -697,11 +697,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'What formal registration or official procedure is required in Germany to obtain Copyright (Urheberrecht) protection over software source code?',
       options: {
         A: 'Registration with the DPMA and payment of a €500 fee',
-        B: 'None; copyright arises automatically upon creation of the work without any registration or symbol requirement',
+        B: 'Depositing code in the German National Library',
         C: 'Displaying the official © symbol on every file',
-        D: 'Depositing code in the German National Library'
+        D: 'None; copyright arises automatically upon creation of the work without any registration or symbol requirement'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Under German and continental European copyright law, copyright arises automatically upon the creation of the work. No registration or copyright notice is required.',
       memoryTip: 'Copyright arises AUTOMATICALLY upon creation (no registration!).',
       difficulty: 'Foundation'
@@ -713,11 +713,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'Registering an intentional common misspelling of a famous brand (such as "amzon.de" or "goggle.com") to intercept web traffic or distribute malware is known as:',
       options: {
         A: 'Cybersquatting',
-        B: 'Typosquatting',
-        C: 'Data Portability',
+        B: 'Data Portability',
+        C: 'Typosquatting',
         D: 'Reverse Engineering'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'Typosquatting targets typographical errors made by Internet users entering website addresses into web browsers.',
       memoryTip: 'Common misspellings = Typosquatting.',
       difficulty: 'Foundation'
@@ -729,11 +729,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'Why is a "Right-to-Audit" clause considered essential in enterprise cloud and SaaS vendor contracts?',
       options: {
         A: 'It allows the customer to write off cloud fees as tax credits.',
-        B: 'It grants the customer and regulatory authorities the legal right to inspect vendor security controls and verify statutory compliance (such as GDPR Art. 28).',
-        C: 'It forces the vendor to provide free software upgrades.',
+        B: 'It forces the vendor to provide free software upgrades.',
+        C: 'It grants the customer and regulatory authorities the legal right to inspect vendor security controls and verify statutory compliance (such as GDPR Art. 28).',
         D: 'It transfers the customer’s copyright to the cloud provider.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'GDPR Art. 28 and financial regulations mandate that controllers verify processor compliance. Without a Right-to-Audit clause, independent verification is legally impossible.',
       memoryTip: 'Right-to-Audit enables statutory verification of vendor compliance.',
       difficulty: 'Intermediate'
@@ -745,11 +745,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'If a cloud hosting provider (acting as Data Processor) suffers a ransomware breach affecting customer databases, what is its legal reporting obligation under GDPR Art. 33(2)?',
       options: {
         A: 'It must notify the Supervisory Authority directly within 72 hours.',
-        B: 'It must notify the affected Controllers without undue delay.',
+        B: 'It must publish a press release in European newspapers within 14 days.',
         C: 'It has no reporting obligation if the data was encrypted.',
-        D: 'It must publish a press release in European newspapers within 14 days.'
+        D: 'It must notify the affected Controllers without undue delay.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Processors do not report directly to the Supervisory Authority; they must notify the Controller without undue delay.',
       memoryTip: 'Processor reports to Controller without undue delay.',
       difficulty: 'Intermediate'
@@ -776,12 +776,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'Data Portability',
       question: 'The Right to Data Portability (GDPR Art. 20) entitles data subjects to receive their personal data in what format?',
       options: {
-        A: 'In physical handwritten letters only',
-        B: 'In a structured, commonly used, and machine-readable format (e.g., JSON or CSV)',
+        A: 'In a structured, commonly used, and machine-readable format (e.g., JSON or CSV)',
+        B: 'In physical handwritten letters only',
         C: 'Encrypted with a proprietary vendor cipher',
         D: 'Printed on microfiche film'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Data portability requires controllers to provide data in a structured, commonly used, and machine-readable format to allow transfer to another provider.',
       memoryTip: 'Data Portability = Structured, commonly used, machine-readable format.',
       difficulty: 'Foundation'
@@ -792,12 +792,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'Privacy by Default',
       question: 'Which of the following practices constitutes a direct violation of "Privacy by Default" (GDPR Art. 25(2))?',
       options: {
-        A: 'Setting user profiles to public by default with pre-ticked consent boxes for marketing tracking.',
+        A: 'Requiring users to enter an email address to register.',
         B: 'Encrypting passwords using salted bcrypt.',
         C: 'Deleting log files automatically after 30 days.',
-        D: 'Requiring users to enter an email address to register.'
+        D: 'Setting user profiles to public by default with pre-ticked consent boxes for marketing tracking.'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'D',
       explanation: 'Privacy by default requires that only necessary data is processed and the most privacy-friendly settings apply automatically out-of-the-box. Pre-ticked boxes violate this.',
       memoryTip: 'Pre-ticked consent boxes violate Privacy by Default.',
       difficulty: 'Foundation'
@@ -808,12 +808,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'Creative Commons CC0',
       question: 'What does a Creative Commons CC0 dedication signify when applied to an open-source dataset or image?',
       options: {
-        A: 'The work cannot be used for commercial purposes.',
-        B: 'The author dedicates the work to the public domain, waiving all copyright and related rights worldwide to the maximum extent permitted by law.',
+        A: 'The author dedicates the work to the public domain, waiving all copyright and related rights worldwide to the maximum extent permitted by law.',
+        B: 'The work cannot be used for commercial purposes.',
         C: 'Users must pay royalties after 100 downloads.',
         D: 'The software must only run on Linux.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'CC0 is the universal public domain dedication tool, allowing creators to waive all copyright interests and dedicate their works to the public domain.',
       memoryTip: 'CC0 = Public Domain dedication (no rights reserved).',
       difficulty: 'Intermediate'
@@ -825,11 +825,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'Under § 38 of the German Federal Data Protection Act (BDSG), when must an enterprise mandatorily designate a Data Protection Officer (DPO)?',
       options: {
         A: 'Only if the company is listed on the Frankfurt Stock Exchange.',
-        B: 'If the enterprise permanently employs at least 20 persons in the automated processing of personal data.',
-        C: 'Whenever revenue exceeds €100 million.',
+        B: 'Whenever revenue exceeds €100 million.',
+        C: 'If the enterprise permanently employs at least 20 persons in the automated processing of personal data.',
         D: 'Only for healthcare providers.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'Section 38 BDSG sets the employee threshold: designating a DPO is mandatory if at least 20 employees are permanently engaged in automated data processing.',
       memoryTip: 'German BDSG DPO threshold = 20 persons regularly processing data.',
       difficulty: 'Intermediate'
@@ -840,12 +840,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'German Impressum Rule',
       question: 'In German e-commerce jurisprudence, what is the established "two-click rule" regarding the website Impressum?',
       options: {
-        A: 'Users must click twice to accept cookies.',
-        B: 'The legal notice (Impressum) must be easily recognizable, directly accessible, and reachable from any page on the website within at most two mouse clicks.',
+        A: 'The legal notice (Impressum) must be easily recognizable, directly accessible, and reachable from any page on the website within at most two mouse clicks.',
+        B: 'Users must click twice to accept cookies.',
         C: 'Orders are only legally binding after two confirmation clicks.',
         D: 'Websites must shut down after two failed logins.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Case law dictates that the Impressum must be directly reachable from every subpage within a maximum of two clicks via a clear link.',
       memoryTip: 'Impressum must be accessible within TWO clicks from anywhere.',
       difficulty: 'Foundation'
@@ -856,12 +856,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'Breach Notification to Data Subjects',
       question: 'Under GDPR Article 34, when must a Controller notify the affected DATA SUBJECTS directly regarding a personal data breach?',
       options: {
-        A: 'For every single incident, even if no data was exposed.',
-        B: 'Only when the breach is likely to result in a HIGH RISK to the rights and freedoms of natural persons.',
+        A: 'Only when the breach is likely to result in a HIGH RISK to the rights and freedoms of natural persons.',
+        B: 'For every single incident, even if no data was exposed.',
         C: 'Only if ordered to do so by Interpol.',
         D: 'Never; controllers only talk to regulators.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Data subjects must be notified without undue delay only when the breach is likely to result in a HIGH RISK to their rights and freedoms (Art. 34).',
       memoryTip: 'Notify individuals directly only if HIGH risk exists.',
       difficulty: 'Foundation'
@@ -873,11 +873,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'If personal data is transformed through irreversible differential privacy techniques so that re-identification of individuals is mathematically impossible, what is its legal status under GDPR?',
       options: {
         A: 'It remains personal data subject to all GDPR fines.',
-        B: 'It constitutes Anonymised Data, and the principles of data protection under GDPR no longer apply (Recital 26).',
-        C: 'It must be reported to the DPA within 72 hours.',
+        B: 'It must be reported to the DPA within 72 hours.',
+        C: 'It constitutes Anonymised Data, and the principles of data protection under GDPR no longer apply (Recital 26).',
         D: 'It is classified as special category healthcare data.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'Recital 26 GDPR states that principles of data protection do not apply to anonymous information—information which does not relate to an identified or identifiable natural person.',
       memoryTip: 'Truly anonymised data falls OUTSIDE GDPR scope.',
       difficulty: 'Foundation'
@@ -888,12 +888,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'Cybersquatting',
       question: 'An individual registers "siemens-appliances-store.com" in bad faith with no intention of using it, hoping to demand €50,000 from Siemens AG. This act is called:',
       options: {
-        A: 'Cybersquatting',
+        A: 'Reverse engineering',
         B: 'Typosquatting',
-        C: 'Reverse engineering',
+        C: 'Cybersquatting',
         D: 'Fair use'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'Cybersquatting is the bad-faith registration of domain names identical or confusingly similar to trademarks to extort money from the trademark holder.',
       memoryTip: 'Registering trademarked domain in bad faith to extort = Cybersquatting.',
       difficulty: 'Foundation'
@@ -904,12 +904,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'GDPR Tier 1 Fines',
       question: 'What is the maximum fine under Tier 1 of GDPR (Article 83(4)), covering technical infractions such as failure to maintain processing records or execute an Art. 28 DPA?',
       options: {
-        A: 'Up to €1 million or 0.5% turnover',
-        B: 'Up to €10 million or 2% of total worldwide annual turnover, whichever is higher',
+        A: 'Up to €10 million or 2% of total worldwide annual turnover, whichever is higher',
+        B: 'Up to €1 million or 0.5% turnover',
         C: 'Up to €20 million or 4% of turnover',
         D: '€50,000 maximum'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Tier 1 penalties are up to €10 million or 2% of annual global turnover, whichever is higher.',
       memoryTip: 'Tier 1 = €10m or 2% turnover.',
       difficulty: 'Intermediate'
@@ -952,12 +952,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'Privacy by Design Architecture',
       question: 'Implementing data minimization, automatic record expiration, and end-to-end encryption into the software architecture during sprint planning is an example of:',
       options: {
-        A: 'Privacy by Design (Art. 25(1))',
+        A: 'Utility Model Registration',
         B: 'Cybersquatting',
         C: 'Right of Withdrawal',
-        D: 'Utility Model Registration'
+        D: 'Privacy by Design (Art. 25(1))'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'D',
       explanation: 'Embedding data protection safeguards into the technical architecture from inception fulfills Privacy by Design.',
       memoryTip: 'Architecting privacy from day one = Privacy by Design.',
       difficulty: 'Foundation'
@@ -970,10 +970,10 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       options: {
         A: '"Continue"',
         B: '"Register"',
-        C: 'An unambiguous phrasing indicating a binding payment obligation, such as "Zahlungspflichtig bestellen" (Order with obligation to pay)',
-        D: '"Download free trial"'
+        C: '"Download free trial"',
+        D: 'An unambiguous phrasing indicating a binding payment obligation, such as "Zahlungspflichtig bestellen" (Order with obligation to pay)'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'D',
       explanation: 'The German "Button-Lösung" requires the final checkout button to explicitly state a payment obligation (e.g. "Zahlungspflichtig bestellen"). Ambiguous labels like "Weiter" invalidate the contract.',
       memoryTip: 'Button-Lösung = "Zahlungspflichtig bestellen" (explicit payment notice).',
       difficulty: 'Intermediate'
@@ -985,11 +985,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'Under GDPR Article 38, what is a mandatory statutory protection granted to a designated Data Protection Officer (DPO)?',
       options: {
         A: 'The DPO must be paid more than the CEO.',
-        B: 'The DPO shall not be dismissed or penalized by the controller or processor for performing their statutory duties, and reports directly to highest management.',
+        B: 'The DPO must be an external consultant.',
         C: 'The DPO holds diplomatic immunity from local police.',
-        D: 'The DPO must be an external consultant.'
+        D: 'The DPO shall not be dismissed or penalized by the controller or processor for performing their statutory duties, and reports directly to highest management.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'DPOs enjoy statutory independence: they cannot be dismissed or penalized for executing their duties and report directly to executive leadership.',
       memoryTip: 'DPO cannot be fired or penalized for doing their job.',
       difficulty: 'Intermediate'
@@ -1000,12 +1000,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'GDPR Breach Exception',
       question: 'If a lost corporate laptop containing 5,000 patient records was encrypted with verified full-disk AES-256 and the key was safely stored off-device, why might the Controller be exempt from notifying the DATA SUBJECTS under Art. 34?',
       options: {
-        A: 'Because the data was rendered unintelligible to any unauthorized person lacking access to the key.',
-        B: 'Because laptops are not subject to GDPR.',
+        A: 'Because laptops are not subject to GDPR.',
+        B: 'Because the data was rendered unintelligible to any unauthorized person lacking access to the key.',
         C: 'Because patient data has no financial value.',
         D: 'Because the loss occurred outside the European Union.'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'B',
       explanation: 'Under Art. 34(3)(a), communication to data subjects is not required if the controller applied technological protections (like robust encryption) rendering data unintelligible.',
       memoryTip: 'Strong encryption makes data unintelligible, waiving data subject notice.',
       difficulty: 'Intermediate'
@@ -1016,12 +1016,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'Right of Withdrawal Exceptions',
       question: 'Which of the following purchases is typically EXCLUDED from the statutory 14-day Right of Withdrawal under § 312g(2) BGB?',
       options: {
-        A: 'A standard off-the-shelf printed book',
-        B: 'Individually customized goods manufactured to specific customer specifications (e.g., custom engraved hardware), or sealed software unsealed after delivery',
+        A: 'Individually customized goods manufactured to specific customer specifications (e.g., custom engraved hardware), or sealed software unsealed after delivery',
+        B: 'A standard off-the-shelf printed book',
         C: 'A standard computer mouse',
         D: 'A generic cotton t-shirt'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Customized bespoke goods and unsealed software or audio recordings are statutory exceptions where the right of withdrawal is waived.',
       memoryTip: 'Custom goods & unsealed software = No withdrawal right.',
       difficulty: 'Intermediate'
@@ -1033,11 +1033,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'Under GDPR Article 9, which of the following is classified as "Special Category" (sensitive) personal data subject to stricter processing bans?',
       options: {
         A: 'Business email address',
-        B: 'Biometric data for uniquely identifying a natural person, genetic data, health data, and political opinions',
+        B: 'Company registration number',
         C: 'IP address of a home router',
-        D: 'Company registration number'
+        D: 'Biometric data for uniquely identifying a natural person, genetic data, health data, and political opinions'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Art. 9 defines special categories: racial/ethnic origin, political opinions, religious beliefs, genetic/biometric data, health data, and sexual orientation.',
       memoryTip: 'Health, genetics, biometrics, politics = Special Category (Art. 9).',
       difficulty: 'Foundation'
@@ -1080,12 +1080,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'Right of Rectification',
       question: 'What does GDPR Article 16 (Right to Rectification) allow a data subject to demand?',
       options: {
-        A: 'Immediate financial compensation of €5,000',
-        B: 'The correction of inaccurate personal data without undue delay, and completion of incomplete data',
+        A: 'The correction of inaccurate personal data without undue delay, and completion of incomplete data',
+        B: 'Immediate financial compensation of €5,000',
         C: 'The termination of the company’s operating license',
         D: 'Free shares in the company'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Art. 16 entitles individuals to obtain from the controller without undue delay the rectification of inaccurate personal data concerning them.',
       memoryTip: 'Article 16 = Right to Rectification (fix inaccurate data).',
       difficulty: 'Foundation'
@@ -1097,11 +1097,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'Section 26 of the German Federal Data Protection Act (BDSG) specifically governs which sensitive domain of data processing?',
       options: {
         A: 'Maritime shipping logistics',
-        B: 'Data processing for employment-related purposes (Employee Data Protection)',
-        C: 'Space satellite communications',
+        B: 'Space satellite communications',
+        C: 'Data processing for employment-related purposes (Employee Data Protection)',
         D: 'Video game microtransactions'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'Section 26 BDSG provides the national statutory framework for processing personal data of employees in Germany.',
       memoryTip: '§ 26 BDSG = Employee Data Protection in Germany.',
       difficulty: 'Mastery'
@@ -1128,12 +1128,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'Patent vs Utility Model Speed',
       question: 'Why would an IT hardware startup in Germany file for a Utility Model (Gebrauchsmuster) rather than a full Patent for a fast-moving physical gadget?',
       options: {
-        A: 'Because utility models last 100 years.',
-        B: 'Because utility models are registered quickly and inexpensively without awaiting substantive examination, providing immediate registration protection within weeks.',
+        A: 'Because utility models are registered quickly and inexpensively without awaiting substantive examination, providing immediate registration protection within weeks.',
+        B: 'Because utility models last 100 years.',
         C: 'Because patents are illegal for startups.',
         D: 'Because utility models do not require fees.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Utility models are registered within weeks without substantive novelty examination, allowing rapid legal protection for short-lifecycle products.',
       memoryTip: 'Utility models register rapidly without waiting for patent examinations.',
       difficulty: 'Intermediate'
@@ -1160,12 +1160,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'DPA Investigation Powers',
       question: 'Under GDPR Article 58, which of the following is an investigative or corrective power of a Data Protection Supervisory Authority?',
       options: {
-        A: 'Imposing a temporary or definitive limitation including a ban on processing.',
+        A: 'Confiscating all company bank accounts without notice.',
         B: 'Sentencing company directors to mandatory military service.',
-        C: 'Confiscating all company bank accounts without notice.',
+        C: 'Imposing a temporary or definitive limitation including a ban on processing.',
         D: 'Cancelling an author’s copyright.'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'Under Art. 58, DPAs possess powers to issue warnings, order compliance, impose processing bans, and levy administrative fines up to €20m / 4%.',
       memoryTip: 'DPAs can order complete processing bans and issue fines.',
       difficulty: 'Foundation'
@@ -1176,12 +1176,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'E-Commerce Impressum Omission',
       question: 'What is the immediate legal risk in Germany if a commercial online retailer fails to provide a compliant Impressum on its website?',
       options: {
-        A: 'The site can be immediately targeted by competitors and consumer associations with costly legal warning letters (Abmahnungen) and cease-and-desist claims.',
+        A: 'The ISP cuts all electricity to the company building.',
         B: 'The domain name is automatically transferred to the German government.',
-        C: 'The ISP cuts all electricity to the company building.',
+        C: 'The site can be immediately targeted by competitors and consumer associations with costly legal warning letters (Abmahnungen) and cease-and-desist claims.',
         D: 'There is no legal consequence if products are high quality.'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'Missing or defective Impressums violate unfair competition laws (UWG), triggering rapid warning notices (Abmahnungen) with legal fee claims and injunctions.',
       memoryTip: 'Missing Impressum triggers Abmahnungen (formal warning letters).',
       difficulty: 'Intermediate'
@@ -1192,12 +1192,12 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       topic: 'GDPR Processor Liability',
       question: 'Can a Data Processor be held directly liable by a Supervisory Authority for GDPR violations?',
       options: {
-        A: 'No, only controllers can ever be fined under GDPR.',
-        B: 'Yes, processors can be fined directly for violating obligations specifically directed at processors (e.g. Art. 28, Art. 32 security, sub-processor rules).',
+        A: 'Yes, processors can be fined directly for violating obligations specifically directed at processors (e.g. Art. 28, Art. 32 security, sub-processor rules).',
+        B: 'No, only controllers can ever be fined under GDPR.',
         C: 'Only if the processor has headquarters in Germany.',
         D: 'Only if the fine is under €10,000.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Unlike pre-GDPR laws, GDPR imposes direct statutory obligations and direct liability on Processors under Articles 28, 30, 32, 33(2), and 37.',
       memoryTip: 'Processors have direct statutory liability under GDPR.',
       difficulty: 'Mastery'
@@ -1209,11 +1209,11 @@ Under GDPR Art. 28(3), processing by a processor must be governed by a binding w
       question: 'What does the "Right to Restriction of Processing" (GDPR Art. 18) mean for the stored data?',
       options: {
         A: 'The data must be immediately destroyed from all backup tapes.',
-        B: 'The data may, with the exception of storage, only be processed with the data subject’s consent or for legal claims, while its accuracy or lawfulness is contested.',
+        B: 'The data must be converted to paper format.',
         C: 'The data is transferred to a public blockchain.',
-        D: 'The data must be converted to paper format.'
+        D: 'The data may, with the exception of storage, only be processed with the data subject’s consent or for legal claims, while its accuracy or lawfulness is contested.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Restriction freezes the data: the controller may continue to store it, but cannot actively process it while disputes (e.g., accuracy) are resolved.',
       memoryTip: 'Restriction = Freezing processing while keeping data in storage.',
       difficulty: 'Intermediate'

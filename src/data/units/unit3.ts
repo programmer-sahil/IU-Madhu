@@ -549,11 +549,11 @@ Remediation Mechanisms:
       question: 'Which condition must be met for an organization’s residual risk to be deemed governance-compliant?',
       options: {
         A: 'Residual risk must be mathematically reduced to absolute zero.',
-        B: 'Residual risk must fall within the organization’s approved Risk Appetite.',
-        C: 'Residual risk must exceed inherent risk by at least 20%.',
+        B: 'Residual risk must exceed inherent risk by at least 20%.',
+        C: 'Residual risk must fall within the organization’s approved Risk Appetite.',
         D: 'Residual risk must be fully outsourced to an external cloud vendor.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'Residual risk can never be zero; it is compliant when management and the Board verify that it falls within approved Risk Appetite thresholds.',
       memoryTip: 'Residual Risk must fall within Risk Appetite.',
       difficulty: 'Intermediate'
@@ -566,10 +566,10 @@ Remediation Mechanisms:
       options: {
         A: 'Risk Avoidance',
         B: 'Risk Mitigation',
-        C: 'Risk Transfer (Sharing)',
-        D: 'Risk Invalidation'
+        C: 'Risk Invalidation',
+        D: 'Risk Transfer (Sharing)'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'D',
       explanation: 'Purchasing cyber insurance shifts the financial impact of a loss to a third party, exemplifying Risk Transfer (or Risk Sharing).',
       memoryTip: 'Insurance = Risk Transfer.',
       difficulty: 'Foundation'
@@ -580,12 +580,12 @@ Remediation Mechanisms:
       topic: 'Risk Treatment Limits',
       question: 'Does purchasing cyber insurance relieve an enterprise from regulatory fines and legal liability under GDPR or SOX?',
       options: {
-        A: 'Yes, insurance contracts supersede statutory EU regulations.',
-        B: 'No, financial risk may be transferred, but statutory and legal accountability cannot be transferred to a third party.',
+        A: 'No, financial risk may be transferred, but statutory and legal accountability cannot be transferred to a third party.',
+        B: 'Yes, insurance contracts supersede statutory EU regulations.',
         C: 'Yes, provided the insurer is registered in the European Union.',
         D: 'Only if the policy was approved by the Board.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Risk transfer only shifts financial consequences. Legal and fiduciary accountability cannot be transferred or outsourced.',
       memoryTip: 'Financial risk can be transferred; legal liability cannot.',
       difficulty: 'Intermediate'
@@ -629,11 +629,11 @@ Remediation Mechanisms:
       question: 'What is the fundamental difference between a SOC 2 Type 1 report and a SOC 2 Type 2 report?',
       options: {
         A: 'Type 1 is for physical security, while Type 2 is for software security.',
-        B: 'Type 1 evaluates control design at a single point in time, while Type 2 tests operating effectiveness over a period of time (typically 6–12 months).',
+        B: 'Type 1 is free, while Type 2 is government-subsidized.',
         C: 'Type 1 is published by ISO, while Type 2 is published by NIST.',
-        D: 'Type 1 is free, while Type 2 is government-subsidized.'
+        D: 'Type 1 evaluates control design at a single point in time, while Type 2 tests operating effectiveness over a period of time (typically 6–12 months).'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Type 1 is a point-in-time design assessment. Type 2 tests both design and operating effectiveness by sampling evidence over 6 to 12 months.',
       memoryTip: 'Type 1 = Point in time (design). Type 2 = Period of time (operating effectiveness).',
       difficulty: 'Foundation'
@@ -646,10 +646,10 @@ Remediation Mechanisms:
       options: {
         A: 'Privacy',
         B: 'Availability',
-        C: 'Security (Common Criteria)',
-        D: 'Processing Integrity'
+        C: 'Processing Integrity',
+        D: 'Security (Common Criteria)'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'D',
       explanation: 'Security (also termed the Common Criteria) is the baseline mandatory requirement in all SOC 2 reports. The other four are optional based on service scope.',
       memoryTip: 'Security (Common Criteria) is mandatory in every SOC 2.',
       difficulty: 'Intermediate'
@@ -677,11 +677,11 @@ Remediation Mechanisms:
       question: 'A company identifies that an old legacy web server has an unpatchable vulnerability. Rather than leaving it exposed or writing custom code, they shut down the server and terminate the service permanently. This is:',
       options: {
         A: 'Risk Acceptance',
-        B: 'Risk Avoidance',
-        C: 'Risk Transfer',
+        B: 'Risk Transfer',
+        C: 'Risk Avoidance',
         D: 'Risk Mitigation'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'Risk Avoidance involves eliminating the risk exposure entirely by terminating the activity or retiring the vulnerable asset.',
       memoryTip: 'Shutting down / eliminating the asset = Risk Avoidance.',
       difficulty: 'Foundation'
@@ -692,12 +692,12 @@ Remediation Mechanisms:
       topic: 'Risk Appetite vs Tolerance',
       question: 'Which statement correctly contrasts Risk Appetite and Risk Tolerance?',
       options: {
-        A: 'Risk Appetite is set by junior developers, while Risk Tolerance is set by external auditors.',
-        B: 'Risk Appetite is the broad strategic level of risk the Board is willing to accept; Risk Tolerance is the acceptable operational variance around specific objectives.',
+        A: 'Risk Appetite is the broad strategic level of risk the Board is willing to accept; Risk Tolerance is the acceptable operational variance around specific objectives.',
+        B: 'Risk Appetite is set by junior developers, while Risk Tolerance is set by external auditors.',
         C: 'Risk Tolerance is always higher than Risk Appetite.',
         D: 'They are completely synonymous in modern compliance frameworks.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Risk appetite reflects strategic high-level willingness set by the Board; risk tolerance is the tactical deviation or variance allowed around specific performance metrics.',
       memoryTip: 'Appetite = Broad strategic boundary. Tolerance = Operational variance.',
       difficulty: 'Intermediate'
@@ -708,12 +708,12 @@ Remediation Mechanisms:
       topic: 'Control Shortcomings',
       question: 'When two employees in separate departments conspire together to approve fictitious invoices and bypass segregation of duties, which control shortcoming has occurred?',
       options: {
-        A: 'Collusion',
+        A: 'Access Creep',
         B: 'Human Error',
-        C: 'Access Creep',
+        C: 'Collusion',
         D: 'System Latency'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'Collusion occurs when two or more individuals work together to secretly subvert internal controls such as segregation of duties.',
       memoryTip: 'Conspiring together to bypass controls = Collusion.',
       difficulty: 'Foundation'
@@ -773,11 +773,11 @@ Remediation Mechanisms:
       question: 'The CEO demands that the IT security director immediately bypass multi-factor authentication for his personal iPad before boarding a flight. This is an example of:',
       options: {
         A: 'Collusion',
-        B: 'Management Override',
+        B: 'Technical Corrective Control',
         C: 'Access Creep',
-        D: 'Technical Corrective Control'
+        D: 'Management Override'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Management Override occurs when executive leadership uses authority to circumvent established security controls and policies.',
       memoryTip: 'Executives bypassing controls = Management Override.',
       difficulty: 'Foundation'
@@ -788,12 +788,12 @@ Remediation Mechanisms:
       topic: 'NIST Standards',
       question: 'Which NIST Special Publication provides a comprehensive catalog of security and privacy controls for federal information systems?',
       options: {
-        A: 'NIST SP 800-53',
+        A: 'NIST SP 700-1',
         B: 'NIST SP 800-14',
-        C: 'NIST SP 700-1',
+        C: 'NIST SP 800-53',
         D: 'NIST SP 999-99'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'NIST SP 800-53 is the benchmark catalog of security and privacy controls widely used across government and commercial enterprises.',
       memoryTip: 'NIST SP 800-53 = Master security control catalog.',
       difficulty: 'Foundation'
@@ -804,12 +804,12 @@ Remediation Mechanisms:
       topic: 'Risk Threshold',
       question: 'What is a "Risk Threshold" in enterprise risk management?',
       options: {
-        A: 'The total value of all servers owned by a firm.',
-        B: 'A specific quantifiable trigger level beyond which a risk requires mandatory escalation or immediate intervention.',
+        A: 'A specific quantifiable trigger level beyond which a risk requires mandatory escalation or immediate intervention.',
+        B: 'The total value of all servers owned by a firm.',
         C: 'The maximum discount offered by cloud vendors.',
         D: 'The amount of memory installed on a database server.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'A risk threshold is a quantifiable trigger or boundary; breaching it mandates immediate escalation, executive notification, or remediation.',
       memoryTip: 'Risk Threshold = Quantitative trigger requiring escalation.',
       difficulty: 'Intermediate'
@@ -837,11 +837,11 @@ Remediation Mechanisms:
       question: 'If a database containing public marketing brochures has a critical remote code execution vulnerability, but the data has zero confidential value and cannot be pivoted to other systems, what is the impact on Risk?',
       options: {
         A: 'Risk is infinite because vulnerability is critical.',
-        B: 'Risk remains very low or negligible because Asset Value is negligible.',
-        C: 'Risk is automatically classified as a severe ISO violation.',
+        B: 'Risk is automatically classified as a severe ISO violation.',
+        C: 'Risk remains very low or negligible because Asset Value is negligible.',
         D: 'The risk formula cannot be calculated.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'Because Risk = Threat × Vulnerability × Asset Value, having negligible Asset Value (public data, no pivot ability) keeps overall Risk low.',
       memoryTip: 'Low asset value = Low overall risk.',
       difficulty: 'Intermediate'
@@ -853,11 +853,11 @@ Remediation Mechanisms:
       question: 'When is Risk Acceptance considered legitimate and academically sound?',
       options: {
         A: 'When the IT manager ignores an email from the auditor.',
-        B: 'When the cost of remediation exceeds the asset value, risk is within appetite, and acceptance is formally documented and approved by the asset owner.',
-        C: 'Whenever software licenses expire.',
+        B: 'Whenever software licenses expire.',
+        C: 'When the cost of remediation exceeds the asset value, risk is within appetite, and acceptance is formally documented and approved by the asset owner.',
         D: 'Only after a ransomware attack has concluded.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'Legitimate risk acceptance requires formal documentation, asset owner authorization, and confirmation that the exposure falls within approved risk appetite.',
       memoryTip: 'Acceptance must be formal, documented, and within appetite.',
       difficulty: 'Intermediate'
@@ -869,11 +869,11 @@ Remediation Mechanisms:
       question: 'Who is the primary target audience for an independent SOC 2 Type 2 attestation report?',
       options: {
         A: 'General public reading Twitter',
-        B: 'Enterprise B2B customers, regulators, and partner auditors evaluating vendor risk',
+        B: 'Hardware retail buyers',
         C: 'Junior software interns',
-        D: 'Hardware retail buyers'
+        D: 'Enterprise B2B customers, regulators, and partner auditors evaluating vendor risk'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'SOC 2 reports are shared with B2B customers and auditors under NDAs to provide third-party assurance regarding vendor controls.',
       memoryTip: 'SOC 2 = B2B vendor risk assurance.',
       difficulty: 'Foundation'
@@ -901,11 +901,11 @@ Remediation Mechanisms:
       question: 'A locked server rack enclosure inside an air-conditioned room is an example of what control category?',
       options: {
         A: 'Administrative control',
-        B: 'Physical control',
-        C: 'Technical logical control',
+        B: 'Technical logical control',
+        C: 'Physical control',
         D: 'Compensatory directive control'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'A server rack enclosure with a key or combination lock provides a physical barrier, making it a Physical control.',
       memoryTip: 'Server racks & locks = Physical category.',
       difficulty: 'Foundation'
@@ -917,11 +917,11 @@ Remediation Mechanisms:
       question: 'When an auditor selects 25 sample change management tickets across the year to verify that each had formal QA approval prior to production release, what is being tested?',
       options: {
         A: 'Design Effectiveness',
-        B: 'Operating Effectiveness',
+        B: 'Principle of Least Privilege',
         C: 'Risk Tolerance',
-        D: 'Principle of Least Privilege'
+        D: 'Operating Effectiveness'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Sampling real execution evidence over time tests whether the control operated effectively in practice (Operating Effectiveness).',
       memoryTip: 'Testing real samples across time = Operating Effectiveness.',
       difficulty: 'Intermediate'
@@ -933,11 +933,11 @@ Remediation Mechanisms:
       question: 'Which of the following is a VULNERABILITY rather than a THREAT?',
       options: {
         A: 'A nation-state cyber espionage group',
-        B: 'An unpatched SQL injection flaw in a public login page',
-        C: 'A Category 5 hurricane approaching the data center',
+        B: 'A Category 5 hurricane approaching the data center',
+        C: 'An unpatched SQL injection flaw in a public login page',
         D: 'A disgruntled employee planning data theft'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'An unpatched software flaw is an internal weakness (Vulnerability). Nation-states, hurricanes, and disgruntled employees are Threats (external/internal actors or events).',
       memoryTip: 'Flaw in system = Vulnerability; Danger/actor = Threat.',
       difficulty: 'Foundation'
@@ -949,11 +949,11 @@ Remediation Mechanisms:
       question: 'Implementing Multi-Factor Authentication (MFA) on all employee VPN accounts is an example of which risk treatment strategy?',
       options: {
         A: 'Risk Avoidance',
-        B: 'Risk Mitigation (Modification)',
-        C: 'Risk Acceptance',
+        B: 'Risk Acceptance',
+        C: 'Risk Mitigation (Modification)',
         D: 'Risk Transfer'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'Deploying controls such as MFA reduces the likelihood of unauthorized account takeover, which is Risk Mitigation (or Modification).',
       memoryTip: 'Deploying security controls = Risk Mitigation.',
       difficulty: 'Foundation'
@@ -965,11 +965,11 @@ Remediation Mechanisms:
       question: 'What is the "Statement of Applicability" (SoA) in an ISO/IEC 27001 implementation?',
       options: {
         A: 'A bill sent to external auditors.',
-        B: 'A mandatory document detailing which Annex A controls were selected, whether they are implemented, and the justification for inclusions or exclusions.',
+        B: 'An advertising brochure for customers.',
         C: 'A list of employee social security numbers.',
-        D: 'An advertising brochure for customers.'
+        D: 'A mandatory document detailing which Annex A controls were selected, whether they are implemented, and the justification for inclusions or exclusions.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'The Statement of Applicability (SoA) is a core ISO 27001 requirement documenting which controls from Annex A apply, their implementation status, and justifications.',
       memoryTip: 'Statement of Applicability (SoA) = Documented list of selected & excluded controls.',
       difficulty: 'Mastery'
@@ -997,11 +997,11 @@ Remediation Mechanisms:
       question: 'Why can an internal control system never guarantee 100% elimination of risk?',
       options: {
         A: 'Because open source software is banned by ISO.',
-        B: 'Because controls are subject to inherent limitations including human error, collusion, cost-benefit trade-offs, and management override.',
+        B: 'Because auditors require at least 5% risk to remain employed.',
         C: 'Because computers are fundamentally unpredictable.',
-        D: 'Because auditors require at least 5% risk to remain employed.'
+        D: 'Because controls are subject to inherent limitations including human error, collusion, cost-benefit trade-offs, and management override.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'COSO and all audit standards emphasize inherent limitations: human error, collusion, management override, and economic constraints ensure absolute zero risk cannot be attained.',
       memoryTip: 'Inherent limitations: human error, collusion, override, economics.',
       difficulty: 'Foundation'
@@ -1012,12 +1012,12 @@ Remediation Mechanisms:
       topic: 'SOC 2 Trust Criteria',
       question: 'Under SOC 2, the criterion "Processing Integrity" evaluates whether:',
       options: {
-        A: 'The data center is powered by renewable solar energy.',
-        B: 'System processing is complete, valid, accurate, timely, and authorized.',
+        A: 'System processing is complete, valid, accurate, timely, and authorized.',
+        B: 'The data center is powered by renewable solar energy.',
         C: 'All employees sign non-disclosure agreements.',
         D: 'The building has physical fire extinguishers.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Processing Integrity evaluates whether systems achieve their purpose by processing data in a complete, valid, accurate, timely, and authorized manner.',
       memoryTip: 'Processing Integrity = Complete, valid, accurate, timely, authorized.',
       difficulty: 'Intermediate'
@@ -1045,11 +1045,11 @@ Remediation Mechanisms:
       question: 'During the 3-year validity cycle of an ISO/IEC 27001 certification, when must surveillance audits be conducted?',
       options: {
         A: 'Every 6 months',
-        B: 'Annually in Year 1 and Year 2',
+        B: 'Surveillance audits are completely optional',
         C: 'Only if a data breach is publicly reported',
-        D: 'Surveillance audits are completely optional'
+        D: 'Annually in Year 1 and Year 2'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'ISO 27001 requires mandatory annual surveillance audits at Year 1 and Year 2 to verify continual compliance before recertification at Year 3.',
       memoryTip: 'Surveillance audits = Annually in Year 1 and Year 2.',
       difficulty: 'Intermediate'
@@ -1060,12 +1060,12 @@ Remediation Mechanisms:
       topic: 'Risk Tolerance',
       question: 'If a bank sets a maximum allowable transaction processing downtime of 15 minutes, this metric represents a concrete example of:',
       options: {
-        A: 'Risk Appetite',
-        B: 'Risk Tolerance',
+        A: 'Risk Tolerance',
+        B: 'Risk Appetite',
         C: 'Residual Fraud',
         D: 'Access Creep'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Risk tolerance defines acceptable operational boundaries and variance around specific targets (such as 15 minutes of downtime).',
       memoryTip: 'Specific operational boundary = Risk Tolerance.',
       difficulty: 'Intermediate'
@@ -1076,12 +1076,12 @@ Remediation Mechanisms:
       topic: 'Control Shortcoming',
       question: 'A developer accidentally enters production database credentials into a public GitHub repository because of fatigue. This control failure is primarily attributed to:',
       options: {
-        A: 'Collusion',
-        B: 'Human Error',
+        A: 'Human Error',
+        B: 'Collusion',
         C: 'Management Override',
         D: 'Access Creep'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Honest mistakes, fatigue, or slips by employees represent the classic control limitation of Human Error.',
       memoryTip: 'Fatigue & honest slips = Human Error.',
       difficulty: 'Foundation'
@@ -1108,12 +1108,12 @@ Remediation Mechanisms:
       topic: 'Auditing Controls',
       question: 'Why must an auditor verify Design Effectiveness before testing Operating Effectiveness?',
       options: {
-        A: 'Because testing operating effectiveness is illegal without design sign-off.',
-        B: 'Because if a control is poorly designed, it will fail to prevent or detect risk regardless of how consistently it is operated.',
+        A: 'Because if a control is poorly designed, it will fail to prevent or detect risk regardless of how consistently it is operated.',
+        B: 'Because testing operating effectiveness is illegal without design sign-off.',
         C: 'Because design effectiveness tests software, while operating tests hardware.',
         D: 'To reduce audit fees for the client.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'If a control design is fundamentally flawed, consistently operating that flawed control is useless. Hence, design suitability must be validated first.',
       memoryTip: 'No point testing operation if the design is fundamentally broken.',
       difficulty: 'Intermediate'
@@ -1124,12 +1124,12 @@ Remediation Mechanisms:
       topic: 'Control Categories',
       question: 'An automated vulnerability scanner that scans enterprise networks every weekend and generates a remediation ticket is what category of control?',
       options: {
-        A: 'Physical control',
+        A: 'Technical (Logical) control',
         B: 'Administrative control',
-        C: 'Technical (Logical) control',
+        C: 'Physical control',
         D: 'Deterrent control'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'A',
       explanation: 'The vulnerability scanner is a software tool running on computing systems, categorizing it as a Technical (or Logical) control.',
       memoryTip: 'Software tools & scripts = Technical category.',
       difficulty: 'Foundation'
@@ -1141,11 +1141,11 @@ Remediation Mechanisms:
       question: 'When an organization decides to outsource its payment processing to an established PCI-DSS Level 1 compliant gateway rather than storing credit cards internally, it is engaging in:',
       options: {
         A: 'Risk Acceptance and Fraud',
-        B: 'Risk Mitigation and Risk Transfer/Sharing',
+        B: 'Access Creep',
         C: 'Management Override',
-        D: 'Access Creep'
+        D: 'Risk Mitigation and Risk Transfer/Sharing'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Outsourcing payment handling mitigates technical risk by removing credit cards from internal scope, and transfers operational payment risks to the certified provider.',
       memoryTip: 'Outsourcing specialized payment handling = Mitigation + Risk Transfer.',
       difficulty: 'Intermediate'

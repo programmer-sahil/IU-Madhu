@@ -545,12 +545,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Core Model Numbers',
       question: 'What is the total number of Governance and Management Objectives defined in the COBIT 2019 Core Model?',
       options: {
-        A: '34',
+        A: '40',
         B: '37',
-        C: '40',
+        C: '34',
         D: '48'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'A',
       explanation: 'The COBIT 2019 Core Model contains exactly 40 objectives: 5 EDM + 14 APO + 11 BAI + 6 DSS + 4 MEA = 40.',
       memoryTip: '40 total objectives in COBIT 2019 (COBIT 5 had 37).',
       difficulty: 'Foundation'
@@ -561,12 +561,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Domain Breakdown',
       question: 'How many management objectives belong to the Align, Plan and Organize (APO) domain in COBIT 2019?',
       options: {
-        A: '5',
+        A: '14',
         B: '6',
         C: '11',
-        D: '14'
+        D: '5'
       },
-      correctAnswer: 'D',
+      correctAnswer: 'A',
       explanation: 'The APO domain contains 14 management objectives (APO01 to APO14), making it the largest domain in COBIT.',
       memoryTip: 'APO = 14 objectives (Strategy, Architecture, Portfolio, Risk, etc.).',
       difficulty: 'Intermediate'
@@ -578,11 +578,11 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       question: 'Which of the following is one of the THREE Governance Framework Principles (as opposed to a Governance System Principle)?',
       options: {
         A: 'Provide Stakeholder Value',
-        B: 'Open and Flexible',
-        C: 'Dynamic Governance System',
+        B: 'Dynamic Governance System',
+        C: 'Open and Flexible',
         D: 'Holistic Approach'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'The three Governance Framework principles are: 1. Based on Conceptual Model, 2. Open and Flexible, 3. Aligned to Major Standards. The others are Governance System principles.',
       memoryTip: 'Framework principles: Conceptual Model, Open & Flexible, Aligned to Standards.',
       difficulty: 'Intermediate'
@@ -594,11 +594,11 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       question: 'In COBIT 2019, what term replaced "IT-related goals" from COBIT 5 in the Goals Cascade?',
       options: {
         A: 'Digital Goals',
-        B: 'Alignment Goals',
+        B: 'Enabler Goals',
         C: 'Operational Targets',
-        D: 'Enabler Goals'
+        D: 'Alignment Goals'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'COBIT 2019 renamed "IT-related goals" to "Alignment Goals" to emphasize that IT goals exist solely to align with and support enterprise goals.',
       memoryTip: 'COBIT 5 IT-related goals -> COBIT 2019 Alignment Goals (13).',
       difficulty: 'Intermediate'
@@ -609,12 +609,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Governance System Components',
       question: 'How many Governance System Components are defined in COBIT 2019 (formerly known as "Enablers" in COBIT 5)?',
       options: {
-        A: 'Four',
+        A: 'Seven',
         B: 'Six',
-        C: 'Seven',
+        C: 'Four',
         D: 'Eleven'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'A',
       explanation: 'There are 7 Governance System Components: 1. Processes, 2. Organizational Structures, 3. Principles/Policies/Frameworks, 4. Information, 5. Culture/Ethics/Behavior, 6. People/Skills/Competencies, 7. Services/Infrastructure/Applications.',
       memoryTip: '7 Components of a Governance System.',
       difficulty: 'Foundation'
@@ -626,11 +626,11 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       question: 'How many Design Factors are provided in COBIT 2019 to tailor an enterprise governance system?',
       options: {
         A: '7',
-        B: '11',
-        C: '13',
+        B: '13',
+        C: '11',
         D: '40'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'COBIT 2019 introduces 11 Design Factors (e.g., Enterprise Strategy, Threat Landscape, Role of IT, Sourcing Model) to customize the governance system.',
       memoryTip: '11 Design Factors for tailoring.',
       difficulty: 'Foundation'
@@ -689,12 +689,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Domain Responsibilities',
       question: 'Incident management, service desk requests, and IT security operations fall under which COBIT 2019 domain?',
       options: {
-        A: 'DSS (Deliver, Service and Support)',
+        A: 'MEA (Monitor, Evaluate and Assess)',
         B: 'BAI (Build, Acquire and Implement)',
         C: 'APO (Align, Plan and Organize)',
-        D: 'MEA (Monitor, Evaluate and Assess)'
+        D: 'DSS (Deliver, Service and Support)'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'D',
       explanation: 'Operational execution, day-to-day service delivery, helpdesk requests, and operational security controls belong to DSS (Deliver, Service and Support).',
       memoryTip: 'Operational services, incidents & security = DSS.',
       difficulty: 'Foundation'
@@ -705,12 +705,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Domain Responsibilities',
       question: 'Which COBIT domain contains the objective "Managed System of Internal Control" and "Managed Compliance with External Requirements"?',
       options: {
-        A: 'MEA (Monitor, Evaluate and Assess)',
+        A: 'BAI (Build, Acquire and Implement)',
         B: 'EDM (Evaluate, Direct and Monitor)',
         C: 'APO (Align, Plan and Organize)',
-        D: 'BAI (Build, Acquire and Implement)'
+        D: 'MEA (Monitor, Evaluate and Assess)'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'D',
       explanation: 'MEA focuses on monitoring performance, evaluating internal controls (MEA02), and assessing compliance with external laws and regulations (MEA03).',
       memoryTip: 'Monitoring, controls assessment & compliance = MEA.',
       difficulty: 'Intermediate'
@@ -738,11 +738,11 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       question: 'How many Enterprise Goals are defined in the COBIT 2019 Goals Cascade, and how are they structured?',
       options: {
         A: '7 goals structured by ITIL practices',
-        B: '13 goals structured across the 4 Balanced Scorecard dimensions',
+        B: '11 goals structured by Design Factors',
         C: '40 goals structured across the 5 COBIT domains',
-        D: '11 goals structured by Design Factors'
+        D: '13 goals structured across the 4 Balanced Scorecard dimensions'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'COBIT 2019 defines 13 Enterprise Goals structured across the 4 Balanced Scorecard dimensions: Financial, Customer, Internal, and Learning & Growth.',
       memoryTip: '13 Enterprise Goals structured by Balanced Scorecard.',
       difficulty: 'Intermediate'
@@ -755,10 +755,10 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       options: {
         A: '5',
         B: '11',
-        C: '13',
-        D: '34'
+        C: '34',
+        D: '13'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'D',
       explanation: 'COBIT 2019 defines exactly 13 Alignment Goals that map between the 13 Enterprise Goals and the 40 Governance and Management Objectives.',
       memoryTip: '13 Enterprise Goals map to 13 Alignment Goals.',
       difficulty: 'Foundation'
@@ -769,12 +769,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'EDM Objectives',
       question: 'Which of the following is NOT an EDM governance objective in COBIT 2019?',
       options: {
-        A: 'EDM01 Ensured Governance Framework Setting and Maintenance',
+        A: 'EDM06 Ensured Continuous Delivery of Software',
         B: 'EDM02 Ensured Benefits Delivery',
         C: 'EDM03 Ensured Risk Optimization',
-        D: 'EDM06 Ensured Continuous Delivery of Software'
+        D: 'EDM01 Ensured Governance Framework Setting and Maintenance'
       },
-      correctAnswer: 'D',
+      correctAnswer: 'A',
       explanation: 'There are only 5 EDM objectives: EDM01 (Framework Setting), EDM02 (Benefits Delivery), EDM03 (Risk Optimization), EDM04 (Resource Optimization), and EDM05 (Stakeholder Engagement). There is no EDM06.',
       memoryTip: 'EDM has exactly 5 objectives (EDM01 to EDM05).',
       difficulty: 'Mastery'
@@ -785,12 +785,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Design Factors',
       question: 'If a bank operates under strict banking supervision and criminal penalties for data leakage, which Design Factor is primarily driving high target capability levels for security and compliance objectives?',
       options: {
-        A: 'Design Factor 6: Compliance Requirements',
-        B: 'Design Factor 9: IT Implementation Methods',
+        A: 'Design Factor 9: IT Implementation Methods',
+        B: 'Design Factor 6: Compliance Requirements',
         C: 'Design Factor 11: Enterprise Size',
         D: 'Design Factor 10: Technology Adoption Strategy'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'B',
       explanation: 'Design Factor 6 (Compliance Requirements) assesses the stringency of legal and regulatory compliance, directly inflating priority for MEA03 (Compliance) and APO13 (Security).',
       memoryTip: 'Strict external laws = Design Factor 6 (Compliance Requirements).',
       difficulty: 'Intermediate'
@@ -818,11 +818,11 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       question: 'In the COBIT 7-phase implementation lifecycle, Phase 2 asks "Where are we now?". What is its primary governance activity?',
       options: {
         A: 'Purchasing commercial off-the-shelf software',
-        B: 'Assessing current process capability and identifying existing pain points',
+        B: 'Writing code for automated test suites',
         C: 'Disbanding the IT Steering Committee',
-        D: 'Writing code for automated test suites'
+        D: 'Assessing current process capability and identifying existing pain points'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'Phase 2 ("Where are we now?") evaluates the current state (as-is baseline) by assessing current process capability levels and identifying enterprise pain points.',
       memoryTip: 'Phase 2 = As-Is assessment of current capability.',
       difficulty: 'Intermediate'
@@ -849,12 +849,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Governance vs Management in COBIT',
       question: 'Under COBIT 2019, which entity is accountable for setting direction through prioritization and decision making?',
       options: {
-        A: 'Governance (Governing Body / Board)',
-        B: 'Management (Lead Developer)',
+        A: 'Management (Lead Developer)',
+        B: 'Governance (Governing Body / Board)',
         C: 'External cloud vendors',
         D: 'Tier 1 Helpdesk Agents'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'B',
       explanation: 'Setting direction through prioritization and high-level decision making is a core governance responsibility of the governing body (Board).',
       memoryTip: 'Setting direction = Governance / Board.',
       difficulty: 'Foundation'
@@ -866,11 +866,11 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       question: 'Does COBIT 2019 claim to make business decisions or determine the specific technical architecture for an enterprise?',
       options: {
         A: 'Yes, COBIT dictates the exact programming languages and server vendors.',
-        B: 'No, COBIT provides a governance and management framework to guide decision making, but does not dictate specific business strategies or technical designs.',
-        C: 'Yes, but only for financial institutions.',
+        B: 'Yes, but only for financial institutions.',
+        C: 'No, COBIT provides a governance and management framework to guide decision making, but does not dictate specific business strategies or technical designs.',
         D: 'No, COBIT only applies to non-profit organizations.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'COBIT does not make business decisions or dictate technology architectures; it provides the framework, processes, and guidance to enable enterprises to govern and manage IT effectively.',
       memoryTip: 'COBIT guides decision making; it never dictates specific technical brands.',
       difficulty: 'Intermediate'
@@ -881,12 +881,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Role of IT Design Factor',
       question: 'Design Factor 7 evaluates the "Role of IT" according to which established quadrant model?',
       options: {
-        A: 'Porter’s Five Forces',
-        B: 'McFarlan’s Strategic Grid (Support, Factory, Turnaround, Strategic)',
+        A: 'McFarlan’s Strategic Grid (Support, Factory, Turnaround, Strategic)',
+        B: 'Porter’s Five Forces',
         C: 'Deming PDCA Quadrant',
         D: 'Maslow’s Hierarchy of Needs'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Design Factor 7 utilizes McFarlan’s Strategic Grid, categorizing IT into: Support, Factory, Turnaround, or Strategic.',
       memoryTip: 'Role of IT uses McFarlan’s Grid (Support, Factory, Turnaround, Strategic).',
       difficulty: 'Mastery'
@@ -913,12 +913,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'MEA Domain',
       question: 'How many objectives are in the MEA (Monitor, Evaluate and Assess) domain in COBIT 2019?',
       options: {
-        A: '4',
+        A: '11',
         B: '5',
         C: '6',
-        D: '11'
+        D: '4'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'D',
       explanation: 'MEA contains exactly 4 objectives: MEA01 (Performance & Conformance), MEA02 (Internal Control System), MEA03 (Compliance with External Requirements), and MEA04 (Assurance).',
       memoryTip: 'MEA = 4 objectives.',
       difficulty: 'Foundation'
@@ -961,12 +961,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Governance System Principles',
       question: 'Which Governance System Principle states that a governance system should cover all enterprise information and technology across all business functions rather than just the IT department?',
       options: {
-        A: 'End-to-End Governance System',
-        B: 'Based on Conceptual Model',
+        A: 'Based on Conceptual Model',
+        B: 'End-to-End Governance System',
         C: 'Open and Flexible',
         D: 'CMMI Alignment'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'B',
       explanation: 'The principle "End-to-End Governance System" mandates that governance must encompass all technology and information processing across the entire enterprise.',
       memoryTip: 'Enterprise-wide coverage = End-to-End Governance System.',
       difficulty: 'Foundation'
@@ -978,11 +978,11 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       question: 'How does COBIT 2019 relate to technical frameworks like ITIL and ISO/IEC 27001?',
       options: {
         A: 'COBIT invalidates and bans their use.',
-        B: 'COBIT acts as an overarching governance umbrella, aligning and referencing these specialized frameworks.',
+        B: 'COBIT only allows ISO standards to be read by the Board.',
         C: 'COBIT is identical in every detail to ITIL.',
-        D: 'COBIT only allows ISO standards to be read by the Board.'
+        D: 'COBIT acts as an overarching governance umbrella, aligning and referencing these specialized frameworks.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'COBIT does not replace specialized standards; it acts as an overarching governance framework that integrates, maps, and aligns them (e.g., ITIL for services, ISO 27001 for security).',
       memoryTip: 'COBIT = The overarching governance umbrella.',
       difficulty: 'Foundation'
@@ -993,12 +993,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Design Factors',
       question: 'Design Factor 8 examines "Sourcing Model". What are the typical sourcing models evaluated?',
       options: {
-        A: 'Waterwall, Agile, DevOps',
-        B: 'Outsourcing, Cloud, Insourced / Shared Services',
+        A: 'Outsourcing, Cloud, Insourced / Shared Services',
+        B: 'Waterwall, Agile, DevOps',
         C: 'Single-tier, Multi-tier, Peer-to-peer',
         D: 'Direct, Indirect, Dual'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Design Factor 8 evaluates how the enterprise obtains IT services: insourced, outsourced, cloud computing, or hybrid/shared services.',
       memoryTip: 'Sourcing = Insourced vs Cloud vs Outsourced.',
       difficulty: 'Intermediate'
@@ -1009,12 +1009,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Process Capability Level 5',
       question: 'What is the highest capability level achievable by a process in COBIT 2019?',
       options: {
-        A: 'Level 3 Defined',
+        A: 'Level 5 Optimizing',
         B: 'Level 4 Managed',
-        C: 'Level 5 Optimizing',
+        C: 'Level 3 Defined',
         D: 'Level 6 Perfected'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'A',
       explanation: 'The highest capability level in the CMMI scheme is Level 5: Optimizing, where the process is continuously improved through innovative improvements.',
       memoryTip: 'Level 5 = Optimizing (highest).',
       difficulty: 'Foundation'
@@ -1027,10 +1027,10 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       options: {
         A: 'APO01',
         B: 'APO12',
-        C: 'APO13',
-        D: 'APO14'
+        C: 'APO14',
+        D: 'APO13'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'D',
       explanation: 'APO13 is "Managed Security" in COBIT 2019. APO12 is "Managed Risk", and APO14 is "Managed Data".',
       memoryTip: 'APO12 = Risk; APO13 = Security; APO14 = Data.',
       difficulty: 'Mastery'
@@ -1041,12 +1041,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Culture, Ethics and Behavior',
       question: 'Why does COBIT 2019 include "Culture, Ethics and Behavior" as one of the seven governance components?',
       options: {
-        A: 'Because corporate governance mandates religious services.',
-        B: 'Because human attitudes and organizational culture are critical determinants of whether governance controls succeed or are bypassed.',
+        A: 'Because human attitudes and organizational culture are critical determinants of whether governance controls succeed or are bypassed.',
+        B: 'Because corporate governance mandates religious services.',
         C: 'Because it is required by the U.S. Patent Office.',
         D: 'To reduce the costs of computer hardware.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'A',
       explanation: 'Culture, ethics, and behavior shape how individuals comply with policies and controls. Without a supportive ethical culture, even well-engineered technical controls fail.',
       memoryTip: 'Culture determines whether controls succeed or get bypassed.',
       difficulty: 'Intermediate'
@@ -1058,11 +1058,11 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       question: 'The Governance System Principle "Dynamic Governance System" means that:',
       options: {
         A: 'The governance system must reboot every 24 hours.',
-        B: 'Whenever enterprise strategy, threats, or business models change, the governance system must be updated to account for the impact.',
+        B: 'Dynamic memory allocation is used on servers.',
         C: 'The Board changes its members weekly.',
-        D: 'Dynamic memory allocation is used on servers.'
+        D: 'Whenever enterprise strategy, threats, or business models change, the governance system must be updated to account for the impact.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'D',
       explanation: 'A dynamic governance system considers the impact of changes in enterprise strategy or technology, adjusting design factors and capability targets accordingly.',
       memoryTip: 'Dynamic = Adjusts when business strategy or threats change.',
       difficulty: 'Intermediate'
@@ -1074,11 +1074,11 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       question: 'The Governance Framework Principle "Based on a Conceptual Model" requires that:',
       options: {
         A: 'COBIT cannot be written in English.',
-        B: 'The framework identifies key components and relationships to optimize consistency and allow automation.',
-        C: 'All concepts must be purely theoretical without practical use.',
+        B: 'All concepts must be purely theoretical without practical use.',
+        C: 'The framework identifies key components and relationships to optimize consistency and allow automation.',
         D: 'The framework must only run on mainframe computers.'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'A conceptual model identifies the key components and relationships, ensuring logical consistency and enabling software tools to automate governance design.',
       memoryTip: 'Conceptual Model = Identifies key components and relationships consistently.',
       difficulty: 'Mastery'
@@ -1089,12 +1089,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'EDM03 Objective',
       question: 'What is the specific focus of the governance objective EDM03 in COBIT 2019?',
       options: {
-        A: 'Ensured Risk Optimization',
+        A: 'Managed Human Resources',
         B: 'Managed Service Requests',
-        C: 'Managed Human Resources',
+        C: 'Ensured Risk Optimization',
         D: 'Ensured Vendor Profits'
       },
-      correctAnswer: 'A',
+      correctAnswer: 'C',
       explanation: 'EDM03 is "Ensured Risk Optimization", where the governing body sets risk appetite and tolerance thresholds and monitors IT risk exposure.',
       memoryTip: 'EDM02 = Benefits; EDM03 = Risk Optimization; EDM04 = Resource Optimization.',
       difficulty: 'Mastery'
@@ -1106,11 +1106,11 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       question: 'Which professional association develops and maintains the COBIT framework?',
       options: {
         A: 'ISO (International Organization for Standardization)',
-        B: 'ISACA (Information Systems Audit and Control Association)',
-        C: 'BSI (Federal Office for Information Security)',
+        B: 'BSI (Federal Office for Information Security)',
+        C: 'ISACA (Information Systems Audit and Control Association)',
         D: 'Axelos'
       },
-      correctAnswer: 'B',
+      correctAnswer: 'C',
       explanation: 'ISACA (Information Systems Audit and Control Association) creates and maintains COBIT.',
       memoryTip: 'COBIT is developed by ISACA.',
       difficulty: 'Foundation'
@@ -1137,12 +1137,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Implementation Lifecycle Phase 7',
       question: 'In the COBIT 7-phase implementation lifecycle, what is the core question asked in Phase 7?',
       options: {
-        A: '"What are the drivers?"',
+        A: '"How do we keep the momentum going?"',
         B: '"Where do we want to be?"',
-        C: '"How do we keep the momentum going?"',
+        C: '"What are the drivers?"',
         D: '"How much did the project cost?"'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'A',
       explanation: 'Phase 7 asks "How do we keep the momentum going?", focusing on embedding changes into operational culture and sustaining continual improvement.',
       memoryTip: 'Phase 7 = How do we keep momentum going? (Sustain).',
       difficulty: 'Intermediate'
@@ -1153,12 +1153,12 @@ Key Exam Note: Capability levels apply to individual processes (activities withi
       topic: 'Alignment Goals Count',
       question: 'In mapping the Goals Cascade, how many Alignment Goals directly link to the 40 Governance and Management Objectives?',
       options: {
-        A: '7',
+        A: '13',
         B: '11',
-        C: '13',
+        C: '7',
         D: '25'
       },
-      correctAnswer: 'C',
+      correctAnswer: 'A',
       explanation: 'There are 13 Alignment Goals in COBIT 2019, which link directly to the 40 Governance and Management Objectives.',
       memoryTip: '13 Alignment Goals.',
       difficulty: 'Foundation'

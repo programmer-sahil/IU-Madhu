@@ -71,11 +71,11 @@ export const NumbersView: React.FC = () => {
         {filtered.map(item => (
           <div
             key={item.id}
-            className="glass-card rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800/80 hover:border-amber-400 dark:hover:border-amber-500 transition-all shadow-sm flex flex-col justify-between space-y-4"
+            className="premium-card rounded-[18px] p-5 flex flex-col justify-between space-y-4 hover:border-indigo-400 dark:hover:border-indigo-500/50 transition-all"
           >
             <div>
               <div className="flex items-center justify-between text-xs pb-2 border-b border-slate-100 dark:border-slate-800">
-                <span className="font-mono font-bold text-amber-600 dark:text-amber-400">
+                <span className="font-mono font-bold text-indigo-600 dark:text-indigo-400 text-[11px]">
                   Unit {item.unit} • {item.framework}
                 </span>
                 <button
@@ -85,10 +85,10 @@ export const NumbersView: React.FC = () => {
                     title: `${item.number} — ${item.label}`,
                     unit: item.unit
                   })}
-                  className="p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400"
+                  className="p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-indigo-500"
                 >
                   {isBookmarked(item.id) ? (
-                    <BookmarkCheck className="w-4 h-4 text-indigo-600" />
+                    <BookmarkCheck className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                   ) : (
                     <Bookmark className="w-4 h-4" />
                   )}
@@ -97,33 +97,33 @@ export const NumbersView: React.FC = () => {
 
               {/* Huge Number Callout */}
               <div className="pt-3 pb-1">
-                <div className="text-3xl font-black text-slate-900 dark:text-white font-mono tracking-tight text-gradient">
+                <div className="text-3xl font-black text-slate-900 dark:text-[#F8FAFC] font-mono tracking-tight">
                   {item.number}
                 </div>
-                <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">
+                <h3 className="text-sm font-bold text-slate-900 dark:text-[#F8FAFC] mt-1">
                   {item.label}
-                </h4>
-                <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+                </h3>
+                <p className="text-xs text-slate-600 dark:text-[#CBD5E1] mt-1 leading-relaxed">
                   {item.context}
                 </p>
               </div>
             </div>
 
             <div className="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
-              <div className="p-2 rounded-lg bg-indigo-50/60 dark:bg-indigo-950/30 text-indigo-900 dark:text-indigo-200">
-                <span className="font-bold flex items-center gap-1 text-[11px] uppercase tracking-wider text-indigo-700 dark:text-indigo-300 mb-0.5">
+              <div className="p-2.5 rounded-[10px] bg-slate-50 dark:bg-[#151E31]/70 border border-slate-200/80 dark:border-slate-800 text-slate-800 dark:text-[#CBD5E1]">
+                <span className="font-bold flex items-center gap-1 text-[10px] uppercase tracking-wider text-indigo-700 dark:text-[#A5B4FC] mb-0.5">
                   <HelpCircle className="w-3 h-3" /> Potential Exam Question:
                 </span>
-                <p className="italic text-[11px] leading-tight">
+                <p className="italic text-[11px] leading-relaxed">
                   "{item.examQuestionPrompt}"
                 </p>
               </div>
 
-              <div className="p-2 rounded-lg bg-rose-50/60 dark:bg-rose-950/30 text-rose-900 dark:text-rose-200">
-                <span className="font-bold flex items-center gap-1 text-[11px] uppercase tracking-wider text-rose-700 dark:text-rose-300 mb-0.5">
+              <div className="p-2.5 rounded-[10px] bg-rose-500/10 border border-rose-500/25 text-rose-900 dark:text-rose-200">
+                <span className="font-bold flex items-center gap-1 text-[10px] uppercase tracking-wider text-rose-700 dark:text-rose-300 mb-0.5">
                   <AlertCircle className="w-3 h-3" /> Trap to Avoid:
                 </span>
-                <p className="text-[11px] leading-tight">
+                <p className="text-[11px] leading-relaxed">
                   {item.trapToAvoid}
                 </p>
               </div>

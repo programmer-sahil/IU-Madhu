@@ -5,7 +5,7 @@ import { useProgress } from '../hooks/useProgress';
 import confetti from 'canvas-confetti';
 import { 
   CheckCircle, XCircle, Bookmark, BookmarkCheck, ArrowRight, ArrowLeft, 
-  RotateCcw, Sparkles, Timer, Flame, Award, BookOpen, AlertCircle, RefreshCw
+  RotateCcw, Target, Timer, Flame, Award, BookOpen, AlertCircle, RefreshCw
 } from 'lucide-react';
 
 export type McqMode = 'learn' | 'exam' | 'weak' | 'rapid' | 'unit' | 'full';
@@ -175,7 +175,7 @@ export const McqPractice: React.FC<McqPracticeProps> = ({
             { id: 'exam', label: 'Exam Mode', icon: Timer },
             { id: 'weak', label: 'Weak Questions', icon: AlertCircle },
             { id: 'rapid', label: 'Rapid Fire (10)', icon: Flame },
-            { id: 'unit', label: 'Unit Test (20)', icon: Sparkles },
+            { id: 'unit', label: 'Unit Test (20)', icon: Target },
             { id: 'full', label: 'Full Course (48)', icon: Award }
           ].map(m => {
             const Icon = m.icon;
@@ -369,41 +369,41 @@ export const McqPractice: React.FC<McqPracticeProps> = ({
               const isRevealed = mode === 'learn' ? !!selectedOpt : false;
               const isCorrectOpt = optKey === currentMcq.correctAnswer;
 
-              let btnStyle = 'border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-800/70 hover:border-indigo-400 text-slate-800 dark:text-slate-200';
+              let btnStyle = 'border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#151E31]/60 hover:border-indigo-400 dark:hover:border-indigo-500/50 text-slate-800 dark:text-[#CBD5E1]';
 
               if (isRevealed) {
                 if (isCorrectOpt) {
-                  btnStyle = 'border-emerald-500 bg-emerald-50/90 dark:bg-emerald-950/70 text-emerald-900 dark:text-emerald-100 font-semibold shadow-sm';
+                  btnStyle = 'border-emerald-500/80 bg-emerald-50/90 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 font-semibold shadow-sm';
                 } else if (isSelected && !isCorrectOpt) {
-                  btnStyle = 'border-rose-500 bg-rose-50/90 dark:bg-rose-950/70 text-rose-900 dark:text-rose-100';
+                  btnStyle = 'border-rose-500/80 bg-rose-50/90 dark:bg-rose-950/40 text-rose-900 dark:text-rose-200';
                 }
               } else if (isSelected) {
-                btnStyle = 'border-indigo-600 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-900 dark:text-indigo-100 font-semibold ring-2 ring-indigo-500/30';
+                btnStyle = 'border-indigo-600 bg-indigo-50/80 dark:bg-indigo-950/50 text-indigo-900 dark:text-indigo-200 font-semibold ring-1 ring-indigo-500/30';
               }
 
               return (
                 <button
                   key={optKey}
                   onClick={() => handleSelectOption(optKey)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all flex items-start gap-3.5 text-sm ${btnStyle}`}
+                  className={`w-full text-left p-3.5 sm:p-4 rounded-[12px] border transition-all flex items-start gap-3.5 text-xs sm:text-sm min-h-[48px] ${btnStyle}`}
                 >
-                  <span className={`w-6 h-6 rounded-lg text-xs font-bold flex items-center justify-center shrink-0 ${
+                  <span className={`w-6 h-6 rounded-lg text-xs font-bold flex items-center justify-center shrink-0 mt-0.5 ${
                     isRevealed && isCorrectOpt
                       ? 'bg-emerald-600 text-white'
                       : isRevealed && isSelected
                       ? 'bg-rose-600 text-white'
                       : isSelected
                       ? 'bg-indigo-600 text-white'
-                      : 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
+                      : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
                   }`}>
                     {optKey}
                   </span>
-                  <span className="flex-1 leading-normal">{optText}</span>
+                  <span className="flex-1 leading-relaxed">{optText}</span>
                   {isRevealed && isCorrectOpt && (
-                    <CheckCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                   )}
                   {isRevealed && isSelected && !isCorrectOpt && (
-                    <XCircle className="w-5 h-5 text-rose-600 dark:text-rose-400 shrink-0" />
+                    <XCircle className="w-5 h-5 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
                   )}
                 </button>
               );
@@ -412,19 +412,19 @@ export const McqPractice: React.FC<McqPracticeProps> = ({
 
           {/* Explanation Box (Visible immediately in Learn mode if answered) */}
           {mode === 'learn' && userSelections[currentMcq.id] && (
-            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3 text-xs animate-fade-in">
+            <div className="p-4 rounded-[14px] bg-slate-50 dark:bg-[#151E31] border border-slate-200/90 dark:border-slate-800 space-y-3 text-xs animate-fade-in shadow-sm">
               <div>
-                <span className="font-bold text-slate-900 dark:text-white uppercase tracking-wider block mb-1">
+                <span className="font-bold text-slate-900 dark:text-white uppercase tracking-wider block mb-1 text-[11px]">
                   Why this is correct:
                 </span>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                <p className="text-slate-700 dark:text-[#CBD5E1] leading-relaxed">
                   {currentMcq.explanation}
                 </p>
               </div>
 
-              <div className="pt-2 border-t border-slate-200/60 dark:border-slate-700/60 flex items-start gap-2">
+              <div className="pt-2 border-t border-slate-200/60 dark:border-slate-800 flex items-start gap-2">
                 <span className="font-bold text-indigo-600 dark:text-indigo-400 shrink-0">Remember:</span>
-                <p className="text-slate-800 dark:text-slate-200 font-semibold italic">
+                <p className="text-slate-800 dark:text-[#F8FAFC] font-semibold italic">
                   {currentMcq.memoryTip}
                 </p>
               </div>

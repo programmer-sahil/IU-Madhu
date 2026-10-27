@@ -8,7 +8,7 @@ import { FlashcardDeck } from './FlashcardDeck';
 import confetti from 'canvas-confetti';
 import { 
   BookOpen, FileText, Zap, HelpCircle, Layers, Target, 
-  CheckCircle2, Clock, Award, CheckSquare, Square, ChevronRight, Eye 
+  CheckCircle2, Clock, Award, CheckSquare, Square, Eye, EyeOff 
 } from 'lucide-react';
 
 interface UnitViewProps {
@@ -35,65 +35,62 @@ export const UnitView: React.FC<UnitViewProps> = ({ unit, initialTab = 'overview
   const handleMarkComplete = () => {
     toggleUnitCompleted(unit.id);
     if (!isUnitCompleted) {
-      confetti({ particleCount: 75, spread: 70, origin: { y: 0.6 } });
+      confetti({ particleCount: 60, spread: 60, origin: { y: 0.6 } });
     }
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pb-12">
       {/* Unit Hero Banner */}
-      <div className={`rounded-3xl p-6 md:p-8 bg-gradient-to-r ${unit.gradient} text-white shadow-xl relative overflow-hidden`}>
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-white/5 backdrop-blur-3xl transform skew-x-12 pointer-events-none" />
-
+      <div className="rounded-[22px] md:rounded-[26px] p-6 sm:p-8 bg-gradient-to-br from-[#0B1120] via-[#111827] to-[#151E31] text-white border border-slate-800 shadow-card-dark relative overflow-hidden">
         <div className="relative z-10 space-y-4 max-w-3xl">
           <div className="flex flex-wrap items-center gap-2 text-xs">
-            <span className="px-3 py-1 rounded-full font-bold bg-white/20 backdrop-blur-md uppercase tracking-wider">
+            <span className="px-2.5 py-1 rounded-[8px] font-semibold bg-indigo-500/15 text-[#A5B4FC] border border-indigo-500/25 uppercase tracking-wider text-[11px]">
               Unit {unit.id} • {unit.code}
             </span>
-            <span className="px-3 py-1 rounded-full font-semibold bg-white/10 backdrop-blur-md flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5" /> {unit.estimatedTime} Revision
+            <span className="px-2.5 py-1 rounded-[8px] text-slate-300 bg-slate-800/60 border border-slate-700/60 flex items-center gap-1.5 text-[11px]">
+              <Clock className="w-3.5 h-3.5 text-slate-400" /> {unit.estimatedTime} Revision
             </span>
             {isUnitCompleted && (
-              <span className="px-3 py-1 rounded-full font-bold bg-emerald-500/90 text-white flex items-center gap-1">
-                <CheckCircle2 className="w-3.5 h-3.5" /> Unit Mastered
+              <span className="px-2.5 py-1 rounded-[8px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1 text-[11px]">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> Unit Mastered
               </span>
             )}
           </div>
 
-          <h2 className="text-2xl md:text-4xl font-black tracking-tight leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-white leading-tight font-heading">
             {unit.title}
-          </h2>
-          <p className="text-white/80 text-xs md:text-sm font-medium leading-relaxed">
+          </h1>
+          <p className="text-[#CBD5E1] text-xs sm:text-sm font-normal leading-relaxed max-w-2xl">
             {unit.subtitle}
           </p>
 
-          {/* Quick Mark Complete Button */}
-          <div className="pt-2">
+          <div className="pt-1">
             <button
               onClick={handleMarkComplete}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-md flex items-center gap-2 ${
+              className={`min-h-[40px] px-4 py-2 rounded-[10px] text-xs font-semibold transition-all flex items-center gap-2 ${
                 isUnitCompleted
-                  ? 'bg-emerald-500 text-white hover:bg-emerald-600'
-                  : 'bg-white text-slate-900 hover:bg-slate-100'
+                  ? 'bg-emerald-600/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-600/30'
+                  : 'bg-indigo-600 text-white hover:bg-indigo-500'
               }`}
             >
               <CheckCircle2 className="w-4 h-4" />
-              {isUnitCompleted ? 'Unit Marked Completed' : 'Mark Unit as Completed'}
+              {isUnitCompleted ? 'Marked Completed (Click to Undo)' : 'Mark Unit as Completed'}
             </button>
           </div>
         </div>
       </div>
 
       {/* Tabs Navigation */}
-      <div className="flex gap-1.5 overflow-x-auto pb-2 scrollbar-thin border-b border-slate-200 dark:border-slate-800">
+      <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin border-b border-slate-200/90 dark:border-slate-800/80">
         {[
           { id: 'overview', label: 'Overview', icon: BookOpen },
-          { id: 'summary', label: 'Master’s Summary', icon: FileText },
+          { id: 'summary', label: 'Summary', icon: FileText },
           { id: 'cheatSheet', label: 'Cheat Sheet', icon: Zap },
           { id: 'questions', label: 'Important Q&A', icon: HelpCircle },
           { id: 'mcqs', label: 'MCQ Practice', icon: Award },
           { id: 'flashcards', label: 'Flashcards', icon: Layers },
-          { id: 'examFocus', label: 'Active Recall & Readiness', icon: Target }
+          { id: 'examFocus', label: 'Active Recall', icon: Target }
         ].map(tab => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -101,162 +98,189 @@ export const UnitView: React.FC<UnitViewProps> = ({ unit, initialTab = 'overview
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
+              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-[10px] text-xs font-semibold whitespace-nowrap transition-all min-h-[40px] ${
                 isActive
                   ? 'bg-indigo-600 text-white shadow-sm'
-                  : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/80 dark:border-slate-800'
+                  : 'bg-white dark:bg-[#111827] text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-[#151E31] border border-slate-200 dark:border-slate-800'
               }`}
             >
-              <Icon className="w-4 h-4" />
-              {tab.label}
+              <Icon className="w-3.5 h-3.5" />
+              <span>{tab.label}</span>
             </button>
           );
         })}
       </div>
 
-      {/* Tab 1: Overview */}
+      {/* Tab 1: Overview & Core Concept Cards (NO STARK WHITE RECTANGLES!) */}
       {activeTab === 'overview' && (
         <div className="space-y-6 animate-fade-in">
           {/* Executive Overview Card */}
-          <div className="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 space-y-3">
-            <h3 className="text-base font-bold text-slate-900 dark:text-white">
-              Academic Unit Syllabus & Examination Focus
-            </h3>
-            <p className="text-xs md:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <div className="premium-card rounded-[18px] p-5 sm:p-6 space-y-2.5">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+              Syllabus Scope & Examination Focus
+            </span>
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-[#CBD5E1] leading-relaxed">
               {unit.overview}
             </p>
           </div>
 
-          {/* Key Concepts Grid (Dual Explanation: Simple vs Exam Definition) */}
-          <div className="space-y-4">
-            <h3 className="text-base font-bold text-slate-900 dark:text-white">
-              Core Examinable Concepts (Simple vs Master’s Definition)
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {unit.keyConcepts.map(kc => (
-                <div
-                  key={kc.id}
-                  className="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800 space-y-3 shadow-sm hover:border-indigo-400 transition-all"
-                >
-                  <div className="flex items-center justify-between text-xs pb-1 border-b border-slate-100 dark:border-slate-800">
-                    <span className="font-bold text-indigo-600 font-mono text-[11px] uppercase">
+          {/* Section Heading */}
+          <div className="pt-2">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+              CORE EXAMINABLE CONCEPTS
+            </span>
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white font-heading">
+              Simple Understanding vs Master's-Level Definition
+            </h2>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              Learn the intuitive meaning first, then memorize the precise terminology expected in written examination answers.
+            </p>
+          </div>
+
+          {/* Key Concepts Grid: 1 column mobile, 2 columns desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {unit.keyConcepts.map(kc => (
+              <div
+                key={kc.id}
+                className="concept-card flex flex-col justify-between space-y-4"
+              >
+                <div className="space-y-3">
+                  {/* Category and Title */}
+                  <div className="flex items-center justify-between text-xs pb-2 border-b border-slate-100 dark:border-slate-800/80">
+                    <span className="font-mono font-bold text-indigo-600 dark:text-indigo-400 text-[11px] uppercase tracking-wider">
                       {kc.category}
                     </span>
                   </div>
 
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-base font-bold text-slate-900 dark:text-[#F8FAFC]">
                     {kc.term}
-                  </h4>
+                  </h3>
 
-                  <div className="space-y-2 text-xs">
-                    {/* Simple Explanation */}
-                    <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-850 border border-slate-200/60 dark:border-slate-800">
-                      <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px] block mb-0.5">
-                        Intuitive Mental Model:
+                  {/* Dual Inset Panels with High Contrast */}
+                  <div className="space-y-2.5">
+                    {/* 1. Simple Mental Model */}
+                    <div className="inset-mental-model">
+                      <span className="font-bold text-slate-600 dark:text-[#A5B4FC] uppercase tracking-wider text-[10px] block mb-1">
+                        Simple Mental Model
                       </span>
-                      <p className="text-slate-700 dark:text-slate-300 italic">
+                      <p className="text-slate-700 dark:text-[#CBD5E1] text-xs leading-relaxed italic">
                         "{kc.simpleExplanation}"
                       </p>
                     </div>
 
-                    {/* Academic Exam Definition */}
-                    <div className="p-2.5 rounded-lg bg-indigo-50/70 dark:bg-indigo-950/40 border border-indigo-200/60 dark:border-indigo-900/60">
-                      <span className="font-bold text-indigo-700 dark:text-indigo-300 uppercase tracking-wider text-[10px] block mb-0.5">
-                        Academic Exam Definition:
+                    {/* 2. Academic Exam Definition */}
+                    <div className="inset-academic-def">
+                      <span className="font-bold text-indigo-700 dark:text-[#C7D2FE] uppercase tracking-wider text-[10px] block mb-1">
+                        Master's Exam Definition
                       </span>
-                      <p className="text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
+                      <p className="text-slate-900 dark:text-[#F8FAFC] text-xs leading-relaxed font-normal">
                         {kc.examDefinition}
                       </p>
                     </div>
                   </div>
+                </div>
 
-                  {/* Keywords */}
-                  <div className="flex flex-wrap gap-1 pt-1">
+                {/* Exam Keyword Chips */}
+                <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 space-y-1.5">
+                  <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">
+                    Essential Keywords
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
                     {kc.examKeywords.map((kw, i) => (
-                      <span key={i} className="badge-keyword text-[10px]">
+                      <span key={i} className="badge-keyword">
                         {kw}
                       </span>
                     ))}
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       )}
 
       {/* Tab 2: Master's Summary */}
       {activeTab === 'summary' && (
-        <div className="space-y-6 animate-fade-in">
+        <div className="space-y-6 animate-fade-in max-w-4xl">
           {unit.summarySections.map((sec, idx) => (
             <div
               key={idx}
-              className="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 space-y-4 shadow-sm"
+              className="premium-card rounded-[18px] p-5 sm:p-6 space-y-4"
             >
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                {sec.title}
-              </h3>
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-indigo-500 font-bold block mb-1">
+                  Section 0{idx + 1}
+                </span>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                  {sec.title}
+                </h3>
+              </div>
 
-              <p className="text-xs md:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-700 dark:text-[#CBD5E1] leading-relaxed">
                 {sec.summaryParagraph}
               </p>
 
               {/* Key Bullet Points */}
-              <div className="space-y-1.5 text-xs">
+              <div className="space-y-2 text-xs">
                 {sec.keyPoints.map((pt, pIdx) => (
-                  <div key={pIdx} className="flex items-start gap-2 text-slate-700 dark:text-slate-300">
-                    <span className="text-indigo-600 font-bold shrink-0">•</span>
+                  <div key={pIdx} className="flex items-start gap-2.5 text-slate-700 dark:text-[#CBD5E1]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" />
                     <span className="leading-relaxed">{pt}</span>
                   </div>
                 ))}
               </div>
 
-              {/* Optional Section Comparison Table */}
+              {/* Section Comparison Table (Responsive with smooth scrolling) */}
               {sec.comparisonTable && (
-                <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 mt-3">
-                  <table className="w-full text-left text-xs">
-                    <thead className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold border-b border-slate-200 dark:border-slate-700">
-                      <tr>
-                        {sec.comparisonTable.headers.map((h, hIdx) => (
-                          <th key={hIdx} className="p-3">{h}</th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-                      {sec.comparisonTable.rows.map((r, rIdx) => (
-                        <tr key={rIdx} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/30">
-                          {r.map((cell, cIdx) => (
-                            <td key={cIdx} className={`p-3 ${cIdx === 0 ? 'font-semibold text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-300'}`}>
-                              {cell}
-                            </td>
+                <div className="mt-4 rounded-[14px] border border-slate-200 dark:border-slate-800 overflow-hidden bg-slate-50/50 dark:bg-[#0B1120]/60">
+                  <div className="overflow-x-auto scrollbar-thin">
+                    <table className="w-full text-left text-xs min-w-[500px]">
+                      <thead className="bg-slate-100 dark:bg-[#151E31] text-slate-800 dark:text-[#F8FAFC] font-semibold border-b border-slate-200 dark:border-slate-800">
+                        <tr>
+                          {sec.comparisonTable.headers.map((h, hIdx) => (
+                            <th key={hIdx} className="p-3">{h}</th>
                           ))}
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody className="divide-y divide-slate-200/80 dark:divide-slate-800">
+                        {sec.comparisonTable.rows.map((r, rIdx) => (
+                          <tr key={rIdx} className="hover:bg-slate-100/50 dark:hover:bg-slate-800/30 transition-colors">
+                            {r.map((cell, cIdx) => (
+                              <td 
+                                key={cIdx} 
+                                className={`p-3 ${cIdx === 0 ? 'font-semibold text-slate-900 dark:text-white' : 'text-slate-600 dark:text-[#CBD5E1]'}`}
+                              >
+                                {cell}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               )}
 
-              {/* Optional Process Steps */}
+              {/* Process Steps */}
               {sec.processSteps && (
-                <div className="space-y-2 mt-3 text-xs">
+                <div className="space-y-2 mt-4 text-xs">
                   {sec.processSteps.map(st => (
-                    <div key={st.step} className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 flex items-start gap-3">
+                    <div key={st.step} className="p-3.5 rounded-[12px] bg-slate-50 dark:bg-[#151E31]/60 border border-slate-200 dark:border-slate-800 flex items-start gap-3">
                       <span className="w-6 h-6 rounded-full bg-indigo-600 text-white font-bold text-xs flex items-center justify-center shrink-0">
                         {st.step}
                       </span>
                       <div>
                         <span className="font-bold text-slate-900 dark:text-white block">{st.title}</span>
-                        <span className="text-slate-600 dark:text-slate-400">{st.description}</span>
+                        <span className="text-slate-600 dark:text-[#CBD5E1]">{st.description}</span>
                       </div>
                     </div>
                   ))}
                 </div>
               )}
 
-              {/* Exam Insight Callout */}
-              <div className="p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 text-xs text-amber-900 dark:text-amber-200 leading-relaxed">
-                <strong>Examiner Insight:</strong> {sec.examInsight}
+              {/* Academic Exam Insight Panel */}
+              <div className="p-3.5 rounded-[12px] bg-amber-500/10 border border-amber-500/30 text-xs text-amber-900 dark:text-amber-200 leading-relaxed">
+                <strong className="text-amber-700 dark:text-amber-300">Examiner Insight:</strong> {sec.examInsight}
               </div>
             </div>
           ))}
@@ -291,20 +315,20 @@ export const UnitView: React.FC<UnitViewProps> = ({ unit, initialTab = 'overview
         </div>
       )}
 
-      {/* Tab 7: Exam Focus & Active Recall */}
+      {/* Tab 7: Active Recall & Readiness */}
       {activeTab === 'examFocus' && (
-        <div className="space-y-6 animate-fade-in">
-          {/* Active Recall Section */}
-          <div className="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 space-y-4">
+        <div className="space-y-6 animate-fade-in max-w-4xl">
+          {/* Active Recall Drills */}
+          <div className="premium-card rounded-[18px] p-5 sm:p-6 space-y-4">
             <div>
-              <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider">
-                Active Recall Drill
+              <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                ACTIVE RECALL DRILL
               </span>
               <h3 className="text-lg font-bold text-slate-900 dark:text-white mt-0.5">
                 Can You Recall? (Test Yourself Without Notes)
               </h3>
-              <p className="text-xs text-slate-500">
-                Attempt to answer each prompt mentally or in writing before clicking to reveal the model answer.
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                Attempt to formulate each answer mentally before clicking to reveal the model answer.
               </p>
             </div>
 
@@ -312,25 +336,25 @@ export const UnitView: React.FC<UnitViewProps> = ({ unit, initialTab = 'overview
               {unit.activeRecall.map((ar, i) => {
                 const isRevealed = !!revealedRecall[ar.id];
                 return (
-                  <div key={ar.id} className="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-800/60 space-y-3 text-xs">
+                  <div key={ar.id} className="p-4 rounded-[14px] border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-[#151E31]/50 space-y-3 text-xs">
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-start gap-2.5">
-                        <span className="font-bold text-indigo-600 font-mono text-sm">{i + 1}.</span>
+                        <span className="font-bold text-indigo-600 dark:text-indigo-400 font-mono text-sm">{i + 1}.</span>
                         <h4 className="font-bold text-slate-900 dark:text-white text-sm">
                           {ar.question}
                         </h4>
                       </div>
                       <button
                         onClick={() => toggleRecallAnswer(ar.id)}
-                        className="px-3 py-1 rounded-lg text-xs font-bold bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 flex items-center gap-1.5 shrink-0"
+                        className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-[#111827] text-slate-700 dark:text-[#CBD5E1] border border-slate-200 dark:border-slate-700 hover:border-indigo-400 flex items-center gap-1.5 shrink-0 transition-colors"
                       >
-                        <Eye className="w-3.5 h-3.5" />
-                        {isRevealed ? 'Hide Answer' : 'Show Answer'}
+                        {isRevealed ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
+                        {isRevealed ? 'Hide' : 'Reveal'}
                       </button>
                     </div>
 
                     {isRevealed && (
-                      <div className="p-3 rounded-lg bg-emerald-50/70 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 text-slate-800 dark:text-slate-200 leading-relaxed animate-fade-in">
+                      <div className="p-3.5 rounded-[10px] bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-200/80 dark:border-emerald-800/60 text-slate-800 dark:text-[#CBD5E1] leading-relaxed animate-fade-in">
                         <span className="font-bold text-emerald-800 dark:text-emerald-300 block mb-1">
                           Model Recall Answer:
                         </span>
@@ -343,18 +367,18 @@ export const UnitView: React.FC<UnitViewProps> = ({ unit, initialTab = 'overview
             </div>
           </div>
 
-          {/* Unit Completion Readiness Checklist */}
-          <div className="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
+          {/* Unit Completion Checklist */}
+          <div className="premium-card rounded-[18px] p-5 sm:p-6 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
               <div>
                 <h3 className="font-bold text-base text-slate-900 dark:text-white">
                   You are Exam-Ready for Unit {unit.id} if you can:
                 </h3>
-                <p className="text-xs text-slate-500">
-                  Check all conditions. Once all are met, formally mark this unit complete.
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  Verify each criterion before formally marking this unit complete.
                 </p>
               </div>
-              <span className="text-xs font-mono font-bold text-indigo-600">
+              <span className="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400 self-start sm:self-auto">
                 {Object.values(unitChecklist).filter(Boolean).length} / {unit.completionChecklist.length} Verified
               </span>
             </div>
@@ -366,14 +390,14 @@ export const UnitView: React.FC<UnitViewProps> = ({ unit, initialTab = 'overview
                   <div
                     key={idx}
                     onClick={() => toggleChecklistItem(idx)}
-                    className={`p-3 rounded-xl border cursor-pointer transition-all flex items-center gap-3 ${
+                    className={`p-3.5 rounded-[12px] border cursor-pointer transition-all flex items-center gap-3 ${
                       isChecked
-                        ? 'bg-emerald-50/70 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200 font-semibold'
-                        : 'bg-white dark:bg-slate-800/60 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-indigo-400'
+                        ? 'bg-emerald-50/80 dark:bg-emerald-950/30 border-emerald-300 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200 font-semibold'
+                        : 'bg-white dark:bg-[#151E31]/40 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-[#CBD5E1] hover:border-indigo-400'
                     }`}
                   >
                     {isChecked ? (
-                      <CheckSquare className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <CheckSquare className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                     ) : (
                       <Square className="w-4 h-4 text-slate-400 shrink-0" />
                     )}
@@ -386,10 +410,10 @@ export const UnitView: React.FC<UnitViewProps> = ({ unit, initialTab = 'overview
             <div className="pt-2 flex justify-end">
               <button
                 onClick={handleMarkComplete}
-                className={`px-6 py-2.5 rounded-xl text-xs font-bold transition-all shadow-md flex items-center gap-2 ${
+                className={`min-h-[44px] px-6 py-2.5 rounded-[10px] text-xs font-semibold transition-all flex items-center gap-2 ${
                   isUnitCompleted
                     ? 'bg-emerald-600 text-white hover:bg-emerald-700'
-                    : 'bg-indigo-600 text-white hover:bg-indigo-700'
+                    : 'bg-indigo-600 text-white hover:bg-indigo-500'
                 }`}
               >
                 <CheckCircle2 className="w-4 h-4" />

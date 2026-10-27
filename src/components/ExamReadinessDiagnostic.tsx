@@ -3,7 +3,7 @@ import { useProgress } from '../hooks/useProgress';
 import { allUnits } from '../data/units';
 import { 
   Award, CheckCircle2, AlertTriangle, ArrowRight, BookOpen, 
-  Sparkles, ShieldCheck, Flame, RotateCcw 
+  ShieldCheck, Flame, RotateCcw 
 } from 'lucide-react';
 
 interface ExamReadinessDiagnosticProps {

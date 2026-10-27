@@ -172,8 +172,8 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-start justify-center pt-20 px-4 animate-fade-in">
-      <div className="glass-card rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-slate-900">
+    <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-start justify-center pt-16 sm:pt-20 px-4 animate-fade-in">
+      <div className="rounded-[20px] w-full max-w-2xl overflow-hidden shadow-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#111827]">
         {/* Search Input Bar */}
         <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center gap-3">
           <Search className="w-5 h-5 text-indigo-600 dark:text-indigo-400 shrink-0" />
