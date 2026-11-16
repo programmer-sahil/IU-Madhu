@@ -1227,7 +1227,7 @@ export const InteractiveVisuals: React.FC<InteractiveVisualsProps> = ({ unitId }
     const rupPhases = {
       inception: {
         name: 'Inception',
-        milestone: 'Lifecycle Objectives (LCO)',
+        milestone: 'Scope & Feasibility Gate',
         objective: 'Determine project scope, business case feasibility, and core use cases.',
         workloads: {
           'Business Modeling': 85,
@@ -1237,12 +1237,12 @@ export const InteractiveVisuals: React.FC<InteractiveVisualsProps> = ({ unitId }
           'Test': 10,
           'Deployment': 5,
         },
-        examFact: 'Primary risk tackled is financial and operational viability. The phase ends at the LCO gate.'
+        examFact: 'Primary focus is business modeling and viability. Iterations are not typical here due to abstract nature.'
       },
       elaboration: {
         name: 'Elaboration',
-        milestone: 'Lifecycle Architecture (LCA)',
-        objective: 'Establish executable architecture baseline and mitigate top architectural risks.',
+        milestone: 'Requirements & Architectural Baseline Gate',
+        objective: 'Establish system requirements, UML architectural models, and mitigate primary project risks.',
         workloads: {
           'Business Modeling': 30,
           'Requirements': 80,
@@ -1251,12 +1251,12 @@ export const InteractiveVisuals: React.FC<InteractiveVisualsProps> = ({ unitId }
           'Test': 30,
           'Deployment': 10,
         },
-        examFact: 'Most critical phase for technical risk retirement. 80% of use cases specified in detail by LCA.'
+        examFact: 'Most critical phase for technical risk retirement. Architecture and UML models established before coding.'
       },
       construction: {
         name: 'Construction',
-        milestone: 'Initial Operational Capability (IOC)',
-        objective: 'Iteratively develop complete software product and operational features.',
+        milestone: 'Operational Software Gate',
+        objective: 'Developers program, test, and debug code to produce high-quality tested deliverables ready for user acceptance.',
         workloads: {
           'Business Modeling': 5,
           'Requirements': 20,
@@ -1265,12 +1265,12 @@ export const InteractiveVisuals: React.FC<InteractiveVisualsProps> = ({ unitId }
           'Test': 80,
           'Deployment': 25,
         },
-        examFact: 'Highest resource expenditure. Multiple iterations build executable increments toward beta release.'
+        examFact: 'Highest resource expenditure. Multiple iterations build executable increments toward complete product.'
       },
       transition: {
         name: 'Transition',
-        milestone: 'Product Release (PR)',
-        objective: 'Deploy product to end users, conduct beta testing, user training, and rollout.',
+        milestone: 'User Acceptance & Handover Gate',
+        objective: 'Transfer solution to customers/users and maintenance team, complete user documentation, and conduct user training.',
         workloads: {
           'Business Modeling': 0,
           'Requirements': 10,
@@ -1279,7 +1279,7 @@ export const InteractiveVisuals: React.FC<InteractiveVisualsProps> = ({ unitId }
           'Test': 70,
           'Deployment': 95,
         },
-        examFact: 'Validates user acceptance in live environment. Ends at final Product Release gate.'
+        examFact: 'Phase concludes with user acceptance, operational handoff to maintenance, and hardware/network setup.'
       }
     };
 

@@ -2865,7 +2865,7 @@ export const unit6Mcqs: MCQ[] = [
     "whyOthersAreWrong": [
       "Schwaber co-created Scrum, not SAFe.",
       "Peter DeGrace coined the Sashimi model metaphor.",
-      "Barry Boehm created COCOMO and the Spiral model."
+      "Barry Boehm created the Spiral model."
     ],
     "examTrap": "SAFe was created by Dean Leffingwell for large enterprise corporations.",
     "source": {

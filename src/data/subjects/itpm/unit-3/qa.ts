@@ -606,7 +606,7 @@ export const unit3ImportantQuestions: DescriptiveQuestion[] = [
       "Cause-and-effect diagrams",
       "Likelihood-Impact matrix"
     ],
-    "commonMistakes": "Including quantitative Monte Carlo simulations not present in Unit 3.",
+    "commonMistakes": "Including external quantitative simulation tools not taught in Unit 3.",
     "selfCheckChecklist": [
       "Defined qualitative analysis?",
       "Described 4 distinct tools from the course book?"

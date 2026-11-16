@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "test": "python3 scripts/validate_itpm_content.py",
+    "test": "python3 scripts/validate_itpm_content.py && python3 scripts/validate_itpm_source_purity.py",
     "lint": "oxlint",
     "preview": "vite preview"
   },

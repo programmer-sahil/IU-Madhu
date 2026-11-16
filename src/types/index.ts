@@ -140,6 +140,7 @@ export interface UnitData {
   id: UnitId;
   code: string;
   title: string;
+  shortTitle?: string;
   subtitle: string;
   estimatedTime: string;
   color: string;

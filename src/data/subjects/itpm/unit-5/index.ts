@@ -31,13 +31,13 @@ export const unit5Data: UnitData = {
   color: "from-blue-600 to-cyan-600",
   gradient: "linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)",
   badge: "Unit 5",
-  overview: "Official curriculum for Unit 5 of Module DLMBITPAM01 (IT Project Management) at IU International University of Applied Sciences. Covers modern engineering lifecycles for small and medium IT projects. Explores the Rational Unified Process (RUP) with its 4 core phases (Inception, Elaboration, Construction, Transition) and 2 optional phases (Production, Disposal), concurrent disciplines, workload hump chart, and prototyping strategies. Examines the Agile Manifesto (4 core values, 12 principles, self-organizing teams, and semantic versioning). Deconstructs Scrum in depth: 3 empirical pillars (Transparency, Inspection, Adaptation), 5 core values, 3 defined roles (Product Owner, Scrum Master, Developers — with NO Project Manager), 3 artifacts (Product Backlog, Sprint Backlog, Increment + Definition of Done), and 4 time-boxed ceremonies. Concludes with plan-driven predictive models in small projects: Pure Waterfall, Waterfall with Feedback, Sashimi (overlapping phases), and the V-Model with its 1:1 horizontal verification traceability links, alongside comprehensive methodology selection frameworks.",
+  overview: "Official curriculum for Unit 5 of Module DLMBITPAM01 (IT Project Management) at IU International University of Applied Sciences. Covers modern engineering lifecycles for small and medium IT projects. Explores the Rational Unified Process (RUP) with its 4 core phases (Inception, Elaboration, Construction, Transition) and 2 optional phases (Production, Disposal), concurrent disciplines, workload distribution chart, and prototyping strategies. Examines the Agile Manifesto (4 core values, 12 principles, self-organizing teams, and major.minor.build.revision versioning). Deconstructs Scrum in depth: 3 empirical pillars (Transparency, Inspection, Adaptation), 5 core values, 3 defined roles (Product Owner, Scrum Master, Developers — with NO Project Manager), 3 artifacts (Product Backlog, Sprint Backlog, Increment + Definition of Done), and 4 time-boxed ceremonies. Concludes with plan-driven predictive models in small projects: Pure Waterfall, Waterfall with Feedback, Sashimi (overlapping phases), and the V-Model with its 1:1 horizontal verification traceability links, alongside comprehensive methodology selection frameworks.",
   summarySections: unit5SummarySections,
   keyConcepts: unit5Concepts,
   cheatSheet: {
     mustMemorize: [
-      "RUP 4 Core Phases: Inception (LCO gate), Elaboration (LCA gate), Construction (IOC gate), Transition (PR gate).",
-      "RUP 2 Optional Lifecycle Phases: Production (live operations & maintenance) and Disposal (system decommissioning & migration).",
+      "RUP 4 Core Phases: Inception (Scope & Feasibility), Elaboration (Requirements & Architecture), Construction (Programming & Testing), Transition (Customer Handover & Training).",
+      "RUP 2 Optional Lifecycle Phases: Production (live operational feedback & upgrade insight) and Disposal (system decommissioning & replacement).",
       "RUP Prototyping Rule: Throw-away prototypes are discarded; Evolutionary prototypes evolve into production. A prototype is NOT production software.",
       "Agile Manifesto 4 Values: Individuals & interactions > processes/tools; Working software > comprehensive documentation; Customer collaboration > contract negotiation; Responding to change > following a plan.",
       "Agile Simplicity (Principle 10): 'The art of maximizing the amount of work not done.'",
@@ -54,13 +54,13 @@ export const unit5Data: UnitData = {
     coreDefinitions: [
       {
         term: "Inception Phase",
-        definition: "RUP phase establishing scope, business case, and initial feasibility, ending at the Lifecycle Objectives milestone.",
-        examNote: "Scope & feasibility gate; not full architecture."
+        definition: "RUP phase establishing scope, business case, and initial feasibility, identifying core use cases without detailed iterations.",
+        examNote: "Scope & feasibility phase; iterations are not typical here due to abstract nature."
       },
       {
         term: "Elaboration Phase",
-        definition: "RUP phase proving the executable architectural baseline and mitigating critical risks, ending at the Lifecycle Architecture milestone.",
-        examNote: "Passing LCA gate is required before mass resource commitment to Construction."
+        definition: "RUP phase creating detailed requirements, architectural view using UML (use cases, class diagrams), and identifying critical risks before coding.",
+        examNote: "Architecture and risks must be established before mass coding in Construction."
       },
       {
         term: "Definition of Done (DoD)",
@@ -96,19 +96,16 @@ export const unit5Data: UnitData = {
       { acronym: "RUP", fullName: "Rational Unified Process", focus: "Architecture-centric, use-case driven iterative engineering framework." },
       { acronym: "UML", fullName: "Unified Modeling Language", focus: "Visual modeling standard utilized extensively throughout RUP disciplines." },
       { acronym: "DoD", fullName: "Definition of Done", focus: "Shared quality checklist required for software to enter the Increment." },
-      { acronym: "LCO", fullName: "Lifecycle Objectives", focus: "Milestone gate concluding the RUP Inception phase." },
-      { acronym: "LCA", fullName: "Lifecycle Architecture", focus: "Milestone gate concluding the RUP Elaboration phase." },
-      { acronym: "IOC", fullName: "Initial Operational Capability", focus: "Milestone gate concluding the RUP Construction phase." },
-      { acronym: "PR", fullName: "Product Release", focus: "Milestone gate concluding the RUP Transition phase." }
+      { acronym: "BDUF", fullName: "Big Design Up Front", focus: "Traditional sequential model premise contrasted with agile methods." }
     ],
     processes: [
       {
         name: "RUP Iterative Lifecycle",
         steps: [
-          "1. Inception: Establish scope, business case, and core use cases (Ends at LCO milestone)",
-          "2. Elaboration: Prove executable architectural baseline and retire risks (Ends at LCA milestone)",
-          "3. Construction: Iteratively develop operational components and software (Ends at IOC milestone)",
-          "4. Transition: Conduct beta testing, deployment, and user acceptance (Ends at PR milestone)"
+          "1. Inception: Establish scope, business goals, feasibility, and high-level use cases",
+          "2. Elaboration: Establish requirements, UML architectural models, and risk analysis",
+          "3. Construction: Program, test, and debug code to create functional deliverables",
+          "4. Transition: Transfer solution to users, train personnel, prepare documentation, and handover to maintenance"
         ],
         description: "Four sequential core phases of RUP where engineering disciplines execute concurrently."
       },
@@ -125,14 +122,13 @@ export const unit5Data: UnitData = {
     ],
     comparisons: unit5CheatSheetComparisons,
     examTraps: [
-      { trap: "Believing architecture is finalized in RUP Inception.", truth: "Architecture is baseline-tested and proven in the Elaboration phase (LCA gate)." },
+      { trap: "Believing architecture is finalized in RUP Inception.", truth: "Architecture and UML models are established in the Elaboration phase before bulk coding." },
       { trap: "Assuming Scrum has a Project Manager.", truth: "Scrum has NO Project Manager role. Responsibilities are divided between PO, SM, and Developers." },
       { trap: "Extending a sprint if work is incomplete.", truth: "Sprint duration is an inviolable time-box (<= 1 month). Unfinished work returns to Product Backlog." },
       { trap: "Thinking prototypes can be deployed directly into production.", truth: "A prototype is not production software. Throw-away prototypes are discarded; evolutionary prototypes require refactoring." }
     ],
     memoryShortcuts: [
       { acronym: "I-E-C-T", meaning: "Inception, Elaboration, Construction, Transition", usage: "Four core sequential phases of RUP." },
-      { acronym: "LCO-LCA-IOC-PR", meaning: "Lifecycle Objectives, Lifecycle Architecture, Initial Operational Capability, Product Release", usage: "Four milestone gates concluding RUP phases." },
       { acronym: "T-I-A", meaning: "Transparency, Inspection, Adaptation", usage: "Three empirical pillars of Scrum." }
     ]
   },

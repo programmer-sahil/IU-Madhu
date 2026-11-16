@@ -217,7 +217,7 @@ export const MockExamView: React.FC = () => {
               <li>1 Compulsory Comprehensive Case Study (20 marks)</li>
               <li>2 Medium Analytical / Comparative questions (8 marks each = 16 marks)</li>
               <li>1 Short Foundational question (6 marks)</li>
-              <li>Passing mark: 50% (45/90 marks). Target for distinction: 80%+ (72/90 marks).</li>
+              <li>Practice Readiness benchmark: Strong (≥ 80%), Progressing (70–79%), Developing (50–69%), Starting (&lt; 50%). Note: Course-book knowledge tests require ≥ 80% on the learning platform to register for assessment.</li>
             </ul>
           </div>
 

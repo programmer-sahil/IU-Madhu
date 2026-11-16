@@ -34,11 +34,11 @@ const EXAM_CONFIGS: Record<ExamMode, ExamConfig> = {
     badge: '60 Min · 50 Marks'
   },
   full: {
-    name: 'Official Full Exam Simulation',
+    name: '90-Minute Comprehensive Practice',
     questionCount: 60,
     timeLimitMinutes: 90,
-    description: 'Authentic IU examination simulation. Exactly 90 minutes, 60 marks, 50% pass mark (30/60).',
-    badge: '90 Min · 60 Marks · Official'
+    description: 'Comprehensive 90-minute timed simulation covering all 24 syllabus sections. Tests core concepts, calculations, and scenarios.',
+    badge: '90 Min · 60 Questions · Practice'
   },
   weak: {
     name: 'High-Difficulty & Trap Practice',
@@ -151,9 +151,29 @@ export const FinalExamPractice: React.FC = () => {
 
     const total = examQuestions.length;
     const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
-    const isPassed = percentage >= 50;
+    
+    let readinessTier: 'Strong' | 'Progressing' | 'Developing' | 'Starting';
+    let tierColor: string;
+    let tierBadge: string;
+    if (percentage >= 80) {
+      readinessTier = 'Strong';
+      tierColor = 'text-emerald-400';
+      tierBadge = 'bg-emerald-500/20 text-emerald-300 border-emerald-400/30';
+    } else if (percentage >= 70) {
+      readinessTier = 'Progressing';
+      tierColor = 'text-indigo-400';
+      tierBadge = 'bg-indigo-500/20 text-indigo-300 border-indigo-400/30';
+    } else if (percentage >= 50) {
+      readinessTier = 'Developing';
+      tierColor = 'text-amber-400';
+      tierBadge = 'bg-amber-500/20 text-amber-300 border-amber-400/30';
+    } else {
+      readinessTier = 'Starting';
+      tierColor = 'text-rose-400';
+      tierBadge = 'bg-rose-500/20 text-rose-300 border-rose-400/30';
+    }
 
-    return { correct, total, percentage, isPassed, unitBreakdown };
+    return { correct, total, percentage, readinessTier, tierColor, tierBadge, unitBreakdown };
   }, [examQuestions, userAnswers]);
 
   // Format Time Helper
@@ -463,39 +483,44 @@ export const FinalExamPractice: React.FC = () => {
     <div className="space-y-8 animate-fadeIn max-w-5xl mx-auto pb-16">
       {/* Score Summary Banner */}
       <div className={`p-6 sm:p-8 rounded-3xl border shadow-xl relative overflow-hidden ${
-        scoreStats.isPassed
+        scoreStats.percentage >= 70
           ? 'bg-gradient-to-br from-emerald-950 via-slate-900 to-indigo-950 text-white border-emerald-500/30'
+          : scoreStats.percentage >= 50
+          ? 'bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-900 text-white border-indigo-500/30'
           : 'bg-gradient-to-br from-rose-950 via-slate-900 to-slate-900 text-white border-rose-500/30'
       }`}>
         <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div className="space-y-2">
-            <span className={`px-2.5 py-1 rounded-full text-[11px] font-mono font-bold border ${
-              scoreStats.isPassed
-                ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400/30'
-                : 'bg-rose-500/20 text-rose-300 border-rose-400/30'
-            }`}>
-              {scoreStats.isPassed ? 'EXAMINATION PASSED (≥ 50%)' : 'REVISION REQUIRED (< 50%)'}
+            <span className={`px-2.5 py-1 rounded-full text-[11px] font-mono font-bold border ${scoreStats.tierBadge}`}>
+              PRACTICE READINESS: {scoreStats.readinessTier.toUpperCase()} ({scoreStats.percentage}%)
             </span>
             <h1 className="text-2xl sm:text-3xl font-black text-white">
-              {scoreStats.isPassed ? 'Congratulations! Target Achieved.' : 'Keep Practicing! Refine Core Concepts.'}
+              {scoreStats.percentage >= 80 
+                ? 'Outstanding Mastery! Full Syllabus Grounding.' 
+                : scoreStats.percentage >= 70 
+                ? 'Strong Progress! Target Knowledge Solid.' 
+                : scoreStats.percentage >= 50
+                ? 'Foundation Established. Refine Weak Units.'
+                : 'Revision Recommended. Practice Weak Areas.'}
             </h1>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-              You scored {scoreStats.correct} out of {scoreStats.total} ({scoreStats.percentage}%). Official IU examination pass threshold is 50%.
+            <p className="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
+              You scored {scoreStats.correct} out of {scoreStats.total} questions ({scoreStats.percentage}%).
+              <span className="block mt-1 text-[11px] text-slate-400">
+                Academic Note: On the IU learning platform, module knowledge tests require at least 80% to register for the final assessment; final exam grading follows IU examination guidelines.
+              </span>
             </p>
           </div>
 
           <div className="flex items-center gap-4 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10 shrink-0">
             <div className="text-center">
               <span className="text-[10px] text-slate-300 block font-semibold uppercase">Overall Score</span>
-              <span className={`text-3xl sm:text-4xl font-black font-mono ${
-                scoreStats.isPassed ? 'text-emerald-400' : 'text-rose-400'
-              }`}>
+              <span className={`text-3xl sm:text-4xl font-black font-mono ${scoreStats.tierColor}`}>
                 {scoreStats.percentage}%
               </span>
             </div>
             <div className="h-10 w-px bg-white/20" />
             <div className="text-center">
-              <span className="text-[10px] text-slate-300 block font-semibold uppercase">Marks</span>
+              <span className="text-[10px] text-slate-300 block font-semibold uppercase">Questions</span>
               <span className="text-xl sm:text-2xl font-bold font-mono text-white">
                 {scoreStats.correct}/{scoreStats.total}
               </span>

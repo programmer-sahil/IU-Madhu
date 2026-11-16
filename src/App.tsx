@@ -374,6 +374,7 @@ function AppShell({
         units: sData.units.map(u => ({
           id: u.id,
           title: u.title,
+          sections: (s.units.find(su => su.id === u.id)?.sections || []),
           keyConcepts: (u as any).keyConcepts,
           importantQuestions: (u as any).importantQuestions,
           mcqs: (u as any).mcqs,
@@ -594,6 +595,8 @@ function UnitViewRouteWrapper() {
       key={`${subjectSlug}-${unit.id}`}
       unit={unit}
       initialTab={searchParams.get('tab') || 'overview'}
+      subjectTitle={subject?.title}
+      subjectSlug={subjectSlug}
     />
   );
 }

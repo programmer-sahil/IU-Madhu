@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { UnitData } from '../types';
 import { useProgress } from '../hooks/useProgress';
 import { CheatSheetView } from './CheatSheetView';
@@ -9,17 +10,27 @@ import { InteractiveVisuals } from './InteractiveVisuals';
 import confetti from 'canvas-confetti';
 import { 
   BookOpen, FileText, Zap, HelpCircle, Layers, Target, 
-  CheckCircle2, Clock, Award, CheckSquare, Square, Eye, EyeOff, Cpu
+  CheckCircle2, Clock, Award, CheckSquare, Square, Eye, EyeOff, Cpu,
+  ChevronRight, ArrowLeft
 } from 'lucide-react';
 
 interface UnitViewProps {
   unit: UnitData;
   initialTab?: string;
+  subjectTitle?: string;
+  subjectSlug?: string;
 }
 
-export const UnitView: React.FC<UnitViewProps> = ({ unit, initialTab = 'overview' }) => {
+export const UnitView: React.FC<UnitViewProps> = ({ 
+  unit, 
+  initialTab = 'overview',
+  subjectTitle,
+  subjectSlug 
+}) => {
+  const navigate = useNavigate();
   const { progress, toggleUnitCompleted } = useProgress();
   const [activeTab, setActiveTab] = useState<string>(initialTab);
+  const [activeSectionId, setActiveSectionId] = useState<string>('');
   const [revealedRecall, setRevealedRecall] = useState<Record<string, boolean>>({});
   const [unitChecklist, setUnitChecklist] = useState<Record<number, boolean>>({});
 
@@ -29,6 +40,31 @@ export const UnitView: React.FC<UnitViewProps> = ({ unit, initialTab = 'overview
   const completionChecklist = unit.completionChecklist || [];
 
   const isUnitCompleted = progress.completedUnits.includes(unit.id);
+
+  // IntersectionObserver for tracking active section while scrolling
+  useEffect(() => {
+    if (activeTab !== 'summary') return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSectionId(entry.target.id);
+          }
+        }
+      },
+      {
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0,
+      }
+    );
+
+    summarySections.forEach((_, idx) => {
+      const el = document.getElementById(`sec-${unit.id}-${idx + 1}`);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [activeTab, summarySections, unit.id]);
 
   const toggleRecallAnswer = (id: string) => {
     setRevealedRecall(prev => ({ ...prev, [id]: !prev[id] }));
@@ -47,6 +83,40 @@ export const UnitView: React.FC<UnitViewProps> = ({ unit, initialTab = 'overview
 
   return (
     <div className="space-y-6 pb-12">
+      {/* Clickable Academic Breadcrumbs */}
+      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 overflow-x-auto whitespace-nowrap pb-1">
+        <button
+          type="button"
+          onClick={() => navigate('/')}
+          className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
+        >
+          Home
+        </button>
+        <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+        <button
+          type="button"
+          onClick={() => navigate(subjectSlug ? `/subjects/${subjectSlug}` : '/')}
+          className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium truncate max-w-[200px]"
+        >
+          {subjectTitle || 'Subject Dashboard'}
+        </button>
+        <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+        <span className="text-slate-900 dark:text-white font-semibold truncate">
+          Unit {unit.id}: {unit.shortTitle || unit.title}
+        </span>
+      </nav>
+
+      {/* Mobile Sticky Floating "Back to Subject" Button */}
+      <div className="lg:hidden fixed bottom-20 left-4 z-40">
+        <button
+          type="button"
+          onClick={() => navigate(subjectSlug ? `/subjects/${subjectSlug}` : '/')}
+          className="px-3.5 py-2 rounded-full bg-slate-900/90 dark:bg-slate-800/90 text-white text-xs font-semibold shadow-xl backdrop-blur-md border border-slate-700/60 flex items-center gap-1.5 hover:scale-105 active:scale-95 transition-all"
+        >
+          <ArrowLeft className="w-3.5 h-3.5" />
+          <span>Back to Subject</span>
+        </button>
+      </div>
       {/* Unit Hero Banner */}
       <div className="rounded-[22px] md:rounded-[26px] p-6 sm:p-8 bg-gradient-to-br from-[#0B1120] via-[#111827] to-[#151E31] text-white border border-slate-800 shadow-card-dark relative overflow-hidden">
         <div className="relative z-10 space-y-4 max-w-3xl">
@@ -215,15 +285,47 @@ export const UnitView: React.FC<UnitViewProps> = ({ unit, initialTab = 'overview
       {/* Tab 2: Master's Summary */}
       {activeTab === 'summary' && (
         <div className="space-y-6 animate-fade-in max-w-4xl">
+          {/* Sticky Section Pill Bar with Scroll Tracking */}
+          {summarySections.length > 0 && (
+            <div className="sticky top-16 z-20 -mx-1 px-3 py-2 bg-slate-50/95 dark:bg-[#0B1120]/95 backdrop-blur-md rounded-xl border border-slate-200/80 dark:border-slate-800/80 flex items-center gap-2 overflow-x-auto scrollbar-thin shadow-sm">
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider shrink-0 mr-1">
+                Sections:
+              </span>
+              {summarySections.map((sec, idx) => {
+                const secId = `sec-${unit.id}-${idx + 1}`;
+                const isCurrent = activeSectionId === secId || (!activeSectionId && idx === 0);
+                return (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => {
+                      setActiveSectionId(secId);
+                      document.getElementById(secId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                    className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 shrink-0 ${
+                      isCurrent
+                        ? 'bg-indigo-600 text-white shadow-sm ring-2 ring-indigo-400/30'
+                        : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700'
+                    }`}
+                  >
+                    <span className="font-mono text-[10px]">{unit.id}.{idx + 1}</span>
+                    <span className="truncate max-w-[130px]">{sec.title}</span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
           {summarySections.length > 0 ? (
             summarySections.map((sec, idx) => (
               <div
                 key={idx}
-                className="premium-card rounded-[18px] p-5 sm:p-6 space-y-4"
+                id={`sec-${unit.id}-${idx + 1}`}
+                className="premium-card rounded-[18px] p-5 sm:p-6 space-y-4 scroll-mt-28"
               >
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-wider text-indigo-500 font-bold block mb-1">
-                    Section 0{idx + 1}
+                    Section {unit.id}.{idx + 1}
                   </span>
                   <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                     {sec.title}

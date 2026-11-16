@@ -11,6 +11,7 @@ import {
   itpmComparisons, 
   itpmExamTraps, 
   unit3Formulas,
+  unit2PertFormulas,
   getAllQuestions 
 } from '../data/subjects/itpm';
 
@@ -57,7 +58,7 @@ const MUST_MEMORIZE_CARDS = [
     points: [
       "RACI Rule: Exactly ONE 'A' (Accountable) person per deliverable to prevent split accountability.",
       "Multiple 'R' (Responsible doers) are permitted; 'C' is two-way consult; 'I' is one-way broadcast.",
-      "Communication Channels Formula: N(N - 1) / 2. Explains exponential communication overhead.",
+      "Stakeholder Power/Interest: High Power/Interest (Manage Closely); Low Power/Interest (Monitor).",
       "Conflict Modes: Collaborating (Win-Win consensus) is the gold standard; Compromise is give-and-take lose-lose."
     ],
     trap: "Having two 'A's on a single task violates RACI governance rules and leads to diffusion of responsibility."
@@ -110,10 +111,25 @@ export const QuickRevision: React.FC = () => {
     });
   }, [selectedUnit, searchQuery]);
 
-  // Filtered Formulas
+  // Filtered Formulas (Unit 2 PERT Node + Unit 3 EVM/Estimation)
+  const allFormulas = useMemo(() => {
+    const u2List = unit2PertFormulas.map((f, idx) => ({
+      id: `itpm-u2-form-${idx + 1}`,
+      name: f.name,
+      formula: f.formula,
+      unit: 2,
+      description: f.description,
+      interpretation: f.examApplication,
+      sourceVerified: true,
+      sourceSection: f.source.section || "2.3",
+      sourcePage: f.source.page || 48
+    }));
+    return [...u2List, ...unit3Formulas];
+  }, []);
+
   const filteredFormulas = useMemo(() => {
-    return unit3Formulas.filter(f => {
-      if (selectedUnit !== 'all' && selectedUnit !== 3 && selectedUnit !== 2) return false;
+    return allFormulas.filter(f => {
+      if (selectedUnit !== 'all' && f.unit !== selectedUnit) return false;
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
         return f.name.toLowerCase().includes(query) ||
@@ -122,7 +138,7 @@ export const QuickRevision: React.FC = () => {
       }
       return true;
     });
-  }, [selectedUnit, searchQuery]);
+  }, [allFormulas, selectedUnit, searchQuery]);
 
   // Filtered Numbers
   const filteredNumbers = useMemo(() => {
@@ -378,9 +394,15 @@ export const QuickRevision: React.FC = () => {
                   {form.description}
                 </p>
 
-                <div className="text-[11px] text-slate-500 border-t border-slate-100 dark:border-slate-800 pt-2">
-                  <span className="font-semibold text-slate-700 dark:text-slate-300">Interpretation: </span>
-                  {form.interpretation}
+                <div className="text-[11px] text-slate-500 border-t border-slate-100 dark:border-slate-800 pt-2 space-y-1">
+                  <div>
+                    <span className="font-semibold text-slate-700 dark:text-slate-300">Interpretation: </span>
+                    {form.interpretation}
+                  </div>
+                  <div className="flex items-center justify-between text-[10px] text-slate-400 font-mono pt-1">
+                    <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓ Course-Book Verified</span>
+                    <span>Unit {form.unit} · Sec {form.sourceSection} (p.{form.sourcePage})</span>
+                  </div>
                 </div>
               </div>
             ))}

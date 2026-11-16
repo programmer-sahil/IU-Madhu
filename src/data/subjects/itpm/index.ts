@@ -10,6 +10,7 @@ export { unit4Data } from './unit-4';
 export { unit5Data } from './unit-5';
 export { unit6Data } from './unit-6';
 export { unit3Formulas } from './unit-3/formulas';
+export { unit2PertFormulas, unit2CalculationExercises } from './unit-2/formulas';
 export { unit4Scenarios } from './unit-4/scenarios';
 export { unit5Scenarios } from './unit-5/scenarios';
 export { unit6Scenarios } from './unit-6/scenarios';

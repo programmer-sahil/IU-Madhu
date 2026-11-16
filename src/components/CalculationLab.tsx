@@ -59,14 +59,19 @@ export const CalculationLab: React.FC = () => {
   const profitabilityIndex = projectCost > 0 ? Number((npv / projectCost).toFixed(2)) : 0;
   const paybackPeriod = annualCashInflow > 0 ? Number((projectCost / annualCashInflow).toFixed(1)) : 0;
 
-  // PERT State
-  const [pertO, setPertO] = useState<number>(8);
-  const [pertM, setPertM] = useState<number>(14);
-  const [pertP, setPertP] = useState<number>(26);
+  // PERT CPM Node State (Section 2.3, pp. 44-50)
+  const [pertDuration, setPertDuration] = useState<number>(7);
+  const [predEft1, setPredEft1] = useState<number>(12);
+  const [predEft2, setPredEft2] = useState<number>(16);
+  const [succLst1, setSuccLst1] = useState<number>(28);
+  const [succLst2, setSuccLst2] = useState<number>(25);
 
-  const pertTe = Number(((pertO + 4 * pertM + pertP) / 6).toFixed(2));
-  const pertSigma = Number(((pertP - pertO) / 6).toFixed(2));
-  const pertVar = Number(Math.pow(pertSigma, 2).toFixed(2));
+  const pertEst = Math.max(predEft1, predEft2);
+  const pertEft = pertEst + pertDuration;
+  const pertLft = Math.min(succLst1, succLst2);
+  const pertLst = pertLft - pertDuration;
+  const pertSlack = pertLst - pertEst;
+  const isPertCritical = pertSlack === 0;
 
   // Practice Problems State
   const [selectedPracticeIndex, setSelectedPracticeIndex] = useState<number>(0);
@@ -115,15 +120,18 @@ export const CalculationLab: React.FC = () => {
     },
     {
       id: 4,
-      title: "PERT Three-Point Estimation",
-      unit: "Unit 2 / Unit 3",
-      question: "A microservice deployment is estimated with: Optimistic = 6 days, Most Likely = 12 days, Pessimistic = 24 days. Calculate the PERT Expected Duration (TE) and Standard Deviation (sigma).",
-      correctCv: 13,
-      correctCpi: 3,
+      title: "PERT Forward/Backward Pass & Slack Analysis",
+      unit: "Unit 2 (Section 2.3)",
+      question: "Activity C has Duration = 7 days. Incoming Predecessor A has EFT = 12 days and Predecessor B has EFT = 16 days. Outgoing Successor X has LST = 28 days and Successor Y has LST = 25 days. Calculate EST, EFT, LFT, LST, and Total Slack. What is the Total Slack value?",
+      correctCv: 2,
+      correctCpi: 16,
       steps: [
-        "1. Expected Duration: TE = (o + 4m + p) / 6 = (6 + 4*12 + 24) / 6 = (6 + 48 + 24) / 6 = 78 / 6 = 13 days",
-        "2. Standard Deviation: sigma = (p - o) / 6 = (24 - 6) / 6 = 18 / 6 = 3 days",
-        "3. Confidence Range: 68% probability project finishes between 10 and 16 days (13 +/- 3)."
+        "1. Forward Pass Merge Rule: EST(C) = max(EFT(A), EFT(B)) = max(12, 16) = 16 days",
+        "2. Forward Pass EFT: EFT(C) = EST(C) + Duration = 16 + 7 = 23 days",
+        "3. Backward Pass Burst Rule: LFT(C) = min(LST(X), LST(Y)) = min(28, 25) = 25 days",
+        "4. Backward Pass LST: LST(C) = LFT(C) - Duration = 25 - 7 = 18 days",
+        "5. Total Slack Formula: Slack = LST - EST = 18 - 16 = 2 days (or LFT - EFT = 25 - 23 = 2 days)",
+        "6. Critical Path Interpretation: Because Slack = 2 > 0, Activity C is NOT on the Critical Path (Critical Path tasks have Slack = 0)."
       ]
     }
   ];
@@ -165,7 +173,7 @@ export const CalculationLab: React.FC = () => {
           { id: 'evm', label: 'Earned Value (EVM)', icon: Activity, badge: 'Unit 3' },
           { id: 'fpa', label: 'Function Point Analysis (FPA)', icon: Layers, badge: 'Unit 3' },
           { id: 'financial', label: 'ROI, NPV & Payback', icon: DollarSign, badge: 'Unit 3' },
-          { id: 'pert', label: 'PERT 3-Point Sizing', icon: TrendingUp, badge: 'Unit 2' },
+          { id: 'pert', label: 'PERT / CPM Node Analysis', icon: TrendingUp, badge: 'Unit 2' },
           { id: 'practice', label: 'Step-by-Step Solver', icon: Sparkles, badge: 'Exam Lab' },
         ].map((tab) => {
           const Icon = tab.icon;
@@ -842,95 +850,161 @@ export const CalculationLab: React.FC = () => {
         </div>
       )}
 
-      {/* MODULE 4: PERT */}
+      {/* MODULE 4: PERT / CPM NODE ANALYSIS (Section 2.3, pp. 44-50) */}
       {activeModule === 'pert' && (
         <div className="space-y-6">
           <div className="bg-white dark:bg-slate-900/80 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
-            <h3 className="font-bold text-slate-900 dark:text-white text-base flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-slate-800">
-              <BarChart3 className="w-4 h-4 text-sky-500" />
-              PERT Three-Point Estimation Calculator (Beta Distribution)
-            </h3>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-200 dark:border-slate-800">
+              <h3 className="font-bold text-slate-900 dark:text-white text-base flex items-center gap-2">
+                <BarChart3 className="w-4 h-4 text-sky-500" />
+                PERT / CPM Network Node Calculator (Forward Pass, Backward Pass & Slack)
+              </h3>
+              <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-300 border border-sky-300 dark:border-sky-800">
+                Source: Unit 2 · Section 2.3 (pp. 44–50)
+              </span>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-              <div className="p-4 bg-emerald-50 dark:bg-emerald-950/30 rounded-xl border border-emerald-200 dark:border-emerald-800 space-y-2">
-                <label className="font-bold text-emerald-900 dark:text-emerald-300 block">Optimistic Duration (o)</label>
-                <input
-                  type="number"
-                  min="1"
-                  value={pertO}
-                  onChange={(e) => setPertO(Number(e.target.value))}
-                  className="w-full px-3 py-2 rounded-lg font-mono bg-white dark:bg-slate-800 border border-emerald-300 dark:border-emerald-700"
-                />
-                <p className="text-[11px] text-slate-500">Best-case scenario if everything goes perfectly.</p>
-              </div>
-
               <div className="p-4 bg-sky-50 dark:bg-sky-950/30 rounded-xl border border-sky-200 dark:border-sky-800 space-y-2">
-                <label className="font-bold text-sky-900 dark:text-sky-300 block">Most Likely Duration (m) [Weight x 4]</label>
+                <label className="font-bold text-sky-900 dark:text-sky-300 block">Activity Duration (Days)</label>
                 <input
                   type="number"
                   min="1"
-                  value={pertM}
-                  onChange={(e) => setPertM(Number(e.target.value))}
+                  value={pertDuration}
+                  onChange={(e) => setPertDuration(Math.max(1, Number(e.target.value)))}
                   className="w-full px-3 py-2 rounded-lg font-mono bg-white dark:bg-slate-800 border border-sky-300 dark:border-sky-700"
                 />
-                <p className="text-[11px] text-slate-500">Most probable duration under normal conditions.</p>
+                <p className="text-[11px] text-slate-500">Estimated duration for this work package.</p>
               </div>
 
-              <div className="p-4 bg-rose-50 dark:bg-rose-950/30 rounded-xl border border-rose-200 dark:border-rose-800 space-y-2">
-                <label className="font-bold text-rose-900 dark:text-rose-300 block">Pessimistic Duration (p)</label>
-                <input
-                  type="number"
-                  min="1"
-                  value={pertP}
-                  onChange={(e) => setPertP(Number(e.target.value))}
-                  className="w-full px-3 py-2 rounded-lg font-mono bg-white dark:bg-slate-800 border border-rose-300 dark:border-rose-700"
-                />
-                <p className="text-[11px] text-slate-500">Worst-case scenario with delays and complications.</p>
+              <div className="p-4 bg-indigo-50 dark:bg-indigo-950/30 rounded-xl border border-indigo-200 dark:border-indigo-800 space-y-2">
+                <label className="font-bold text-indigo-900 dark:text-indigo-300 block">Incoming Predecessors (EFTs)</label>
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <span className="text-[10px] text-slate-500 block">Predecessor 1 EFT:</span>
+                    <input
+                      type="number"
+                      min="0"
+                      value={predEft1}
+                      onChange={(e) => setPredEft1(Number(e.target.value))}
+                      className="w-full px-2 py-1.5 rounded-lg font-mono text-xs bg-white dark:bg-slate-800 border border-indigo-300 dark:border-indigo-700"
+                    />
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-slate-500 block">Predecessor 2 EFT:</span>
+                    <input
+                      type="number"
+                      min="0"
+                      value={predEft2}
+                      onChange={(e) => setPredEft2(Number(e.target.value))}
+                      className="w-full px-2 py-1.5 rounded-lg font-mono text-xs bg-white dark:bg-slate-800 border border-indigo-300 dark:border-indigo-700"
+                    />
+                  </div>
+                </div>
+                <p className="text-[11px] text-slate-500">Forward pass takes MAX: EST = max(EFT predecessors).</p>
+              </div>
+
+              <div className="p-4 bg-purple-50 dark:bg-purple-950/30 rounded-xl border border-purple-200 dark:border-purple-800 space-y-2">
+                <label className="font-bold text-purple-900 dark:text-purple-300 block">Outgoing Successors (LSTs)</label>
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <span className="text-[10px] text-slate-500 block">Successor 1 LST:</span>
+                    <input
+                      type="number"
+                      min="0"
+                      value={succLst1}
+                      onChange={(e) => setSuccLst1(Number(e.target.value))}
+                      className="w-full px-2 py-1.5 rounded-lg font-mono text-xs bg-white dark:bg-slate-800 border border-purple-300 dark:border-purple-700"
+                    />
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-slate-500 block">Successor 2 LST:</span>
+                    <input
+                      type="number"
+                      min="0"
+                      value={succLst2}
+                      onChange={(e) => setSuccLst2(Number(e.target.value))}
+                      className="w-full px-2 py-1.5 rounded-lg font-mono text-xs bg-white dark:bg-slate-800 border border-purple-300 dark:border-purple-700"
+                    />
+                  </div>
+                </div>
+                <p className="text-[11px] text-slate-500">Backward pass takes MIN: LFT = min(LST successors).</p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-              <div className="p-4 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 text-xs">
-                <span className="text-slate-500 block">Expected Duration (TE)</span>
-                <span className="text-xs text-slate-400 block mb-1">Formula: (o + 4m + p) / 6</span>
-                <div className="text-3xl font-black font-mono text-sky-600 dark:text-sky-400">{pertTe} days</div>
+            {/* Visual PERT Node Box (Matching Course Book Figure 18) */}
+            <div className="p-5 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 space-y-4">
+              <span className="text-xs font-bold text-slate-700 dark:text-slate-300 block uppercase tracking-wider">
+                Official PERT Activity-on-Node Representation:
+              </span>
+              
+              <div className="max-w-md mx-auto rounded-xl overflow-hidden border-2 border-slate-700 dark:border-slate-600 shadow-md">
+                {/* Top Row: EST | Duration | EFT */}
+                <div className="grid grid-cols-3 bg-sky-100 dark:bg-sky-950/60 border-b border-slate-300 dark:border-slate-700 text-center text-xs divide-x divide-slate-300 dark:divide-slate-700">
+                  <div className="p-2">
+                    <span className="text-[10px] text-slate-500 block">EST</span>
+                    <span className="font-mono font-black text-sky-800 dark:text-sky-300 text-sm">{pertEst}</span>
+                  </div>
+                  <div className="p-2 bg-sky-200/50 dark:bg-sky-900/40">
+                    <span className="text-[10px] text-slate-500 block">Duration</span>
+                    <span className="font-mono font-black text-slate-900 dark:text-white text-sm">{pertDuration}d</span>
+                  </div>
+                  <div className="p-2">
+                    <span className="text-[10px] text-slate-500 block">EFT</span>
+                    <span className="font-mono font-black text-sky-800 dark:text-sky-300 text-sm">{pertEft}</span>
+                  </div>
+                </div>
+
+                {/* Middle Row: Activity Identifier */}
+                <div className="p-3 bg-white dark:bg-slate-900 text-center font-bold text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-700 text-sm">
+                  Activity C (Sample Task)
+                </div>
+
+                {/* Bottom Row: LST | Slack | LFT */}
+                <div className="grid grid-cols-3 bg-indigo-100 dark:bg-indigo-950/60 text-center text-xs divide-x divide-slate-300 dark:divide-slate-700">
+                  <div className="p-2">
+                    <span className="text-[10px] text-slate-500 block">LST</span>
+                    <span className="font-mono font-black text-indigo-800 dark:text-indigo-300 text-sm">{pertLst}</span>
+                  </div>
+                  <div className={`p-2 ${isPertCritical ? 'bg-emerald-200/80 dark:bg-emerald-950/80 text-emerald-900 dark:text-emerald-300' : 'bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300'}`}>
+                    <span className="text-[10px] font-bold block">Slack</span>
+                    <span className="font-mono font-black text-sm">{pertSlack}d</span>
+                  </div>
+                  <div className="p-2">
+                    <span className="text-[10px] text-slate-500 block">LFT</span>
+                    <span className="font-mono font-black text-indigo-800 dark:text-indigo-300 text-sm">{pertLft}</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="p-4 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 text-xs">
-                <span className="text-slate-500 block">Standard Deviation (sigma)</span>
-                <span className="text-xs text-slate-400 block mb-1">Formula: (p - o) / 6</span>
-                <div className="text-3xl font-black font-mono text-indigo-600 dark:text-indigo-400">{pertSigma} days</div>
-              </div>
-
-              <div className="p-4 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 text-xs">
-                <span className="text-slate-500 block">Variance (sigma^2)</span>
-                <span className="text-xs text-slate-400 block mb-1">Formula: ((p - o) / 6)^2</span>
-                <div className="text-3xl font-black font-mono text-purple-600 dark:text-purple-400">{pertVar}</div>
+              {/* Status Badge */}
+              <div className="text-center pt-2">
+                {isPertCritical ? (
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-300 font-bold text-xs">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                    <span>CRITICAL PATH ACTIVITY (Zero Slack) — Any delay directly delays the project completion date!</span>
+                  </div>
+                ) : (
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-bold text-xs">
+                    <span>Non-Critical Activity — Has {pertSlack} days of scheduling buffer (Slack = LST - EST = LFT - EFT).</span>
+                  </div>
+                )}
               </div>
             </div>
 
-            {/* Confidence Intervals */}
-            <div className="p-4 bg-sky-50 dark:bg-sky-950/40 rounded-xl border border-sky-200 dark:border-sky-800 text-xs space-y-2">
-              <span className="font-bold text-sky-900 dark:text-sky-200">Examinable PERT Confidence Intervals:</span>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div className="p-2.5 rounded-lg bg-white/60 dark:bg-slate-900/60 border border-sky-200 dark:border-sky-800">
-                  <div className="font-bold text-slate-800 dark:text-white">68.2% Confidence (1-sigma)</div>
-                  <div className="font-mono text-sky-600 dark:text-sky-400 mt-0.5">
-                    {(pertTe - pertSigma).toFixed(1)} to {(pertTe + pertSigma).toFixed(1)} days
-                  </div>
-                </div>
-                <div className="p-2.5 rounded-lg bg-white/60 dark:bg-slate-900/60 border border-sky-200 dark:border-sky-800">
-                  <div className="font-bold text-slate-800 dark:text-white">95.4% Confidence (2-sigma)</div>
-                  <div className="font-mono text-sky-600 dark:text-sky-400 mt-0.5">
-                    {(pertTe - 2*pertSigma).toFixed(1)} to {(pertTe + 2*pertSigma).toFixed(1)} days
-                  </div>
-                </div>
-                <div className="p-2.5 rounded-lg bg-white/60 dark:bg-slate-900/60 border border-sky-200 dark:border-sky-800">
-                  <div className="font-bold text-slate-800 dark:text-white">99.7% Confidence (3-sigma)</div>
-                  <div className="font-mono text-sky-600 dark:text-sky-400 mt-0.5">
-                    {(pertTe - 3*pertSigma).toFixed(1)} to {(pertTe + 3*pertSigma).toFixed(1)} days
-                  </div>
-                </div>
+            {/* Academic Rules Reference */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-2">
+              <div className="p-3.5 rounded-xl bg-sky-50 dark:bg-sky-950/30 border border-sky-200 dark:border-sky-800 space-y-1">
+                <span className="font-bold text-sky-900 dark:text-sky-300 block">Forward Pass Rules (EFT = EST + Duration):</span>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Start from project Day 0. If an activity has multiple incoming predecessors, its Earliest Start Time equals the MAXIMUM Earliest Finish Time of those predecessors: EST = max(EFT_pred).
+                </p>
+              </div>
+              <div className="p-3.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800 space-y-1">
+                <span className="font-bold text-indigo-900 dark:text-indigo-300 block">Backward Pass Rules (LST = LFT - Duration):</span>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Start from project completion date. If an activity has multiple outgoing successors, its Latest Finish Time equals the MINIMUM Latest Start Time of those successors: LFT = min(LST_succ).
+                </p>
               </div>
             </div>
           </div>

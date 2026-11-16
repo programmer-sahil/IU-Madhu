@@ -332,22 +332,37 @@ def validate_all():
     assert total_trp == 115
 
     # 12. Mock Exams
+    u1_mock = load_ts_json('src/data/subjects/itpm/unit-1/mockExams.ts', 'unit1MockExams')
+    u2_mock = load_ts_json('src/data/subjects/itpm/unit-2/mockExams.ts', 'unit2MockExams')
     u3_mock = load_ts_json('src/data/subjects/itpm/unit-3/mockExams.ts', 'unit3MockExams')
     u4_mock = load_ts_json('src/data/subjects/itpm/unit-4/mockExams.ts', 'unit4MockExams')
     u5_mock = load_ts_json('src/data/subjects/itpm/unit-5/mockExams.ts', 'unit5MockExams')
     u6_mock = load_ts_json('src/data/subjects/itpm/unit-6/mockExams.ts', 'unit6MockExams')
+    all_mocks = u1_mock + u2_mock + u3_mock + u4_mock + u5_mock + u6_mock
+    total_mocks = len(all_mocks)
+
     print(f"\n[12] Mock Exams Audit:")
-    print(f"    ✓ Unit 1 & 2 in mockTests.ts: 2")
+    print(f"    ✓ Unit 1 Mock Exams: {len(u1_mock)} / 2")
+    print(f"    ✓ Unit 2 Mock Exams: {len(u2_mock)} / 2")
     print(f"    ✓ Unit 3 Mock Exams: {len(u3_mock)} / 2")
     print(f"    ✓ Unit 4 Mock Exams: {len(u4_mock)} / 2")
     print(f"    ✓ Unit 5 Mock Exams: {len(u5_mock)} / 2")
     print(f"    ✓ Unit 6 Mock Exams: {len(u6_mock)} / 2")
-    print(f"    ✓ Total Mock Exams: 10")
-    assert len(u3_mock) == 2 and len(u4_mock) == 2 and len(u5_mock) == 2 and len(u6_mock) == 2
+    print(f"    ✓ Total Mock Exams: {total_mocks} / 12")
+
+    assert len(u1_mock) == 2 and len(u2_mock) == 2 and len(u3_mock) == 2 and len(u4_mock) == 2 and len(u5_mock) == 2 and len(u6_mock) == 2
+    assert total_mocks == 12
+
+    for mock in all_mocks:
+        assert mock.get('totalMarks') == 90, f"Mock {mock.get('id')} totalMarks is not 90"
+        assert len(mock.get('mcqIds', [])) == 40, f"Mock {mock.get('id')} does not have 40 MCQs"
+        assert len(mock.get('descriptiveQuestions', [])) == 6, f"Mock {mock.get('id')} does not have 6 descriptive questions"
+        desc_marks = sum(q.get('marks', 0) for q in mock.get('descriptiveQuestions', []))
+        assert desc_marks == 50, f"Mock {mock.get('id')} descriptive marks sum to {desc_marks}, expected 50"
 
     print("\n" + "=" * 80)
     print("  AUDIT PASSED: 620 MCQS, 260 FLASHCARDS, 125 Q&AS, 71 COMPARISONS,")
-    print("  115 TRAPS & 10 MOCK EXAMS 100% GROUNDED IN IU MATERIALS!")
+    print("  115 TRAPS & 12 MOCK EXAMS 100% GROUNDED IN IU MATERIALS!")
     print("=" * 80)
 
 if __name__ == '__main__':

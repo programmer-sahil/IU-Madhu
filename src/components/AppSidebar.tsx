@@ -167,7 +167,7 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
   ];
 
   const progressItems: NavItem[] = [
-    { id: 'readiness', label: 'Am I Ready?', icon: CheckCircle2 },
+    { id: 'readiness', label: 'Practice Readiness', icon: CheckCircle2 },
     { id: 'bookmarks', label: 'My Revision List', icon: Bookmark },
   ];
 
@@ -343,11 +343,11 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
         </div>
 
         {/* Scrollable Navigation Sections */}
-        <div className="flex-1 overflow-y-auto px-2 py-3 space-y-4 scrollbar-thin">
+        <div className="flex-1 overflow-y-auto px-2 py-2.5 space-y-2.5 scrollbar-thin">
           {/* SECTION: OVERVIEW */}
           <div>
             {!collapsed && (
-              <span className="px-2.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+              <span className="px-2 text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
                 OVERVIEW
               </span>
             )}
@@ -359,7 +359,7 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
                   onNavigateHome();
                   onCloseMobile();
                 }}
-                className={`w-full flex items-center ${collapsed ? 'justify-center px-2 py-2' : 'justify-between px-2.5 py-1.5'} rounded-lg text-xs font-medium transition-all ${
+                className={`w-full flex items-center ${collapsed ? 'justify-center px-1.5 py-1.5' : 'justify-between px-2.5 py-1.25'} rounded-lg text-xs font-medium transition-all ${
                   currentView === 'home'
                     ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-semibold border-l-2 border-indigo-600 dark:border-indigo-500'
                     : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-slate-200'
@@ -379,7 +379,7 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
                   onNavigate('dashboard');
                   onCloseMobile();
                 }}
-                className={`w-full flex items-center ${collapsed ? 'justify-center px-2 py-2' : 'justify-between px-2.5 py-1.5'} rounded-lg text-xs font-medium transition-all ${
+                className={`w-full flex items-center ${collapsed ? 'justify-center px-1.5 py-1.5' : 'justify-between px-2.5 py-1.25'} rounded-lg text-xs font-medium transition-all ${
                   currentView === 'dashboard'
                     ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-semibold border-l-2 border-indigo-600 dark:border-indigo-500'
                     : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-slate-200'
@@ -401,7 +401,7 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
                 <button
                   type="button"
                   onClick={() => toggleSectionCollapse('COURSE')}
-                  className="w-full flex items-center justify-between px-2.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors mb-1 text-left cursor-pointer"
+                  className="w-full flex items-center justify-between px-2 text-[10px] font-bold uppercase tracking-wider text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors mb-1 text-left cursor-pointer"
                 >
                   <span>COURSE (UNITS 1–6)</span>
                   <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${!collapsed && !!collapsedSections['COURSE'] ? '-rotate-90' : ''}`} />
@@ -418,7 +418,7 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
                     const unitHoverTitle = unit.title ? `Unit ${unit.id}: ${unit.title}` : `Unit ${unit.id}`;
 
                     return (
-                      <div key={unit.id} className="space-y-0.5">
+                      <div key={unit.id} className="relative group/unit space-y-0.5">
                         <div className="flex items-center">
                           <button
                             type="button"
@@ -426,12 +426,12 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
                               onNavigate('unit', unit.id);
                               onCloseMobile();
                             }}
-                            className={`w-full flex items-center ${collapsed ? 'justify-center px-2 py-1.5' : 'justify-between px-2.5 py-1.5'} rounded-lg text-xs font-medium transition-all ${
+                            className={`w-full flex items-center ${collapsed ? 'justify-center px-1.5 py-1.5' : 'justify-between px-2.5 py-1.25'} rounded-lg text-xs font-medium transition-all ${
                               isActive
                                 ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-semibold border-l-2 border-indigo-600 dark:border-indigo-500'
                                 : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-slate-200'
                             }`}
-                            title={unitHoverTitle}
+                            title={collapsed ? undefined : unitHoverTitle}
                           >
                             <div className={`flex items-center gap-2 ${collapsed ? 'justify-center' : 'min-w-0 flex-1'}`}>
                               <span className={`w-4 h-4 rounded text-[10px] font-mono font-bold flex items-center justify-center shrink-0 ${
@@ -474,7 +474,60 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
                           </button>
                         </div>
 
-                        {/* Accordion Sub-sections */}
+                        {/* Collapsed Mode Hover Flyout Popup */}
+                        {collapsed && (
+                          <div className="hidden group-hover/unit:block absolute left-full top-0 ml-2.5 w-64 p-3 bg-white dark:bg-[#111827] rounded-xl shadow-2xl border border-slate-200 dark:border-slate-800 z-50 text-left pointer-events-auto animate-fade-in">
+                            <div className="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800 mb-2">
+                              <div className="flex items-center gap-1.5 min-w-0">
+                                <span className="w-5 h-5 rounded bg-indigo-600 text-white font-mono text-[10px] font-bold flex items-center justify-center shrink-0">
+                                  {unit.id}
+                                </span>
+                                <span className="text-xs font-bold text-slate-900 dark:text-white truncate">
+                                  {unit.shortTitle || unit.title}
+                                </span>
+                              </div>
+                              {isComingSoon ? (
+                                <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 shrink-0">
+                                  Soon
+                                </span>
+                              ) : (
+                                <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 shrink-0">
+                                  Exam Ready
+                                </span>
+                              )}
+                            </div>
+                            {hasSections && (
+                              <div className="space-y-1 my-2 max-h-48 overflow-y-auto scrollbar-thin">
+                                {unit.sections!.map(sec => {
+                                  const secStatus = getSectionStatus(sec.number);
+                                  return (
+                                    <div key={sec.id || sec.number} className="flex items-center justify-between text-[11px] py-1 px-1.5 rounded hover:bg-slate-50 dark:hover:bg-slate-800/60">
+                                      <span className="text-slate-600 dark:text-slate-300 truncate pr-2">
+                                        <span className="font-mono text-slate-400 dark:text-slate-500 mr-1.5 font-semibold">{sec.number}</span>
+                                        {sec.title}
+                                      </span>
+                                      <span className={`text-[10px] font-mono shrink-0 ${secStatus.color}`} title={secStatus.label}>
+                                        {secStatus.symbol}
+                                      </span>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            )}
+                            <button
+                              type="button"
+                              onClick={() => {
+                                onNavigate('unit', unit.id);
+                                onCloseMobile();
+                              }}
+                              className="mt-2 w-full py-1.5 px-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-[11px] font-bold text-center transition-colors shadow-sm"
+                            >
+                              Open Unit {unit.id} →
+                            </button>
+                          </div>
+                        )}
+
+                        {/* Accordion Sub-sections in Expanded Mode */}
                         {!collapsed && !isComingSoon && hasSections && isExpanded && (
                           <div className="ml-4 pl-2 border-l border-slate-200 dark:border-slate-800 my-1 space-y-0.5">
                             {unit.sections!.map(sec => {
@@ -519,7 +572,7 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
                   <button
                     type="button"
                     onClick={() => toggleSectionCollapse(sec.heading)}
-                    className="w-full flex items-center justify-between px-2.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors mb-1 text-left cursor-pointer"
+                    className="w-full flex items-center justify-between px-2 text-[10px] font-bold uppercase tracking-wider text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors mb-1 text-left cursor-pointer"
                   >
                     <span>{sec.heading}</span>
                     <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isSecCollapsed ? '-rotate-90' : ''}`} />
@@ -539,7 +592,7 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
                             onNavigate(item.id);
                             onCloseMobile();
                           }}
-                          className={`w-full flex items-center ${collapsed ? 'justify-center px-2 py-2' : 'justify-between px-2.5 py-1.5'} rounded-lg text-xs font-medium transition-all ${
+                          className={`w-full flex items-center ${collapsed ? 'justify-center px-1.5 py-1.5' : 'justify-between px-2.5 py-1.25'} rounded-lg text-xs font-medium transition-all ${
                             isActive
                               ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-semibold border-l-2 border-indigo-600 dark:border-indigo-500'
                               : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-slate-200'

@@ -11,9 +11,9 @@ export const unit5CheatSheetComparisons: CheatSheetComparison[] = [
         "detailB": "Establish executable architectural baseline and mitigate high risks"
       },
       {
-        "criterion": "Milestone Gate",
-        "detailA": "Lifecycle Objectives (LCO) milestone",
-        "detailB": "Lifecycle Architecture (LCA) milestone"
+        "criterion": "Phase Deliverable",
+        "detailA": "Project charter, business case, and high-level use cases",
+        "detailB": "Detailed requirements, UML diagrams, and architectural view"
       },
       {
         "criterion": "Requirements Depth",
@@ -37,9 +37,9 @@ export const unit5CheatSheetComparisons: CheatSheetComparison[] = [
         "detailB": "Bulk component coding, feature implementation, and testing"
       },
       {
-        "criterion": "Milestone Gate",
-        "detailA": "Lifecycle Architecture (LCA) milestone",
-        "detailB": "Initial Operational Capability (IOC) milestone"
+        "criterion": "Phase Deliverable",
+        "detailA": "System architecture, UML models, and risk analysis",
+        "detailB": "Complete programmed code and verified test suites"
       },
       {
         "criterion": "Resource Expenditure",
@@ -68,9 +68,9 @@ export const unit5CheatSheetComparisons: CheatSheetComparison[] = [
         "detailB": "Beta testing, user training, data conversion, and deployment"
       },
       {
-        "criterion": "Milestone Gate",
-        "detailA": "Initial Operational Capability (IOC) milestone",
-        "detailB": "Product Release (PR) milestone"
+        "criterion": "Phase Deliverable",
+        "detailA": "Complete tested software components ready for deployment",
+        "detailB": "Customer acceptance, user documentation, and operational handover"
       },
       {
         "criterion": "Primary User Role",
@@ -411,10 +411,10 @@ export const unit5Comparisons: MasterComparison[] = [
         "keyDifference": "Establish business case, scope boundaries, and initial feasibility vs Establish executable architectural baseline and mitigate high risks"
       },
       {
-        "aspect": "Milestone Gate",
-        "itemA": "Lifecycle Objectives (LCO) milestone",
-        "itemB": "Lifecycle Architecture (LCA) milestone",
-        "keyDifference": "Lifecycle Objectives (LCO) milestone vs Lifecycle Architecture (LCA) milestone"
+        "aspect": "Phase Deliverable",
+        "itemA": "Project charter, business case, and high-level use cases",
+        "itemB": "Detailed requirements, UML diagrams, and architectural view",
+        "keyDifference": "Project charter and business case vs Detailed requirements and UML architectural view"
       },
       {
         "aspect": "Requirements Depth",
@@ -449,10 +449,10 @@ export const unit5Comparisons: MasterComparison[] = [
         "keyDifference": "Architectural design, risk mitigation, and technical feasibility vs Bulk component coding, feature implementation, and testing"
       },
       {
-        "aspect": "Milestone Gate",
-        "itemA": "Lifecycle Architecture (LCA) milestone",
-        "itemB": "Initial Operational Capability (IOC) milestone",
-        "keyDifference": "Lifecycle Architecture (LCA) milestone vs Initial Operational Capability (IOC) milestone"
+        "aspect": "Phase Deliverable",
+        "itemA": "System architecture, UML models, and risk analysis",
+        "itemB": "Complete programmed code and verified test suites",
+        "keyDifference": "Architectural UML models and risk analysis vs Complete programmed code and test suites"
       },
       {
         "aspect": "Resource Expenditure",
@@ -493,10 +493,10 @@ export const unit5Comparisons: MasterComparison[] = [
         "keyDifference": "Building components, writing unit tests, feature integration vs Beta testing, user training, data conversion, and deployment"
       },
       {
-        "aspect": "Milestone Gate",
-        "itemA": "Initial Operational Capability (IOC) milestone",
-        "itemB": "Product Release (PR) milestone",
-        "keyDifference": "Initial Operational Capability (IOC) milestone vs Product Release (PR) milestone"
+        "aspect": "Phase Deliverable",
+        "itemA": "Complete tested software components ready for deployment",
+        "itemB": "Customer acceptance, user documentation, and operational handover",
+        "keyDifference": "Tested software components vs Customer acceptance and operational handover"
       },
       {
         "aspect": "Primary User Role",

@@ -341,21 +341,17 @@ export const itProjectManagementConfig: SubjectConfig = {
       ],
       topics: [
         'Challenges of Cost Estimation in IT Projects',
-        'Quality Attributes of Estimates: Accuracy, Precision, Reliability, Credibility',
-        'Project Budget Hierarchy (Direct Costs, Indirect Costs, Contingency Reserve, Management Reserve)',
-        'Financial Evaluation: Return on Investment (ROI), Payback Period, Net Present Value (NPV)',
-        'Three-Point Estimation: Triangular vs PERT / Beta Distribution',
-        'Expert Estimation & Wideband Delphi Technique',
-        'Function Point Analysis (FPA): Unadjusted Function Points (UFP) & Complexity Adjustment Factor (CAF)',
-        'Agile Cost Estimation & Planning Poker (Story Points, Velocity)',
+        'Quality Attributes of Cost Estimation Metrics',
+        'Cost-Benefit Metrics: Return on Investment (ROI), Payback Period, Net Present Value (NPV), Profitability Index',
+        'Estimation Techniques: Expert Judgment, Analogy, Delphi Method',
+        'Function Point Analysis (FPA): Functional Types, Complexity Weighting (Table 1), 14 System Characteristics, TDI & CAF Formula',
+        'Agile Cost Estimation & Planning Poker (Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55)',
         'Earned Value Analysis (EVA): Planned Value (PV), Earned Value (EV), Actual Cost (AC), Budget at Completion (BAC)',
         'Cost Variance (CV = EV - AC) & Schedule Variance (SV = EV - PV)',
-        'Cost Performance Index (CPI) & Schedule Performance Index (SPI)',
-        'EVM Forecasting: Estimate at Completion (EAC), Estimate to Complete (ETC), Variance at Completion (VAC)',
-        'To-Complete Performance Index (TCPI)',
-        'Risk Management Lifecycle: Identification, Qualitative & Quantitative Analysis, Response, Monitoring',
-        'Risk Matrix (Likelihood vs Impact) & Risk Register',
-        'Risk Response Strategies: Avoid, Mitigate, Transfer, Accept'
+        'Cost Performance Index (CPI = EV / AC) & Schedule Performance Index (SPI = EV / PV)',
+        '25/75 Earning Rule & Burn-down Chart Progress Tracking',
+        'Risk Management Stages: Prevention, Detection, and Response',
+        'Risk Maturity Hierarchy: Ad hoc, Abbreviated, Organized, Managed, Adaptive (Farah 2011)'
       ]
     },
     {

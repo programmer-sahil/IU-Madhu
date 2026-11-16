@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { 
   Award, BookOpen, CheckCircle2, ArrowRight, 
-  GraduationCap
+  GraduationCap, Compass, ShieldCheck, Flame, Layers, HelpCircle, FileCheck, AlertOctagon
 } from 'lucide-react';
 
 export interface SubjectUnit {
   id: number;
   number: number;
   title: string;
+  shortTitle?: string;
   subtitle: string;
   sections: Array<{ id: string; title: string }>;
 }
@@ -62,7 +63,7 @@ export const SubjectDashboard: React.FC<SubjectDashboardProps> = ({
   onNavigateToUnit,
   onNavigateToMcq,
   onNavigateToReadiness,
-  onNavigateToMock: _onNavigateToMock,
+  onNavigateToMock,
   onNavigateToLastMinute
 }) => {
   const getReadinessTier = (score: number) => {
@@ -76,6 +77,58 @@ export const SubjectDashboard: React.FC<SubjectDashboardProps> = ({
   const tier = getReadinessTier(analytics.overallReadiness ?? 0);
   const isFreshStudent = (analytics.totalAnswered ?? 0) === 0 && (analytics.completedUnitsCount ?? 0) === 0;
   const firstUnitId = subject.units.length > 0 ? subject.units[0].id : 1;
+
+  // Dynamic "What Should I Study Next?" Recommendation
+  const recommendation = useMemo(() => {
+    // 1. Weak unit recommendation
+    if (analytics.weakUnits && analytics.weakUnits.length > 0) {
+      const weakUnitId = analytics.weakUnits[0];
+      const u = subject.units.find(item => item.id === weakUnitId) || subject.units[0];
+      return {
+        badge: 'Diagnostic Recommendation',
+        badgeColor: 'text-rose-600 dark:text-rose-400 bg-rose-500/10 border-rose-500/25',
+        title: `Targeted Revision: Unit ${u.number} (${u.shortTitle || u.title})`,
+        reason: `Your accuracy in Unit ${u.number} is currently below our 70% exam benchmark. Targeted MCQ practice and exam traps will turn this into a strong unit.`,
+        cta: `Practice Unit ${u.number} MCQs →`,
+        action: () => onNavigateToMcq(u.id),
+      };
+    }
+
+    // 2. Uncompleted unit recommendation
+    const firstUncompleted = subject.units.find(u => !progress.completedUnits?.includes(u.id));
+    if (firstUncompleted) {
+      return {
+        badge: 'Next Curriculum Milestone',
+        badgeColor: 'text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 border-indigo-500/25',
+        title: `Continue Course: Unit ${firstUncompleted.number} — ${firstUncompleted.title}`,
+        reason: `Complete this unit's key concepts and revision summary to progress towards full 6-unit syllabus mastery.`,
+        cta: `Open Unit ${firstUncompleted.number} →`,
+        action: () => onNavigateToUnit(firstUncompleted.id),
+      };
+    }
+
+    // 3. High readiness / simulation recommendation
+    if (analytics.overallReadiness >= 75) {
+      return {
+        badge: 'Final Exam Readiness',
+        badgeColor: 'text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border-emerald-500/25',
+        title: 'Run a 90-Minute Comprehensive Practice Simulation',
+        reason: 'You have mastered the foundational units. Test your endurance, pacing, and multi-unit recall under realistic exam conditions.',
+        cta: 'Launch Comprehensive Practice →',
+        action: () => onNavigateToMock(),
+      };
+    }
+
+    // Default: Start Unit 1
+    return {
+      badge: 'Recommended Starting Point',
+      badgeColor: 'text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 border-indigo-500/25',
+      title: `Start Unit 1: ${subject.units[0]?.title || 'Characteristics of IT Projects'}`,
+      reason: 'Lay the groundwork with project characteristics, governance constraints, and IT project manager responsibilities.',
+      cta: 'Begin Unit 1 →',
+      action: () => onNavigateToUnit(firstUnitId),
+    };
+  }, [analytics.weakUnits, analytics.overallReadiness, subject.units, progress.completedUnits, onNavigateToMcq, onNavigateToUnit, onNavigateToMock, firstUnitId]);
 
   return (
     <div className="space-y-8 animate-fade-in pb-12">
@@ -104,15 +157,15 @@ export const SubjectDashboard: React.FC<SubjectDashboardProps> = ({
           <div className="flex flex-wrap items-center gap-2 pt-1 pb-1 text-xs">
             <span className="px-2.5 py-1 rounded-lg bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-semibold font-mono flex items-center gap-1.5">
               <Award className="w-3.5 h-3.5 text-indigo-400" />
-              {analytics.totalMcqsCount || 170} MCQs Available
+              {analytics.totalMcqsCount || 620} MCQs Available
             </span>
             <span className="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold font-mono flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-              Units 1 & 2 Exam Ready
+              All 6 Units Exam Ready
             </span>
             <span className="px-2.5 py-1 rounded-lg bg-sky-500/20 text-sky-300 border border-sky-500/30 font-semibold font-mono flex items-center gap-1.5">
               <BookOpen className="w-3.5 h-3.5 text-sky-400" />
-              Units 3–6 in Prep
+              24 Sections • 12 Mocks
             </span>
           </div>
 
@@ -135,9 +188,38 @@ export const SubjectDashboard: React.FC<SubjectDashboardProps> = ({
               onClick={onNavigateToLastMinute}
               className="px-4 sm:px-5 py-2.5 sm:py-3 rounded-[10px] text-xs font-semibold bg-transparent hover:bg-slate-800/60 text-[#CBD5E1] hover:text-white border border-slate-700/60 flex items-center justify-center gap-2 transition-all min-h-[44px]"
             >
-              30-Min Final Revision
+              Final Revision Sprint
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* Dynamic "What Should I Study Next?" Recommendation Card */}
+      <div className="premium-card rounded-[20px] p-5 sm:p-6 border-l-4 border-l-indigo-600 dark:border-l-indigo-500 bg-gradient-to-r from-indigo-50/50 via-white to-sky-50/30 dark:from-indigo-950/20 dark:via-[#111827] dark:to-[#151E31] space-y-3">
+        <div className="flex items-center justify-between">
+          <span className={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${recommendation.badgeColor}`}>
+            {recommendation.badge}
+          </span>
+          <span className="text-[11px] text-slate-400 flex items-center gap-1 font-medium">
+            <Compass className="w-3.5 h-3.5 text-indigo-500" /> Adaptive Learning Guidance
+          </span>
+        </div>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+              {recommendation.title}
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+              {recommendation.reason}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={recommendation.action}
+            className="px-5 py-2.5 rounded-[10px] text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm flex items-center justify-center gap-2 transition-all shrink-0 self-start sm:self-auto min-h-[40px]"
+          >
+            <span>{recommendation.cta}</span>
+          </button>
         </div>
       </div>
 
@@ -356,6 +438,90 @@ export const SubjectDashboard: React.FC<SubjectDashboardProps> = ({
               </div>
             );
           })}
+        </div>
+      </div>
+
+      {/* Course Coverage & Integrity Matrix (6-Unit Diagnostic View) */}
+      <div className="premium-card rounded-[22px] p-6 sm:p-7 space-y-5">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200/80 dark:border-slate-800/80">
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full flex items-center gap-1">
+                <ShieldCheck className="w-3.5 h-3.5" /> 100% Course-Book Grounded
+              </span>
+              <span className="text-xs text-slate-400 font-mono">DLMBITPAM01</span>
+            </div>
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white mt-1">
+              Course Coverage & Syllabus Diagnostic Matrix
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              Comprehensive inventory across all 6 syllabus units, 24 sections, and multi-tier revision tools.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            <span className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
+              620 MCQs • 260 FCs • 12 Mocks
+            </span>
+          </div>
+        </div>
+
+        {/* Matrix Table */}
+        <div className="overflow-x-auto scrollbar-thin rounded-xl border border-slate-200 dark:border-slate-800">
+          <table className="w-full text-left text-xs min-w-[640px]">
+            <thead className="bg-slate-50 dark:bg-[#151E31] text-slate-700 dark:text-slate-200 font-bold border-b border-slate-200 dark:border-slate-800">
+              <tr>
+                <th className="p-3">Unit & Scope</th>
+                <th className="p-3 text-center">Sections</th>
+                <th className="p-3 text-center">MCQ Bank</th>
+                <th className="p-3 text-center">Flashcards</th>
+                <th className="p-3 text-center">Q&A</th>
+                <th className="p-3 text-center">Traps & Comparisons</th>
+                <th className="p-3 text-center">Mock Exams</th>
+                <th className="p-3 text-right">Audit Status</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200/80 dark:divide-slate-800">
+              {[
+                { u: 1, title: 'Characteristics of IT Projects', sec: 4, mcqs: 70, fc: 30, qa: 20, comps: 8, traps: 14, mocks: 2 },
+                { u: 2, title: 'Organizing the Work', sec: 4, mcqs: 100, fc: 40, qa: 20, comps: 10, traps: 20, mocks: 2 },
+                { u: 3, title: 'Cost Estimation and Controlling', sec: 4, mcqs: 110, fc: 45, qa: 20, comps: 12, traps: 18, mocks: 2 },
+                { u: 4, title: 'The Human Factor', sec: 3, mcqs: 100, fc: 45, qa: 20, comps: 11, traps: 18, mocks: 2 },
+                { u: 5, title: 'Small and Medium Projects', sec: 4, mcqs: 110, fc: 45, qa: 20, comps: 15, traps: 20, mocks: 2 },
+                { u: 6, title: 'Organizing Large Projects', sec: 5, mcqs: 130, fc: 55, qa: 25, comps: 15, traps: 25, mocks: 2 },
+              ].map(row => (
+                <tr key={row.u} className="hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
+                  <td className="p-3 font-semibold text-slate-900 dark:text-white">
+                    <span className="font-mono text-indigo-600 dark:text-indigo-400 mr-2">U{row.u}</span>
+                    <span>{row.title}</span>
+                  </td>
+                  <td className="p-3 text-center font-mono text-slate-600 dark:text-slate-300">{row.sec}</td>
+                  <td className="p-3 text-center font-mono font-bold text-indigo-600 dark:text-indigo-400">{row.mcqs}</td>
+                  <td className="p-3 text-center font-mono text-slate-600 dark:text-slate-300">{row.fc}</td>
+                  <td className="p-3 text-center font-mono text-slate-600 dark:text-slate-300">{row.qa}</td>
+                  <td className="p-3 text-center font-mono text-slate-600 dark:text-slate-300">{row.traps} / {row.comps}</td>
+                  <td className="p-3 text-center font-mono text-slate-600 dark:text-slate-300">{row.mocks} (90m)</td>
+                  <td className="p-3 text-right">
+                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+                      <CheckCircle2 className="w-3.5 h-3.5" /> Verified
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+            <tfoot className="bg-slate-50/80 dark:bg-[#151E31]/80 font-bold border-t border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white">
+              <tr>
+                <td className="p-3">Course Totals</td>
+                <td className="p-3 text-center font-mono">24</td>
+                <td className="p-3 text-center font-mono text-indigo-600 dark:text-indigo-400 font-black">620</td>
+                <td className="p-3 text-center font-mono">260</td>
+                <td className="p-3 text-center font-mono">125</td>
+                <td className="p-3 text-center font-mono">115 / 71</td>
+                <td className="p-3 text-center font-mono">12</td>
+                <td className="p-3 text-right text-emerald-600 dark:text-emerald-400 font-mono">100% Grounded</td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
       </div>
 

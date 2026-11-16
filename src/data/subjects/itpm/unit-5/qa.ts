@@ -7,33 +7,34 @@ export const unit5ImportantQuestions: DescriptiveQuestion[] = [
     "marks": 8,
     "priority": "VERY HIGH PRIORITY",
     "suggestedTimeMinutes": 15,
-    "question": "Explain the four core phases of the Rational Unified Process (RUP) and describe the primary milestone gate that terminates each phase.",
-    "examinerExpectation": "Student must list all 4 phases in exact sequential order (Inception, Elaboration, Construction, Transition), explain the core technical focus of each, and identify the formal milestone gate concluding each phase.",
+    "question": "Explain the four core phases of the Rational Unified Process (RUP) and describe the primary objectives and activities of each phase.",
+    "examinerExpectation": "Student must list all 4 core phases in exact sequential order (Inception, Elaboration, Construction, Transition), explain the core technical focus of each according to Section 5.1 of the course book, and note why iterations are not typical in Inception.",
     "answerStructure": [
-      "Introduction: Define RUP as an iterative, architecture-centric, use-case driven process framework.",
-      "Phase 1: Inception - Scope, business case, initial feasibility, terminating in Lifecycle Objectives (LCO) milestone.",
-      "Phase 2: Elaboration - Architectural baseline, critical use cases, risk mitigation, terminating in Lifecycle Architecture (LCA) milestone.",
-      "Phase 3: Construction - Bulk coding, component development, feature completion, terminating in Initial Operational Capability (IOC) milestone.",
-      "Phase 4: Transition - Rollout, beta testing, user training, operational handover, terminating in Product Release (PR) milestone.",
-      "Summary: Note the sequential gates ensure major architectural risks are solved in Elaboration before large capital expenditure in Construction."
+      "Introduction: Define RUP as an iterative software process framework categorized along 6 engineering disciplines.",
+      "Phase 1: Inception - High-level scope, business modeling, core use cases, and feasibility (iterations not typical due to abstract nature).",
+      "Phase 2: Elaboration - Detailed requirements, UML architectural modeling (use cases, class diagrams), and critical risk identification.",
+      "Phase 3: Construction - Bulk coding, programming, unit/integration testing, and debugging to build high-quality deliverables.",
+      "Phase 4: Transition - Delivery to customers/users and maintenance team, hardware/network setup, user documentation, and training.",
+      "Optional Phases: Mention optional Production (operational feedback) and Disposal (system replacement) phases."
     ],
     "keywords": [
       "Inception",
       "Elaboration",
       "Construction",
       "Transition",
-      "Lifecycle Objectives",
-      "Lifecycle Architecture",
-      "Initial Operational Capability",
-      "Product Release",
-      "Architectural Baseline"
+      "Business Modeling",
+      "UML Diagrams",
+      "Architectural View",
+      "User Acceptance",
+      "Maintenance Team"
     ],
-    "modelAnswer": "The Rational Unified Process (RUP) organizes software development into four sequential phases, each concluding with a distinct milestone gate:\n\n1. Inception Phase: Focuses on establishing the business case, project scope boundaries, high-level requirements, and initial risk assessment. It concludes with the Lifecycle Objectives (LCO) Milestone, which verifies stakeholder consensus on scope and financial viability.\n\n2. Elaboration Phase: Focuses on analyzing the problem domain, establishing an executable architectural baseline, elaborating critical use cases, and mitigating high-exposure technical risks. It concludes with the Lifecycle Architecture (LCA) Milestone; passing this gate proves the architecture is sound and stable.\n\n3. Construction Phase: Represents the manufacturing phase where remaining components and application features are developed, integrated, and thoroughly tested. It concludes with the Initial Operational Capability (IOC) Milestone, indicating a functional beta product is ready for user deployment.\n\n4. Transition Phase: Delivers the software into the live user environment, encompassing beta testing, defect fixing, user training, data migration, and operational handover. It concludes with the Product Release (PR) Milestone, confirming the system meets user acceptance criteria and business goals.",
-    "commonMistakes": "Confusing Elaboration with Construction (thinking coding happens only in Construction, or architecture is decided in Inception). Omitting the formal milestone names (LCO, LCA, IOC, PR).",
+    "modelAnswer": "The Rational Unified Process (RUP) organizes software development into four core sequential phases, each characterized by specific technical objectives:\n\n1. Inception Phase: Focuses on determining project scope, business case feasibility, and high-level use cases. Business modeling requires the greatest effort here. Iterations are not typical in this phase due to its generic and abstract nature.\n\n2. Elaboration Phase: Focuses on creating detailed project requirements, establishing an architectural view using UML diagrams (such as use cases for actors and interactions, and class hierarchies for object-oriented development), and identifying project risks to ensure future project success.\n\n3. Construction Phase: Developers program, test, and debug code to produce high-quality deliverables that are thoroughly tested and ready for user acceptance. Resource expenditure and implementation effort peak during this phase.\n\n4. Transition Phase: Transfers the completed solution to customers/users and to the maintenance team that oversees patches and upgrades. At this stage, hardware requirements are addressed, user documentation is prepared, and user training is conducted.\n\nAdditionally, the course book notes two optional full-lifecycle phases: a Production phase (to observe live user response and feed insights to future projects) and a Disposal phase (when transitioning smoothly to a replacement system).",
+    "commonMistakes": "Confusing Elaboration with Construction (thinking coding happens without prior architectural modeling in Elaboration). Forgetting that iterations are not typical in Inception.",
     "selfCheckChecklist": [
-      "Are all 4 phases listed in exact order?",
-      "Is the architectural baseline correctly attributed to Elaboration?",
-      "Are all 4 formal milestone gates named correctly?"
+      "Are all 4 core phases listed in exact order?",
+      "Is UML architectural modeling correctly attributed to Elaboration?",
+      "Are customer handover, training, and maintenance correctly attributed to Transition?",
+      "Are the two optional phases (Production, Disposal) mentioned?"
     ],
     "source": {
       "type": "course-book",

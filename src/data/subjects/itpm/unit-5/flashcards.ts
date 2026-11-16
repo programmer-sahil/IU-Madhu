@@ -47,14 +47,15 @@ export const unit5Flashcards: Flashcard[] = [
     "id": "itpm-u5-fc-004",
     "unit": 5,
     "category": "RUP",
-    "front": "What is the primary milestone of the RUP Elaboration phase?",
-    "back": "Lifecycle Architecture (LCA) milestone \u2014 establishing an executable architectural baseline and addressing major technical risks.",
-    "examTip": "Construction cannot safely begin until the architectural baseline is proven in Elaboration.",
+    "front": "What are the primary deliverables and goals of the RUP Elaboration phase?",
+    "back": "Detailed project requirements, an architectural view using UML diagrams (use cases and class hierarchies), and early risk identification and mitigation.",
+    "examTip": "Construction cannot safely begin until requirements, architecture, and risks are established in Elaboration.",
     "source": {
       "type": "course-book",
       "unit": 5,
       "section": "5.1",
-      "topic": "RUP Elaboration"
+      "topic": "RUP Elaboration",
+      "page": 101
     }
   },
   {

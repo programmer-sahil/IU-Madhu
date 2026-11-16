@@ -7,6 +7,7 @@ import { unit2ExamTraps } from "./traps";
 import { unit2Comparisons } from "./comparisons";
 import { unit2PertFormulas, unit2CalculationExercises } from "./formulas";
 import { unit2Visuals } from "./visuals";
+import { unit2MockExams } from "./mockExams";
 
 export {
   unit2Mcqs,
@@ -18,7 +19,8 @@ export {
   unit2Comparisons,
   unit2PertFormulas,
   unit2CalculationExercises,
-  unit2Visuals
+  unit2Visuals,
+  unit2MockExams
 };
 
 export const unit2Data: UnitData = {

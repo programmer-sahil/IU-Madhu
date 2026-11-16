@@ -5,8 +5,9 @@ import { unit1ImportantQuestions } from "./qa";
 import { unit1Concepts, unit1SummarySections } from "./concepts";
 import { unit1ExamTraps } from "./traps";
 import { unit1Visuals } from "./visuals";
+import { unit1MockExams } from "./mockExams";
 
-export { unit1Mcqs, unit1Flashcards, unit1ImportantQuestions, unit1Concepts, unit1SummarySections, unit1ExamTraps, unit1Visuals };
+export { unit1Mcqs, unit1Flashcards, unit1ImportantQuestions, unit1Concepts, unit1SummarySections, unit1ExamTraps, unit1Visuals, unit1MockExams };
 
 export const unit1Data: UnitData = {
   id: 1,

@@ -15,7 +15,7 @@ import {
 
 export interface SearchResultItem {
   id: string;
-  type: 'concept' | 'question' | 'mcq' | 'flashcard' | 'number' | 'comparison' | string;
+  type: 'section' | 'concept' | 'question' | 'mcq' | 'flashcard' | 'number' | 'comparison' | string;
   title: string;
   subtitle: string;
   unit: number;
@@ -24,6 +24,7 @@ export interface SearchResultItem {
   subjectTitle: string;
   subjectShortCode: string;
   action: () => void;
+  priorityScore?: number;
 }
 
 export interface GlobalSearchModalProps {
@@ -40,6 +41,7 @@ export interface GlobalSearchModalProps {
     units: Array<{
       id: number;
       title: string;
+      sections?: Array<{ id: string; number: string; title: string }>;
       keyConcepts?: any[];
       importantQuestions?: any[];
       mcqs?: any[];
@@ -108,6 +110,8 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
   // Type badge styling
   const getTypeBadgeStyle = (type: string) => {
     switch (type) {
+      case 'section':
+        return 'bg-sky-100 text-sky-800 dark:bg-sky-950/80 dark:text-sky-300 border border-sky-300 dark:border-sky-800 font-semibold';
       case 'concept':
         return 'bg-indigo-100 text-indigo-700 dark:bg-indigo-950/70 dark:text-indigo-300';
       case 'question':
@@ -128,6 +132,8 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
   // Content type icon
   const renderTypeIcon = (type: string) => {
     switch (type) {
+      case 'section':
+        return <BookOpen className="w-3 h-3 shrink-0 text-sky-600 dark:text-sky-400" />;
       case 'concept':
         return <BookOpen className="w-3 h-3 shrink-0" />;
       case 'question':
@@ -223,6 +229,42 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
         for (const u of subject.units) {
           const unitId = typeof u.id === 'number' ? u.id : parseInt(String(u.id), 10) || 1;
 
+          // 0. Syllabus Sections (Top Priority for exact match)
+          if (Array.isArray((u as any).sections)) {
+            for (const sec of (u as any).sections) {
+              const secNum = (sec.number || '').toLowerCase();
+              const secTitle = (sec.title || '').toLowerCase();
+              const cleanSec = secNum.replace('.', '');
+              const qClean = q.replace('section', '').replace('sec', '').replace('.', '').trim();
+
+              const isExactNumberMatch = secNum === q || cleanSec === q || `section ${secNum}` === q || `sec ${secNum}` === q || (cleanSec === qClean && qClean.length > 0);
+              const isExactTitleMatch = secTitle === q;
+              const isTitleMatch = secTitle.includes(q);
+              const isNumberMatch = secNum.includes(q);
+
+              if (isExactNumberMatch || isExactTitleMatch || isTitleMatch || isNumberMatch) {
+                const priorityScore = isExactNumberMatch ? 1000 : (isExactTitleMatch ? 800 : (isTitleMatch ? 600 : 400));
+                const baseTitle = `Section ${sec.number}: ${sec.title}`;
+                items.push({
+                  id: sec.id || `${subjectSlug}-sec-${sec.number}`,
+                  type: 'section',
+                  title: isSearchingAll ? `${subjectTitle}: ${baseTitle}` : baseTitle,
+                  subtitle: `Unit ${unitId} Syllabus Section`,
+                  unit: unitId,
+                  snippet: `Official IU Syllabus Section ${sec.number} — ${u.title}`,
+                  subjectSlug,
+                  subjectTitle,
+                  subjectShortCode: shortCode,
+                  priorityScore,
+                  action: () => {
+                    onNavigate(`/subjects/${subjectSlug}/units/${unitId}`);
+                    onClose();
+                  }
+                });
+              }
+            }
+          }
+
           // Key Concepts
           if (Array.isArray(u.keyConcepts)) {
             for (let i = 0; i < u.keyConcepts.length; i++) {
@@ -241,6 +283,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                 keywords.includes(q)
               ) {
                 const baseTitle = kc.term || 'Key Concept';
+                const priorityScore = term === q ? 300 : (term.includes(q) ? 200 : 100);
                 items.push({
                   id: kc.id || `${subjectSlug}-kc-${unitId}-${i}`,
                   type: 'concept',
@@ -251,6 +294,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                   subjectSlug,
                   subjectTitle,
                   subjectShortCode: shortCode,
+                  priorityScore,
                   action: () => {
                     onNavigate(`/subjects/${subjectSlug}/units/${unitId}`);
                     onClose();
@@ -277,6 +321,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
               ) {
                 const questUnit = typeof quest.unit === 'number' ? quest.unit : unitId;
                 const baseTitle = quest.question || 'Exam Question';
+                const priorityScore = questionText.includes(q) ? 150 : 80;
                 items.push({
                   id: quest.id || `${subjectSlug}-q-${questUnit}-${i}`,
                   type: 'question',
@@ -289,6 +334,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                   subjectSlug,
                   subjectTitle,
                   subjectShortCode: shortCode,
+                  priorityScore,
                   action: () => {
                     onNavigate(`/subjects/${subjectSlug}/tools/important-qa?unit=${questUnit}`);
                     onClose();
@@ -313,6 +359,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
               ) {
                 const mcqUnit = typeof mcq.unit === 'number' ? mcq.unit : unitId;
                 const baseTitle = mcq.question || 'MCQ Practice Question';
+                const priorityScore = mcqQ.includes(q) ? 140 : 70;
                 items.push({
                   id: mcq.id || `${subjectSlug}-mcq-${mcqUnit}-${i}`,
                   type: 'mcq',
@@ -323,6 +370,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                   subjectSlug,
                   subjectTitle,
                   subjectShortCode: shortCode,
+                  priorityScore,
                   action: () => {
                     onNavigate(`/subjects/${subjectSlug}/practice/mcq?unit=${mcqUnit}`);
                     onClose();
@@ -343,6 +391,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
               if (front.includes(q) || back.includes(q) || category.includes(q)) {
                 const fcUnit = typeof fc.unit === 'number' ? fc.unit : unitId;
                 const baseTitle = fc.front || 'Flashcard';
+                const priorityScore = front.includes(q) ? 130 : 60;
                 items.push({
                   id: fc.id || `${subjectSlug}-fc-${fcUnit}-${i}`,
                   type: 'flashcard',
@@ -355,6 +404,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                   subjectSlug,
                   subjectTitle,
                   subjectShortCode: shortCode,
+                  priorityScore,
                   action: () => {
                     onNavigate(`/subjects/${subjectSlug}/practice/flashcards?unit=${fcUnit}`);
                     onClose();
@@ -383,6 +433,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
           ) {
             const numUnit = typeof num.unit === 'number' ? num.unit : 1;
             const baseTitle = `${num.number || ''} — ${num.label || 'High-Yield Number'}`;
+            const priorityScore = numberStr === q ? 250 : 90;
             items.push({
               id: num.id || `${subjectSlug}-num-${i}`,
               type: 'number',
@@ -393,6 +444,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
               subjectSlug,
               subjectTitle,
               subjectShortCode: shortCode,
+              priorityScore,
               action: () => {
                 onNavigate(`/subjects/${subjectSlug}/tools/numbers`);
                 onClose();
@@ -417,6 +469,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
           ) {
             const compUnit = typeof comp.unit === 'number' ? comp.unit : 1;
             const baseTitle = comp.title || 'Master Comparison';
+            const priorityScore = title.includes(q) ? 180 : 85;
             items.push({
               id: comp.id || `${subjectSlug}-comp-${i}`,
               type: 'comparison',
@@ -427,6 +480,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
               subjectSlug,
               subjectTitle,
               subjectShortCode: shortCode,
+              priorityScore,
               action: () => {
                 onNavigate(`/subjects/${subjectSlug}/tools/comparisons`);
                 onClose();
@@ -436,6 +490,9 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
         }
       }
     }
+
+    // Rank by priorityScore descending
+    items.sort((a, b) => (b.priorityScore || 0) - (a.priorityScore || 0));
 
     return items.slice(0, 20); // Limit 20 results
   }, [query, targetSubjects, searchScope, onNavigate, onClose]);

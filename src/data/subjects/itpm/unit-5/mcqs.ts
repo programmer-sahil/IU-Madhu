@@ -515,64 +515,66 @@ export const unit5Mcqs: MCQ[] = [
   },
   {
     "id": "itpm-u5-s51-mcq-017",
-    "topic": "RUP Milestones: Life-Cycle Objectives",
+    "topic": "RUP Inception Characteristics",
     "difficulty": "hard",
-    "question": "Which formal milestone evaluates the success of the RUP Inception phase?",
+    "question": "According to the IU course book, why are iterations within the phase NOT typical for the RUP Inception phase?",
     "options": {
-      "A": "Lifecycle Objectives (LCO) Milestone",
-      "B": "Lifecycle Architecture (LCA) Milestone",
-      "C": "Initial Operational Capability (IOC) Milestone",
-      "D": "Product Release (PR) Milestone"
+      "A": "Because of its generic and abstract nature focusing on broad scope and business goals",
+      "B": "Because software code must be fully completed and deployed during Inception",
+      "C": "Because the Unified Process strictly prohibits meetings during project initiation",
+      "D": "Because customer feedback cannot be gathered until after software disposal"
     },
     "correctAnswer": "A",
-    "explanation": "The Inception phase concludes with the Lifecycle Objectives (LCO) milestone, verifying basic scope, business case, and stakeholder alignment.",
+    "explanation": "Section 5.1 of the course book explicitly notes that while iterations within phases are the norm for Elaboration, Construction, and Transition, this is not typical for the Inception phase because of its generic and abstract nature.",
     "whyOthersAreWrong": [
-      "Lifecycle Architecture (LCA) milestone marks the conclusion of the Elaboration phase.",
-      "Initial Operational Capability (IOC) marks the conclusion of Construction.",
-      "Product Release marks the conclusion of Transition."
+      "Software coding occurs primarily in Construction, not Inception.",
+      "RUP encourages communication and does not prohibit stakeholder meetings.",
+      "Customer feedback occurs throughout iterations and especially during Transition, not only after disposal."
     ],
-    "examTrap": "Memorize the 4 milestone gates: Inception = Lifecycle Objectives; Elaboration = Lifecycle Architecture; Construction = Initial Operational Capability; Transition = Product Release.",
+    "examTrap": "Remember that Inception defines initial scope and business case; its abstract nature means multiple internal iterations are not typical.",
     "source": {
       "type": "course-book",
       "unit": 5,
       "section": "5.1",
-      "topic": "Rational Unified Process (RUP)"
+      "topic": "Rational Unified Process (RUP)",
+      "page": 101
     },
     "sourceUnit": 5,
     "sourceSection": "5.1",
-    "sourceTopic": "RUP Milestones: Life-Cycle Objectives",
+    "sourceTopic": "RUP Inception Characteristics",
     "unit": 5,
     "unitId": 5,
     "subjectId": "itpm"
   },
   {
     "id": "itpm-u5-s51-mcq-018",
-    "topic": "RUP Milestones: Lifecycle Architecture",
+    "topic": "RUP Elaboration Phase Modeling",
     "difficulty": "hard",
-    "question": "The Lifecycle Architecture (LCA) milestone occurs at the boundary between which two RUP phases?",
+    "question": "In the RUP Elaboration phase, which modeling tools and diagrams are specifically developed to establish the architectural view of the solution components?",
     "options": {
-      "A": "Elaboration and Construction",
-      "B": "Inception and Elaboration",
-      "C": "Construction and Transition",
-      "D": "Transition and Production"
+      "A": "Unified Modeling Language (UML) use cases and class hierarchies",
+      "B": "Earned Value Analysis graphs and burn-down charts",
+      "C": "PRINCE2 product breakdown structures and exception reports",
+      "D": "Single-point deterministic duration estimates"
     },
     "correctAnswer": "A",
-    "explanation": "The Lifecycle Architecture (LCA) milestone terminates the Elaboration phase; passing it gives approval to proceed into Construction.",
+    "explanation": "The course book explicitly states that in the Elaboration phase, specific diagrams are developed using the Unified Modeling Language (UML), including use cases for identifying actors and interactions, and class hierarchies if an object-oriented language is used.",
     "whyOthersAreWrong": [
-      "Inception and Elaboration are separated by the Lifecycle Objectives milestone.",
-      "Construction and Transition are separated by the Initial Operational Capability milestone.",
-      "Transition and Production are separated by the Product Release milestone."
+      "EVM graphs are cost controlling tools in Unit 3, not RUP architectural modeling tools.",
+      "PRINCE2 product breakdown structures belong to Unit 6, not RUP Elaboration.",
+      "Single-point deterministic estimates do not constitute UML architectural views."
     ],
-    "examTrap": "LCA requires an executable architectural baseline. If architecture is unstable, the project should not enter Construction.",
+    "examTrap": "Elaboration is where requirements and UML architectural views (use cases and class hierarchies) are established, along with risk identification.",
     "source": {
       "type": "course-book",
       "unit": 5,
       "section": "5.1",
-      "topic": "Rational Unified Process (RUP)"
+      "topic": "Rational Unified Process (RUP)",
+      "page": 101
     },
     "sourceUnit": 5,
     "sourceSection": "5.1",
-    "sourceTopic": "RUP Milestones: Lifecycle Architecture",
+    "sourceTopic": "RUP Elaboration Phase Modeling",
     "unit": 5,
     "unitId": 5,
     "subjectId": "itpm"

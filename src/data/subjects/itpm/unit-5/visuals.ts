@@ -2,7 +2,7 @@ export const unit5Visuals = [
   {
     "id": "itpm-u5-vis-001",
     "title": "RUP Lifecycle Phases & Gate Milestones",
-    "description": "Sequential progression through Inception (LCO), Elaboration (LCA), Construction (IOC), Transition (PR), plus Production and Disposal.",
+    "description": "Sequential progression through Inception, Elaboration, Construction, Transition, plus optional Production and Disposal.",
     "type": "lifecycle",
     "unit": 5
   },
