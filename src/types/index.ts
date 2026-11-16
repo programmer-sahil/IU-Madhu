@@ -1,6 +1,13 @@
 export type UnitId = 1 | 2 | 3 | 4 | 5 | 6;
 
-export type QuestionPriority = 'VERY HIGH PRIORITY' | 'HIGH PRIORITY' | 'POSSIBLE SHORT QUESTION' | 'POSSIBLE LONG QUESTION';
+export type QuestionPriority = 
+  | 'VERY HIGH PRIORITY' 
+  | 'HIGH PRIORITY' 
+  | 'POSSIBLE SHORT QUESTION' 
+  | 'POSSIBLE LONG QUESTION'
+  | 'MEDIUM PRIORITY'
+  | 'LOW PRIORITY'
+  | 'MASTER 20-MARK COMPREHENSIVE QUESTION';
 
 export type QuestionMarks = 1 | 6 | 8 | 20;
 
@@ -29,6 +36,17 @@ export interface DescriptiveQuestion {
   keywords: string[];
   commonMistakes: string;
   selfCheckChecklist: string[];
+  type?: string;
+  calculationSteps?: string[];
+  source?: SourceMetadata;
+}
+
+export interface SourceMetadata {
+  type: 'course-book' | 'revision-pack';
+  unit: number;
+  section: string;
+  topic: string;
+  page?: number;
 }
 
 export interface MCQOption {
@@ -38,7 +56,10 @@ export interface MCQOption {
 
 export interface MCQ {
   id: string;
+  subjectId?: string;
   unit: UnitId;
+  unitId?: UnitId;
+  section?: string;
   topic: string;
   question: string;
   options: {
@@ -49,8 +70,18 @@ export interface MCQ {
   };
   correctAnswer: 'A' | 'B' | 'C' | 'D';
   explanation: string;
-  memoryTip: string;
-  difficulty: 'Foundation' | 'Intermediate' | 'Mastery';
+  memoryTip?: string;
+  difficulty: 'Foundation' | 'Intermediate' | 'Mastery' | 'easy' | 'medium' | 'hard';
+  whyOthersAreWrong?: string[];
+  examTrap?: string;
+  type?: string;
+  calculationSteps?: string[];
+  source?: SourceMetadata;
+  sourceUnit?: number;
+  sourceSection?: string;
+  sourceTopic?: string;
+  sourcePage?: number;
+  page?: number;
 }
 
 export interface Flashcard {
@@ -60,6 +91,9 @@ export interface Flashcard {
   back: string;
   category: string;
   examTip?: string;
+  type?: string;
+  calculationSteps?: string[];
+  source?: SourceMetadata;
 }
 
 export interface ActiveRecallQuestion {
@@ -132,7 +166,7 @@ export interface MasterComparison {
     aspect: string;
     itemA: string;
     itemB: string;
-    keyDifference: string;
+    keyDifference?: string;
   }[];
   examTrap: string;
   memoryRule: string;
@@ -206,3 +240,6 @@ export interface StudentProgress {
   }[];
   notes: Record<string, string>;
 }
+
+export * from './subject';
+

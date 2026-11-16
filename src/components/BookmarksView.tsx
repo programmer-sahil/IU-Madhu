@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useProgress } from '../hooks/useProgress';
+import { useSubject } from '../contexts/SubjectContext';
 import { 
   Bookmark, BookmarkCheck, Trash2, BookOpen, Layers, Hash, 
   HelpCircle, ArrowRight, FileText 
@@ -11,6 +12,7 @@ interface BookmarksViewProps {
 
 export const BookmarksView: React.FC<BookmarksViewProps> = ({ onNavigateToUnit }) => {
   const { progress, toggleBookmark } = useProgress();
+  const { currentSubject } = useSubject();
   const [filterType, setFilterType] = useState<string>('all');
 
   const filtered = progress.bookmarkedItems.filter(item => {
@@ -19,18 +21,21 @@ export const BookmarksView: React.FC<BookmarksViewProps> = ({ onNavigateToUnit }
   });
 
   return (
-    <div className="space-y-6 max-w-4xl mx-auto">
+    <div className="space-y-6 max-w-4xl mx-auto pb-12">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
         <div>
-          <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
-            Personal Revision Vault
-          </span>
+          <div className="flex items-center gap-2 mb-1">
+            <span className="font-mono text-xs px-2 py-0.5 rounded font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+              {currentSubject.courseCode}
+            </span>
+            <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">{currentSubject.title}</span>
+          </div>
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mt-1">
             My Bookmarked Revision List
           </h2>
-          <p className="text-xs text-slate-500">
-            Saved exam questions, MCQs, flashcards, and high-yield numbers stored in your browser.
+          <p className="text-xs text-slate-500 mt-0.5">
+            Saved exam questions, MCQs, flashcards, and high-yield numbers for {currentSubject.title}.
           </p>
         </div>
 
@@ -54,13 +59,13 @@ export const BookmarksView: React.FC<BookmarksViewProps> = ({ onNavigateToUnit }
 
       {/* Bookmarks List */}
       {filtered.length === 0 ? (
-        <div className="glass-card rounded-2xl p-12 text-center space-y-3">
-          <Bookmark className="w-12 h-12 text-slate-300 dark:text-slate-700 mx-auto" />
-          <h4 className="font-bold text-slate-900 dark:text-white">
-            No Bookmarks Saved Yet
-          </h4>
-          <p className="text-xs text-slate-500 max-w-sm mx-auto">
-            Click the bookmark icon on any exam question, MCQ, flashcard, or number to save it to your personal revision queue.
+        <div className="glass-card rounded-2xl p-12 text-center text-slate-500 space-y-3">
+          <Bookmark className="w-10 h-10 mx-auto text-slate-400" />
+          <h3 className="text-base font-bold text-slate-900 dark:text-white">
+            No Bookmarks in This Subject Yet
+          </h3>
+          <p className="text-xs max-w-sm mx-auto leading-relaxed">
+            Click the bookmark icon on any exam question, MCQ, flashcard, or key number while revising {currentSubject.title} to save it to your personal revision list.
           </p>
         </div>
       ) : (
@@ -68,47 +73,36 @@ export const BookmarksView: React.FC<BookmarksViewProps> = ({ onNavigateToUnit }
           {filtered.map(item => (
             <div
               key={item.id}
-              className="premium-card rounded-[14px] p-4 flex items-center justify-between gap-4 hover:border-indigo-400 dark:hover:border-indigo-500/50 transition-all text-xs"
+              className="glass-card rounded-xl p-4 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4 hover:border-indigo-400 transition-all text-xs"
             >
-              <div className="flex items-center gap-3">
-                <span className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
-                  item.type === 'question' ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300' :
-                  item.type === 'mcq' ? 'bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300' :
-                  item.type === 'flashcard' ? 'bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300' :
-                  'bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300'
-                }`}>
-                  {item.type === 'question' && <FileText className="w-4 h-4" />}
-                  {item.type === 'mcq' && <HelpCircle className="w-4 h-4" />}
-                  {item.type === 'flashcard' && <Layers className="w-4 h-4" />}
-                  {item.type === 'number' && <Hash className="w-4 h-4" />}
-                </span>
-
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-bold text-indigo-600 font-mono">Unit {item.unit}</span>
-                    <span className="text-slate-300">•</span>
-                    <span className="capitalize text-slate-500 font-semibold">{item.type}</span>
-                  </div>
-                  <h4 className="font-bold text-slate-900 dark:text-white text-sm line-clamp-1 mt-0.5">
-                    {item.title}
-                  </h4>
+              <div className="space-y-1 flex-1 min-w-0">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-indigo-600 font-bold bg-indigo-50 dark:bg-indigo-950 px-2 py-0.5 rounded text-[10px]">
+                    Unit {item.unit}
+                  </span>
+                  <span className="text-[10px] uppercase font-bold text-slate-400">
+                    {item.type}
+                  </span>
                 </div>
+                <h4 className="text-sm font-semibold text-slate-900 dark:text-white truncate">
+                  {item.title}
+                </h4>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 shrink-0">
                 {onNavigateToUnit && (
                   <button
                     onClick={() => onNavigateToUnit(item.unit)}
-                    className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 hover:text-indigo-600"
-                    title="Go to Unit"
+                    className="p-2 rounded-lg text-slate-400 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-800"
+                    title="Open Unit"
                   >
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 )}
                 <button
                   onClick={() => toggleBookmark(item)}
-                  className="p-2 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-600"
-                  title="Remove Bookmark"
+                  className="p-2 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-slate-100 dark:hover:bg-slate-800"
+                  title="Remove bookmark"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>

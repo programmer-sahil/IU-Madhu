@@ -1,7 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { Flashcard, UnitId } from '../types';
-import { getAllFlashcards, allUnits } from '../data/units';
 import { useProgress } from '../hooks/useProgress';
+import { useSubject } from '../contexts/SubjectContext';
+import { useSubjectData } from '../hooks/useSubjectData';
 import { 
   Check, X, RotateCw, Shuffle, Lightbulb, Bookmark, BookmarkCheck,
   ChevronLeft, ChevronRight, Layers, Award
@@ -13,7 +14,9 @@ interface FlashcardDeckProps {
 
 export const FlashcardDeck: React.FC<FlashcardDeckProps> = ({ initialUnit }) => {
   const { progress, markFlashcard, toggleBookmark, isBookmarked } = useProgress();
-  const allCards = useMemo(() => getAllFlashcards(), []);
+  const { currentSubject } = useSubject();
+  const { getAllFlashcards } = useSubjectData();
+  const allCards = useMemo(() => getAllFlashcards(), [getAllFlashcards]);
 
   const [selectedUnit, setSelectedUnit] = useState<number>(initialUnit || 0); // 0 = all units
   const [filterMode, setFilterMode] = useState<'all' | 'needsRevision'>('all');
@@ -66,18 +69,65 @@ export const FlashcardDeck: React.FC<FlashcardDeckProps> = ({ initialUnit }) => 
     setCurrentIndex(Math.floor(Math.random() * filteredCards.length));
   };
 
-  return (
-    <div className="space-y-6 max-w-2xl mx-auto">
-      {/* Top Header & Unit Filter */}
-      <div className="glass-card rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <Layers className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-          <h3 className="font-bold text-slate-900 dark:text-white text-base">
-            Active Recall Flashcards
-          </h3>
+  if (allCards.length === 0) {
+    return (
+      <div className="space-y-6">
+        <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b border-slate-200 dark:border-slate-800">
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-xs px-2 py-0.5 rounded font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+                {currentSubject.courseCode}
+              </span>
+              <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">Flashcards</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-1">
+              {currentSubject.title}
+            </h2>
+          </div>
         </div>
 
+        <div className="glass-card rounded-2xl p-12 text-center space-y-4">
+          <div className="w-16 h-16 rounded-2xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mx-auto border border-indigo-200/60 dark:border-indigo-800/60">
+            <Layers className="w-8 h-8" />
+          </div>
+          <div className="space-y-1 max-w-md mx-auto">
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+              Flashcard Deck In Preparation
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+              Interactive 3D revision flashcards for {currentSubject.title} ({currentSubject.courseCode}) are being compiled according to official university examination syllabi.
+            </p>
+          </div>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+            <span>0 items available</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-6 max-w-3xl mx-auto">
+      {/* Subject Header */}
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b border-slate-200 dark:border-slate-800">
+        <div>
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-xs px-2 py-0.5 rounded font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+              {currentSubject.courseCode}
+            </span>
+            <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">Flashcards</span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-1">
+            {currentSubject.title}
+          </h2>
+        </div>
+      </div>
+
+      {/* Control / Filter Bar */}
+      <div className="glass-card rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        {/* Unit Selector */}
         <div className="flex items-center gap-2">
+          <span className="text-xs font-medium text-slate-500">Unit:</span>
           <select
             value={selectedUnit}
             onChange={(e) => {
@@ -85,189 +135,189 @@ export const FlashcardDeck: React.FC<FlashcardDeckProps> = ({ initialUnit }) => 
               setCurrentIndex(0);
               setIsFlipped(false);
             }}
-            className="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             <option value={0}>All Units ({allCards.length})</option>
-            {allUnits.map(u => (
+            {currentSubject.units.map(u => (
               <option key={u.id} value={u.id}>
-                Unit {u.id}: {u.title.split(':')[0]}
+                Unit {u.id}: {u.shortTitle || u.title.split(':')[0]}
               </option>
             ))}
           </select>
+        </div>
 
+        {/* Filter Toggle & Shuffle */}
+        <div className="flex items-center gap-2">
           <button
             onClick={() => {
               setFilterMode(prev => prev === 'all' ? 'needsRevision' : 'all');
               setCurrentIndex(0);
               setIsFlipped(false);
             }}
-            className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
+            className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
               filterMode === 'needsRevision'
-                ? 'bg-amber-100 border-amber-300 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300'
-                : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300'
+                ? 'bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-200 border border-amber-300 dark:border-amber-700 font-bold'
+                : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'
             }`}
           >
-            Weak Cards ({progress.needsRevisionFlashcards.length})
+            Needs Revision ({progress.needsRevisionFlashcards.length})
           </button>
 
           <button
             onClick={handleShuffle}
-            className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500"
-            title="Shuffle"
+            disabled={filteredCards.length <= 1}
+            className="p-1.5 rounded-lg text-slate-500 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-40"
+            title="Shuffle Deck"
           >
             <Shuffle className="w-4 h-4" />
           </button>
         </div>
       </div>
 
-      {/* Card Counter & Mastery Stats */}
-      <div className="flex items-center justify-between text-xs text-slate-500 px-2 font-mono">
+      {/* Progress Counter & Mastery Indicator */}
+      <div className="flex items-center justify-between text-xs text-slate-500 px-1">
         <span>
           Card {filteredCards.length > 0 ? currentIndex + 1 : 0} of {filteredCards.length}
         </span>
-        <div className="flex items-center gap-4">
-          <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-semibold">
+        <div className="flex items-center gap-3">
+          <span className="text-emerald-600 font-semibold flex items-center gap-1">
             <Check className="w-3.5 h-3.5" /> {progress.masteredFlashcards.length} Mastered
           </span>
-          <span className="flex items-center gap-1 text-amber-600 dark:text-amber-400 font-semibold">
-            <X className="w-3.5 h-3.5" /> {progress.needsRevisionFlashcards.length} Needs Revise
+          <span className="text-amber-600 font-semibold flex items-center gap-1">
+            <RotateCw className="w-3.5 h-3.5" /> {progress.needsRevisionFlashcards.length} To Revise
           </span>
         </div>
       </div>
 
-      {/* 3D Flip Card */}
+      {/* The 3D Flippable Flashcard */}
       {filteredCards.length === 0 ? (
-        <div className="glass-card rounded-3xl p-12 text-center space-y-3">
-          <Award className="w-10 h-10 text-emerald-500 mx-auto" />
-          <h4 className="font-bold text-slate-900 dark:text-white">
-            No Flashcards in this Filter
-          </h4>
-          <p className="text-xs text-slate-500">
-            You have no cards marked for revision in this selection!
-          </p>
-          <button
-            onClick={() => setFilterMode('all')}
-            className="px-4 py-2 rounded-lg text-xs font-bold bg-indigo-600 text-white"
-          >
-            View All Cards
-          </button>
+        <div className="glass-card rounded-2xl p-12 text-center text-slate-500 space-y-2">
+          <Layers className="w-8 h-8 mx-auto text-slate-400" />
+          <h4 className="font-bold text-slate-800 dark:text-white">No flashcards in this filter</h4>
+          <p className="text-xs">Switch to "All Units" or reset the revision filter.</p>
         </div>
       ) : currentCard ? (
-        <div className="perspective-1000">
-          <div
+        <div className="space-y-4">
+          <div 
             onClick={() => setIsFlipped(prev => !prev)}
-            className={`cursor-pointer min-h-[300px] sm:min-h-[340px] w-full rounded-[22px] p-6 sm:p-8 relative transition-transform duration-500 transform-style-3d shadow-card-dark flex flex-col justify-between border ${
-              isFlipped 
-                ? 'rotate-y-180 border-indigo-400/80 dark:border-indigo-500/60 bg-white dark:bg-[#151E31]' 
-                : 'border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#111827]'
-            }`}
+            className="perspective-1000 cursor-pointer min-h-[300px] sm:min-h-[340px]"
           >
-            {/* Front Side */}
-            <div className={`space-y-4 ${isFlipped ? 'hidden' : 'block'}`}>
-              <div className="flex items-center justify-between">
-                <span className="px-2.5 py-1 rounded-[6px] text-xs font-semibold bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-[#A5B4FC] border border-indigo-200/60 dark:border-indigo-800/60 font-mono text-[11px]">
-                  Unit {currentCard.unit} • {currentCard.category}
-                </span>
-                <span className="text-xs text-slate-400 flex items-center gap-1 font-mono text-[11px]">
-                  <RotateCw className="w-3.5 h-3.5" /> Tap to Flip
-                </span>
+            <div className={`relative w-full h-full min-h-[300px] sm:min-h-[340px] rounded-2xl p-6 sm:p-8 border transition-all duration-500 transform-style-3d shadow-md hover:shadow-xl ${
+              isFlipped 
+                ? 'rotate-y-180 bg-indigo-50/90 dark:bg-slate-800/90 border-indigo-300 dark:border-indigo-700' 
+                : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-indigo-300'
+            }`}>
+              {/* Front Side */}
+              <div className={`absolute inset-0 p-6 sm:p-8 flex flex-col justify-between backface-hidden ${isFlipped ? 'hidden' : 'flex'}`}>
+                <div className="flex items-center justify-between text-xs text-slate-400">
+                  <span className="font-mono font-bold text-indigo-600 bg-indigo-50 dark:bg-indigo-950 px-2 py-0.5 rounded">
+                    Unit {currentCard.unit} • {currentCard.category}
+                  </span>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleBookmark({
+                        id: currentCard.id,
+                        type: 'flashcard',
+                        title: currentCard.front,
+                        unit: currentCard.unit
+                      });
+                    }}
+                    className="p-1 rounded text-slate-400 hover:text-indigo-600"
+                  >
+                    {isBookmarked(currentCard.id) ? (
+                      <BookmarkCheck className="w-4 h-4 text-indigo-600" />
+                    ) : (
+                      <Bookmark className="w-4 h-4" />
+                    )}
+                  </button>
+                </div>
+
+                <div className="my-auto text-center space-y-3">
+                  <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider block">
+                    Question / Term
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-relaxed">
+                    {currentCard.front}
+                  </h3>
+                </div>
+
+                <div className="text-center text-xs text-slate-400 flex items-center justify-center gap-1.5">
+                  <RotateCw className="w-3.5 h-3.5" /> Click anywhere to reveal explanation
+                </div>
               </div>
 
-              <div className="py-8 sm:py-12 text-center">
-                <h4 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-[#F8FAFC] tracking-tight font-heading">
-                  {currentCard.front}
-                </h4>
-              </div>
+              {/* Back Side (Flipped) */}
+              <div className={`absolute inset-0 p-6 sm:p-8 flex flex-col justify-between rotate-y-180 backface-hidden ${isFlipped ? 'flex' : 'hidden'}`}>
+                <div className="flex items-center justify-between text-xs">
+                  <span className="font-mono font-bold text-indigo-600 dark:text-indigo-300 bg-white/60 dark:bg-slate-900/60 px-2 py-0.5 rounded">
+                    Academic Truth & Definition
+                  </span>
+                  <span className="text-slate-400 text-[11px]">Click to flip back</span>
+                </div>
 
-              <div className="text-center text-xs text-slate-400 italic">
-                Tap card or press Space to reveal answer
-              </div>
-            </div>
+                <div className="my-auto space-y-4">
+                  <p className="text-sm sm:text-base text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
+                    {currentCard.back}
+                  </p>
 
-            {/* Back Side */}
-            <div className={`space-y-4 ${isFlipped ? 'block rotate-y-180' : 'hidden'}`}>
-              <div className="flex items-center justify-between">
-                <span className="px-2.5 py-1 rounded-[6px] text-xs font-semibold bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-[#A5B4FC] border border-indigo-200/60 dark:border-indigo-800/60 text-[11px]">
-                  Academic Definition & Recall
-                </span>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleBookmark({
-                      id: currentCard.id,
-                      type: 'flashcard',
-                      title: currentCard.front,
-                      unit: currentCard.unit
-                    });
-                  }}
-                  className="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-400 hover:text-indigo-500"
-                >
-                  {isBookmarked(currentCard.id) ? (
-                    <BookmarkCheck className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                  ) : (
-                    <Bookmark className="w-4 h-4" />
+                  {currentCard.examTip && (
+                    <div className="p-3 rounded-xl bg-white/70 dark:bg-slate-900/70 border border-indigo-200/60 dark:border-indigo-900/60 text-xs flex items-start gap-2 text-indigo-900 dark:text-indigo-200">
+                      <Lightbulb className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-bold block text-[10px] uppercase tracking-wider">Exam Tip</span>
+                        {currentCard.examTip}
+                      </div>
+                    </div>
                   )}
-                </button>
-              </div>
+                </div>
 
-              <div className="py-4">
-                <p className="text-xs sm:text-sm md:text-base text-slate-800 dark:text-[#F8FAFC] font-normal leading-relaxed whitespace-pre-line">
-                  {currentCard.back}
-                </p>
-                {currentCard.examTip && (
-                  <div className="mt-4 p-3.5 rounded-[12px] bg-amber-500/10 border border-amber-500/30 text-xs text-amber-900 dark:text-amber-200 font-medium flex items-center gap-2">
-                    <Lightbulb className="w-4 h-4 text-amber-500 shrink-0" />
-                    <span>Exam Tip: {currentCard.examTip}</span>
-                  </div>
-                )}
-              </div>
-
-              <div className="text-center text-xs text-slate-400 italic">
-                Tap to flip back
+                <div className="text-center text-[11px] text-slate-400">
+                  Rate your recall below to advance
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ) : null}
 
-      {/* Bottom Know It / Need Revision Buttons (Thumb-friendly touch targets) */}
-      {filteredCards.length > 0 && (
-        <div className="flex items-center justify-between gap-3 pt-2">
-          <button
-            onClick={handlePrev}
-            className="p-3.5 rounded-[10px] bg-white dark:bg-[#151E31] border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-[#CBD5E1] hover:bg-slate-100 min-h-[48px] min-w-[48px] flex items-center justify-center transition-colors"
-            title="Previous Card"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-
-          <div className="flex-1 flex gap-3">
+          {/* Action Buttons: Know it vs Need Revision */}
+          <div className="flex items-center justify-center gap-4 pt-2">
             <button
               onClick={handleNeedRevision}
-              className="flex-1 py-3 px-4 rounded-[10px] text-xs font-semibold bg-amber-500/10 hover:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30 flex items-center justify-center gap-2 transition-all min-h-[48px]"
+              className="flex-1 max-w-[200px] py-3 rounded-xl text-xs font-bold border border-amber-300 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-200 hover:bg-amber-100 flex items-center justify-center gap-2 transition-all shadow-sm"
             >
-              <X className="w-4 h-4 text-amber-500" />
-              Review Again
+              <X className="w-4 h-4 text-rose-500" />
+              Need Revision
             </button>
 
             <button
               onClick={handleKnowIt}
-              className="flex-1 py-3 px-4 rounded-[10px] text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm flex items-center justify-center gap-2 transition-all min-h-[48px]"
+              className="flex-1 max-w-[200px] py-3 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center gap-2 transition-all shadow-sm"
             >
-              <Check className="w-4 h-4" />
-              Know It
+              <Check className="w-4 h-4 text-white" />
+              I Know This
             </button>
           </div>
 
-          <button
-            onClick={handleNext}
-            className="p-3.5 rounded-[10px] bg-white dark:bg-[#151E31] border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-[#CBD5E1] hover:bg-slate-100 min-h-[48px] min-w-[48px] flex items-center justify-center transition-colors"
-            title="Next Card"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
+          {/* Navigation Arrows */}
+          <div className="flex items-center justify-between pt-2">
+            <button
+              onClick={handlePrev}
+              className="p-2 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <span className="text-xs font-mono text-slate-400">
+              Space / Arrow keys to navigate
+            </span>
+            <button
+              onClick={handleNext}
+              className="p-2 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
-      )}
+      ) : null}
     </div>
   );
 };

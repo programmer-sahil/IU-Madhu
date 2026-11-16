@@ -1,0 +1,952 @@
+=== PAGE 1 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+IU INTERNATIONAL UNIVERSITY OF APPLIED SCIENCES
+IT PROJECT MANAGEMENT
+DLMBITPAM01
+UNIT 6 - ORGANIZING LARGE PROJECTS
+COMPLETE CHEAT SHEET + SUMMARY NOTES + IMPORTANT Q&A + 2 MOCK TESTS
+Exam-focused revision pack based on the IU course book
+MEMORIZE THESE FIRST - THE UNIT 6 CORE
+• PMBOK: 47 processes -> 5 process groups -> 10 knowledge areas. Learn the 5 groups and all 10 areas exactly.
+• PRINCE2: 7 principles + 7 themes + 7 processes. Also learn the 4 management levels.
+• Multi-project management: Portfolio -> Program -> Project; know what success, planning, change and monitoring mean at 
+each level.
+• PMO types: Supportive = low control; Controlling = moderate control/compliance; Directive = high control/direct 
+management.
+• Scaled agile: Scrum of Scrums (SoS), Large-Scale Scrum (LeSS), and SAFe. Know what each adds to ordinary Scrum.
+• LeSS: one product backlog, one product owner, one sprint, one definition of done, one increment; learn its 9 principles.
+• SAFe: 5 core competencies and CALMR = Culture, Automation, Lean flow, Measurement, Recovery.
+• Method selection: Predictive vs adaptive; iterative vs incremental vs agile; factor in requirements, resources, 
+hardware/software dependency, structure and culture.
+Made by SK Sahil
+Use this as the primary Unit 6 revision source. Rehearse the bold lists until they can be reproduced without looking.
+
+
+=== PAGE 2 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+1. ONE-PAGE MEMORY MAP - REVISE THIS BEFORE THE EXAM
+A. PMBOK - 47 / 5 / 10
+• 5 process groups: Initiating -> Planning -> Executing -> Monitoring & Controlling -> Closing.
+• 10 knowledge areas: Integration, Scope, Time, Cost, Quality, Human Resource, Communications, Risk, Procurement, 
+Stakeholder.
+• Process counts emphasized in the course book: Initiating 2; Planning 24; Executing 8; Monitoring & Controlling 11; Closing 
+2.
+B. PRINCE2 - 7 / 7 / 7 + 4 LEVELS
+• Principles: Continued business justification; Focus on products; Manage by stages; Manage by exception; Defined 
+roles/responsibilities; Tailor to environment; Learn from experience.
+• Themes: Business Case; Organization; Quality; Plans; Risk; Change; Progress.
+• Processes: Starting Up; Directing; Initiating; Controlling a Stage; Managing Product Delivery; Managing a Stage Boundary; 
+Closing.
+• 4 levels: Corporate/Program/Management -> Project Board -> Project Manager -> Team Leaders/Teams.
+C. LARGE-PROJECT STRUCTURE
+• Portfolio = strategic umbrella and aggregate investment/value view.
+• Program = coordinated group of related projects/other work to achieve a broader benefit.
+• Project = detailed execution focused on objectives, constraints and stakeholders.
+• PMO = shared-resource, standards, coaching, compliance, audit and cross-project communication structure.
+D. SCALED AGILE
+• SoS: small Scrum teams (<12 in the course book) + ambassador coordination meeting.
+• LeSS: scale Scrum as one Scrum rather than adding a management layer; one backlog/PO/sprint/increment/DoD.
+• SAFe: portfolio-program-team hierarchy, ARTs, DevOps, lean systems, lean portfolio management and enterprise 
+coordination.
+• CALMR: Culture - Automation - Lean flow - Measurement - Recovery.
+E. METHOD-SELECTION RULE
+• Stable/clear requirements, high safety/security, strong hardware dependence -> predictive/plan-driven is usually stronger.
+• Unclear/changing requirements, limited resources, rapid feedback needs -> adaptive/agile is usually stronger.
+• Most real projects may combine approaches. The course book explicitly recognizes mixed/customized methods.
+Highest-yield final-exam questions
+1. Explain the PMBOK structure: 47 processes, five process groups and ten knowledge areas.
+2. Explain PRINCE2 using its seven principles, seven themes and seven processes.
+3. Compare PMBOK and PRINCE2 for large-project management.
+4. Differentiate portfolio, program and project management and explain the role/types of PMO.
+5. Explain the challenges of scaling agile and compare Scrum of Scrums, LeSS and SAFe.
+6. Explain SAFe core competencies, ARTs and CALMR.
+7. Explain how organizational structure/culture and requirement uncertainty affect methodology selection.
+8. Differentiate predictive, adaptive, iterative, incremental and agile approaches with suitable project examples.
+
+
+=== PAGE 3 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+2. PMBOK GUIDE - COMPLETE SUMMARY
+In the course book, the Project Management Body of Knowledge (PMBOK) is presented as PMI's widely recognized guide for 
+project management, particularly for large projects. It organizes project-management knowledge into processes. Each process is 
+viewed through a systems logic of inputs, tools/techniques and outputs.
+2.1 The five PMBOK process groups
+Process group
+Course-book emphasis
+Key outputs / purpose
+Initiating (2 processes)
+Authorize a new project or phase; define 
+initial scope and financial resources; identify 
+stakeholders.
+Project charter; stakeholder register; shared 
+vision and authorization.
+Planning (24)
+Establish scope, refine objectives and define 
+the course of action. Progressive elaboration 
+may require feedback loops.
+Project management plan; detailed scope, 
+schedule, cost and subsidiary plans.
+Executing (8)
+Complete the work in the project 
+management plan; coordinate 
+people/resources and stakeholder 
+expectations.
+Project work and deliverables; implementation 
+of planned activities.
+Monitoring & Controlling (11)
+Track, review and regulate performance; 
+identify variances and initiate approved 
+changes.
+Performance information; 
+corrective/preventive action; change control.
+Closing (2)
+Finalize activities and formally close the 
+project/phase/contract; may also cover 
+premature closure.
+Formal acceptance, lessons learned, updated 
+documents, released resources.
+2.2 Ten PMBOK knowledge areas - memorize as 5 + 5
+Knowledge area
+What it manages
+Integration
+Unifies and coordinates processes; resource choices, trade-offs and 
+interdependencies.
+Scope
+Ensures only required project work is included; distinguish project 
+scope from product scope.
+Time
+Plans schedule, durations, dependencies and timely completion.
+Cost
+Planning, estimating, budgeting, financing, funding and cost control.
+Quality
+Policies, objectives and responsibilities so the solution satisfies quality 
+expectations; supports continuous improvement.
+Human Resource
+Organizes and manages the temporary project team; trust, 
+commitment, culture and performance.
+Communications
+Plans, creates, distributes, stores, retrieves, controls and disposes 
+project information; creates transparency.
+Risk
+Plans, identifies, analyzes, responds to and controls uncertainty; 
+increase positive and reduce negative event impact.
+Procurement
+Documents procurement decisions, identifies vendors, solicits offers, 
+awards/administers/amends contracts.
+Stakeholder
+Identifies, engages, manages and controls 
+people/groups/organizations affected by or able to affect the project.
+PMBOK EXAM TRAPS
+• Monitoring & Controlling is not just a late phase; it can run in parallel with much of the project.
+• Closing can mean normal completion, cancellation, postponement, abortion, or transfer/handover.
+• Project scope = work needed to deliver the solution; product scope = features/functions of the solution.
+• PMBOK process groups can overlap and interact; the guide does not force one rigid life cycle.
+
+
+=== PAGE 4 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+3. PRINCE2 - 7 PRINCIPLES, 7 THEMES, 7 PROCESSES
+PRINCE2 stands for Projects in Controlled Environments. The course book presents it as a process-based methodology widely 
+used in Europe and as a UK-government standard approach. Its core characteristics are continued business justification, a 
+defined project organization, product-based planning, tailoring, and dividing work into manageable stages.
+3.1 Four levels of PRINCE2 management
+Level
+Main actor
+Main responsibility
+Corporate / Program / Management
+Senior organizational level
+Instigates and frames the project.
+Directing
+Project Board
+Main project decision-making body; directs 
+without doing daily management.
+Managing
+Project Manager
+Runs the project day to day and controls 
+stages.
+Delivering
+Team leaders and teams
+Create/deliver the project solution and report 
+progress.
+3.2 Seven PRINCE2 principles
+1. Continued business justification: A documented reason for the project must remain valid and be reviewed throughout the 
+life cycle.
+2. Focus on products: Outputs/products are clearly defined and agreed; product descriptions guide planning, change and 
+acceptance.
+3. Manage by stages: Break the project into controllable time periods and approve movement from one stage to the next.
+4. Manage by exception: Each level delegates within tolerances and escalates only when boundaries are forecast to be 
+breached.
+5. Defined roles and responsibilities: Everyone should understand their role and the business, user and supplier perspectives.
+6. Tailor to suit the project environment: Adapt PRINCE2 to project size, complexity, importance, capability and risk.
+7. Learn from experience: Use and record lessons from past/current projects; the lessons log supports reuse of knowledge.
+3.3 Seven PRINCE2 themes
+Theme
+What to remember
+Business Case
+Maintain business justification and benefits review planning.
+Organization
+Define roles/responsibilities and communication management 
+strategy; project board represents business/user/supplier interests.
+Quality
+Quality system, quality assurance, quality planning and quality control; 
+captured in a quality management strategy.
+Plans
+Project plan + stage plans + team plan; exception plan may recover 
+from tolerance breaches.
+Risk
+Identify, assess, plan, implement and communicate; assign risk 
+owner; address threats through avoid/reduce/mitigate/transfer/accept.
+Change
+Control issues and changes through appropriate authority and 
+configuration/change-control procedures.
+Progress
+Control performance using tolerances and event/time-driven controls; 
+escalate deviations when thresholds are breached.
+3.4 Seven PRINCE2 processes
+Process
+Purpose
+Starting up a project
+Investigate feasibility, design/appoint project management team, 
+ensure information is available, plan next stage.
+Directing a project
+Project board decides whether to start, move stage, or close; monitors 
+progress and exception situations.
+Initiating a project
+Develop project plan, confirm foundations/business case and commit 
+resources for the first stage.
+Controlling a stage
+Daily management: delegate work, report, manage risk/issues, gather 
+progress, watch exceptions, correct deviations.
+Managing product delivery
+Authorize, create, accept and deliver work; ensure deliverables meet 
+requirements and progress is assessed.
+Managing a stage boundary
+Review achievements/status of the current stage, plan the next stage 
+and address exceptions.
+Closing a project
+Prepare closure/end report, archive documents, hand over product 
+and release/transfer responsibilities.
+
+
+=== PAGE 5 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+PRINCE2 QUICK DIFFERENCE FROM PMBOK
+• PMBOK is presented as more detailed and knowledge/process oriented; PRINCE2 is broader and higher-level with 
+standardized roles/responsibilities.
+• PRINCE2 gives particularly strong emphasis to business justification, products, stages, tolerances and management by 
+exception.
+• Both are process-based and suited especially to large projects, but they structure the body of knowledge differently.
+
+
+=== PAGE 6 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+4. MULTI-PROJECT MANAGEMENT, PORTFOLIOS, PROGRAMS AND PMO
+Large organizations usually run many projects concurrently. Managing each independently can exhaust scarce resources and 
+reduce responsiveness. The course book therefore organizes multiple projects under portfolios and programs so resources, 
+governance and strategic alignment can be coordinated.
+4.1 Portfolio vs Program vs Project
+Level
+Primary focus
+Planning / monitoring / success
+Portfolio
+Strategic objectives, investment choices, 
+aggregate capability and resource allocation.
+Monitors broad strategic changes, portfolio 
+risk and resource allocation. Success = 
+aggregate investment performance and 
+benefits.
+Program
+Coordinates related projects/subprograms 
+and related work to achieve shared benefits.
+Develops overall program plans and manages 
+cross-project goals/constraints/benefits. 
+Success = degree to which the program 
+satisfies its specific need.
+Project
+Delivers a specific result within constraints 
+and stakeholder expectations.
+Detailed life-cycle plans and day-to-day 
+monitoring/control. Success = meeting 
+constraints and satisfying stakeholders.
+4.2 Project Management Office (PMO)
+The PMO standardizes governance processes and enables sharing of resources, methodologies, tools and techniques. It may 
+report to executive management and can act as a project stakeholder, including recommending or terminating projects that do 
+not align with business objectives.
+PMO type
+Control level
+What it does
+Supportive
+Low
+Consultative support, templates, best 
+practices, training, information and lessons 
+learned; acts as repository.
+Controlling
+Moderate
+Provides support but also requires 
+compliance with frameworks, templates, tools 
+and governance.
+Directive
+High
+Directly manages projects and detailed 
+project activity.
+PMO FUNCTIONS TO MEMORIZE
+• Manage shared resources across projects.
+• Develop project-management methodologies, best practices and standards.
+• Provide coaching, mentoring, training and oversight.
+• Monitor compliance through project audits.
+• Manage policies, procedures, templates and organizational process assets.
+• Coordinate communication across projects.
+
+
+=== PAGE 7 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+5. AGILE SOFTWARE PROCESSES IN LARGE PROJECTS
+The course book treats a large agile project primarily as one involving more than one independently operating team. Scaling 
+agile can improve customer focus, speed, cost and responsiveness, but introduces longer planning horizons, 
+authority/delegation issues, team synchronization, delivery integration and coordination challenges.
+WHY SCALING AGILE IS HARD
+• Large projects may have 12-18 month roadmaps while team backlogs are refined every 2-3 weeks.
+• Higher-level change can arrive after teams have already completed detailed work, causing waste.
+• Product-owner authority may conflict with program/portfolio responsibilities.
+• Very large groups reduce the ability to self-organize and synchronize integration.
+• Multiple teams create interfaces, dependencies and coordination overhead.
+5.1 Scrum of Scrums (SoS)
+• Divide the large project into multiple small agile/Scrum teams; the course book describes teams as fewer than 12 people.
+• Each team selects an ambassador, often its Scrum Master, to join a cross-team Scrum of Scrums meeting.
+• Meetings are short (about 15 minutes) and can occur daily or at a frequency the teams choose.
+• Focus: team status, cross-team obstacles, interface/integration issues, responsibilities and work boundaries.
+5.2 Large-Scale Scrum (LeSS)
+LeSS attempts to scale the purpose and simplicity of Scrum. The course book characterizes it as an organizational design 
+framework. Unlike SoS, LeSS views the large-scale setup as one Scrum rather than an additional management layer above 
+multiple Scrums.
+LeSS - KEEP THESE SHARED
+• One product backlog.
+• One product owner.
+• One sprint.
+• One definition of done for all teams.
+• One increment at the end.
+• Cross-functional teams.
+• Sprint planning has Part 1 and Part 2.
+LeSS nine core principles
+1. Transparency: Tangible done items, short cycles, common definitions, working together and reducing fear.
+2. More with less: More responsibility/customer focus/team ownership with fewer rules, artifacts and defined processes.
+3. Whole-product focus: One backlog, product owner, shippable product and sprint regardless of team count.
+4. Customer-centric: Learn real customer problems and use meaningful feedback loops.
+5. Continuous improvement: Pursue ongoing improvement experiments.
+6. Lean thinking: Eliminate waste, reduce partially done work, deliver quickly and delay decisions when useful to reduce uncertainty.
+7. Systems thinking: Optimize the whole system and use system modeling rather than local optimization.
+8. Empirical process control: Inspect and adapt product, process, behavior and organizational design instead of ritualistically following 
+context-free practices.
+9. Queuing theory: Use queue behavior to manage queue sizes, WIP, multitasking, work packages and variability.
+5.3 Scaled Agile Framework (SAFe)
+SAFe scales agile across portfolio, program and team/project levels. The course book emphasizes decentralizing decision-
+making, economic thinking, systems thinking, variability/change and incremental learning while still coordinating at enterprise 
+scale.
+SAFe core competency (course book)
+What to remember
+Lean-agile leadership
+Leaders model lean-agile values, coach/teach, empower teams and 
+improve the system of work.
+Team and technical agility
+Cross-functional, technically competent teams; common goals; quality/test-
+first mindset.
+DevOps and release on demand
+Development and operations collaborate for rapid, frequent value delivery 
+through the continuous-delivery pipeline and ARTs.
+Business solutions and lean systems engineering
+Coordinate large multidisciplinary actors and build scalable solutions using 
+flow, architecture, solution intent and multiple planning horizons.
+Lean portfolio management (LPM)
+Lean strategy/investment funding, agile portfolio operations and lean 
+governance aligned to business strategy.
+
+
+=== PAGE 8 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+CALMR - DEVOPS MEMORY WORD
+• C - Culture: shared responsibility for fast value delivery.
+• A - Automation: reduce human intervention, improve speed and quality.
+• L - Lean flow: limit WIP, reduce batch size, manage queues.
+• M - Measurement: measure value flow to learn and improve.
+• R - Recovery: enable fast rollback/fix-forward for production issues.
+SAFe TERMS THAT CAN APPEAR IN MCQs
+• ART (Agile Release Train): cross-functional agile teams operating on a shared cadence to deliver value.
+• Solution train: integrates the work of ARTs for a complete large solution.
+• Solution intent: repository for NFRs, interfaces, decompositions, requirements assignments, architectural guidelines and 
+other alignment information.
+• Multiple planning horizons: detailed near-term plans, less-detailed long-term plans - "plan to what you know."
+• Business epics: large customer-facing initiatives; enabler epics: advance the architectural runway.
+• At program level the course book describes 8-12 week iterative cycles and an innovation-planning sprint for innovation, 
+inspection and adaptation.
+5.4 SoS vs LeSS vs SAFe - exam comparison
+Framework
+Scaling idea
+Best phrase to remember
+Scrum of Scrums
+Add cross-team ambassador coordination 
+above small Scrum teams.
+Coordinate interfaces, obstacles, boundaries 
+and integration.
+LeSS
+Treat large development as one Scrum with 
+shared product structures.
+Scale Scrum with less added structure; one 
+backlog/PO/sprint/increment/DoD.
+SAFe
+Coordinate team, program and portfolio levels 
+with lean-agile structures.
+Enterprise scaling with ARTs, DevOps, 
+systems engineering and lean portfolio 
+management.
+
+
+=== PAGE 9 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+6. SELECTING THE APPROPRIATE PROJECT MANAGEMENT METHOD
+The course book rejects a one-size-fits-all methodology. Method selection should reflect the project and the organization. Off-
+the-shelf methods may be convenient, but tailoring or combining approaches may fit the organization better if sufficient time and 
+resources are available.
+6.1 Organizational factors
+Factor
+Exam note
+Functional structure
+Specialization, clear functional control and economies of scale; but cross-
+functional coordination/accountability can be weak and silos can cause 
+friction.
+Matrix structure
+Dual relationships by function and project/product; enables cross-
+functional coordination and scarce-skill sharing, but may create reporting 
+friction and transient-team motivation issues.
+Culture - power
+Often small organizations; informal communication and norms of a central 
+power source.
+Culture - role
+Often large bureaucratic organizations; coordination through clear roles/job 
+descriptions.
+Culture - task
+Often matrix-type organizations; power lies at the intersection of roles.
+Culture - person
+Often professional organizations; the individual is the key element.
+Mission / Vision
+Mission = reason for existence; vision = where the organization wishes to 
+be. Methodology should align with both.
+6.2 Predictive vs adaptive
+Approach
+Core idea
+Best fit / limitation
+Predictive
+Anticipate next steps and plan in advance.
+Best when requirements are clear/stable, 
+strong interdependencies exist, or 
+hardware/safety make changes expensive. 
+Accurate resource planning, but inflexible.
+Adaptive
+Treat change as central and use flexible 
+processes.
+Best when requirements are incomplete, 
+unclear or expected to change, or resources 
+are limited. Fast response, less certainty 
+upfront.
+6.3 Iterative vs incremental vs agile
+Model
+How functionality grows
+Iterative
+All required features appear early at low but usable fidelity; later 
+iterations increase fidelity until full.
+Incremental
+A few features are implemented at full fidelity first; later increments 
+add more full-fidelity features.
+Agile (as described in the book)
+Starts with few features at low but functional fidelity; repeatedly 
+refines and adds features until the complete solution reaches full 
+fidelity.
+TEXTBOOK EXAMPLES
+• Space-shuttle IT / complex hardware-software system -> predictive is favored because midstream hardware requirement 
+changes are costly and slow.
+• Computer game with frequent user feedback -> adaptive is favored because the solution can be refined as feedback 
+arrives.
+• Most projects can combine methods; even predictive methods may have feedback loops, while a Scrum sprint can contain 
+waterfall-like internal activities.
+
+
+=== PAGE 10 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+7. RAPID REVISION TABLES - NIGHT-BEFORE-EXAM
+7.1 Numbers and lists that must be exact
+Item
+Exact list / number
+PMBOK
+47 processes; 5 groups; 10 knowledge areas.
+PMBOK groups
+Initiating, Planning, Executing, Monitoring & Controlling, Closing.
+PMBOK process counts
+2, 24, 8, 11, 2.
+PRINCE2
+7 principles; 7 themes; 7 processes; 4 management levels.
+PRINCE2 themes
+Business Case, Organization, Quality, Plans, Risk, Change, Progress.
+PMO types
+Supportive, Controlling, Directive.
+Scaled agile
+Scrum of Scrums, LeSS, SAFe.
+LeSS
+9 principles.
+SAFe (course book)
+5 core competencies.
+CALMR
+Culture, Automation, Lean flow, Measurement, Recovery.
+7.2 Commonly confused concepts
+Do not confuse
+Difference
+Project scope vs product scope
+Project scope = work to deliver solution; product scope = solution 
+features/functions.
+Project vs program vs portfolio
+Specific result vs coordinated related work/benefits vs strategic 
+aggregate investment/value.
+Supportive vs controlling vs directive PMO
+Low control/advice vs moderate control/compliance vs high 
+control/direct management.
+SoS vs LeSS
+SoS adds ambassador coordination; LeSS treats the scale as one 
+Scrum rather than an extra hierarchy.
+Iterative vs incremental
+All features early at low fidelity vs few features at full fidelity added 
+over time.
+Predictive vs adaptive
+Plan change away / stabilize requirements vs expect and respond to 
+change.
+PRINCE2 principle vs theme vs process
+Guiding rule vs management aspect vs activity flow.
+Manage by stages vs manage by exception
+Stage-based control vs delegation within tolerances with escalation 
+only when needed.
+7.3 Final 15-minute recall checklist
+1. Can I write all 5 PMBOK process groups in order?
+2. Can I write all 10 PMBOK knowledge areas?
+3. Can I explain Initiating, Planning, Executing, Monitoring/Controlling and Closing in one line each?
+4. Can I write all 7 PRINCE2 principles?
+5. Can I write all 7 PRINCE2 themes?
+6. Can I write all 7 PRINCE2 processes?
+7. Can I explain portfolio, program and project in one sentence each?
+8. Can I distinguish all three PMO types?
+9. Can I explain SoS, LeSS and SAFe without notes?
+10. Can I write all 9 LeSS principles?
+11. Can I expand CALMR?
+12. Can I name the 5 SAFe competencies from the course book?
+13. Can I explain predictive, adaptive, iterative, incremental and agile?
+14. Can I give one textbook example for predictive and one for adaptive?
+15. Can I justify why a hybrid/customized approach may be appropriate?
+
+
+=== PAGE 11 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+8. IMPORTANT SAQ - SHORT QUESTIONS WITH MODEL ANSWERS
+Q. What is PMBOK?
+Answer: A PMI guide that organizes recognized project-management knowledge, processes, tools and practices. In this course 
+book it is structured around 47 processes, five process groups and ten knowledge areas.
+Q. Name the five PMBOK process groups.
+Answer: Initiating; Planning; Executing; Monitoring and Controlling; Closing.
+Q. What is progressive elaboration?
+Answer: The progressive detailing and refinement of the project management plan as more information becomes available and 
+feedback loops clarify the work.
+Q. What is project integration management?
+Answer: The knowledge area that identifies, combines, unifies and coordinates project-management processes and activities, 
+including resource trade-offs and interdependencies.
+Q. What is the difference between project scope and product scope?
+Answer: Project scope is the work required to deliver the solution; product scope is the set of features and functions that 
+characterize the solution.
+Q. What does PRINCE2 stand for?
+Answer: Projects in Controlled Environments.
+Q. What is manage by exception?
+Answer: A PRINCE2 principle where each level delegates authority within defined tolerances and escalation occurs when those 
+boundaries are expected to be breached.
+Q. What is the purpose of the PRINCE2 business case theme?
+Answer: To create and maintain the project business justification and keep expected benefits aligned with stakeholder 
+expectations.
+Q. What is a portfolio?
+Answer: A strategic grouping of projects/programs managed together to align investment, resources and benefits with 
+organizational objectives.
+Q. What is a program?
+Answer: A coordinated group of related projects, subprograms and sometimes related work managed together to achieve 
+broader benefits and goals.
+Q. What is a PMO?
+Answer: A Project Management Office is a centralized unit that standardizes governance, shares 
+resources/tools/methodologies, supports projects and monitors compliance.
+Q. What are the three PMO types?
+Answer: Supportive, Controlling and Directive.
+Q. What is Scrum of Scrums?
+Answer: A scaled-Scrum coordination approach where small Scrum teams send ambassadors to a cross-team meeting to 
+resolve dependencies, interfaces and integration issues.
+Q. How does LeSS differ from SoS?
+Answer: LeSS treats large-scale development as one Scrum with shared backlog, product owner, sprint, definition of done and 
+increment; SoS adds a coordination layer/meeting between separate Scrum teams.
+Q. What does CALMR stand for?
+Answer: Culture, Automation, Lean flow, Measurement, Recovery.
+Q. What is an ART in SAFe?
+Answer: An Agile Release Train is a coordinated group of cross-functional agile teams that operates on a shared cadence to 
+deliver value through a continuous-delivery pipeline.
+Q. What is solution intent?
+Answer: A SAFe repository containing information such as NFRs, interfaces, decompositions, requirement allocations and 
+architectural guidance needed to keep teams aligned.
+Q. What is the difference between predictive and adaptive methods?
+Answer: Predictive methods plan work and resources in advance under stable requirements; adaptive methods expect change 
+and use flexible processes to respond to evolving or unclear requirements.
+Q. What is an iterative model?
+Answer: A model where all required features are available early at low usable fidelity and are refined across iterations until full 
+fidelity.
+Q. What is an incremental model?
+Answer: A model where a small set of features is completed at full fidelity first, and later increments add more full-fidelity 
+features.
+
+
+=== PAGE 12 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+
+
+=== PAGE 13 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+9. MOST IMPORTANT 6-MARK QUESTIONS - MODEL ANSWERS
+Q (6 marks). Explain the five PMBOK process groups.
+Answer: Initiating authorizes the project/phase and establishes the charter and stakeholders. Planning defines scope/objectives 
+and progressively elaborates the management plan. Executing performs the planned work and coordinates people/resources. 
+Monitoring and Controlling tracks performance, measures variances and controls approved change. Closing formally completes 
+the project/phase/contract, secures acceptance, captures lessons and releases resources.
+Q (6 marks). Explain the three PMO types.
+Answer: A Supportive PMO has low control and provides templates, best practices, training and lessons learned. A Controlling 
+PMO adds moderate control by requiring compliance with frameworks, tools and governance. A Directive PMO has high control 
+and directly manages projects. All can support shared resources, standards, audits and cross-project communication.
+Q (6 marks). Explain PRINCE2 manage by stages and manage by exception.
+Answer: Manage by stages divides a project into controllable time periods and requires review/approval before moving to the 
+next stage. Manage by exception delegates authority from one management level to the next within defined tolerances. Normal 
+work proceeds without escalation; a forecast breach of scope, cost, schedule or other tolerance is escalated upward. Together, 
+they provide control without excessive senior-management intervention.
+Q (6 marks). Differentiate portfolio, program and project management.
+Answer: Portfolio management aligns investments and resources with strategy and judges aggregate benefits/performance. 
+Program management coordinates related projects and work to achieve broader goals and benefits, providing overall leadership 
+and managing cross-project change. Project management controls detailed execution and day-to-day work to deliver a specific 
+result within constraints and satisfy stakeholders.
+Q (6 marks). Explain the main challenges of scaling agile to large projects.
+Answer: Large projects have longer planning horizons than team iterations, creating refinement mismatch and possible wasted 
+work. Authority can conflict between product owners and program/portfolio leadership. Multiple teams create dependencies, 
+interface/integration issues and synchronization needs. Large team sizes weaken self-organization. Distributed/virtual teams and 
+compliance concerns add coordination overhead. Therefore tailored scaling frameworks such as SoS, LeSS or SAFe are used.
+Q (6 marks). Compare Scrum of Scrums and LeSS.
+Answer: SoS divides the project into small Scrum teams and uses ambassadors in cross-team meetings to coordinate status, 
+interfaces, obstacles and integration. LeSS instead treats large-scale development as one Scrum and keeps one backlog, 
+product owner, sprint, definition of done and increment across teams. SoS therefore adds a coordination mechanism; LeSS tries 
+to scale Scrum with minimal additional structure.
+Q (6 marks). Explain CALMR in SAFe.
+Answer: Culture creates shared responsibility for value delivery. Automation reduces human intervention and improves 
+speed/quality. Lean flow limits WIP, reduces batch size and manages queues. Measurement tracks value flow and supports 
+learning/continuous improvement. Recovery enables fast correction of production problems through rollback or fix-forward 
+capabilities.
+Q (6 marks). Explain when predictive and adaptive methods are appropriate.
+Answer: Predictive methods suit clear, stable requirements, strong interdependencies, regulated/safety-critical work and 
+hardware-heavy systems where late change is expensive. They support detailed advance planning but are inflexible. Adaptive 
+methods suit incomplete, unclear or rapidly changing requirements and cases needing frequent user feedback. They respond 
+faster to change but provide less up-front certainty. A hybrid may be selected when both conditions exist.
+
+
+=== PAGE 14 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+10. 20-MARK HIGH-YIELD ANSWER BLUEPRINTS
+10.1 PMBOK vs PRINCE2 - 20 marks
+Write in this order
+• 1) Define both approaches and state that both support structured management of large projects.
+• 2) PMBOK: 47 processes, 5 process groups and 10 knowledge areas; briefly explain the five groups.
+• 3) PRINCE2: 7 principles, 7 themes and 7 processes; mention 4 management levels and management by exception.
+• 4) Compare structure: PMBOK = detailed body of knowledge/process matrix; PRINCE2 = broader standardized method 
+with explicit roles, stages, products and tolerances.
+• 5) Discuss strengths: PMBOK breadth/detail; PRINCE2 business justification, common vocabulary and control-by-
+exception.
+• 6) Conclude that the selected/tailored approach must suit project size, environment, regulation and organizational culture.
+10.2 Scaling agile in a large enterprise - 20 marks
+Write in this order
+• 1) Explain why ordinary small-team agile becomes difficult at scale: planning horizons, dependencies, authority and 
+synchronization.
+• 2) Explain SoS: team ambassadors, short coordination meetings, interfaces/integration/obstacles.
+• 3) Explain LeSS: one Scrum, shared product structures and its major principles.
+• 4) Explain SAFe: team-program-portfolio coordination, five competencies, ARTs and CALMR.
+• 5) Compare when each is useful and discuss trade-offs: added coordination vs agility/autonomy.
+• 6) Close with tailoring and alignment to enterprise strategy and customer value.
+10.3 Choosing a methodology for a complex IT project - 20 marks
+Write in this order
+• 1) State that one-size-fits-all selection is inappropriate.
+• 2) Analyze requirement clarity/change, project size, resources, safety/regulation, hardware/software dependency and 
+planning horizon.
+• 3) Analyze organization: functional vs matrix structure, culture, mission and vision.
+• 4) Compare predictive vs adaptive; explain iterative, incremental and agile variants.
+• 5) Use textbook-style examples: hardware-heavy/high-safety system -> predictive; user-feedback-driven game/software -> 
+adaptive.
+• 6) Recommend a tailored or hybrid approach where justified and explain how governance, team understanding and 
+commitment support success.
+
+
+=== PAGE 15 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+11. BEST QUESTIONS TO PRACTICE BEFORE THE FINAL EXAM
+These are high-yield questions derived from the concepts and contrasts emphasized in Unit 6. Exact final-exam wording cannot 
+be guaranteed, so use them as priority practice rather than a prediction.
+Very high priority
+1. Describe the PMBOK framework and explain its five process groups and ten knowledge areas.
+2. Describe PRINCE2 and explain its seven principles, seven themes and seven processes.
+3. Compare PMBOK and PRINCE2 as approaches for large IT projects.
+4. Explain multi-project management using portfolio, program and project levels; include PMO types and functions.
+5. Why is agile difficult to scale? Compare Scrum of Scrums, LeSS and SAFe.
+6. Explain SAFe using its five core competencies, ARTs, CALMR and lean portfolio management.
+7. Explain how to select a project-management methodology using predictive/adaptive and organizational factors.
+High priority 6-mark / SAQ areas
+1. Five PMBOK process groups and process counts.
+2. Ten PMBOK knowledge areas.
+3. PRINCE2 management-by-exception.
+4. PRINCE2 management levels.
+5. Seven PRINCE2 themes.
+6. Supportive vs Controlling vs Directive PMO.
+7. Portfolio vs Program vs Project.
+8. SoS ambassadors and purpose.
+9. Nine LeSS principles.
+10. SAFe five competencies.
+11. CALMR.
+12. Business epics vs enabler epics.
+13. Predictive vs adaptive.
+14. Iterative vs incremental vs agile.
+15. Functional vs matrix organizational structures.
+
+
+=== PAGE 16 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+MOCK TEST 1 - UNIT 6: ORGANIZING LARGE PROJECTS
+FULL MARKS: 90  |  UNIT 6 ONLY  |  Suggested practice time: 90 minutes
+Instructions
+• Section A: 40 MCQs x 1 mark = 40 marks. Choose one best answer.
+• Section B: Answer all 5 short/structured questions x 6 marks = 30 marks.
+• Section C: Answer the 20-mark integrated question = 20 marks.
+• No answer key is included in this mock. Attempt without notes first.
+SECTION A - MCQ (40 x 1 = 40 marks)
+1. In the course book, PMBOK is organized into how many project-management processes?
+A) 42   B) 47   C) 49   D) 54
+2. Which is the first PMBOK process group?
+A) Planning   B) Initiating   C) Executing   D) Closing
+3. Which PMBOK process group contains 24 processes in the course book?
+A) Planning   B) Executing   C) Initiating   D) Closing
+4. Which process group tracks, reviews and regulates project performance?
+A) Closing   B) Executing   C) Monitoring and Controlling   D) Initiating
+5. Which item is a PMBOK knowledge area?
+A) Product backlog   B) Integration management   C) Sprint review   D) Manage by stages
+6. Project scope primarily concerns:
+A) Features of the final product only   B) Work required to deliver the solution   C) Only customer expectations   D) Only the project 
+budget
+7. Which PMBOK knowledge area handles vendors and contracts?
+A) Procurement   B) Communication   C) Integration   D) Quality
+8. The PMBOK risk-management objective is to:
+A) Eliminate all uncertainty   B) Increase positive and decrease negative event impacts   C) Avoid all project change   D) Transfer 
+every risk
+9. The acronym PRINCE2 expands to:
+A) Projects in Controlled Environments   B) Processes in Complex Enterprises   C) Project Integration and Control Environment   D) 
+Programs in Controlled Execution
+10. How many PRINCE2 principles are presented?
+A) 5   B) 6   C) 7   D) 10
+11. Which is a PRINCE2 principle?
+A) Manage by exception   B) Continuous deployment   C) Earned value   D) Critical path
+12. Which PRINCE2 principle emphasizes clear outputs?
+A) Focus on products   B) Learn from experience   C) Manage by stages   D) Tailor to environment
+13. In PRINCE2, the main decision-making body is the:
+A) Scrum Master   B) Project Board   C) PMO only   D) Team Leader
+14. Day-to-day PRINCE2 project management is performed mainly by the:
+A) Project Board   B) Project Manager   C) Corporate level   D) Customer
+15. Which is a PRINCE2 theme?
+A) Progress   B) Sprint   C) Iteration   D) Velocity
+16. Which PRINCE2 theme includes quality assurance, planning and control?
+A) Plans   B) Quality   C) Change   D) Business Case
+17. Which PRINCE2 process is concerned with daily management of a stage?
+A) Controlling a Stage   B) Starting Up a Project   C) Directing a Project   D) Closing a Project
+18. Which process occurs at the end of a major PRINCE2 stage?
+A) Managing a Stage Boundary   B) Managing Product Delivery   C) Starting Up   D) Initiating
+19. A portfolio is primarily organized around:
+A) Only one deliverable   B) Strategic objectives and aggregate value   C) Only daily tasks   D) One sprint
+20. A program typically coordinates:
+A) Related projects and work for broader benefits   B) One developer only   C) A single task   D) Only external suppliers
+21. Which PMO type exerts the lowest control?
+A) Directive   B) Controlling   C) Supportive   D) Executive
+22. Which PMO type directly manages projects?
+A) Supportive   B) Directive   C) Repository   D) Advisory
+23. A core PMO function is to:
+A) Avoid standardization   B) Manage shared resources and standards   C) Remove project audits   D) Eliminate governance
+24. A large agile project is primarily challenging because it involves:
+A) No teams   B) Multiple independently operating teams   C) No customer feedback   D) No dependencies
+25. Scrum of Scrums usually coordinates teams through:
+A) A project charter   B) Ambassadors   C) A quality gate   D) A contract board
+
+
+=== PAGE 17 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+26. A Scrum of Scrums meeting mainly addresses:
+A) Only individual salaries   B) Interfaces, integration and obstacles   C) Only procurement   D) Only business cases
+27. LeSS is best described in the course book as a(n):
+A) Accounting method   B) Organizational design framework   C) Cost-estimation formula   D) Procurement standard
+28. Which is shared across teams in LeSS?
+A) Separate product owner per team   B) One product backlog   C) Different definitions of done   D) Different sprints
+29. Which is a LeSS principle?
+A) Whole-product focus   B) Manage by exception   C) Cost baseline   D) Product charter
+30. SAFe explicitly considers which hierarchy?
+A) Only team level   B) Portfolio, program and project/team levels   C) Only portfolio level   D) Only supplier level
+31. Which is a SAFe core competency in the course book?
+A) Lean-agile leadership   B) Quality gate management   C) PERT estimation   D) Product charter management
+32. In CALMR, the A stands for:
+A) Adaptation   B) Automation   C) Authority   D) Alignment
+33. In CALMR, Recovery emphasizes:
+A) More documentation   B) Fast fixes such as rollback/fix-forward   C) Longer annual planning   D) Higher WIP
+34. ART stands for:
+A) Agile Release Train   B) Adaptive Resource Team   C) Automated Risk Transfer   D) Agile Review Task
+35. Business epics primarily target:
+A) Large customer-facing initiatives   B) Only architectural runway   C) Individual daily tasks   D) PMO audits
+36. Enabler epics primarily support:
+A) Architectural runway   B) Customer invoices   C) Project closure   D) Team payroll
+37. A predictive method is generally strongest when requirements are:
+A) Unclear and volatile   B) Clear and stable   C) Unknown   D) Ignored
+38. An adaptive approach is generally useful when requirements are:
+A) Fixed permanently   B) Incomplete or expected to change   C) Legally frozen   D) Fully implemented
+39. An iterative model in the course book first provides:
+A) All features at low usable fidelity   B) Few features at full fidelity   C) No functionality   D) Only documentation
+40. A matrix organization is characterized by:
+A) No reporting relationships   B) Dual relationships by function and project/product   C) Only functional silos   D) No specialization
+SECTION B - 6-MARK QUESTIONS (5 x 6 = 30 marks)
+41. Explain the five PMBOK process groups and state the main purpose of each.  [6]
+42. Explain any six PRINCE2 principles and show how they support project control.  [6]
+43. Differentiate portfolio, program and project management.  [6]
+44. Compare Supportive, Controlling and Directive PMOs.  [6]
+45. Explain Scrum of Scrums and Large-Scale Scrum (LeSS), highlighting the main difference between them.  [6]
+SECTION C - 20-MARK QUESTION
+46. A multinational organization is replacing several legacy IT systems through a large program involving many teams, 
+strict governance, shared resources and requirements that may change as users test early releases. Senior 
+management wants formal control and strategic alignment, while development teams want agile feedback cycles. Using 
+Unit 6 concepts, recommend and justify an appropriate project-management approach. Your answer must integrate 
+PMBOK/PRINCE2 ideas, portfolio-program-project governance, PMO responsibilities, scaled agile options 
+(SoS/LeSS/SAFe), and predictive/adaptive or hybrid method selection.  [20]
+
+
+=== PAGE 18 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+MOCK TEST 2 - UNIT 6: ORGANIZING LARGE PROJECTS
+FULL MARKS: 90  |  UNIT 6 ONLY  |  Suggested practice time: 90 minutes
+Instructions
+• Section A: 40 MCQs x 1 mark = 40 marks. Choose one best answer.
+• Section B: Answer all 5 short/structured questions x 6 marks = 30 marks.
+• Section C: Answer the 20-mark integrated question = 20 marks.
+• Attempt this paper after Mock 1 and revise only the areas you cannot recall.
+SECTION A - MCQ (40 x 1 = 40 marks)
+1. Which PMBOK group formally completes a project, phase or contractual obligation?
+A) Planning   B) Closing   C) Executing   D) Initiating
+2. Which PMBOK group usually consumes most project resources and budget?
+A) Executing   B) Closing   C) Initiating   D) Stakeholder
+3. Which knowledge area unifies processes and manages interdependencies?
+A) Integration   B) Time   C) Procurement   D) Quality
+4. Which knowledge area ensures timely project completion?
+A) Time management   B) Risk management   C) Stakeholder management   D) Human resource management
+5. Which knowledge area includes timely creation, distribution and control of project information?
+A) Communications   B) Cost   C) Scope   D) Procurement
+6. Known project risks may be assigned:
+A) Only a lessons log   B) Contingency reserves   C) No response   D) Only a sprint
+7. Which knowledge area identifies and engages people or groups affected by the project?
+A) Stakeholder management   B) Time management   C) Cost management   D) Quality management
+8. PMBOK process groups are assumed in practice to:
+A) Never overlap   B) Overlap and interact as project needs require   C) Run only once   D) Exclude iteration
+9. Which PRINCE2 principle requires a valid reason for the project throughout its life cycle?
+A) Continued business justification   B) Focus on products   C) Manage by stages   D) Defined roles
+10. Which principle emphasizes lessons logs?
+A) Learn from experience   B) Manage by exception   C) Tailor to environment   D) Focus on products
+11. Manage by exception depends strongly on:
+A) Tolerances and escalation   B) No delegation   C) Daily board control   D) No reporting
+12. Which PRINCE2 theme produces/maintains business justification?
+A) Business Case   B) Progress   C) Quality   D) Change
+13. Which PRINCE2 theme defines communication among stakeholder groups?
+A) Organization   B) Plans   C) Progress   D) Risk
+14. An exception plan is associated most directly with which PRINCE2 theme?
+A) Plans   B) Quality   C) Organization   D) Business Case
+15. Which PRINCE2 theme uses identify, assess, plan, implement and communicate?
+A) Risk   B) Progress   C) Change   D) Plans
+16. Which PRINCE2 theme is centered on change authority and configuration/change control?
+A) Change   B) Progress   C) Business Case   D) Quality
+17. Which PRINCE2 process is led by the Project Board and provides overall direction?
+A) Directing a Project   B) Controlling a Stage   C) Managing Product Delivery   D) Closing a Project
+18. Which PRINCE2 process prepares the end project report and handover?
+A) Closing a Project   B) Starting Up   C) Initiating   D) Managing a Stage Boundary
+19. Portfolio success is judged mainly by:
+A) Daily task completion   B) Aggregate investment performance and benefits   C) One sprint velocity   D) One work package
+20. Program success is judged mainly by:
+A) Degree to which the program satisfies its need   B) Only budget variance   C) Only stakeholder count   D) Only code volume
+21. Project success at the lower level focuses on:
+A) Aggregate portfolio return only   B) Constraints and stakeholder satisfaction   C) Enterprise culture only   D) Annual strategy only
+22. Which PMO type requires compliance but does not necessarily directly manage every project?
+A) Controlling   B) Supportive   C) Directive   D) Informal
+23. Project audits are a typical activity of the:
+A) PMO   B) Customer only   C) Scrum ambassador only   D) Supplier only
+24. Large-scale agile roadmaps in the course book may span roughly:
+A) 1-2 days   B) 12-18 months   C) Only one sprint   D) No time horizon
+25. Team backlogs in large agile projects may be refined on a much shorter cycle of about:
+A) 2-3 weeks   B) 5 years   C) 18 months   D) 10 years
+26. In SoS, an ambassador is often the team's:
+A) Scrum Master   B) Accountant   C) Project sponsor   D) Procurement officer
+
+
+=== PAGE 19 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+27. LeSS uses how many product owners for the whole product?
+A) One   B) One per developer   C) One per task   D) None
+28. Which LeSS principle emphasizes optimizing the whole rather than parts?
+A) Systems thinking   B) More with less   C) Transparency   D) Queuing theory
+29. Which LeSS principle is concerned with WIP, multitasking and queue sizes?
+A) Queuing theory   B) Customer-centric   C) Whole-product focus   D) Transparency
+30. Which LeSS principle emphasizes waste reduction?
+A) Lean thinking   B) Manage by stages   C) Business justification   D) Procurement
+31. Which SAFe competency is at the highest portfolio level?
+A) Lean portfolio management   B) Team and technical agility   C) DevOps only   D) Quality planning
+32. CALMR measurement is intended to support:
+A) Learning and continuous improvement   B) No feedback   C) Annual-only control   D) Higher WIP
+33. A solution train in SAFe primarily:
+A) Integrates work of ARTs   B) Replaces all teams with one person   C) Creates contracts   D) Closes projects
+34. The SAFe phrase "plan to what you know" supports:
+A) Multiple planning horizons   B) No planning   C) Fixed annual detail only   D) One-time estimation
+35. The course book describes intentional architecture and emergent design mainly under:
+A) Architecting for scale and flexibility   B) Project closure   C) PRINCE2 business case   D) PMO audit
+36. A functional organizational structure can suffer in projects from:
+A) Cross-functional silos and weak coordination   B) Too much dual reporting   C) No specialization   D) No economies of scale
+37. A matrix structure can help by:
+A) Using scarce specialists across project teams   B) Eliminating all reporting lines   C) Preventing cross-functional work   D) 
+Removing project teams
+38. A predictive model is less suitable when:
+A) Requirements change rapidly   B) Requirements are fixed   C) Hardware changes are expensive   D) Safety is critical
+39. An incremental model first delivers:
+A) Few features at full fidelity   B) All features at low fidelity   C) No working features   D) Only requirements
+40. The course book ultimately recommends methodology selection based on:
+A) Fit to project and organization, including possible tailoring/hybridization   B) One method for every project   C) Only licensing cost 
+D) Only team preference
+SECTION B - 6-MARK QUESTIONS (5 x 6 = 30 marks)
+41. Explain all ten PMBOK knowledge areas briefly.  [6]
+42. Explain the seven PRINCE2 themes and their project-management purpose.  [6]
+43. Explain the major functions of a PMO and why it is valuable in a multi-project environment.  [6]
+44. Explain the five SAFe core competencies presented in the course book and expand CALMR.  [6]
+45. Differentiate predictive, adaptive, iterative, incremental and agile approaches.  [6]
+SECTION C - 20-MARK QUESTION
+46. A company must build a safety-sensitive platform combining hardware and software, but one customer-facing 
+application inside the platform will evolve through frequent user feedback. The company uses a matrix organization 
+and runs many projects through a PMO. Critically design a project-management approach for this situation. Compare 
+predictive and adaptive options, explain where PMBOK or PRINCE2 controls could be used, show how 
+portfolio/program/project governance and the PMO would coordinate resources, and evaluate whether SoS, LeSS or 
+SAFe should be used for the agile portion.  [20]
+
+
+=== PAGE 20 ===
+IU International University of Applied Sciences  |  IT Project Management - Unit 6  |  Made by SK Sahil
+FINAL MEMORY CHECK
+If she can reproduce the following without notes, Unit 6 is exam-ready:
+• PMBOK: 47 / 5 / 10 + process counts 2-24-8-11-2.
+• PRINCE2: 7 principles / 7 themes / 7 processes + 4 management levels.
+• Portfolio vs Program vs Project + Supportive/Controlling/Directive PMO.
+• SoS vs LeSS vs SAFe + 9 LeSS principles + 5 SAFe competencies + CALMR.
+• Predictive vs Adaptive + Iterative vs Incremental vs Agile + functional vs matrix structure.
+Made by SK Sahil
+IU International University of Applied Sciences - IT Project Management (DLMBITPAM01)
+
+

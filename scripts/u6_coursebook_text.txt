@@ -1,0 +1,983 @@
+=== PAGE 119 ===
+UNIT 6
+ORGANIZING LARGE PROJECTS
+STUDY GOALS
+Upon completion of this unit, you will have learned …
+–
+the purpose and characteristics of the Project Management Body of Knowledge guide.
+–
+the organization and structure of the PRINCE2 project management methodology.
+–
+how resources are allocated between multiple projects.
+–
+how agile methodologies can be applied to large projects.
+–
+the specifics of SoS, SAFe, and LeSS project management methodologies.
+–
+the criteria used for selecting a project management methodology.
+
+
+=== PAGE 120 ===
+6. ORGANIZING LARGE PROJECTS
+Introduction
+Managing a large project is a challenging endeavor that requires overcoming a confluence
+of factors like the fast pace of technological advances, increased regulation, increased
+competition that can come from any part of the world, volatility along the supply chain,
+etc. Managing an IT project is compounded by the fact that technological advances affect
+both the management of a project and its product—technology is used both as a tool and
+a solution. To respond to these challenges, organizations sort their project work into hier-
+archies with portfolio, program, and project levels, create centralized control structures
+like dedicated project management offices, and adopt or modify existing project manage-
+ment methodologies to accommodate their needs.
+In large IT projects, the system under development is typically broken down into individ-
+ual pieces that are assigned for further breakdown to individual teams and groups of
+teams. These teams create their own medium-level designs that break down into smaller
+pieces that are sent for coding. At that stage, more developers typically join the teams;
+similarly, as tasks are completed, some developers leave the teams. This creates “fluid”
+team structures that pose challenges for project managers in terms of cultivating the cul-
+ture they want. In some projects, multiple pieces can be assigned to a single team, requir-
+ing close and continuous cooperation of the team members (Martin et al., 2005a).
+6.1 PMBOK Guide
+The acceptance of project management as a profession signaled the need to formalize the
+field with principles, knowledge, processes, skills, tools, best practices, techniques, and
+the organization of the practitioners into professional societies and associations like the
+Project Management Institute, Inc. (PMI). In addition to bringing professionals together,
+the purpose of PMI (since becoming accredited as a standards developer by the American
+National Standards Institute in 1998) is to develop standards and guideline publications to
+advise and recommend best practices.
+The outcome of one such an initiative was the publication of the Project Management
+Body of Knowledge (PMBOK) which has become the de facto choice for project manage-
+ment (especially for large projects) in North America and a preferred choice in many other
+parts of the world. PMBOK describes the life cycle of a project and its management by con-
+sidering globally recognized standards and guides that professional project managers
+have identified as important for the successful execution of projects (Larson & Gray, 2015).
+The first two sections of the guide provide an introduction to general project management
+concepts while the remaining sections discuss the 47 logically grouped project manage-
+ment processes that form the guide to the project management body of knowledge. These
+sections typically follow a systems structure with inputs to a process, tools for accomplish-
+ing the work, and outputs.
+118
+
+
+=== PAGE 121 ===
+Figure 42: PMBOK Processes
+Source: created on behalf of IU (2019).
+119
+
+
+=== PAGE 122 ===
+Figure 43: PMBOK Processes
+Source: created on behalf of IU (2019).
+The 47 processes are organized into five process groups/phases: initiating, planning, exe-
+cuting, monitoring and controlling, and closing. These are similar to what we have seen in
+the waterfall and other life cycle methodologies. Based on typical factors and constraints,
+PMBOK further groups the project processes along ten knowledge areas: integration man-
+agement; scope management; time management; cost management; quality manage-
+ment; human resource management; communications management; risk management;
+procurement management; and stakeholder management.
+Figure 44: PMBOK Process Groups
+Source: created on behalf of IU (2019).
+The initiating process group includes two processes that are performed to define a new
+project (or a new phase of an existing project) by obtaining authorization to start the
+project or phase. Within this process, the initial scope and financial resources of the
+120
+
+
+=== PAGE 123 ===
+Project Charter
+Within a project, this is a
+statement of objectives
+that defines project goals
+as well as the roles and
+responsibilities of team
+members.
+project are defined as part of the “project charter.” Also, the internal and external stake-
+holders who will interact and influence the project direction are defined as part of the
+“stakeholder register.” The key purpose of the initiating phase is to ensure that stake-
+holder participation is assured and their expectations are aligned with the project’s pur-
+pose. Involving key stakeholders like sponsors, customers, etc. builds trust and a shared
+understanding of the meaning of “done” while also clarifying responsibilities and involve-
+ment. In essence, the vision of the project is formed and is visible to everyone in this
+phase.
+The planning process group includes 24 processes that are required to establish the scope
+of the project, refine the objectives, and define the course of action required to attain the
+objectives that the project was undertaken to achieve. Several feedback loops might be
+required to refine the plan and provide clear documentation. This is a phase that will have
+to be revisited according to the challenges and the needs of the project that might not
+have been evident at the beginning of the phase. This will result in a progressive detailing
+(also called progressive elaboration) of the project management plan with its core compo-
+nents of scope, schedule, cost, etc. One objective of this process group is to delineate the
+paths that the various project constituents will have to follow to ensure stakeholder sup-
+port and successful completion of the project or phase.
+The executing process group includes eight processes performed to complete the work
+defined in the project management plan as per the project specifications. It involves coor-
+dinating people and resources and managing stakeholder expectations as well as integrat-
+ing and performing the activities of the project in accordance with the project manage-
+ment plan. If deviations from the expected outcomes are observed, the phase will feed
+back to planning to update the plan and align it with stakeholder expectations. Changes
+may include activity durations, resources, and unanticipated risks. This phase typically
+accounts for most of the resources and budget; getting it right requires skills and expertise
+from both the project manager and the team.
+The monitoring and controlling process group includes eleven processes required to track,
+review, and regulate the progress and performance of the project; identify any areas in
+which changes to the plan are required; and initiate the corresponding changes. Variances
+from the plan are measured in this phase to provide insight to the project direction and
+progress that could trigger reactive measures to get everything under control. Actions in
+anticipation of potential problems and influencing the factors that would enable only
+approved changes are considered in this phase. Because the purpose of this phase is
+effectively a stance toward the overall project, the boundaries of the phase are extended
+to almost every aspect of the project.
+Finally, the closing process group includes two processes performed to finalize all activi-
+ties across all process groups to formally close the project, phase, or contractual obliga-
+tions. In addition to serving as verification that all project processes have been formally
+completed, this phase can also signal the premature closure of the project including
+project cancellation, abortion, and postponement in the case of unresolved critical issues.
+In specific cases, the closing phase could be the handover or transfer phase to another
+organizational unit or team. Typically, in the closing phase we ensure that the customer or
+sponsor formally accepts the solutions, post-mortem reviews of all project aspects are
+121
+
+
+=== PAGE 124 ===
+Product Scope
+This is defined as the
+characteristics and fea-
+tures of a product, it is
+usually considered during
+the design process.
+conducted, lessons learned are disseminated, appropriate organizational documents are
+updated, the team disassembles and the members return to their original departments or
+receive new assignments, and all project resources are released.
+Although the process phases/groups are distinct with well-defined interfaces, it is
+assumed that in practice they will overlap and interact as per the specifics of each project.
+Their purpose as per the PMBOK is to guide the application of project management knowl-
+edge and skills. In this sense, predictive and iterative approaches are welcomed, and how
+to proceed is up to the project manager and the team. For example, monitoring and con-
+trolling processes can take place parallel to other processes so they can be seen as a back-
+ground group of processes in the project life cycle.
+The other dimension along which processes are organized in PMBOK is the project knowl-
+edge, which is grouped into ten areas. They represent a complete set of concepts, terms,
+and activities that make up the professional field of project management. They are
+generic enough to cover every aspect of project activity and each knowledge area is inte-
+grated across the five process groups either as distinct or overlapping processes that inter-
+act with each other depending on the project specifics.
+The project integration management area includes six processes that span all process
+groups. They identify, define, combine, unify, and coordinate the various processes and
+project management activities within each group. In the project management context,
+integration includes characteristics of unification, consolidation, communication, and
+integrative actions that are crucial to controlled project execution through completion,
+successfully managing stakeholder expectations, and meeting requirements. Project inte-
+gration management includes making choices about resource allocation, making trade-
+offs among competing objectives and alternatives, and managing the interdependencies
+between the project management knowledge areas.
+The project scope management area includes six processes that are spread between the
+planning and the monitoring and controlling groups. They aim to ensure that only the
+work that is required to complete the project successfully is included. Under project
+scope, we include the work performed to deliver the solution and not necessarily the fea-
+tures and functions that characterize the solution which is often referred to as “product
+scope.” Completion of the former is measured against the project management plan; the
+latter is measured against the product requirements.
+The project time management area includes seven processes that are, like the project
+scope, spread between the planning and the monitoring and controlling groups. These
+processes ensure that the project will be completed in a timely manner by applying tools
+and techniques to develop the project schedule including durations, dependencies, and
+other planning information. In small projects, developing the project schedule and esti-
+mating the required resources might be seen as a single process that can be performed by
+one person in a relatively short amount of time. In PMBOK, these processes are considered
+separate because the tools and techniques for each one of them are different.
+122
+
+
+=== PAGE 125 ===
+The project cost management area includes four processes that also spread between the
+planning and the monitoring and controlling groups. They address any aspects related to
+project cost, including planning, estimating, budgeting, financing, funding, managing, and
+controlling (to ensure the project is completed within the approved budget). Additionally,
+the recurring costs of using, maintaining, and supporting the project solution will be
+required in many instances. In small projects, these activities can be seen as a single activ-
+ity that one person typically undertakes; in larger projects, they are seen as separate, pri-
+marily because they require different skillsets, tools, and techniques. The stakeholders’
+view of cost should be considered here as it might vary according to their interests—for
+example, the cost of a resource can be different at the planning, acquisition, and delivery
+times.
+The project quality management knowledge area includes one process for each of the
+planning, executing, and monitoring and controlling groups. It includes activities that
+determine quality policies, objectives, and responsibilities to ensure the project solution
+satisfies the quality standards set by the project stakeholders. Continuous process
+improvement and quality standards are supported and established regardless of the
+nature of the deliverables to avoid negative consequences for any or all of the project
+stakeholders. For example, exhausting the team members to meet customer requirements
+might keep the customer happy but could impact the organization negatively due to
+employee attrition, errors, omissions, etc.
+The human resource management area includes one process in the planning group and
+three in the executing group. They discuss the organization and management of the
+project team. Project teams pose many challenges because of their tentative nature (they
+only come together for the duration of the project), their employment type (part-time or
+full-time), their skill diversity, their career aspirations (the project subject might add value
+to their experience), and their location (virtual or physical participation), among others.
+Managing and leading the project team requires building trust and commitment, under-
+standing organizational and national cultures, influencing the environment, and commu-
+nicating the need to eliminate any factors that may alter project performance.
+The communications management area includes one process for each of the planning,
+executing, and monitoring and controlling groups. It includes activities that ensure timely
+and appropriate planning, collection, creation, distribution, storage, retrieval, manage-
+ment, control, monitoring, and the ultimate disposition of project information. Effective
+communication creates transparency and brings stakeholders closer together despite
+their potentially different backgrounds, levels of expertise, interests, and perspectives.
+Their positive influence on the project and their alignment with its vision is vital, so com-
+munication becomes one of the core activities of the project manager.
+The risk management knowledge area has five processes in the planning group and one in
+the monitoring and controlling group. It includes processes for conducting risk manage-
+ment planning, identification, analysis, response planning, and controlling risk on a
+project. Risk is inherent in projects and can be anticipated or unexpected. When some-
+thing is a known risk, it can be proactively assigned a contingency reserve; when it is
+123
+
+
+=== PAGE 126 ===
+unknown, a management reserve can be assigned for when it becomes an issue. The
+objectives of project risk management are to increase the likelihood and impact of posi-
+tive events and decrease the likelihood and impact of negative events in the project.
+The project procurement management area includes one process in every phase with the
+exception of the initiating phase. It includes processes for documenting project procure-
+ment decisions, the identification of vendors, soliciting offers, and awarding contracts, as
+well as managing procurement relationships, monitoring contract performance, and
+amending contracts when necessary. Because of the legally binding nature of contracts,
+special skills and attention are required to ensure the contract language accurately
+describes the resources needed for the projects. A contract life cycle approach might be
+required especially when multiple contracts or subcontracts are in effect simultaneously.
+The project stakeholder management knowledge area includes one process in every
+phase with the exception of the closing phase. It includes processes for identifying, man-
+aging, engaging, and controlling people, groups, and organizations that could affect or be
+affected by the project. Anyone who interacts with stakeholders should have the skills and
+knowledge for analyzing their expectations and engaging them in project decisions and
+execution. The processes here focus on continuous communication with stakeholders to
+understand their needs and expectations, addressing issues as they occur, managing con-
+flicting interests, and fostering their engagement when needed.
+6.2 Prince2
+A rival to PMBOK with widespread popularity in Europe and many other parts of the world
+is PRINCE2. The acronym stands for “Projects in Controlled Environments” which is the de
+facto choice of the UK government. Its latest version, PRINCE2 was published in 1996 and
+includes contributions from 150 European organizations. Its key features include a focus
+on business justification, a defined organizational structure for the project management
+team, a product-based approach to planning with flexibility at a level appropriate to the
+project, and an emphasis on dividing the project into manageable and controllable stages.
+The various roles are distributed across four levels of management in PRINCE2 with corpo-
+rate/program/management at the top instigating the project. Below them at the directing
+level is the project board: the main decision-making body of the project. Then comes the
+project manager at the managing level who manages the project on a daily basis; finally,
+at the bottom in the delivering level are the team leaders and their teams who create the
+project’s solution.
+Like PMBOK, PRINCE2 is a process-based methodology that ensures project success based
+on seven principles, seven themes, and seven processes. The seven principles are the
+guiding requirements and good practices.
+124
+
+
+=== PAGE 127 ===
+1.
+Continued business justification: There should be a justifiable and documented rea-
+son for running and managing the project. This principle ensures that the justification
+is reviewed and updated throughout the project life cycle so that any progress can be
+measured against its latest version.
+2.
+Focus on products: What the project creates in every step needs to be clearly defined
+and agreed upon by its stakeholders. Product specifications are set out in the product
+description that forms the basis of planning project activities, managing changes, and
+verifying approval and acceptance of the product.
+3.
+Manage by stages: The project is divided by the project management team into a
+number of time periods called “stages.” The duration of each stage can vary but the
+project moves from one stage to the next after its outcome has been reviewed and
+approved by the approval authority of the stage.
+4.
+Manage by exception: Each management level manages the level below using the
+manage by exception principle. This means that each level delegates authority to
+manage the project to the one below, which in turn reports to their level above once
+they have successfully finished the work or when issues arise that breach the bounda-
+ries of their delegated authority. Typically, the latter is done when deviations from the
+project constraints (scope, schedule, etc.) are observed or anticipated.
+5.
+Defined roles and responsibilities: Each role in the project management team is
+clearly understood by the person who undertakes that role. This includes roles for the
+various management levels and stakeholders with various perspectives (user, sup-
+plier, etc.). These roles and their responsibilities are first set forward in the project
+brief and then in the project initiation documentation.
+6.
+Tailor to suit the project environment: Because no one project is like another, there is
+no one-size-fits-all recipe for success, so the operational environment of the project
+should dictate the specifics of each project. Many aspects should be considered,
+including project size, complexity, importance, capability, and risk.
+7.
+Learn from experience: Mistakes and good practices from past projects are taken into
+account when facing the challenges and threats of new projects. Lessons learned from
+a project are disseminated so future projects and their teams can benefit from best
+practices and avoid making past mistakes. A “lessons log” is typically used to record
+previous and current experience.
+Upon these seven principles, PRINCE2 builds seven themes that provide recommenda-
+tions for carrying out various aspects of project management.
+1.
+Business case: This describes how to create and maintain a record of the business jus-
+tification for the project and which roles are responsible for doing so. This theme
+addresses the need for the development of a business case and highlights how the
+benefits of the project can stay on track with stakeholder expectations. A benefits
+review plan is one product of this theme (along with the business case), which speci-
+fies when, how, and who will be involved with project reviews.
+2.
+Organization: This defines the individual roles and responsibilities of the project
+team. This theme ensures that everyone understands their role in the project regard-
+less of their level and perspectives (business, user, supplier). The interests of the busi-
+ness, user, and supplier groups are represented in the main decision-making body of
+125
+
+
+=== PAGE 128 ===
+the project: the project board. One key product of this theme is the communication
+management strategy that defines how communications will be managed between
+the various project stakeholders.
+3.
+Quality: This describes what the quality requirements and measures are, and how the
+project will meet them. Managing quality is ensured by four components, including a
+“quality system” that defines the approach to quality; the “quality assurance” func-
+tion that checks whether the quality system is being implemented; “quality planning”
+that defines the specifications of the project products; and “quality control” with
+activities for verifying product specifications. A quality management strategy defines
+how the four aspects of quality management will be approached.
+4.
+Plans: This describes the steps required to develop the plans, what the products will
+be, the activities and the techniques that should be used to build those products, and
+who will be assigned to each activity. The outcome of this theme is a project plan that
+offers an overview of the project activities. This will serve as the basis for monitoring
+project work via the project board. Additionally, there will be plans for each individual
+stage of the project to help the project manager control the day-to-day activities, and
+finally there will be the team plan with its highest level of detail. Often, an “exceptions
+plan” is also developed to show how the project will recover from a breach in toleran-
+ces.
+5.
+Risk: This describes the need to effectively identify risks and opportunities that could
+impact the project. The five steps of identify, assess, plan, implement, and communi-
+cate form the process for identifying and dealing with risk. With respect to threats,
+one can avoid them so they do not occur, reduce them to minimize their impact, plan
+actions for their mitigation, transfer them to a third party (like in the case of outsourc-
+ing risky activities to more experienced entities), or make a conscious decision to
+accept them. Assigning a “risk owner” who will monitor, manage, and control that risk
+is part of this process.
+6.
+Change: This describes how the project manager will control and manage changes to
+the project. This theme ensures that the right level of authority approves changes and
+that configuration management helps to identify, monitor, and protect the project’s
+product. Typical project issues that could trigger change are deviations or missing
+specifications, violations of the project constraints such as cost or schedule, and lack
+of support for the project. A change authority (individual or group) is usually designa-
+ted to authorize change through a change control procedure. The latter is documen-
+ted in the “configuration management strategy document” and includes activities for
+capturing and documenting an issue, examining the issue and considering its impact
+on the project, identifying solutions to alleviate the issue, deciding what the optimal
+solution is, and implementing the decision.
+7.
+Progress: This covers the various ways of controlling activities, resources, and stake-
+holders to ensure the project’s objectives are achieved. This is done by observing
+deviations in tolerances of cost and time from their planed estimates. Tolerances are
+specific to the organizational levels of the project, with the corporate and program
+levels setting tolerances for the project board, which in turn sets tolerances for the
+project manager who then sets work package tolerances for the team. Quality toleran-
+ces (for product specifications) are established either at the project or product level,
+while benefit tolerances (benefits for the project owner organization) are set only at
+126
+
+
+=== PAGE 129 ===
+the project level. Event-driven and time-driven controls are placed to measure project
+progress and either confirm the direction the project is heading or initiate responsive
+actions to get it on track.
+Based on the principles and themes, PRINCE2 establishes seven processes to showcase
+the activities required to manage the project. They cover the management work from the
+conception of the project idea to the end when the project solution is materialized and
+accepted by the customer and the project resources are released. The roles of each project
+entity/actor are described for each process as well as the management documents that
+will be created, reviewed, or updated.
+Figure 45: The PRINCE2 Model Process
+Source: created on behalf of IU (2019).
+The seven processes are:
+• Starting up a project: This covers work for investigating the feasibility of the project
+through the development of the project concept. In this process, we design and appoint
+the project management team and ensure that the required information is available. A
+plan is also created for the next stage.
+127
+
+
+=== PAGE 130 ===
+• Directing a project: This covers the activities of the project board in deciding whether
+the project should start, when to transition to the next stage, and whether to close. This
+process does not cover day-to-day activities—these are the domain of the project man-
+ager—but provides a rather ad hoc direction by monitoring progress, providing advice
+and guidance, and reacting to exception situations.
+• Initiating a project: This covers the early planning activities (development of the project
+plan). The existence of the foundations of the project and the business case are docu-
+mented and confirmed while the project board is encouraged to take ownership of the
+project. Agreeing to the commitment of resources for the first stage of the project
+ensures the appropriate investment of time and effort will be made (taking potential
+risks to the project into account).
+• Controlling a stage of a project: This covers the daily management of the project by the
+project manager and their proxies. This includes reporting, addressing issues and risk,
+and delegating work. It also involves gathering progress information about the work,
+watching for exceptions, and taking any necessary corrective actions.
+• Managing product delivery: This covers work for developing the project solution,
+including activities for creating work, accepting it, delivering it, and reporting progress.
+The objective of this phase is to make sure work is effectively authorized, deliverables
+conform to requirements, work progress is assessed and forecast regularly, and appro-
+val is obtained for the completed products.
+• Managing a stage boundary: This covers the work of the project manager at the end of
+each major stage of the project, including reporting on the status and achievements of
+the last stage and the plans for the next stage. Exceptions are addressed through this
+process.
+• Closing a project: This covers the work of the project manager to prepare for the end of
+the project. This includes the end project report, archiving the project documents, and
+handing the product over to the customer or the operational teams (if the product
+needs to move on to manufacturing).
+Compared to PMBOK, which is considered over-detailed (especially for small projects),
+PRINCE2 is broader and higher-level with a well laid out and standardized approach that
+dictates the roles and responsibilities of everyone in the project team. The common
+vocabulary that PRINCE2 provides makes it easier to communicate reports, plans, and
+other management documents between diverse stakeholders and to provide focus for
+what needs to be done. The management-by-exception approach also ensures the effi-
+cient and economic use of time and provides justification for undertaking the project at
+all. Lessons learned can be disseminated and management assets can be reused, allowing
+a resource continuation and the buildup of experience.
+6.3 Multi-Project Management
+In modern organizations, multiple projects are typically executed or planned concurrently
+to address the various needs of the organization, from product and services development
+to upgrades and maintenance of its infrastructure to exploring and implementing innova-
+ted ideas and processes. Running multiple projects independently of each other will
+exhaust resources and limit the organization’s ability to respond to market needs and to
+128
+
+
+=== PAGE 131 ===
+grow (Miller & Hobbs, 2005). To address such issues, enterprises (especially the large ones)
+organize their project activities under a portfolio umbrella in order to manage them in
+groups under similar strategic objectives. Projects relate to each other in portfolios
+through a common outcome of collective capability including sharing clients, technology,
+staff, expertise, and other resources. That doesn’t necessarily mean the project shares
+resources or characteristics (although this is typically the case). They could also be part of
+a general organizational strategic initiative, for example, maximizing return on investment
+or sustainable development. Centralizing project management as a portfolio ensures
+alignment with organizational strategies and prioritization of resource allocation under
+one command and control structure (Blichfeldt & Eskerod, 2008). This allows organiza-
+tions to have an overall view of how the strategic goals are reflected in the portfolio, insti-
+tute appropriate governance management, and authorize human, financial, or material
+resources to be allocated based on expected performance and benefits.
+Internally, in portfolios, projects are grouped into programs or subprograms based on
+interdependencies in terms of resources, the organization’s strategic direction, and shared
+governance structure. Organizing projects this way helps to manage them as a group and
+in a coordinated fashion, align them with higher level strategies when they serve similar
+goals and objectives, and share resources between them. Programs may also include ele-
+ments of related work outside the scope of the discrete projects in the program.
+Figure 46: Hierarchical Reporting Structure of Multi-Project Environments
+Source: created on behalf of IU (2019).
+The hierarchical breakdown of project activities into portfolios, programs, and projects
+allows for the various perspectives of project management elements to be operationally
+accounted for (Miller & Hobbs, 2005). For example, project scope can be a narrow or more
+specific version of the program scope (providing more significant benefits), which itself
+can be a narrow or more specific version of the portfolio scope (reflecting the strategic
+129
+
+
+=== PAGE 132 ===
+Aggregate Portfolio
+This is a summary of mul-
+tiple portfolios and sav-
+ings plans.
+objectives of the organization). Similarly, for planning at the portfolio level, managers cre-
+ate and maintain necessary processes and communications relative to the aggregate
+portfolio, while the at the program level, they develop overall program plans to guide
+more refined planning at the next level where the detailed plans are developed for the
+project life cycle. With respect to monitoring, while project managers monitor and control
+the day-to-day project activities, program managers want to ensure that the overall goals,
+constraints, and benefits of the program are met. At the higher level, portfolio managers
+are interested in monitoring strategic changes and allocating resources, estimating the
+risk of the portfolio, and identifying risks and ways to alleviate their impact.
+The levels of management also have different approaches to how they deal with change,
+the way they define success, and how they exercise their authority (De Reyck et al., 2005).
+The project managers, for example, focus on project objectives, while the program man-
+agers provide vision and overall leadership to the program staff (including the project
+managers). Portfolio managers may manage and coordinate the portfolio staff (including
+the portfolio managers). With respect to change, the top of the structure monitors
+changes in the broader internal and external environment, while program managers
+expect changes both internally and externally to their program and project managers
+expect changes and implement processes to keep them managed and controlled. Success
+is measured at the portfolio level in terms of the aggregate investment performance and
+benefits that the portfolio produces, while at the program level it is measured by the
+degree to which the program satisfies its specific need. At the lower levels, success is
+measured by the extent to which the project meets the constraints and satisfies its stake-
+holders.
+In large organizations, the structure we discussed here is often under the project manage-
+ment office (PMO) unit (Dai & Wells, 2004). This allows the standardization of project-rela-
+ted governance processes and the sharing of resources, methodologies, tools, and techni-
+ques. The unit reports to the executive level of the organization and feeds data to
+performance systems like the balanced scorecard. As the overseeing authority for all
+project activity in the organization, the PMO has the power to act as a project stakeholder
+and interfere with project-related decisions throughout the life cycle of projects, including
+making recommendations and even terminating projects that don’t align with the busi-
+ness objectives of the organization.
+Typical PMO structures range (based on the control and influence they exert) from suppor-
+tive to controlling to directing (Martin, Pearson, & Furumo, 2005b). Supportive PMOs pro-
+vide a consultative role to projects by supplying templates, best practices, training, access
+to information, and lessons learned from other projects. This type of PMO serves as a
+project repository and exerts low control over project activities and decisions. Controlling
+PMOs provide support and require compliance through various means. Compliance may
+involve adopting project management frameworks or methodologies, using specific tem-
+plates, forms, and tools, or conforming to governance while exercising moderate control
+over the portfolios. Directive PMOs, finally, take control by directly managing the projects
+and all their details.
+130
+
+
+=== PAGE 133 ===
+Regardless of their structure, the primary functions of PMOs are to manage shared resour-
+ces across all the projects they administer; to identify and develop project management
+methodologies, best practices, and standards; to provide coaching, mentoring, training,
+and oversight; and to monitor compliance with project management standards, policies,
+procedures, and templates by means of project audits (Hill, 2004). They are also responsi-
+ble for developing and managing project policies, procedures, templates, and other
+shared documentation (organizational process assets) and for coordinating communica-
+tion across projects.
+Organizations can facilitate the alignment of portfolio, program, and project management
+activities by adapting their structure, culture, and processes and by optimizing the use of
+their resources. Supplementing these alignment efforts with business impact analysis and
+robust organizational enablers, organizations can flexibly move within their portfolio, pro-
+gram, and project domains to maximize performance and realize business value (Hobbs,
+Aubry, & Thuillier, 2008). This process begins with comprehensive strategic planning and
+management guided by the organization’s vision and mission within the context of the
+market environment where it operates.
+6.4 Agile Software Processes in Large
+Projects
+While agile methodologies were initially developed for small teams, their popularity and
+rates of success have led larger project teams to consider tailored versions of them for
+their needs (Dingsøyr & Moe, 2013). By large projects, here we mean projects that involve
+more than one independently operating team that could be co-located, distributed across
+geographical locations, or virtual. Sometimes the term is used to indicate software
+projects with large numbers of code and staff, large organizations, and/or a large number
+of activities. While all these conditions could under certain circumstances suggest a large
+project, the complexity of operating more than one team covers the challenges that large
+projects face.
+Implementing agile methodologites for large projects could benefit organizations as their
+customer focus might result in increased customer satisfaction, rapid delivery, reduced
+cost and overhead, and the development of products and services that address changing
+market needs. However, applying agile methodologies in large projects is not so straight-
+forward as in the small projects for which most of these methodologies were developed
+(Dingsøyr & Moe, 2013). Scaling agile principles and practices poses many challenges that
+stem from the longer planning horizons of large projects, the levels of authority that need
+to be delegated, and the synchronization of deliverables, among others. Large projects
+typically spread into more than a year, requiring product-to-market roadmaps of 12 to 18
+months, while project team backlogs get refined at much shorter periods (two to three
+weeks). This creates a disconnect in the level of refinement of the solution as the develop-
+ment teams will work in details and finalize coding before they get the change requests
+that the higher level will not identify until later. A lot of work-months can be lost in this
+way, doing work that might be later be deemed unnecessary.
+131
+
+
+=== PAGE 134 ===
+Scrum of Scrums
+One member of a Scrum
+meeting is designated to
+relay information from
+the smaller meeting and
+attend the Scrum of
+Scrums with ambassa-
+dors from other Scrums.
+This issue gets aggravated by the lack of management frameworks at the higher levels
+compared to the well understood and practiced agile frameworks for smaller teams
+(Dingsøyr & Moe, 2013). The levels of authority might also get mixed—in practices like
+Scrum, the product owner is responsible for the full product life cycle including ROI and
+market performance, while in larger projects, these might be the responsibilities of the
+program or portfolio managers. Such disconnects between the various levels of project
+leadership can greatly affect the performance of small agile teams, especially their
+autonomy and freedom to decide on their own working style. Having teams of hundreds
+or even tens of individuals will limit their effectiveness in self-organizing and synchroniz-
+ing the delivery and integration of their solutions. The context of the application also
+becomes critical in deciding the modification and tailoring to the agile methodology that
+we must consider. This has led to the development of variants of agile like the Scrum of
+Scrums (SoS), scaled agile framework (SAFe), and large-scale Scrum (LeSS), among oth-
+ers. Each of these methodologies adds some form of framework on top of the individual
+(Scrum) teams in order to coordinate their work.
+Scrum of Scrums is a Scrum variant that consists of dividing a project team into groups of
+agile teams (less than 12 individuals) and having each team elect an “ambassador” to par-
+ticipate in a daily meeting with ambassadors from the rest of the teams (Stephens, 2015).
+Typically, the Scrum master of each individual team plays that role, although technically
+specialized team members can sometimes take their place. The meetings are short
+(around 15 minutes long) and can be planned to occur as frequently as the team decides
+(every other day or even weekly).
+132
+
+
+=== PAGE 135 ===
+Figure 47: Scrum of Scrums
+Source: created on behalf of IU (2019).
+The status of each team is discussed in the Scrum of Scrums as well as any issues or chal-
+lenges they face with their coordination. Typically, the discussions address interface
+issues between the solutions each team develops and their integration into the complete
+product or service of the project as well as decisions about the responsibilities and the
+boundaries between the teams’ work. Obstacles are identified and ways to overcome
+them are decided.
+133
+
+
+=== PAGE 136 ===
+Large-scale Scrum (LeSS) is another variant of Scrum that resulted from efforts to apply
+the purpose, elements, and elegance of Scrum to large projects as simply as possible.
+Because such scaling requires deep organizational changes, LeSS is better seen as an
+organizational design framework than a project management practice. Many of the princi-
+ples and ideas of Scrum are still included, like a single product backlog, one definition of
+done for all teams, one product owner, one sprint, one increment at the end of each
+Scrum, and cross-functional teams. What is new is the sprint planning in part 1 and part 2
+where part 1 plays the role of the typical team Scrum while part 2 is similar to the SoS we
+saw before.
+LeSS differs from SoS in that it sees the large-scale view as a single Scrum following the
+principles, rules, elements, and purpose of Scrum—not as another level on top of Scrums.
+It has nine core principles.
+• “Transparency” is evident from tangible “done” items, short cycles, working together,
+common definitions, and removing fear from the workplace.
+• “More with less” suggests more responsibility with less rules, more customer-focus with
+less artifacts, more team ownership of processes, and more meaningful work by having
+less defined processes.
+• “Whole-product focus” means one product backlog, one product owner, one shippable
+product, and one sprint, regardless of the number of teams that are involved. This is
+based on the fact that customers want valuable functionality in a cohesive product, not
+technical components in separate parts.
+• “Customer-centric” involves learning the customers’ real problems and solving them by
+involving customers in meaningful feedback loops.
+• “Continuous improvement” means pushing toward perfection through endless humble
+and radical improvement experiments.
+• “Lean thinking” means building an organizational system with a focus on eliminating
+waste, for example by reducing partially done work and delivering results as fast as pos-
+sible. At the same time, decisions are taken as late as possible to reduce uncertainty
+and take account of the continuously changing environment.
+• “Systems thinking” means understanding and optimizing the whole system (not parts)
+and using systems modeling to explore system dynamics.
+• “Empirical process control” means continually inspecting and adapting the product,
+processes, behaviors, organizational design, and practices to evolve in situationally
+appropriate ways instead of following prescribed sets of so-called “best practices” that
+ignore context, create ritualistic following, impede learning and change, and squash
+people’s sense of engagement and ownership.
+• “Queuing theory” is applied by understanding how systems with queues behave in the
+R&D domain and applying those insights to managing queue sizes, work-in-progress
+limits, multitasking, work-packages, and variability.
+SAFe is another approach to scaling agile across an enterprise that takes the portfolio,
+program, and project hierarchy into consideration (Stephens, 2015). It aims at addressing
+some of the problems with other scaled-up agile methodologies by decentralizing deci-
+sion-making, taking an economic view, and applying systems thinking. Still at its core (as
+for small projects) are the values of assuming variability and change and incremental
+building with integrated learning cycles.
+134
+
+
+=== PAGE 137 ===
+SAFe 4.6 introduced five core competencies that are required in lean enterprises: lean-
+agile leadership, team and technical agility, DevOps and release on demand, business sol-
+utions and lean systems engineering, and lean portfolio management. While each compe-
+tency (with the exception of lean-agile leadership) targets different levels in the hierarchy
+of project, program, and portfolio management, mastering each is critical to achieving
+and sustaining a competitive advantage in today’s marketplace. In addition to the core
+competencies, this new version includes new government guidance, which describes a set
+of success patterns that help public sector organizations implement lean-agile practices.
+The first competency (lean-agile leadership) describes how leaders drive organizational
+change by empowering teams to reach their full potential. The leaders themselves model
+lean-agile values, principles, and practices by exercising lifelong learning, teaching, and
+coaching behaviors. They are the ones with the authority and power to change and
+improve the system that governs how work is done, allowing the benefits of team agility to
+add value. They also ensure the sustainable growth of their organization, their teams, and
+themselves as leaders and professionals.
+At the team member level, individuals need to adhere to lean-agile principles and be tech-
+nically competent to deliver high-quality solutions that support customer requirements
+and future business needs. Team members succeed or fail together as they are accounta-
+ble and committed to common goals. One primary goal is to deliver quality solutions in
+the fastest possible time. As a result, testing plays a core role in such teams and is imple-
+mented at the feature level, the story level, and the code level. As soon as a feature is com-
+pleted and tested at the code level, it is then tested at the story level, and then at the fea-
+ture level. This test-first mindset ensures a flow from code quality, to system quality, to
+architecture and design quality, and finally to release quality.
+The DevOps and release-on-demand competencies apply to the program level and
+describe how the principles of development (Dev) and operations (Ops) can shorten the
+SDLC while aligning to business objectives. This allows organizations to learn and adjust
+quickly to address market needs through rapid and frequent delivery. Organization mem-
+bers like product managers, system architects, etc. need to release value on demand and
+continuously work together to optimize the full flow of value. Such groups of cross-func-
+tional agile teams are considered to be aboard the agile release train (ART). Each ART runs
+across the continuous delivery pipeline, improving the flow of value and enabling release
+on demand through continuous exploration, continuous integration, and continuous
+deployment. This is grounded in the five concepts of culture, automation, lean flow, meas-
+urement, and recovery (CALMR).
+• “Culture” represents the philosophy of shared responsibility for fast value delivery
+across the entire value stream, including product management, development, testing,
+security, compliance, and operations.
+• “Automation” represents the work and assets needed to remove human intervention
+from as much of the pipeline as possible. This shortens time-to-market and improves
+quality.
+• “Lean flow” covers the concepts of limiting WIP, reducing batch size, and managing
+queue lengths to enable faster flow through the pipeline.
+135
+
+
+=== PAGE 138 ===
+• “Measurement” is about understanding and measuring the flow of value through the
+pipeline, thereby fostering learning and continuous improvement.
+• “Recovery” focuses on building systems that allow fast fixes of production issues
+through automatic rollback and “fix forward” capabilities.
+To interface between the program and portfolio levels requires lean system competency.
+This enables the collaboration and contribution of large and diverse numbers of actors
+(developers, suppliers, customer, etc.) who might have compliance concerns and interests
+that demand a broad range of multidisciplinary skills. To allow for continual development,
+SAFe replaces the traditional approach to executing projects in phases with a flow-based
+process that uses roadmaps for continuous integration. A set of practices that inform solu-
+tion-builders include:
+• building solutions components with high-functioning ARTs. Capabilities and compo-
+nents of the system are built by ARTs, which synchronize work by operating with a regu-
+lar tact called cadence for planning, demonstrating, improving, and learning.
+• building and integrating with a solution train. Solution trains integrate the work of the
+ARTs and implement the flow of value needed to deliver the full system.
+• capturing and refining systems specifications in the solution intent. The solution intent
+repository manages and provides detailed information about the intent of the solution
+—nonfunctional requirements (NFRs), interface definitions, system decompositions,
+assignments of requirements to different ARTs, architectural guidelines, and anything
+else needed to keep teams aligned with the vision. SAFe also provides the flexibility to
+“assume variability and preserve options,” allowing some requirements to be fixed
+while others remain open and variable.
+• applying multiple planning horizons. ARTs and teams use backlogs and roadmaps to
+manage work and forecast the schedule. Applying the principle “plan to what you
+know,” teams develop detailed plans for the near term and less detailed plans for the
+long term.
+• architecting for scale, modularity, reusability, and serviceability. SAFe uses principles
+like intentional architecture, emergent design, modularity, and service-based design to
+provide for an evolving and flexible architecture. This approach avoids constraining
+innovation by defining too many details up front.
+• managing the supply chain with “systems of systems” thinking. Suppliers of strategic
+components become part of a virtual ART, participating in planning, demonstration,
+integration, and continuous improvement activities.
+• applying continuous integration. SAFe strikes a balance between the desire to integrate
+as frequently as possible and the cost of integrating the entire system. This decision is
+an economic trade-off between the cost and value of integrating frequently—including
+the insights that it generates.
+• continually addressing compliance concerns. Large solutions are often subject to strict
+compliance requirements. ARTs and teams include compliance testing, documentation,
+and other mandated requirements in their backlogs, and continuously apply definitions
+of done, test automation, and other activities.
+The last of the core competences—lean portfolio management (LPM)—addresses the high-
+est level of the project portfolios. This competency describes how an organization can
+implement lean approaches to strategy and investment funding, agile portfolio opera-
+136
+
+
+=== PAGE 139 ===
+tions, and lean governance. These value streams allow an organization to set practices
+that help meet its business strategy either internally by supporting its business process or
+externally by adding value to the solutions they provide to customers. Mastering this com-
+petency allows for a transition from traditional practices (like rigid annual planning and
+budgeting, overhead of demand over capacity , and centralizing requirements in the
+hands of people who are not involved in the solution development) to executing commit-
+ments reliably and enabling innovation across the organization.
+At the highest level of the portfolio, SAFe uses lean principles like the prioritization of
+“epics” based on the optimization of value streams that could be further broken down at
+the program level. Epics capture and manage the most significant initiatives within a port-
+folio. They can be distinguished into “business epics” for large customer-facing initiatives
+that encapsulate developments that target new business opportunities and “enabler
+epics” that are used to advance the architectural runway to support the business epics.
+Further down the hierarchy, epics can be split into “program” and “solution” epics to facil-
+itate incremental implementation. An “epics owner” is typically responsible for their sta-
+tus and liaises with the lower levels to provide clarification and ensure understanding.
+At the program level, SAFe applies Scrum in principle but with longer sprint cycles where
+the last cycle (often called the “innovation planning sprint”) is dedicated to innovation,
+inspection, and adaptation. This is where the ART is formed by groups of 8–12 in a team
+that performs long-term development based on the epics and the organization’s strategy.
+This level pulls from the backlog of business and architectural epics and splits them into
+features that the teams within the ART will implement through 8–12-week iterative cycles.
+This provides cadences and synchronization and forces all teams to be in the same sprint
+schedule to reduce risk and internal dependencies and instill a common sense of purpose
+and shared ownership.
+At the lower levels of the project, SAFe typically adopts Scrum with all its roles, processes,
+and artifacts. Team requirements are managed by the product owners, are a subset of the
+program backlog, and are stored in the team backlog. The cross-functional teams are
+expected to independently self-organize and complete requirements within the ART’s
+cadence. Scrum does not imply engineering practices; rather, “extreme programming” is
+used to guide development. Practices such as continuous integration and test-driven
+development can and should be implemented to ensure scalability and quality.
+The biggest benefit of adopting SAFe is that it combines the flexibility of a lightweight
+framework with centralized decision-making at the enterprise level (Stephens, 2015). It
+essentially connects project teams with the higher-level strategies of their organizations
+and ensures that the strategic objectives of the organization are seen and take priority
+over everything else. Additionally, the standardization it offers allows small teams to com-
+municate through a common language and efficiently coordinate their work. Some of its
+drawbacks are that it is often seen as enforcing a top-down approach to decision-making
+and creates overhead due to the additional layers of oversight, administration, and coor-
+dination it imposes. The emphasis it places on the big picture can sometimes lead to lon-
+ger planning cycles and more fixed roles within development cycles. Front-line actors like
+137
+
+
+=== PAGE 140 ===
+developers, testers, and product owners who could offer valuable feedback about the
+products or services they develop are often excluded from the decision-making process at
+higher levels.
+6.5 Selection of the Appropriate Project
+Management Method
+Choosing a project management methodology can be a challenge for new and experi-
+enced project managers alike. It should be evident from all we have seen so far that a one-
+size-fits-all methodology is not a reality for project managers in the IT field. In fact, such
+an attitude is more of a counterproductive liability that rarely supports organizational
+maturity and growth. Off-the-shelf methodologies can be an easy answer from a manage-
+ment perspective since they are a “simple” matter of paying licensing fees, getting people
+accredited, and organizing the workplace with supporting material. Such decisions are
+based, though, in the faulty assumption that the methodology is right for the particular
+organization, that teams will actually use it, and that it will ensure and accelerate success-
+ful project delivery. Tailor-made methodologies might be the right answer—if the organi-
+zation is willing to put in the time and resources—as the results will be longer lasting and
+customized to the organization (Vijayasarathy & Butler, 2016).
+Choosing a methodology can be affected by multiple internal and external factors, includ-
+ing the organizational structure and culture of the company (Harkiolakis, 2016). Organiza-
+tional structure emerges through role distribution and the breakdown of organizational
+activities into functions that address specific needs. Hierarchies and operating procedures
+enforce and adapt such structures as the organization interacts with its environment.
+Functional structures typically support the breakdown into specializations that contribute
+to each project as needed and for as long as a project is running, while matrix structures
+organize employees in dual reporting relationships by both function and product/service
+or project. Due to its focus on functions, functional structures have simplified manage-
+ment control, better division of labor, economies of scale, and efficiency in function execu-
+tion. With respect to projects and especially when cross-functionality is needed, the lack
+of coordination, control, and accountability of multifunctional activities can be detrimen-
+tal to projects. This is aggravated in cases where functional units operate as silos, allowing
+friction between them to degrade operational performance and cost the organization in
+maintenance and product/service efficiency.
+Matrix structures, on the other hand, allow for good coordination across functions or divi-
+sion, and aim at quickly responding to market needs by expanding on and leveraging
+employees’ competencies. By allowing specialists within an organization to be used in a
+number of project teams, the organization makes effective use of its resources—in particu-
+lar, the best deployment of those skills that are in short supply. The transient nature of
+project teams can be demotivating in such structures and can lead to an imbalance or fric-
+tion between the sides of the matrix, so the approach requires clear coordination and
+management to be effective. As project teams are created and dissolved frequently, one
+major concern with any structure that also affects whatever project management method-
+138
+
+
+=== PAGE 141 ===
+ology the organization and the team adopts is its alignment with the organizational mis-
+sion and vision. Team loyalty builds within the project, but after the end of the project,
+team members return to the organizational pool or are let go.
+Organizational culture is another core element to consider when selecting a model for
+project management—among the first attempts at theoretically framing this quality are
+the structural and interpretive views of culture. The structural view focuses on how roles
+are structured in an organization and has created a categorization of cultures into “power
+cultures” (usually observed in small organizations) where communication is informal and
+in compliance with the attitudes and norms of the central power source; “role cultures”
+(usually observed in larger bureaucratic organizations) where coordination is provided by
+the elite and clear roles for employees are reflected in their job description; “task cultures”
+(usually observed in matrix-type organizations) where power lies at the intersection of
+roles; and “person cultures” (usually observed in professional organizations) where the
+individual is the key element. The interpretive view, on the other hand, adopts a strategic
+outlook and focuses on how the various design features (like culture and structure) and
+human qualities conspire to enable managers to make sense of the world in a restricted/
+specialized way. Regardless of the view one adopts, culture is expressed through formal
+statements like the organizational mission and vision: The former is a statement that
+describes the reason for the organization’s existence while the latter shows where the
+organization wishes to be. Along with organizational structure, culture has a spillover
+effect on projects and drastically affects how projects are organized and perform.
+Based on the way the various models handle project requirements, we can distinguish
+between them as predictive or adaptive (Stephens, 2015). In predictive models, we antici-
+pate the next steps and plan accordingly ahead of an activity; in adaptive models, we con-
+sider change as part of the core and follow processes that are flexible and can adapt to
+changes as they happen. The key advantage of predictive models is that they allow for
+accurate planning and organization of resources ahead of time in a controlled and predict-
+able way, whereas the adaptive models allow for fast responses to changing or unclear
+requirements. The former is ideal for well-structured or short duration projects where not
+much change is expected and in cases where we cannot afford to experiment with require-
+ments—in particular, complex systems including hardware as well as software (and strong
+interdependencies between the two) cannot afford to change requirements too often
+because hardware changes tend to be more costly and take a longer time. For example, if
+we are building the information technology needed for a space shuttle, it is unlikely that
+we can afford to change requirements halfway through its development, so a predictive
+model where requirements are exhaustively gathered at the beginning would be more
+beneficial. On the other hand, if we are developing a computer game, we might need to go
+back and forth as we get feedback about its performance from the users—suggesting that
+an adaptive model would work better. In general, if our resources are limited and/or if the
+requirements are incomplete, unclear, or expected to change, we are better off with an
+adaptive methodology; otherwise, a predictive model may be the better choice.
+For adaptive models, a further breakdown into iterative and agile can be considered. Itera-
+tive models provide all the features required in the solution at a low but usable fidelity
+(level of completeness) from the earliest iterations and increase the fidelity of the features
+until the solution addresses all the required features at full fidelity. Agile models, on the
+139
+
+
+=== PAGE 142 ===
+other hand, start with the fewest features at low fidelity (but functional) and keep refining
+and adding features progressively through iterations until all the required features are at
+full fidelity. Between the two, we often find another category of incremental models where
+the fewest possible features at full fidelity are addressed first and later iterations target
+additional features (again at full fidelity) until all the required features are implemented at
+full fidelity.
+Figure 48: Project Management Methodologies
+Source: created on behalf of IU (2019).
+It should be noted that the breakdown indicated here is a general and rough classification
+of the models. As we saw when we discussed them in detail, most offer variations or recy-
+cle parts from others, as when we saw the waterfall with feedback where a predictive
+model had also iterative characteristics. Similarly, agile models like Scrum could follow a
+waterfall for each sprint. In general, any variation that fits the specific needs of a project
+and its organization can exist in some form or another.
+Some of the predictive models we discussed here include the waterfall and its variations,
+the V-model, and the various forms of the SDLC. With proper planning that considers all
+the solution requirements and accounts for risks, the team and the customer will know
+exactly what is expected of every phase. The project constraints will be met and any
+issues, whether anticipated or not, will be dealt with early on, ensuring that a quality solu-
+tion is developed. When choosing a predictive model, one should always be aware of its
+inflexible nature—it will not allow for changes, even if they are opportunities that could
+improve processes and performance.
+In the agile category of methodologies, we saw Scrum and SAFe, among others. As in most
+other cases, each of these methodologies can be adapted and customized to address the
+needs of different development teams. While this might be a disadvantage for other meth-
+odologies, customization lies at the heart of agile development. This is more necessary
+than anything else because each project is different and consequently different tools
+(even if only slightly different) should be expected to work best for each project. What they
+140
+
+
+=== PAGE 143 ===
+all have in common is the constant exploration of ways to improve solutions and perform-
+ance with the participation of key stakeholders like the customer in all the stages of devel-
+opment.
+Regardless of the choice between an existing model and a customized version, organiza-
+tional and project leadership needs to ensure everyone on the project team is aware of,
+and understands, the specifics of the model, they all agree on what rules and procedures
+will be followed, and they are all committed to following them. Eventually, what really
+matters is that projects deliver high-quality solutions within the agreed-upon constraints
+(schedule, cost, etc.) whether they are products or services.
+SUMMARY
+In large projects, there are more dependencies between different parts
+of the project and its environment, and a more thorough approach to
+planning is needed as a result. Nevertheless, efforts have been made to
+scale agile project management to larger projects, essentially splitting
+the work into small agile teams and adding additional levels for coordi-
+nation of these teams and the work they perform. Well-known method-
+ologies for this purpose are “Scrum of Scrums” and the scaled agile
+framework (SAFe).
+There are two widely known standardized approaches to project man-
+agement which are mainly suited to large projects. The project manage-
+ment institute (PMI) publishes the “project management body of knowl-
+edge (PMBOK),” the goal of which is to describe the knowledge needed
+for project management. This knowledge is described in 47 processes,
+grouped into 10 knowledge areas, and assigned to five project process
+groups roughly describing the main phases: initiating, planning, execut-
+ing, monitoring and controlling, and closing.
+The second widely known approach to project management is PRINCE2
+and was published on behalf of the UK government. It describes similar
+contents to the PMBOK but is somewhat less formal.
+Depending on the project environment and the results to be created, an
+adequate methodology must be selected for each project. This may be
+an agile approach, a plan-driven approach, or, more often, some combi-
+nation of the two.
+141
+
+
+=== PAGE 144 ===
+
+

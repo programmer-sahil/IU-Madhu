@@ -1,0 +1,721 @@
+=== PAGE 1 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+UNIT 5
+ORGANIZING SMALL AND MEDIUM 
+PROJECTS
+Complete Cheat Sheet • Summary Notes • Important Q&A • 2 Full Mock Tests
+IT PROJECT MANAGEMENT - DLMBITPAM01
+IU International University of Applied Sciences
+Made by SK Sahil
+Exam Revision Pack
+Study order: Memorize the first-page frameworks -> learn the concise notes -> revise the model answers -> attempt 
+both 90-mark mocks without notes.
+
+
+=== PAGE 2 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+1. MEMORIZE THESE FIRST - HIGHEST-YIELD UNIT 5
+If time is short, learn these lists in this order before anything else.
+1. Unit 5 structure - RUP -> Agile software processes -> Scrum -> Plan-driven methods for small projects.
+2. RUP phases - Inception -> Elaboration -> Construction -> Transition. Optional extensions: Production and Disposal.
+3. RUP six disciplines - Business modeling -> Requirements -> Analysis & design -> Implementation -> Testing -> 
+Deployment.
+4. RUP best practices - Iterative development • componentization/reuse • UML visualization • continuous integration/testing.
+5. Prototype types - Throw-away = discard after learning. Evolutionary = keep extending until it becomes the product.
+6. Agile 4 values - Individuals/interactions • Working software • Customer collaboration • Responding to change - each 
+preferred over its traditional counterpart.
+7. Agile operating ideas - Short iterations • working software each iteration • frequent customer feedback • self-organizing 
+teams • quality/technical excellence • adaptability.
+8. Agile 12 principles - memory clusters - Value early/often • welcome change • business+developers together • 
+motivated/self-organizing teams • direct communication • working software = progress • sustainable pace • technical excellence 
+• simplicity • reflect and improve.
+9. Scrum pillars - Transparency • Inspection • Adaptation.
+10. Scrum values - Commitment • Courage • Focus • Openness • Respect.
+11. Scrum roles - Product Owner • Scrum Master • Development Team/Team Members. No traditional project manager role 
+inside Scrum.
+12. Scrum artifacts - Product Backlog • Sprint Backlog • Increment; task board is a common supporting tool.
+13. Scrum events - Sprint Planning -> Daily Scrum -> Sprint Review -> Sprint Retrospective. Sprint = fixed timebox, normally 
+no more than one month in this course book.
+14. Waterfall sequence - Requirements -> Analysis/Design -> Coding/Development -> Verification/Testing -> Deployment.
+15. Waterfall variants - Feedback = step back to earlier phase • Sashimi = overlapping phases • V-model = development on 
+left, matching verification/integration on right.
+16. Method selection - Agile: changing/unclear requirements. Plan-driven: stable requirements, reliability/safety/security. 
+Hybrid: combine both when needed.
+Most likely question zones
+• Explain RUP phases and its iterative/matrix nature.
+• Write Agile values/principles and explain self-organizing teams.
+• Explain Scrum pillars, values, roles, backlog, sprint and four events.
+• Compare product owner and Scrum master.
+• Compare Agile/Scrum with Waterfall/plan-driven approaches.
+• Explain Waterfall, Waterfall-with-feedback, Sashimi and V-model.
+• Choose a methodology for a case and justify Agile, predictive or hybrid.
+
+
+=== PAGE 3 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+2. COMPLETE SUMMARY NOTES - INTRODUCTION & 5.1 RUP
+Small and medium project context
+• Small projects may have only a few developers or even one developer; people often perform several roles.
+• Less documentation can be practical because oral communication is easier, but small teams may have fewer resources, weaker formal 
+quality processes and less specialist knowledge.
+• Individual accountability and dependency are high because a single member may be difficult to replace.
+• Small teams can communicate efficiently, but small size does not remove the need for disciplined project management.
+Unified Process (UP) and RUP
+• UP is iterative and incremental. It is customizable and organizes work across life-cycle phases while engineering processes occur with 
+different intensity in each phase.
+Phase
+What to memorize
+Inception
+Turn a business need into a project idea. Outline goals, initial schedule, 
+key requirements/constraints/features, risks and the business case. Check 
+stakeholder agreement and project credibility.
+Elaboration
+Develop/refine requirements and architecture without over-constraining 
+design. Identify risks. Use UML/architectural views, use cases and class 
+hierarchies where appropriate.
+Construction
+Program, test and debug the solution. Focus on thoroughly tested, high-
+quality deliverables ready for user acceptance.
+Transition
+Transfer the solution to users/customer and maintenance. Address 
+feedback, deployment/hardware needs, documentation and training; may 
+iterate back if needed.
+Optional: Production
+Observe real use after initial completion and collect insight for future 
+upgrades/related projects.
+Optional: Disposal
+Remove/replace the solution safely when users transition to a successor 
+system.
+RUP = Rational Unified Process
+• RUP is the best-known UP variant; developed by Rational and later associated with IBM tooling.
+• RUP keeps the four core phases but organizes work across six engineering disciplines: business modeling, requirements gathering, 
+analysis and design, implementation, testing and deployment.
+• The effort of each discipline changes by phase: business modeling is strongest early; deployment becomes strongest late. Multiple iterations 
+can occur within phases.
+RUP best practices
+• Iterative development to handle changing user requirements.
+• Component-based development so parts can be reused and independently tested before integration.
+• UML/visual modeling to clarify components, interactions and actor roles.
+• Continuous integration to reduce problems caused by different tools/configurations across teams.
+• Testing is integrated throughout, although its intensity becomes greater toward later stages.
+RUP advantages and limitation
+• Advantage: IBM/Rational tools historically supplied templates, modeling, visualization, document management, change tracking and 
+performance profiling.
+• Limitation: strong dependence on these tools made RUP harder to apply without them; the course book notes this as one reason RUP is no 
+longer widely used.
+
+
+=== PAGE 4 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+3. COMPLETE SUMMARY NOTES - 5.2 AGILE SOFTWARE PROCESSES
+Prototyping before Agile
+• Prototype = learning tool used early to reduce uncertainty, test a user interface/requirement or verify a technical concept.
+• Throw-away prototype: discarded after the learning question is answered.
+• Evolutionary prototype: repeatedly extended/revised until it becomes the product.
+• Risk: a quickly built prototype may be mistaken for a production-ready solution even though integration/business rules may be incomplete.
+How Agile differs from prototyping
+• Each Agile iteration should deliver functional software, not merely a learning mock-up.
+• Agile is a philosophy/framework of values and behaviors: trust, flexibility, empowerment and collaboration.
+Four Agile values - memorize
+Prefer
+Over
+Individuals and interactions
+Processes and tools
+Working software
+Comprehensive documentation
+Customer collaboration
+Contract negotiation
+Responding to change
+Following a plan
+Twelve Agile principles - exam-safe paraphrase
+1. Deliver valuable software early and continuously to satisfy the customer.
+2. Welcome changing requirements, even late, when they provide advantage.
+3. Deliver working software frequently, preferring shorter cycles.
+4. Businesspeople and developers collaborate throughout the project.
+5. Build around motivated people; provide support and trust them.
+6. Use direct, rich communication where practical.
+7. Use working software as the primary progress measure.
+8. Maintain a sustainable pace for sponsors, developers and users.
+9. Continuous attention to technical excellence and good design improves agility.
+10. Practice simplicity: avoid unnecessary work.
+11. Let strong architectures, requirements and designs emerge from self-organizing teams.
+12. Regularly reflect, learn and adjust how the team works.
+Self-organizing teams
+• Have authority and flexibility to decide how to accomplish the work.
+• Members monitor their own progress, take responsibility and seek support when needed.
+• They are the opposite of micromanaged teams.
+• Spontaneous self-organization is difficult; inspired leadership should encourage initiative and support rather than control every action.
+• Over time, collaborative responsibility/accountability structures emerge.
+Communication, quality and iterations
+• Frequent customer/proxy communication keeps the work aligned with expectations.
+• Customer feedback at the end of iterations drives changes in the next iteration.
+• Quality depends on good coding principles, common practices/style and technical excellence.
+• Iterations are short and contain analysis, design, coding, testing and verification.
+• At iteration end, customer feedback supports a go/no-go decision when appropriate.
+• Goal of an iteration: a working system the user can validate.
+Version terminology in the course book
+Term
+Meaning
+Revision
+Working version after a feature is completed or an issue is 
+addressed.
+Build
+Final revision at the end of an iteration after testing/debugging.
+Minor release
+A function/requirement has been completed.
+Major release
+Significant new features are added.
+Version pattern
+major.minor.build.revision; e.g., 4.2.5.9.
+
+
+=== PAGE 5 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+4. COMPLETE SUMMARY NOTES - 5.3 SCRUM
+What Scrum is
+• Scrum is an Agile framework built around self-organizing teamwork, fixed time/cost and flexible requirements.
+• It uses timeboxes, collaborative events, a prioritized product backlog and frequent feedback cycles.
+• The Scrum Guide by Ken Schwaber and Jeff Sutherland defines its roles, events, artifacts and rules.
+• Scrum is empirical: knowledge comes from experience and repeated inspection/adaptation.
+Three pillars
+Pillar
+Meaning
+Transparency
+Important process aspects are visible and understood consistently.
+Inspection
+Artifacts/progress are checked often enough to detect undesirable 
+deviations.
+Adaptation
+When deviations exceed acceptable limits, the process/product is 
+adjusted.
+Five Scrum values
+• Commitment • Courage • Focus • Openness • Respect.
+Three Scrum roles
+Role
+Key responsibility
+Product Owner
+Customer/user/stakeholder proxy. Owns and prioritizes product backlog, 
+communicates vision, clarifies requirements, verifies product needs, plans 
+releases and keeps stakeholders informed.
+Scrum Master
+Servant/support role for the team. Removes obstacles, protects self-
+organization, facilitates communication/meetings, mediates discussions, 
+ensures good Scrum practice and challenges the team to improve.
+Team Members
+Egalitarian self-organizing development group jointly responsible for the 
+solution; distribute work, estimate and report progress to each other.
+• The course book describes a typical Scrum team as about five to nine individuals. Scrum does not use a traditional project manager role 
+inside the self-organizing team.
+Artifacts and flow
+Concept
+Memorize
+Product Backlog
+Prioritized list of desired product features; maintained by the Product 
+Owner.
+Sprint
+Fixed-duration, time-boxed iteration; course book notes it normally 
+does not exceed one month.
+Sprint Backlog
+Selected high-priority backlog items the team commits to address 
+during the sprint.
+Increment
+Working solution produced/demonstrated at sprint end.
+Task Board
+Common supporting tool: To Do -> Doing -> Done (and optional 
+feature/requirement columns).
+Four Scrum events - memorize the sequence
+Event
+Purpose
+Sprint Planning
+Select priority product-backlog items for the sprint; create sprint backlog 
+and plan how work will be done.
+Daily Scrum
+Short daily coordination/progress meeting; course book gives about 15 
+minutes.
+Sprint Review
+Demonstrate the increment to stakeholders and collect feedback.
+Sprint Retrospective
+Reflect on team/process/product quality and identify improvements for the 
+next sprint; may refine Definition of Done.
+Release sprint and advantages/challenges
+• When backlog features are finished, a release iteration/sprint may finalize documentation, defects, integration/testing and deployment 
+materials, followed by final acceptance and shipping.
+• Advantages: frequent feedback, visibility, transparency, empowerment/accountability, easier accommodation of change and faster issue 
+resolution.
+• Challenge: Scrum depends on team understanding and experience. Weak Scrum knowledge - especially weak facilitation - can damage the 
+development process.
+• Course-book recommendation: preserve experienced Scrum teams rather than repeatedly breaking them apart.
+
+
+=== PAGE 6 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+5. COMPLETE SUMMARY NOTES - 5.4 PLAN-DRIVEN METHODS
+Why small projects still need discipline
+• Small projects may have fewer people but still carry customer communication and other external dependencies.
+• People may have overlapping responsibilities; strict quality standards may have to be achieved with fewer resources.
+• Groupthink can cause small teams to over-focus on familiar life-cycle phases and neglect others.
+Waterfall model
+• Predictive/sequential: predict work in advance; each phase normally begins after the previous phase is completed.
+• Typical course-book sequence: requirements gathering -> system analysis/design -> coding/development -> verification/testing -> 
+deployment.
+• The course book gives a rough allocation: 20-40% on requirements + analysis/design, 30-40% on coding/development, remainder on 
+testing/deployment.
+When Waterfall fits
+• Short projects with stable requirements.
+• Projects where reliability/quality is critical and strong planning is possible.
+• Environments where stakeholders need clear progress visibility and up-front structure.
+Waterfall advantages and weakness
+• Advantages: stable plan, complete documentation, predictable scheduling/resource/cost allocation, easy progress monitoring.
+• Main weakness: poor response to unclear/changing requirements; testing and customer validation may occur late, when change is 
+expensive.
+Waterfall variants
+Model
+Core idea
+Best memory point
+Waterfall with feedback
+Allows backward movement to a previous phase 
+when needed.
+More flexibility, but larger backward jumps 
+increase cost/schedule impact and still require 
+good prediction.
+Sashimi / overlapping waterfall
+Phases overlap; different parts move at different 
+speeds when dependencies allow.
+Speeds work and optimizes 
+specialists/resources; provides earlier feedback 
+without fully abandoning predictive planning.
+V-model
+Waterfall bent into V: 
+decomposition/development on left; 
+integration/verification on right.
+Each development level has a corresponding 
+verification level; strong emphasis on 
+correctness, safety and security.
+Predictive vs Agile vs Hybrid
+Approach
+Best when
+Main risk
+Agile
+Requirements are unclear/changing; rapid 
+feedback and adaptation matter.
+Harder to prove exact up-front delivery against 
+fixed requirements in highly regulated/safety-
+critical settings.
+Plan-driven
+Requirements are stable; reliability, correctness, 
+safety/security or financial control is critical.
+Requirements may become obsolete before 
+implementation if the environment changes 
+quickly.
+Hybrid
+Project needs both controlled baselines and 
+iterative adaptation.
+Requires deliberate tailoring; careless mixing 
+can create confusion.
+
+
+=== PAGE 7 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+6. ONE-PAGE ULTRA-CONCISE CHEAT SHEET
+Topic
+Memory line
+RUP phases
+Inception -> Elaboration -> Construction -> Transition (+ 
+Production/Disposal optional).
+RUP disciplines
+Business modeling • Requirements • Analysis/design • Implementation • 
+Testing • Deployment.
+RUP best practices
+Iterate • Components/reuse • UML • Continuous integration/testing.
+Prototype
+Throw-away discarded; evolutionary grows into product.
+Agile values
+People • Working software • Customer collaboration • Change response.
+Agile team
+Self-organizing, motivated, customer-connected, quality-focused, 
+iterative/incremental.
+Agile progress
+Working software = primary progress indicator.
+Scrum pillars
+Transparency • Inspection • Adaptation.
+Scrum values
+Commitment • Courage • Focus • Openness • Respect.
+Scrum roles
+Product Owner • Scrum Master • Team.
+Scrum artifacts
+Product backlog • Sprint backlog • Increment.
+Scrum events
+Planning -> Daily Scrum -> Review -> Retrospective.
+Timebox
+Fixed time; do not simply extend because work is unfinished.
+Waterfall
+Sequential predictive phases; stable requirements.
+Feedback Waterfall
+Backward correction to previous phase.
+Sashimi
+Overlapping phases.
+V-model
+Build/decompose left; integrate/verify right; matching test levels.
+Selection
+Change -> Agile | Stability/safety -> Predictive | Mixed needs -> Hybrid.
+6-mark answer formula
+• Definition -> named framework/list -> explain each item precisely -> one application/comparison -> short conclusion.
+20-mark answer formula
+• Diagnose project context -> compare candidate methods -> apply RUP/Agile/Scrum/Waterfall/V-model concepts -> justify selection -> state 
+risks/controls -> recommend hybrid if appropriate.
+
+
+=== PAGE 8 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+7. IMPORTANT SAQ - SHORT QUESTIONS WITH MODEL ANSWERS
+Q. Why can small projects still be difficult to manage?
+Answer: They may have fewer resources, overlapping roles, limited specialist knowledge and high dependency on individual team members, 
+while customer communication and quality obligations still remain.
+Q. What does iterative development mean?
+Answer: Work is repeated in cycles so results can be refined using feedback and new information.
+Q. What does incremental development mean?
+Answer: The product is built in smaller functional parts that are progressively added until the full solution emerges.
+Q. Name the four core Unified Process phases.
+Answer: Inception, elaboration, construction and transition.
+Q. What happens in the inception phase?
+Answer: A business need becomes a project idea; goals, initial schedule, core requirements, constraints, features, risks and the business case 
+are outlined and project credibility is checked.
+Q. What happens in elaboration?
+Answer: Requirements and core architecture are refined, risks are analyzed and modeling such as UML/use cases/class structures may be 
+developed.
+Q. What happens in construction?
+Answer: The system is programmed, tested and debugged to produce high-quality deliverables ready for acceptance.
+Q. What happens in transition?
+Answer: The system is transferred to users/customer and maintenance, with deployment, feedback, documentation, training and necessary 
+adjustments.
+Q. Name the six RUP engineering disciplines.
+Answer: Business modeling, requirements, analysis and design, implementation, testing and deployment.
+Q. Name the two prototype types in Unit 5.
+Answer: Throw-away and evolutionary prototypes.
+Q. State the four Agile values.
+Answer: Individuals/interactions; working software; customer collaboration; responding to change - preferred over processes/tools, 
+comprehensive documentation, contract negotiation and following a plan respectively.
+Q. What is a self-organizing team?
+Answer: A team with authority and flexibility to decide how to do the work, monitor its progress and take responsibility without 
+micromanagement.
+Q. What is the primary measure of progress in Agile?
+Answer: Working software.
+Q. Name the three Scrum pillars.
+Answer: Transparency, inspection and adaptation.
+Q. Name the five Scrum values.
+Answer: Commitment, courage, focus, openness and respect.
+Q. Name the three Scrum roles.
+Answer: Product Owner, Scrum Master and Team Members/Development Team.
+Q. Who owns the product backlog?
+Answer: The Product Owner.
+Q. What is a sprint?
+Answer: A fixed-duration time-boxed iteration containing Scrum work/events and intended to produce a usable increment.
+Q. Name the four Scrum events.
+Answer: Sprint planning, daily Scrum, sprint review and sprint retrospective.
+Q. What is the purpose of a sprint review?
+Answer: Demonstrate the increment to stakeholders and obtain feedback.
+Q. What is the purpose of a sprint retrospective?
+Answer: Reflect on the team, process and quality, then identify improvements for the next sprint.
+Q. What is the main weakness of Waterfall?
+Answer: It handles changing or unclear requirements poorly, and important validation may occur late when change is costly.
+Q. What is Waterfall with feedback?
+Answer: A Waterfall variant that permits backward movement to earlier phases for correction.
+Q. What is the Sashimi model?
+Answer: A Waterfall variant in which phases overlap when dependencies permit.
+Q. What is the V-model?
+Answer: A predictive model pairing each development/decomposition level on the left with a corresponding integration/verification level on the 
+right.
+Q. When is a hybrid approach appropriate?
+Answer: When a project needs both predictive control/reliability and iterative adaptation to changing requirements.
+
+
+=== PAGE 9 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+8. MOST IMPORTANT 6-MARK QUESTIONS - MODEL ANSWERS
+Q. Explain the four core phases of the Rational Unified Process (RUP).
+• Inception converts a business need into a credible project idea and outlines goals, constraints, risks and the business case.
+• Elaboration refines requirements and architecture and reduces major risks.
+• Construction develops, tests and debugs the solution.
+• Transition delivers the solution to users/maintenance and includes deployment, documentation, training and feedback.
+• RUP is iterative: phases can contain repeated cycles for refinement.
+• Optional production/disposal phases may extend the full product life cycle.
+Q. Explain the four Agile values and their practical meaning.
+• Individuals and interactions are preferred to over-reliance on processes/tools.
+• Working software is preferred to excessive documentation.
+• Customer collaboration is preferred to treating the contract as the only interaction mechanism.
+• Responding to change is preferred to rigidly following a plan.
+• The values do not mean the items on the right are worthless; they set priority when trade-offs arise.
+• Together they support flexibility, feedback and value delivery under changing requirements.
+Q. Explain self-organizing teams in Agile.
+• Self-organizing teams have authority and flexibility over how work is performed.
+• Members distribute work and take responsibility for results.
+• They monitor their own progress and seek help when needed.
+• They are designed to reduce micromanagement and increase initiative/motivation.
+• Success requires competent, motivated people and strong communication.
+• Inspired leadership supports and removes obstacles rather than controlling every task.
+Q. Explain Scrum pillars and values.
+• Transparency makes important work/process information visible and commonly understood.
+• Inspection checks artifacts/progress often enough to detect deviation.
+• Adaptation changes the process/product when deviations exceed acceptable limits.
+• The supporting values are commitment, courage, focus, openness and respect.
+• The pillars create empirical control based on experience.
+• The values make the pillars workable within a self-organizing team.
+Q. Compare the Product Owner and Scrum Master.
+• The Product Owner represents customers/users/stakeholders and owns the product backlog.
+• The Product Owner communicates product vision, prioritizes requirements and plans/releases value.
+• The Scrum Master supports the team and protects self-organization.
+• The Scrum Master removes obstacles, facilitates communication/events and promotes good Scrum practice.
+• The Product Owner focuses on what/value and priority; the Scrum Master focuses on process/team effectiveness.
+• Neither role is equivalent to a traditional command-and-control project manager.
+Q. Explain the four Scrum events.
+• Sprint Planning selects priority backlog items and creates the sprint backlog/plan.
+• Daily Scrum is a short daily coordination and progress review.
+• Sprint Review demonstrates the increment to stakeholders and collects feedback.
+• Sprint Retrospective examines how the team/process can improve before the next sprint.
+• All operate inside a fixed-duration sprint/timebox.
+• Together they create rapid feedback, inspection and adaptation.
+Q. Compare Waterfall, Waterfall with feedback and Sashimi.
+• Classic Waterfall is sequential; one phase normally finishes before the next begins.
+• Waterfall with feedback permits backward movement to earlier phases.
+• Long backward jumps can create major cost/schedule impact.
+• Sashimi allows phases to overlap where dependencies permit.
+• Overlap can accelerate work and improve resource utilization while retaining predictive structure.
+• All remain more plan-driven than Agile and work best when requirements can be predicted reasonably well.
+Q. Explain the V-model and its suitability.
+• The V-model is a Waterfall-like predictive model shaped as a V.
+• The left side decomposes requirements/design into increasingly detailed construction work.
+• The right side integrates results and verifies them at matching abstraction levels.
+• Each development level has a corresponding verification/testing level.
+• It emphasizes traceability, correctness and systematic validation.
+• It is particularly suitable where safety, security, reliability or regulated quality is critical.
+Q. Compare Agile and plan-driven project management for small projects.
+• Agile minimizes up-front detail and adapts through short iterations and customer feedback.
+• Plan-driven methods define requirements/phases more fully before execution.
+
+
+=== PAGE 10 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+• Agile is strong when requirements are changing or unclear.
+• Plan-driven methods are strong when requirements are stable and reliability/correctness must be demonstrated.
+• Agile risks weaker predictability in highly regulated settings; plan-driven risks late/expensive change.
+• A hybrid approach can combine controlled baselines with iterative development when the context requires both.
+9. HIGH-YIELD 20-MARK CASE-STUDY BLUEPRINT
+Use this structure when the question asks you to choose/manage a method for a small or medium software 
+project.
+1. Diagnose requirement stability: stable/regulated vs unclear/changing.
+2. Assess project size, dependencies, customer access, safety/security/reliability needs and documentation burden.
+3. If requirements evolve quickly, justify Agile: short iterations, working software, customer feedback, self-organizing team.
+4. If Scrum is selected, define Product Owner, Scrum Master, team, product backlog, sprint backlog, increment and the four events.
+5. If a structured iterative approach is preferred, explain RUP phases and six disciplines.
+6. If reliability and fixed requirements dominate, justify Waterfall or V-model.
+7. Use Waterfall-with-feedback or Sashimi when some correction/overlap is useful but predictive control is retained.
+8. Compare strengths and limitations, not just definitions.
+9. Explain quality/verification and stakeholder feedback throughout the chosen process.
+10. Recommend a hybrid approach if the case has both regulated/stable components and uncertain/changeable components.
+11. Close with a clear method selection and why it minimizes the project-specific risks.
+Best long-question themes to practice
+• RUP for a medium software system with evolving requirements and formal modeling needs.
+• Scrum for a small customer-facing application with frequent change.
+• V-model for safety/security-critical software.
+• Waterfall vs Agile for a fixed-deadline regulated project.
+• Hybrid approach for a project with stable compliance requirements but changing user-interface features.
+High-yield questions to revise
+1. Describe RUP phases, disciplines and best practices.
+2. Differentiate iterative and incremental development.
+3. Explain prototype types and why Agile is not the same as prototyping.
+4. Explain the 4 Agile values and summarize the 12 principles.
+5. Explain self-organizing teams and the role of communication in Agile.
+6. Explain Scrum pillars and values.
+7. Compare Product Owner, Scrum Master and team member responsibilities.
+8. Explain product backlog, sprint backlog, sprint, increment and task board.
+9. Explain all four Scrum events and the full sprint cycle.
+10. Explain advantages and challenges of Scrum.
+11. Describe classic Waterfall and its major strengths/limitations.
+12. Compare Waterfall with feedback and Sashimi.
+13. Explain the V-model and its verification logic.
+14. Compare Agile, plan-driven and hybrid approaches and select one for a case.
+
+
+=== PAGE 11 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+FULL MOCK TEST 1 - UNIT 5: ORGANIZING SMALL AND MEDIUM PROJECTS
+Full Marks: 90 | Unit 5 only | No answer key included
+Section A: 40 MCQs x 1 = 40 | Section B: 5 questions x 6 = 30 | Section C: 1 question x 20 = 20
+Advice: Use exact terminology. For 20 marks, compare alternatives and justify your choice from the case facts.
+1. A key feature of small software projects is often: A. Multiple roles per person   B. No customer   C. Unlimited specialists   D. No accountability
+2. The Unified Process is mainly: A. Iterative and incremental   B. Purely sequential   C. Cost-only   D. Procurement-only
+3. The first UP phase is: A. Inception   B. Transition   C. Construction   D. Elaboration
+4. The phase where requirements and architecture are refined is: A. Elaboration   B. Inception   C. Disposal   D. Deployment
+5. Programming, testing and debugging dominate: A. Construction   B. Inception   C. Production   D. Disposal
+6. Transferring the solution to users occurs mainly in: A. Transition   B. Elaboration   C. Inception   D. Business modeling
+7. Which is an optional life-cycle extension? A. Production   B. Sprint planning   C. Inspection   D. Product backlog
+8. RUP was developed by: A. Rational   B. Microsoft   C. Oracle UK   D. PMI
+9. Which is NOT one of the six RUP engineering disciplines? A. Procurement   B. Requirements   C. Testing   D. Deployment
+10. RUP encourages use of UML mainly to: A. Visualize components/interactions   B. Replace testing   C. Fix budgets   D. Remove requirements
+11. A throw-away prototype is: A. Discarded after learning   B. Always production code   C. A final release   D. A backlog
+12. An evolutionary prototype is: A. Gradually extended toward the product   B. Never revised   C. Always discarded   D. A V-model stage
+13. Agile differs from prototyping because Agile iterations should deliver: A. Functional software   B. Only diagrams   C. Only experiments   D. 
+Only contracts
+14. Which Agile value has priority over processes and tools? A. Individuals and interactions   B. Documentation   C. Contract negotiation   D. Fixed 
+planning
+15. Which Agile value has priority over comprehensive documentation? A. Working software   B. Contracts   C. Tools   D. Phase gates
+16. Which Agile value has priority over contract negotiation? A. Customer collaboration   B. Documentation   C. Testing   D. Planning
+17. Which Agile value has priority over following a plan? A. Responding to change   B. Fixed scope   C. Documentation   D. Procurement
+18. The primary Agile measure of progress is: A. Working software   B. Number of meetings   C. Document length   D. Budget only
+19. Self-organizing teams are intended to increase: A. Initiative and responsibility   B. Micromanagement   C. Central control   D. Phase isolation
+20. Agile customer feedback is normally used to: A. Adjust future iterations   B. Prevent all changes   C. Freeze design immediately   D. Replace 
+testing
+21. The three Scrum pillars are transparency, inspection and: A. Adaptation   B. Documentation   C. Estimation   D. Escalation
+22. Which is a Scrum value? A. Openness   B. Secrecy   C. Centralization   D. Rigidity
+23. The Product Owner primarily owns the: A. Product backlog   B. V-model   C. Risk register   D. Gantt chart
+24. The Scrum Master mainly: A. Supports team/process and removes obstacles   B. Prioritizes business value alone   C. Commands every task   D. 
+Owns the customer contract
+25. A Scrum sprint is a: A. Fixed timebox   B. Unlimited phase   C. Cost estimate   D. Waterfall gate
+26. The list selected for the current sprint is the: A. Sprint backlog   B. Product backlog only   C. Risk backlog   D. Work breakdown structure
+27. The working result demonstrated at sprint end is the: A. Increment   B. Charter   C. Prototype only   D. Baseline
+28. The first of the four Scrum events is: A. Sprint planning   B. Sprint review   C. Retrospective   D. Release
+29. The Daily Scrum is described in the course book as typically about: A. 15 minutes   B. 2 hours   C. 1 day   D. 1 week
+30. Stakeholder feedback on the increment is collected mainly in: A. Sprint review   B. Sprint planning   C. Inception   D. Deployment
+31. Process improvement is a main focus of: A. Sprint retrospective   B. Product backlog   C. Waterfall requirements   D. RUP inception
+32. Classic Waterfall is primarily: A. Sequential and predictive   B. Empirical and timeboxed   C. Unplanned   D. Prototype-only
+33. A strength of Waterfall is: A. Predictability with stable requirements   B. Unlimited change   C. No documentation   D. No testing
+34. A major Waterfall weakness is: A. Poor response to changing requirements   B. Too much customer feedback   C. No structure   D. No schedule
+35. Waterfall with feedback allows: A. Backward movement to earlier phases   B. No correction   C. Only parallel phases   D. No planning
+36. The Sashimi model allows: A. Overlapping phases   B. No phases   C. Only one iteration   D. No dependencies
+37. The V-model emphasizes: A. Matching development and verification levels   B. No testing   C. Only deployment   D. Customer marketing
+38. The V-model is particularly suitable when there is strong need for: A. Reliability/correctness   B. Constant uncontrolled change   C. No 
+documentation   D. No requirements
+39. Agile is generally strongest when requirements are: A. Unclear or changing   B. Completely fixed   C. Legally immutable   D. Already deployed
+40. A hybrid approach is intended to: A. Combine useful predictive and Agile elements   B. Eliminate planning   C. Eliminate feedback   D. Use only 
+Waterfall
+
+
+=== PAGE 12 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+MOCK TEST 1 - SECTION B & C
+SECTION B - Answer all questions. 5 x 6 = 30 marks
+41. Explain the four core RUP phases and state why RUP is iterative. (6)
+42. Explain the four Agile values and any two important Agile principles. (6)
+43. Explain the Scrum pillars and five Scrum values. (6)
+44. Compare the Product Owner and Scrum Master. (6)
+45. Compare classic Waterfall, Waterfall with feedback and the Sashimi model. (6)
+SECTION C - Case Study. 1 x 20 = 20 marks
+46. A small fintech company must build a mobile loan-approval application in four months. The regulatory and security requirements are fixed 
+and must be auditable, but the user-interface and customer-experience requirements are expected to change after every demo. The client 
+can provide weekly feedback. The team has seven developers and wants rapid delivery without weakening compliance. As project 
+manager, select and justify an appropriate development/project-management approach using Unit 5. Compare Agile/Scrum, Waterfall/V-
+model and RUP, propose a practical hybrid if appropriate, define the key roles/events or phases, and explain how quality, verification and 
+changing requirements will be handled.
+
+
+=== PAGE 13 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+FULL MOCK TEST 2 - UNIT 5: ORGANIZING SMALL AND MEDIUM PROJECTS
+Full Marks: 90 | Unit 5 only | No answer key included
+Section A: 40 MCQs x 1 = 40 | Section B: 5 questions x 6 = 30 | Section C: 1 question x 20 = 20
+Advice: In case studies, identify requirement stability and quality risk before selecting the method.
+1. Small projects may suffer from high dependency on individuals because: A. Team members may be hard to replace   B. There are always 
+hundreds of staff   C. Roles never overlap   D. Customers never interact
+2. Inception is most similar to an early: A. Feasibility/business-case stage   B. Final acceptance stage   C. Deployment-only stage   D. Maintenance-
+only stage
+3. UML/use cases are especially associated with: A. Elaboration/RUP modeling   B. Daily Scrum   C. Sashimi only   D. Release sprint only
+4. The RUP discipline strongest toward the end is generally: A. Deployment   B. Business modeling   C. Inception   D. Feasibility
+5. A major RUP practice is continuous: A. Integration   B. Contract freezing   C. Micromanagement   D. De-scoping
+6. A prototype is mainly a: A. Learning tool   B. Final contract   C. Cost baseline   D. Team role
+7. Prototype risk includes: A. Being mistaken for a production-ready product   B. Too much final integration   C. Excessive business rules   D. 
+Guaranteed scalability
+8. Agile became a named approach around the Agile Manifesto in: A. 2001   B. 1980   C. 2019   D. 2026
+9. Agile prefers frequent delivery of: A. Working software   B. Static plans   C. Contract clauses   D. Cost charts
+10. Agile welcomes: A. Changing requirements   B. Only frozen requirements   C. No customer input   D. No refactoring
+11. Businesspeople and developers should work: A. Closely throughout the project   B. Only at project close   C. Never together   D. Only through 
+contracts
+12. Agile encourages a: A. Sustainable pace   B. Permanent overtime requirement   C. One-time inspection   D. No testing approach
+13. Agile values technical excellence because it: A. Enhances agility   B. Replaces customers   C. Prevents iteration   D. Removes design
+14. Simplicity in Agile means: A. Avoid unnecessary work   B. Avoid quality   C. Avoid feedback   D. Avoid users
+15. Regular reflection is intended to: A. Improve team effectiveness   B. Freeze all behavior   C. Cancel communication   D. Replace delivery
+16. Frequent communication in Agile helps maintain: A. Alignment and quality   B. Isolation   C. Fixed contracts only   D. No changes
+17. At each Agile iteration the user should ideally validate: A. A working system   B. Only a plan   C. Only a diagram   D. Only a budget
+18. A tested/debugged final revision of an iteration is a: A. Build   B. Backlog   C. Charter   D. Milestone
+19. Significant new features usually result in a: A. Major release   B. Daily Scrum   C. Risk reserve   D. Disposal phase
+20. Scrum is best described as a: A. Framework   B. Fixed prescriptive methodology only   C. Cost formula   D. Legal standard
+21. Scrum empirical control is based on: A. Experience   B. No inspection   C. Fixed assumptions only   D. Contract enforcement
+22. The pillar that makes work visible is: A. Transparency   B. Adaptation   C. Inspection   D. Courage
+23. The pillar that detects undesirable deviation is: A. Inspection   B. Transparency only   C. Product ownership   D. Deployment
+24. The pillar that changes the process after deviation is: A. Adaptation   B. Transparency   C. Documentation   D. Inception
+25. Which is NOT a Scrum value? A. Obedience   B. Respect   C. Focus   D. Courage
+26. The Product Owner is a proxy for: A. Customers/users/stakeholders   B. Only testers   C. Only vendors   D. No one
+27. The Scrum Master should NOT primarily: A. Micromanage task assignments   B. Remove obstacles   C. Facilitate communication   D. Encourage 
+improvement
+28. A typical Scrum team in this course book is about: A. 5-9 people   B. 50-90 people   C. 1,000 people   D. Exactly 2 people
+29. A timebox means: A. Time is fixed rather than simply extended   B. Scope is always fixed   C. No deadline exists   D. Only documentation is fixed
+30. The Product Backlog contains: A. Prioritized product features   B. Only completed work   C. Only test defects   D. Only cost items
+31. A task board commonly uses: A. To Do, Doing, Done   B. Cost, Profit, Tax   C. Risk, Law, Audit   D. Input, Output, Profit
+32. A release sprint can include: A. Final integration/testing and documentation   B. No testing   C. No acceptance   D. Only backlog creation
+33. Small projects can still require strict: A. Quality standards   B. No standards   C. No customer contact   D. No scheduling
+34. Waterfall is suitable when requirements: A. Are stable   B. Change hourly   C. Are unknown   D. Cannot be documented
+35. In Waterfall, testing late can make changes: A. Difficult and costly   B. Free   C. Irrelevant   D. Impossible to notice
+36. A large backward jump in Waterfall with feedback typically: A. Increases cost/schedule impact   B. Has no effect   C. Removes risk   D. Shortens 
+every project
+37. Sashimi can optimize: A. Resource/expertise usage across overlapping phases   B. No resources   C. Only contracts   D. Only customer training
+38. In the V-model the left side is mainly: A. Decomposition/development   B. Final integration only   C. Retrospective   D. Product ownership
+39. In the V-model the right side is mainly: A. Integration/verification   B. Requirements only   C. Inception only   D. Procurement
+40. Plan-driven methods struggle most when: A. Requirements/environment change rapidly   B. Requirements are stable   C. Verification matters   D. 
+Scheduling matters
+
+
+=== PAGE 14 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+MOCK TEST 2 - SECTION B & C
+SECTION B - Answer all questions. 5 x 6 = 30 marks
+41. Explain the six engineering disciplines of RUP and four RUP best practices. (6)
+42. Differentiate throw-away and evolutionary prototypes, and explain how Agile differs from prototyping. (6)
+43. Explain the Scrum artifacts and the four Scrum events. (6)
+44. Explain the V-model and why it is suitable for safety/security-critical projects. (6)
+45. Compare Agile, plan-driven and hybrid approaches for small projects. (6)
+SECTION C - Case Study. 1 x 20 = 20 marks
+46. A hospital needs a medium-sized patient-monitoring software upgrade. Hardware interfaces and safety requirements are tightly specified 
+and must be verified, but clinicians are still discovering usability needs. The team is distributed, integration with existing modules is 
+complex, and management wants visible progress every two weeks. Using Unit 5, design an appropriate project approach. Discuss 
+whether RUP, Scrum/Agile, Waterfall, Sashimi, V-model or a hybrid should be used; explain the selected phases/iterations, roles/events, 
+verification strategy, customer feedback and how the method addresses both safety and changing usability requirements.
+
+
+=== PAGE 15 ===
+IT Project Management | Unit 5 | Made by SK Sahil
+IU International University of Applied Sciences | DLMBITPAM01
+10. FINAL 10-MINUTE RECALL BEFORE THE EXAM
+Say these from memory without looking:
+1. RUP: Inception - Elaboration - Construction - Transition.
+2. RUP disciplines: Business modeling - Requirements - Analysis/design - Implementation - Testing - Deployment.
+3. Prototype: Throw-away vs Evolutionary.
+4. Agile values: People - Working software - Customer collaboration - Change.
+5. Agile: short iterations + self-organizing teams + frequent customer feedback + quality.
+6. Scrum pillars: Transparency - Inspection - Adaptation.
+7. Scrum values: Commitment - Courage - Focus - Openness - Respect.
+8. Scrum roles: Product Owner - Scrum Master - Team.
+9. Scrum artifacts: Product backlog - Sprint backlog - Increment.
+10. Scrum events: Planning - Daily Scrum - Review - Retrospective.
+11. Waterfall: sequential predictive phases.
+12. Feedback Waterfall: move backward when needed.
+13. Sashimi: overlapping phases.
+14. V-model: development left, verification right.
+15. Changing requirements -> Agile; stable/safety-critical -> predictive; mixed -> hybrid.
+Last exam rule
+• Do not write generic software-development theory. Use the exact Unit 5 terms, compare methods, connect them to the scenario, and justify 
+why the selected method fits requirement stability, feedback needs and reliability/verification demands.
+
+

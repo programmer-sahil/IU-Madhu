@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { allUnits, getUnitById } from '../data/units';
+import { useSubject } from '../contexts/SubjectContext';
+import { useSubjectData } from '../hooks/useSubjectData';
 import { 
   Zap, Clock, Play, Pause, RotateCcw, CheckSquare, Square, 
   Hash, CheckCircle2, ShieldCheck, Flame 
 } from 'lucide-react';
 
-const nightBeforeChecklist = [
+const defaultCgitNightBeforeChecklist = [
   'Memorized EDM = Evaluate, Direct, Monitor (Governance) vs PBRM (Management)',
   'Memorized COBIT Core Model (5 Domains, 40 Objectives: 5 EDM + 14 APO + 11 BAI + 6 DSS + 4 MEA)',
   'Memorized COBIT Goals Cascade: Stakeholder Needs → 13 Enterprise Goals → 13 Alignment Goals → 40 Objectives',
@@ -22,7 +23,35 @@ const nightBeforeChecklist = [
   'Memorized German E-commerce: Impressum (§ 5 DDG - two clicks) and Right of Withdrawal (14 calendar days)'
 ];
 
+const defaultItpmNightBeforeChecklist = [
+  'Memorized IT Project = Temporary + Unique deliverable vs Business Operations = Repetitive + Ongoing',
+  'Memorized Triple Constraint (Scope, Time, Cost) & Quintuple Constraints (Schedule, Cost, Context, Technical, Financing)',
+  'Memorized 4 PM Roles: Initiator, Planner, Implementer, Controller',
+  'Memorized 100% Rule in WBS: Captures 100% of scope; no extra work, no omissions',
+  'Memorized 4 Precedence Types: FS (standard), SS, FF, SF (rarest) and Critical Path Total Float = 0',
+  'Memorized PERT Formulas: TE = (o + 4m + p)/6 and sigma = (p - o)/6; 68% (1σ), 95% (2σ), 99.7% (3σ)',
+  'Memorized 9 Cost Estimate Quality Criteria: A-C-C-P-R-D-U-V-V (Accuracy, Confidence, Credibility, Precision, Reliability, Documentation, Uniformity, Validity, Verification)',
+  'Memorized Cost Reserve Hierarchy: Task Estimate → Task Buffer → WP Buffer → Cost Baseline → Management Reserve → Project Budget',
+  'Memorized Contingency = Known-Unknowns (inside baseline); Management Reserve = Unknown-Unknowns (outside baseline)',
+  'Memorized FPA 5 Types (I-O-Q-I-F): Inputs (2/4/6), Outputs (3/5/7), Inquiries (2/4/6), Interfaces (5/7/10), Files (7/10/15)',
+  'Memorized FPA CAF Formula: CAF = 0.01 * TDI + 0.65 (TDI = 34 -> CAF = 0.99; FP = UFP * CAF)',
+  'Memorized EVM Golden Rule VALUE FIRST: SV = EV - PV; CV = EV - AC; CPI = EV / AC; SPI = EV / PV',
+  'Memorized EVM 25/75 Rule: 25% credited at start/setup, 75% credited upon completion',
+  'Memorized Risk Cycle (I-A-M-M): Identify, Assess, Mitigate, Monitor; 4 Treatments: Avoid, Mitigate, Transfer, Accept',
+  'Memorized 5 Risk Maturity Levels: A-A-O-M-A (Ad hoc, Abbreviated, Organized, Managed, Adaptive)',
+  'Memorized Vision Keeping Cascade: Vision ("Where"), Mission ("What/Why"), Strategy ("How")',
+  'Memorized 4 Culture Archetypes: Clan (internal/flex), Adhocracy (external/flex), Hierarchy (internal/control), Market (external/control)',
+  'Memorized Power-Interest Grid: High Power/High Interest (Manage Closely); High Power/Low Interest (Keep Satisfied); Low Power/High Interest (Keep Informed); Low Power/Low Interest (Monitor)',
+  'Memorized Salience Model: Power, Legitimacy, Urgency (7 classes); Dangerous = Power + Urgency without Legitimacy',
+  'Memorized RACI Cardinal Rule: Exactly ONE person Accountable (A) per activity; multiple Responsible (R) allowed',
+  'Memorized 5 Conflict Styles: Collaborate (Win-Win), Compromise (Give-and-Take), Force (Win-Lose), Smooth (Lose-Win), Withdraw (No Resolution)',
+  'Memorized 4 Negotiation Spiral Phases: Intelligence -> Perception -> Strategy -> Communication; e-negotiation risks flaming'
+];
+
 export const LastMinuteRevision: React.FC = () => {
+  const { currentSubject } = useSubject();
+  const { units, getUnitById } = useSubjectData();
+
   const [activeUnit, setActiveUnit] = useState<number>(1);
   const [timerSeconds, setTimerSeconds] = useState<number>(300); // 5 minutes
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
@@ -40,10 +69,8 @@ export const LastMinuteRevision: React.FC = () => {
     return () => clearInterval(interval);
   }, [isTimerRunning, timerSeconds]);
 
-  const handleUnitSwitch = (uId: number) => {
-    setActiveUnit(uId);
-    setTimerSeconds(300);
-    setIsTimerRunning(false);
+  const toggleCheck = (idx: number) => {
+    setCheckedChecklist(prev => ({ ...prev, [idx]: !prev[idx] }));
   };
 
   const formatTimer = (secs: number) => {
@@ -52,165 +79,208 @@ export const LastMinuteRevision: React.FC = () => {
     return `${m}:${s < 10 ? '0' : ''}${s}`;
   };
 
-  const toggleCheck = (idx: number) => {
-    setCheckedChecklist(prev => ({ ...prev, [idx]: !prev[idx] }));
-  };
+  const activeChecklist = currentSubject.slug === 'it-project-management'
+    ? defaultItpmNightBeforeChecklist
+    : defaultCgitNightBeforeChecklist;
 
-  const unit = getUnitById(activeUnit) || allUnits[0];
+  const currentUnitData = getUnitById(activeUnit) || units[0];
 
-  return (
-    <div className="space-y-6">
-      {/* Header */}
-      <div className="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <div className="flex items-center gap-2 mb-1">
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 flex items-center gap-1">
-              <Flame className="w-3.5 h-3.5" /> High-Pressure Sprint
-            </span>
-            <span className="text-xs text-slate-500">5 Mins Per Unit = 30 Mins Total</span>
+  if (units.length === 0 || !currentUnitData) {
+    return (
+      <div className="space-y-6">
+        <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b border-slate-200 dark:border-slate-800">
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-xs px-2 py-0.5 rounded font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+                {currentSubject.courseCode}
+              </span>
+              <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">30-Min Sprint</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-1">
+              {currentSubject.title}
+            </h2>
           </div>
-          <h2 className="text-2xl font-black text-slate-900 dark:text-white">
-            30-Minute Final Revision
-          </h2>
-          <p className="text-xs text-slate-600 dark:text-slate-400">
-            Cram the absolute highest-yield formulas, comparisons, traps, and definitions right before walking into the examination hall.
-          </p>
         </div>
 
-        {/* 5-Minute Unit Timer */}
-        <div className="p-3.5 rounded-xl bg-slate-900 text-white flex items-center gap-4 shrink-0 shadow-md">
-          <div className="text-center font-mono">
-            <div className="text-xs text-slate-400 uppercase tracking-widest">Unit Timer</div>
-            <div className="text-2xl font-black text-amber-400">{formatTimer(timerSeconds)}</div>
+        <div className="glass-card rounded-2xl p-12 text-center space-y-4">
+          <div className="w-16 h-16 rounded-2xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mx-auto border border-indigo-200/60 dark:border-indigo-800/60">
+            <Flame className="w-8 h-8" />
           </div>
-          <div className="flex items-center gap-1">
-            <button
-              onClick={() => setIsTimerRunning(prev => !prev)}
-              className="p-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white"
-              title={isTimerRunning ? 'Pause' : 'Start'}
-            >
-              {isTimerRunning ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-            </button>
-            <button
-              onClick={() => {
-                setTimerSeconds(300);
-                setIsTimerRunning(false);
-              }}
-              className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300"
-              title="Reset Timer"
-            >
-              <RotateCcw className="w-4 h-4" />
-            </button>
+          <div className="space-y-1 max-w-md mx-auto">
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+              30-Minute Sprint In Preparation
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+              High-intensity exam morning revision sprint and night-before checklist for {currentSubject.title} ({currentSubject.courseCode}) is currently being compiled.
+            </p>
+          </div>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+            <span>0 items available</span>
           </div>
         </div>
       </div>
+    );
+  }
 
-      {/* Unit Selector Tabs */}
-      <div className="grid grid-cols-6 gap-2">
-        {allUnits.map(u => (
+  const checklistItems = currentSubject.slug === 'corporate-governance'
+    ? defaultCgitNightBeforeChecklist
+    : currentSubject.units.map(u => `Review Unit ${u.id}: ${u.title}`);
+
+  return (
+    <div className="space-y-8 max-w-5xl mx-auto pb-12">
+      {/* Subject Header */}
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b border-slate-200 dark:border-slate-800">
+        <div>
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-xs px-2 py-0.5 rounded font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+              {currentSubject.courseCode}
+            </span>
+            <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">High-Yield Revision Protocol</span>
+          </div>
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mt-1">
+            The 30-Minute Final Revision Sprint
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+            Structured for the morning of the exam: 5 minutes per unit focused exclusively on facts with guaranteed marks.
+          </p>
+        </div>
+      </div>
+
+      {/* 5-Minute Sprint Timer Bar */}
+      <div className="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center shrink-0">
+            <Flame className="w-6 h-6" />
+          </div>
+          <div>
+            <span className="text-xs font-bold text-rose-600 uppercase tracking-wider block">
+              Unit {activeUnit} Sprint Timer
+            </span>
+            <span className="text-2xl font-black font-mono text-slate-900 dark:text-white">
+              {formatTimer(timerSeconds)}
+            </span>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2">
           <button
-            key={u.id}
-            onClick={() => handleUnitSwitch(u.id)}
-            className={`p-3 rounded-xl border text-center transition-all ${
-              activeUnit === u.id
-                ? 'border-indigo-600 bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 font-bold shadow-sm'
-                : 'border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 text-slate-600 dark:text-slate-400 hover:border-slate-300'
+            onClick={() => setIsTimerRunning(prev => !prev)}
+            className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
+              isTimerRunning
+                ? 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-200'
+                : 'bg-indigo-600 text-white hover:bg-indigo-500 shadow-sm'
             }`}
           >
-            <span className="block text-xs uppercase font-mono">5 Mins</span>
-            <span className="text-sm font-bold block">Unit {u.id}</span>
+            {isTimerRunning ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+            {isTimerRunning ? 'Pause' : 'Start 5-Min Timer'}
+          </button>
+
+          <button
+            onClick={() => {
+              setIsTimerRunning(false);
+              setTimerSeconds(300);
+            }}
+            className="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+            title="Reset Timer"
+          >
+            <RotateCcw className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
+      {/* Unit Sprint Switcher Tabs */}
+      <div className="grid grid-cols-2 sm:grid-cols-6 gap-2">
+        {currentSubject.units.map(u => (
+          <button
+            key={u.id}
+            onClick={() => {
+              setActiveUnit(u.id);
+              setTimerSeconds(300);
+              setIsTimerRunning(false);
+            }}
+            className={`p-3 rounded-xl border text-center transition-all ${
+              activeUnit === u.id
+                ? 'bg-indigo-600 text-white font-bold border-indigo-600 shadow-sm'
+                : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-indigo-400'
+            }`}
+          >
+            <span className="text-xs font-mono block">Sprint {u.id}</span>
+            <span className="text-[10px] opacity-80 truncate block">{u.shortTitle || `Unit ${u.id}`}</span>
           </button>
         ))}
       </div>
 
-      {/* High-Yield Sprint Cards for the Active Unit */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Must Know Core */}
-        <div className="glass-card rounded-2xl p-5 border-l-4 border-l-indigo-500 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 flex items-center gap-1.5">
-            <Zap className="w-3.5 h-3.5" /> Core Concepts & Triads
+      {/* Active Unit Sprint Content */}
+      <div className="glass-card rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 space-y-6">
+        <div>
+          <span className="font-mono text-xs font-bold text-indigo-600 uppercase tracking-wider">
+            Sprint Focus • 5 Minutes Rapid Review
           </span>
-          <ul className="space-y-2 text-xs text-slate-700 dark:text-slate-300">
-            {unit.cheatSheet.mustMemorize.slice(0, 5).map((m, i) => (
-              <li key={i} className="flex items-start gap-1.5">
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white mt-1">
+            Unit {currentUnitData.id}: {currentUnitData.title}
+          </h3>
+        </div>
+
+        {/* 3 Must-Know Definitions */}
+        <div className="space-y-3">
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+            Core Definitions to Scan
+          </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {currentUnitData.cheatSheet.coreDefinitions.slice(0, 4).map((def, idx) => (
+              <div key={idx} className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 text-xs space-y-1">
+                <span className="font-bold text-slate-900 dark:text-white block">{def.term}</span>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{def.definition}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Must-Memorize Truths */}
+        <div className="p-4 rounded-xl bg-indigo-50/70 dark:bg-indigo-950/40 border border-indigo-200/60 dark:border-indigo-900/40 space-y-2 text-xs">
+          <span className="font-bold text-indigo-900 dark:text-indigo-200 uppercase tracking-wider text-[10px] block">
+            Guaranteed Exam Truths
+          </span>
+          <ul className="space-y-1.5 text-slate-800 dark:text-slate-200">
+            {currentUnitData.cheatSheet.mustMemorize.slice(0, 4).map((item, idx) => (
+              <li key={idx} className="flex items-start gap-2">
                 <span className="text-indigo-600 font-bold">•</span>
-                <span className="leading-snug">{m}</span>
+                <span>{item}</span>
               </li>
             ))}
           </ul>
         </div>
-
-        {/* Fatal Traps */}
-        <div className="glass-card rounded-2xl p-5 border-l-4 border-l-rose-500 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-rose-600 flex items-center gap-1.5">
-            <Flame className="w-3.5 h-3.5" /> Exam Traps (Do Not Write)
-          </span>
-          <div className="space-y-2 text-xs">
-            {unit.cheatSheet.examTraps.map((et, i) => (
-              <div key={i} className="p-2 rounded-lg bg-rose-50/70 dark:bg-rose-950/40 text-[11px] leading-tight">
-                <span className="font-bold text-rose-700 block mb-0.5">Trap: {et.trap}</span>
-                <span className="text-slate-700 dark:text-slate-300">Truth: {et.truth}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Crucial Numbers */}
-        <div className="glass-card rounded-2xl p-5 border-l-4 border-l-amber-500 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
-            <Hash className="w-3.5 h-3.5" /> High-Yield Numbers
-          </span>
-          <div className="space-y-2 text-xs">
-            {unit.cheatSheet.importantNumbers.map((num, i) => (
-              <div key={i} className="flex items-center justify-between p-2 rounded-lg bg-amber-50/70 dark:bg-amber-950/40">
-                <span className="font-mono font-bold text-amber-700 dark:text-amber-300 text-sm">
-                  {num.number}
-                </span>
-                <span className="text-slate-700 dark:text-slate-300 font-medium text-right text-[11px]">
-                  {num.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
-      {/* Night Before Exam Checklist */}
-      <div className="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 space-y-4">
-        <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
+      {/* Night Before Final Checklist */}
+      <div className="glass-card rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 space-y-4">
+        <div className="flex items-center justify-between">
           <div>
-            <h3 className="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-indigo-600" />
-              Night Before Exam Checklist
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">
+              Exam Night Checklist
+            </span>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+              The Night-Before Checklist
             </h3>
-            <p className="text-xs text-slate-500">
-              Verify every checkmark before sleeping. If you can explain all 14 points, you are ready for a high first-class mark.
-            </p>
           </div>
-          <span className="text-xs font-mono font-bold text-indigo-600">
-            {Object.values(checkedChecklist).filter(Boolean).length} / {nightBeforeChecklist.length} Checked
+          <span className="font-mono text-xs text-slate-400">
+            {Object.values(checkedChecklist).filter(Boolean).length} / {checklistItems.length} verified
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-          {nightBeforeChecklist.map((item, idx) => {
+        <div className="space-y-2 text-xs">
+          {checklistItems.map((item, idx) => {
             const isChecked = !!checkedChecklist[idx];
             return (
               <div
                 key={idx}
                 onClick={() => toggleCheck(idx)}
-                className={`p-3 rounded-xl border cursor-pointer transition-all flex items-start gap-2.5 ${
-                  isChecked
-                    ? 'bg-emerald-50/70 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200 font-medium'
-                    : 'bg-white dark:bg-slate-800/60 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-indigo-400'
-                }`}
+                className="flex items-start gap-3 p-2.5 rounded-xl cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
               >
-                {isChecked ? (
-                  <CheckSquare className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                ) : (
-                  <Square className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
-                )}
-                <span className={isChecked ? 'line-through text-slate-500' : ''}>
+                <div className="mt-0.5 text-emerald-600">
+                  {isChecked ? <CheckSquare className="w-4 h-4" /> : <Square className="w-4 h-4 text-slate-300 dark:text-slate-600" />}
+                </div>
+                <span className={`leading-relaxed ${isChecked ? 'line-through text-slate-400' : 'text-slate-800 dark:text-slate-200'}`}>
                   {item}
                 </span>
               </div>

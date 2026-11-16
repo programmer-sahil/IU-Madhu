@@ -1,0 +1,631 @@
+=== PAGE 101 ===
+UNIT 5
+ORGANIZING SMALL AND MEDIUM
+PROJECTS
+STUDY GOALS
+Upon completion of this unit, you will have learned …
+–
+the overall structure and use of the rational unified process.
+–
+the characteristics of the agile software development process and the specifics of
+Scrum.
+–
+the characteristics of predictive project management methods and their application in
+small and medium processes.
+–
+the advantages and disadvantages of predictive methodologies.
+–
+the waterfall project management methodology and its variants.
+–
+the specifics and applicability of the V-model of project management
+
+
+=== PAGE 102 ===
+Iterative
+This method creates
+smaller chunks from a
+large software develop-
+ment application, making
+them easier to handle.
+Incremental
+An incremental frame-
+work begins with smaller
+parts of a larger model,
+slowly adding them until
+the product is fully
+formed.
+5. ORGANIZING SMALL AND MEDIUM
+PROJECTS
+Introduction
+IT projects and more specific software development projects exist in very different sizes,
+depending on the task to be performed and the environment. In small projects, it is not
+unusual to be assigned to teams of few or even a single developer. Additionally, in such
+teams, people are often assigned multiple roles, like the project manager also coding, test-
+ing, etc.
+Small projects typically work with little or even no documented specifications because
+oral communication can play a much larger role. The goals of the project can also be infor-
+mally discussed and remembered fairly easily. Despite their advantages, small- and
+medium-size projects may suffer from multiple issues like fewer resources and less struc-
+ture and formal processes for quality management. With respect to the team members,
+there is usually more accountability as there are fewer people responsible for the work.
+There might be a lack of specialized knowledge required for the project domain, and there
+is more dependency on each member as they could be irreplaceable. On the other hand,
+small teams find it easier to communicate within the team, without setting it all in writing.
+5.1 Rational Unified Process (RUP)
+The need to address unclear or changing requirements in the software domain has led to
+the adoption of iterative and incremental development frameworks that can be custom-
+ized to fit the project needs. One such category of frameworks (despite its name) is the
+unified process (UP). This framework breaks down the project work into the four core pha-
+ses of inception, elaboration, construction, and transition. More phases, like production
+and disposal, could be added as needed.
+One of the core properties of UP is that it is component or matrix-based—clear enough
+since it consists of phases, but within each phase, processes such as requirements gather-
+ing and implementation are included, though with different emphasis as shown in the fig-
+ure below (Kneuper, 2018, p. 85f).
+The inception phase is where a business need forms into a project idea. It is like a feasibil-
+ity study where we outline the project’s goals, draft an initial schedule, and identify poten-
+tial risks. The business case is made in this phase by generating the core requirements,
+constraints, and key features of the project (Gibbs, 2006). At the end of this phase, the
+project is evaluated for stakeholder agreement on the project credibility and constraints
+(scope, schedule, cost), the requirements, the project baselines, and the depth and
+breadth of its preliminary/prototypical architecture.
+100
+
+
+=== PAGE 103 ===
+This is followed by the elaboration phase, where the project requirements are created.
+The core elements of the system that will be developed are identified but not with
+extreme detail that could restrict developers from seeking ideal solutions. Risks will be
+identified at this stage to ensure the future success of the project. Specific diagrams will
+also be developed using the unified modeling language (UML) or other tools that provide
+an architectural view of the solution components, use cases for identifying the various
+actors and the ways that they will interact with the system, and class hierarchies if an
+object-oriented language is going to be used for code development (Kruchten, 2004).
+The next phase is the construction phase, where developers program, test, and debug the
+code of the solution. The focus here is on high-quality deliverables that have been thor-
+oughly tested and are ready for user acceptance. Finally, in the transition phase, the solu-
+tion is transferred to the customers/users and to the maintenance team that will oversee
+code patches, upgrades, and customer requests. Based on the initial feedback, the project
+might return to previous phases to address the issues raised and calibrate the solutions to
+meet customer expectations. At this stage, any hardware requirements (computers, net-
+works, etc.) are addressed, user documentation is prepared, and user training is per-
+formed.
+Often, additional phases can be considered to address the full life cycle of the developed
+solution. A production phase might be necessary if we want to see how users respond to
+the application—although the initial project is considered complete, this phase might pro-
+vide insight and can feed information to a future project for upgrades or similar solutions.
+The disposal phase may be considered if the users need to transition to a replacement sys-
+tem. The solution will have to be removed or replaced with no issues for the users and
+their organization.
+It is important to note that each of the phases described here will typically include itera-
+tions within them to address challenges and obstacles specific to each phase. This is not
+typical for the inception phase because of its generic and abstract nature, but it is the
+norm for the other phases. For example, in the elaboration phase, we might first identify
+general risks and, through subsequent iterations, refine them into detailed aspects of the
+project that could pose risks. Similarly, during the construction phase we might first focus
+on critical and important features and in subsequent iterations add the remaining ones.
+101
+
+
+=== PAGE 104 ===
+Figure 34: Unified Process Iterations
+Source: created on behalf of IU (2019).
+The most popular variant of the unified process is the Rational unified process (RUP),
+developed by the company Rational (later bought up by IBM). It uses the core life cycle
+phases of inception, elaboration, construction, and transition of the unified process but
+also categorizes tasks along the six engineering disciplines of business modeling, require-
+ments gathering, analysis and design, implementation, testing, and deployment. The
+hypothetical case below shows that business modeling will require a lot of effort (red
+color) at the inception phase which will gradually be reduced in the remaining phases,
+while the deployment phase will (naturally) require little effort at the beginning and a lot
+more toward the end of the project. The figure also shows that there are multiple itera-
+tions within each phase, with the exact number being defined in the planning of the
+project.
+102
+
+
+=== PAGE 105 ===
+Figure 35: Workload Distribution in Unified Process Phase
+Source: created on behalf of IU (2019).
+Several best practices form the software engineering paradigm that RUP incorporates in
+order to eliminate errors and increase productivity include:
+• using iterative development to allow the addressing of shifting user requirements dur-
+ing the various project phases.
+• breaking down an advanced project into components in order to allow components to
+be reused and independently tested before their assembly into a larger system. Testing
+should be an integral part of the project at all times, although its significance will be
+more evident toward the end of the project.
+• using diagrams (UML) to visually represent components and their interactions to pro-
+vide clarity of the work that needs to be done and the roles various actors play.
+• performing the continuous integration of the various components developed by the var-
+ious teams (collocated or distributed) to eliminate any influences due to the different
+development tools and system configurations that they might use.
+The main advantages of RUP over other unified processes are the tools that IBM provides
+—like artifact templates for any final or intermediate result that is produced by the project
+as well as visualization, modeling, document management, change request tracking, per-
+formance profiling, etc. These tools are the ones that increased the popularity of RUP,
+especially for large projects. However, while this makes it easy to apply RUP when using
+IBM development tools, it also makes it difficult to apply RUP without these tools. This is
+one of the reasons why RUP is no longer widely used.
+103
+
+
+=== PAGE 106 ===
+5.2 Agile Software Processes
+The uncertainty and changing nature of software requirements has led to the develop-
+ment of practices that produce prototypes for testing and experimentation as early as pos-
+sible. This allows for early detection and resolution of issues, accelerating the develop-
+ment time and early verification of requirements (Gordon & Bieman, 1995). Generally
+speaking, a prototype is a learning tool that helps to reduce uncertainty and to learn about
+the system to be built—for example, by verifying the user interface or other requirements,
+or by checking whether a certain technical concept does indeed work as intended.
+Different types of prototype may be distinguished, in particular throw-away prototypes
+that are discarded once the underlying question has been answered, and evolutionary
+prototypes that are gradually extended and revised until they eventually turn into the
+product under development.
+Despite their advantages, there are drawbacks to prototyping that need be considered.
+Expectations are built due to the short development time, and the prototype might be
+confused with the final solution and shipped to production. This becomes an important
+issue as prototypes do not typically consider integration or the incorporation of most of
+the business rules. As a result, issues might surface later on.
+To eliminate the drawbacks of prototyping, different approaches have been developed,
+including agile development. Agile differs from prototyping in that the software delivered
+in each iteration is functional. In addition, agile is more of a software engineering “philos-
+ophy” or “framework” and a set of guidelines than a simple development practice as it
+encompasses central values and behaviors like trust, flexibility, empowerment, and col-
+laboration among the project team members. As a set of guidelines, it is subject to inter-
+pretation; techniques are often classified as agile simply by addressing one or more of the
+guidelines (Coram & Bohner, 2005).
+The basic ideas of agile software engineering were gradually developed, mainly in the
+1990s, as an alternative to more rigid project life cycles like the waterfall model that were
+dominating the traditional engineering disciplines (Petersen & Wohlin, 2009). These ideas
+were brought together when a group of developers met in 2001 and introduced the name
+“agile” for this method of working, defining the “agile manifesto” described below.
+“Big design up front” (BDUF) models—as the traditional life cycle models of project man-
+agement are called by the proponents of agile development—in their pure form are based
+on the premise that a new phase begins only after the previous one has been finished
+completely and correctly. This can be counterproductive in software development as
+requirements are often unclear and changing, and so models based on this premise are
+rarely used in such a pure form, contrary to what is often claimed by proponents of agile
+project management.
+Agile development as described by the Manifesto of Agile Software Development (2001)
+uses a different approach, defining four agile values:
+• Individuals and interactions over processes and tools
+104
+
+
+=== PAGE 107 ===
+• Working software over comprehensive documentation
+• Customer collaboration over contract negotiation
+• Responding to change over following a plan
+The list of the following 12 principles that were established by the initial creators of Agile
+further elaborate its philosophy (Beck et al., 2001):
+1.
+“Our highest priority is to satisfy the customer through early and continuous delivery
+of valuable software.
+2.
+Welcome changing requirements, even late in development. Agile processes harness
+change for the customer's competitive advantage.
+3.
+Deliver working software frequently, from a couple of weeks to a couple of months,
+with a preference to the shorter timescale.
+4.
+Businesspeople and developers must work together daily throughout the project.
+5.
+Build projects around motivated individuals. Give them the environment and support
+they need, and trust them to get the job done.
+6.
+The most efficient and effective method of conveying information to and within a
+development team is face-to-face conversation.
+7.
+Working software is the primary measure of progress.
+8.
+Agile processes promote sustainable development. The sponsors, developers, and
+users should be able to maintain a constant pace indefinitely.
+9.
+Continuous attention to technical excellence and good design enhances agility.
+10. Simplicity—the art of maximizing the amount of work not done—is essential.
+11. The best architectures, requirements, and designs emerge from self-organizing teams.
+12. At regular intervals, the team reflects on how to become more effective, then tunes
+and adjusts its behavior accordingly.”
+While most of the principles are self-explanatory, the idea of self-organizing teams (princi-
+ple 11) might require elaboration as it defies traditional team management and leadership
+practices. A self-organizing team is one that has the authority and flexibility to act inde-
+pendently using any methodology they like as long as the job is done. In that sense, such
+teams might establish their own levels of authority and even choose their own team mem-
+bers. It is at the other extreme from the micromanaged team where the leader controls
+every single activity regardless of its importance. The form of independence that self-
+organized teams provide is meant to empower and motivate everyone to take initiative
+and get the job done even before they are assigned to a task. In such teams, the members
+monitor their own progress, take responsibility for their work, and seek support within or
+outside of the team when issues arise that they cannot address.
+Despite the evident advantages of these teams, forming one is easier said than done.
+Assembling a team of competent and motivated individuals is feasible, but spontaneous
+self-organization is not typically observed. What is, in general, required is inspired leader-
+ship that instead of guiding team members, encourages them to take initiative and sup-
+ports them when needed. As time goes on and team members gain momentum with their
+initiatives, they will form hierarchies of responsibility and accountability that will be col-
+laborative and self-sustaining.
+105
+
+
+=== PAGE 108 ===
+What is typically exceptional in self-organized teams—and a core ingredient in any varia-
+tion of agile techniques—is communication (Cockburn & Highsmith, 2001). Agile teams
+communicate frequently with the customers or their proxies to ensure the project is on
+track with their expectations. The customer is expected to examine the solution at the end
+of each iteration and provide feedback for addressing any misalignments, issues, and
+improvements that might be required. This forms the basis for adjustments that the team
+makes in the next iteration, and the cycle repeats until the customer accepts the outcome.
+Contact points are normally identified for both the team (PM in most cases) and the cus-
+tomer to handle all such communications and minimize interference with both the team’s
+and the customer’s other activities.
+An additional benefit of frequent communication is that it ensures the agile team is
+focused on quality. This is another core ingredient of agile teams as they strive to develop
+high-quality solutions. This implies that the focus of the development is on writing good
+and solid code that will not need major modifications later on. This means that proper
+coding principles are emphasized and time is dedicated to ensuring formal coding practi-
+ces and a common style is adopted by everyone. The emphasis on code quality might
+delay addressing bugs and fixes until the end, but it ensures the team is focusing on the
+quality of the solutions. Any remaining issues would probably be addressed at the end of
+each iteration without impacting the architecture and effectiveness of the developed solu-
+tion. In general, bugs and fixes are best addressed as a separate life cycle phase instead of
+during the core development phases simply because one bug or fix might lead to another
+and so on, creating possible distractions to the team’s focus on quality.
+A core ingredient of agile teams that deserves more expansion is the iterative and incre-
+mental development. Iterations in agile are relatively short, with durations ranging from a
+week to a couple of months depending on the project. In each iteration, there are all the
+typical development phases, including analysis, design, coding/programming, testing,
+and verification (Coram & Bohner, 2005). The last two phases are often considered as one.
+Each iteration is, in essence, a cascade waterfall structure in itself but with the customer
+involved in every step. It is like executing the same project multiple times and improving it
+in each iteration. This also ensures that bugs identified during the testing phase are
+addressed in the next iteration instead of being piled up for the very end. At the last stage
+of each iteration, a decision has to be made based on customer feedback whether the
+project is go (meaning work on it continues) or no-go (meaning the project is canceled).
+The latter is always a viable option, especially when the project has been derailed for vari-
+ous reasons (lack of resources, funding, etc.). In fact, it is a decision that is best made as
+early as possible to avoid losses of effort and time.
+106
+
+
+=== PAGE 109 ===
+Figure 36: The Agile Process
+Source: created on behalf of IU (2019).
+The goal of each iteration is to produce a working system that the user can validate. In
+cases where a functional application cannot be produced in the anticipated time frame,
+the iteration cycle will have to be expanded to ensure that an application with functioning
+features can be produced by the end of the iteration. Additional features can be added in
+later iterations. Working versions of the application are referred to as revisions and can be
+produced any time that a feature is completed or an issue is addressed. At the end of the
+iteration period (typically a week), the final revision is tested and debugged, producing a
+build. When a function or requirement is completed, then we have minor releases; when
+significant new features have been added, we have a major release (typically once or twice
+a year). The versioning scheme follows the format “major.minor.build.revision.” Version
+4.2.5.9, for example, indicates this is the fourth major release of the software, the second
+minor release, the fifth build, and the ninth revision.
+5.3 Scrum
+A variation of agile where everyone works together to advance development is Scrum. It
+was initially conceived as a metaphor to describe the benefits of self-organizing teams in
+innovative product development (Takeuchi & Nonaka, 1986). This practice was later
+applied to the field of software engineering and named Scrum (short for scrummage) after
+the rugby term that describes how two teams form a circle and push each other with their
+feet for ownership of the ball after it is thrown into the middle of the circle. While tradi-
+tional project management methods rely on fixed requirements to control cost and sched-
+107
+
+
+=== PAGE 110 ===
+Product Owner
+A Product Owner primar-
+ily focuses on maintaining
+relationships with engi-
+neers and stakeholders,
+as well as the wider busi-
+ness aspect of Product
+Development.
+Scrum Master
+The Scrum Master is
+responsible for the end
+product, as well as the
+monitoring of the produc-
+tion process and conduc-
+tion of meetings - they are
+essentially the team
+leader.
+ule, Scrum relies on fixed time and cost to control requirements. This is done using time
+boxes, collaborative ceremonies, a prioritized product backlog, and frequent feedback
+cycles. As an agile approach, Scrum provides a structure for delivery, leaving specific prac-
+tices for the team to determine. This is the reason it has the nature of a framework more
+than a methodology that could be perceived as prescriptive.
+Ken Schwaber and Jeff Sutherland first co-presented Scrum at the OOPSLA conference in
+1995; their combined lessons gained from applying Scrum are documented in the Scrum
+Guide (Schwaber & Sutherland, 2017). This guide contains the definition of Scrum that
+comprises Scrum’s roles, events, artifacts, and the rules that bind them together, and it is
+now the definitive reference on Scrum.
+Scrum is empirical and asserts that knowledge comes from experiences, so it builds upon
+the team’s experience on a particular project through multiple iterations in an attempt to
+optimize predictability and control risk. The empirical control of the development process
+is supported by the pillars of transparency, inspection, and adaptation. Transparency
+ensures that significant aspects of the process are visible to those responsible for the out-
+come. This allows the team to form a shared understanding of what is visible and what it
+means when something is “done.” Transparency also allows for inspection of the process
+artifacts for compliance with the goals of each iteration and the detection of side effects
+and undesirable variables. That does not mean that the team will obsess over inspections
+to the point of neglecting other work but rather that the frequency of inspections will be
+determined by skilled inspectors at the point of work. When inspections identify devia-
+tions outside acceptable limits, the team needs to adapt and adjust the process to align
+the outcome with the set goal. To achieve the three pillars of transparency, inspection,
+and adaptation, the values of commitment (to the goals of the team), courage (to do the
+right thing and overcome problems), focus (on the work and the goals), openness (about
+the work and the challenges), and respect (of each other as capable and independent pro-
+fessionals) need to be embodied and followed by each member of the team.
+There are three defined roles in Scrum teams: the “product owner”, the “Scrum mas-
+ter”, and the “team member.” The product owner is the proxy for the customer, the user,
+and other stakeholders; they have the authority to make decisions about the solution.
+They are the owner of the “product backlog”—a prioritized list of features that need to be
+included in the solution. As the liaison between the development team and the stakehold-
+ers, product owners are responsible for communicating the vision to the team and defin-
+ing and prioritizing the items in the product backlog for each iteration. They are also
+responsible for verifying that the product meets its requirements, planning and announc-
+ing releases, demonstrating the solution to stakeholders, and keeping stakeholders
+informed about the status of the project. They are in daily contact with the team to answer
+questions and provide clarifications, but in general, they do not affect an iteration while it
+is underway. They can, though, make changes that will be incorporated in future iterations
+and can even cancel one if necessary.
+The Scrum master has some similarities with the project manager, but the roles should
+not be confused—the Scrum master acts more as a resource to the team without imposing
+on its self-organization. It is one of the core concepts of Scrum that teams work in a self-
+organized fashion and do not have a project manager or similar role. The Scrum masters
+108
+
+
+=== PAGE 111 ===
+are advocates for the team; they remove obstacles and negotiate with those external to
+the team. They also ensure the team follows good Scrum practices, inspire and challenge
+the team to improve, facilitate communication, and mediate discussions (often leading to
+meetings).
+While the product owner and Scrum master are two distinct and identifiable roles, every-
+one else on the team is part of the same egalitarian group, sharing duties and responsibili-
+ties. A typical Scrum team consists of five to nine individuals who are jointly responsible
+for the development of the solution. They decide among themselves how their workload
+will be distributed; they develop metrics and estimates and report to each other during
+their daily Scrum sessions.
+The Scrum process starts with the customer providing a clear vision and a set of product
+features listed in order of importance. These features form the product backlog, which is
+maintained by the product owner as the customer’s proxy. This initiates a series of “time-
+boxed” incremental iterations referred to as “sprints.” A timebox is a common agile con-
+cept that describes an approach where the amount of time dedicated to an activity is limi-
+ted, and if the planned work is not completed, one does not extend the timeframe but
+delivers whatever is ready. This is used for all Scrum events as a tool for concretely defin-
+ing open-ended ambiguous tasks. The sprint is a container for a series of events; its dura-
+tion is fixed and cannot be modified after the sprint starts. Typically, the duration of a
+sprint does not exceed one month because it is assumed that longer durations might lead
+to changes in requirements and definitions, resulting in increased complexity and risks
+and perhaps also increased costs if not addressed as early as possible.
+This series of events includes the sprint planning event with updates on the sprint backlog
+and a series of daily Scrums that will lead to the sprint review and potentially to the sprint
+retrospective at the end of the sprint cycle. During sprint planning, the team typically
+selects a list of items from the product backlog that can be completed in the sprint and
+lists them in the sprint backlog. The team also discusses how the work will be completed
+and who will be responsible for the various tasks (pieces of the code that will be devel-
+oped). When everyone agrees on the sprint backlog, the task work begins. No interrup-
+tions are allowed at this time so the team can focus on meeting the set goals and complet-
+ing the selected items. The team convenes in short daily meetings (typically 15 minutes
+long), sometimes also called “Scrums,” to coordinate work and review each other’s pro-
+gress. Because there are important common tasks to perform that are not defined by the
+Scrum Guide, a number of tools are commonly used in combination with Scrum. One of
+these is a task board (often with sticky notes) that is used to track the work’s progress with
+columns for work that is still pending (to-do list), work that is under development (doing
+list), and work that has been completed (done list). Depending on the team, other col-
+umns like user requirements/features can be added. Typically, daily Scrums take place in
+front of the task board so that it may be updated during the meeting.
+109
+
+
+=== PAGE 112 ===
+Figure 37: Sprint Task Board
+Source: created on behalf of IU (2019).
+At the end of the sprint is the “sprint review” where the team demonstrates the solution
+(“increment”) to the stakeholders and records their feedback. Unless the developed incre-
+ment meets the customer specifications, the review will be followed by the “sprint retro-
+spective” where the team has the opportunity to reflect on the status of the project and
+think of improvements for consideration during the next sprint. The Scrum master ensures
+the event takes place and the meeting is positive and productive. During the meeting, the
+team also considers ways to improve product quality and work processes and provide any
+updates and clarifications to the “definition of done.”
+The sprint process continues until there are no more features in the product backlog. At
+that time, a release iteration or release sprint is considered to prepare the increment as a
+working product ready for deployment. The documentation that was produced during the
+individual sprints is finalized at this sprint and any defects are resolved. System integra-
+tion and testing also takes place if different modules were developed by different teams,
+and physical items like installation media, manuals, and packaging will be prepared for
+shipping. A final acceptance review and then shipping the product to the customer will
+signal the end of the project.
+The frequent sprints and the involvement of the whole team in the decision-making proc-
+ess is one of the core advantages of the Scrum methodology. Success is based on trans-
+parency, visibility, and empowerment with accountability of the team members who are
+seen as equals. These characteristics allow the team to accommodate change easily and
+as needed to resolve any issues, quickly reducing cost and improving performance. The
+main challenge with Scrum comes from the understanding that team members have of
+the process. The more familiar and experienced the team is with the process, the faster it
+will get to a working rhythm. Less experienced team members and specifically Scrum
+masters can ruin the development process. For these reasons, when a Scrum project fin-
+ishes, the team is assigned a new one instead of being broken up and having team mem-
+bers assigned individually to other projects.
+110
+
+
+=== PAGE 113 ===
+5.4 Plan-Driven Project Management in
+Small Projects
+The development process we follow in small projects can be as important to their success
+as that of large projects is to theirs despite the notion that small projects need less coordi-
+nation and management (Martin, Pearson, & Furumo, 2005a). Because of their small size,
+such projects have fewer team members to share the external dependencies (like commu-
+nicating with the customer) that are usually independent of project size. For one thing, in
+small projects, it is not unusual to have overlapping responsibilities, like every member of
+the team interacting with the customer at some point or another and even working with
+them closely.
+Small projects often need to achieve quality standards that are as strict and demanding as
+those of large projects but must do so with fewer resources. Coordinating all the involved
+entities in small projects can take similar effort and skill as coordinating unified teams in
+large projects. Another challenge small projects face is a form of groupthink where the
+team focuses on life cycle phases they are familiar with and pay less attention to other
+phases.
+An older and the most widely known project management methodology for the system
+development life cycle (SDLC) is the waterfall model. It is classified as a predictive model,
+meaning that we try to predict in advance what will need to be done and then go ahead
+and do it. The phase-by-phase sequential progress of this SDLC flows downward like a
+waterfall (information flows) through the various phases with each phase starting only
+after the previous phase has finished.
+Typically, IT projects start with the requirements-gathering phase, then move to the sys-
+tem analysis and design phases, continue with code development and verification, and
+conclude with the deployment phase where the solution is released to the customer. A
+rough breakdown of the project schedule includes 20–40% of the time spend on require-
+ments and system analysis and design, 30–40% of its time on coding and development,
+and the remaining on testing and deployment. It is generally recommended that teams
+spend a lot of time on the initial phases to ensure all the necessary details are there before
+coding starts; otherwise, the benefits of predictive modeling will not be realized.
+111
+
+
+=== PAGE 114 ===
+Figure 38: Waterfall Model
+Source: created on behalf of IU (2019).
+The “strict” nature of this methodology makes it ideal for small (short-term) projects
+where the requirements will not change much during the lifetime of the project or for
+projects where quality is critical. The latter can only be ensured with proper planning of
+each phase so that every aspect of the phase has been addressed. In contrast to the agile
+frameworks, this methodology ensures a stable solution because all requirements have
+been considered in advance, allowing for advanced planning and structuring of each
+phase. This allows the project manager to easily follow the project progress and provides
+visibility to project stakeholders.
+Despite its advantages, the inability to backtrack in the waterfall model poses serious
+challenges for its effectiveness in information technology projects where user require-
+ments are not crystal-clear at the beginning (Kaur & Sengupta, 2013). This results in
+requirements being tested toward the end when it is difficult to accommodate changes
+that could even address bugs in the code, leaving the customer dissatisfied with the solu-
+tion. To alleviate the disadvantages of the waterfall model—where every phase is executed
+perfectly and nothing changes during development—variations of the model have been
+considered.
+One such variation is the waterfall with feedback model that enables backward moves
+from one step to the previous one. Longer jumps are sometimes considered (like from
+coding to system analysis) but the further up the cascade the move is, the more it will
+impose on cost and schedule. For example, a backward step from deployment to require-
+ments might simply mean that everything was off and a new project, in essence, is started
+to complete the mission. In such cases, it might be better to consider the issue a limitation
+(or a deployment or maintenance risk) instead of actually going back and essentially
+restarting the project. For such reasons, and despite the freedom to move backward, one
+still needs to be good at predicting the outcome of each phase.
+112
+
+
+=== PAGE 115 ===
+Figure 39: Waterfall Model with Feedback
+Source: created on behalf of IU (2019).
+Another popular variant of the waterfall model where phases are allowed to overlap is the
+sashimi model (also called sashimi waterfall and waterfall with overlapping phases). The
+name comes from the resemblance of the layout of the various phases to the way the thin
+slices of fish overlap in the Japanese dish sashimi. During the first phase, some require-
+ments will be defined earlier than others, allowing some of the team members to proceed
+with system analysis and design. Similarly, at a later phase, some of the coding might have
+finished and moved to testing while other parts are still developing or even being
+designed (Fox & Van der Waldt, 2008). Greater overlaps can even be considered to allow
+for various parts of the project to move at different speeds as long as they do not conflict
+or depend on parts that have not finished yet. For example, the solution cannot be
+deployed if there are parts that have not been tested.
+113
+
+
+=== PAGE 116 ===
+Figure 40: Waterfall Model with Overlapping Phases (Sashimi)
+Source: created on behalf of IU (2019).
+In addition to accelerating development, the advantage of overlaps is that it allows
+resources like expertise to be optimized across the various phases. For example, a data-
+base designer might start developing the database tables and indices even as early as
+once the primary requirements have been identified and before user interfaces have been
+finalized. Similarly, a network designer might start setting up routers and switches before
+the network topology is finalized. An additional advantage of overlapping phases is that it
+allows the exploration of particular aspects of the solution to gain some understanding
+before finalizing the decision about how to proceed. Experimenting in this way can pro-
+vide valuable insight and reduce risk without sacrificing the predictive nature of the meth-
+odology. It is, in a way, an internal loop process to provide feedback on the direction of the
+project from later phases to earlier ones (Fox & Van der Waldt, 2008).
+Another alternative to the waterfall that is popular in small project development, in partic-
+ular when there are high requirements on safety and security, is the V-model (also known
+as the validation and verification model). This is basically a waterfall that is bent into a V
+shape with the left side following a deductive approach and decomposing tasks into more
+detailed ones while the right side follows an inductive approach to higher levels of
+abstraction where the various parts of the project get integrated. The core idea represen-
+ted by this model is that the product is developed step by step in the left branch while, in
+the right branch, results are integrated and verified against the results of the left branch.
+The importance of verification is emphasized in this model, with each constructive step on
+the left supported by a verification step on the right. At the lowest levels, testing is meant
+to verify that the code works; as we progress upward, we verify that it satisfies the require-
+ments to eventually satisfy the customer at the highest level. This way, the model ensures
+each level on the left side is matched with a level of equal abstraction on the right side.
+114
+
+
+=== PAGE 117 ===
+Figure 41: V-Model
+Source: created on behalf of IU (2019).
+The predictive models that we have seen in this section are useful in small projects pri-
+marily because they support structures that are easy to follow and monitor. They allow
+the development of complete plans with documentation that makes them easier to follow
+and adjust (adding or removing steps and personnel). Scheduling becomes simpler, and
+allocations of resources and cost can be predicted in advance. Their main disadvantage is
+that they don’t handle change well, but this is to some extent countered by the low risk of
+being affected by environmental pressures due to their short-term nature (Stephens,
+2015). In a small project with a typically short duration, changes in the business world are
+less likely to be fast enough to affect the project requirements before its completion. In
+addition, the customers/users typically have a clearer view of what is needed primarily
+because small projects target either solutions that supplement existing systems or specific
+needs for businesses.
+Generally speaking, one can say that plan-driven or sequential models such as the V-
+model are better suited to projects where there is a strong need for reliability and correct-
+ness of the result—for example, because of high demand for safety and security, or in a
+financial environment. With agile methods, it is difficult to define exactly what is needed
+and to show that has indeed been provided. Plan-driven approaches struggle, on the
+other hand, when requirements are unclear or the environment changes quickly. In such
+an environment, there is a high risk that requirements will be out of date before they have
+been implemented. In each individual project, it is therefore important to find the best mix
+of both, often called a “hybrid” project management or development approach.
+SUMMARY
+Although they use the same basic concepts as large projects, small and
+medium projects need somewhat different approaches to project man-
+agement. Typically, fewer dependencies imply that less planning is nee-
+ded, and a more agile approach can be used.
+115
+
+
+=== PAGE 118 ===
+The rational unified process was created to support the use of the uni-
+fied modelling language and used an iterative approach to software
+development. It distinguishes between the definition of the work that
+needs to be done, and when to do it. The work to be done is defined as
+processes such as business modelling. When to do this work is defined
+by assigning the processes, with varying intensity, to different project
+phases and iterations within these phases.
+Today, the most commonly used approach to IT projects is agile project
+management, based on the agile values and principles defined in the
+agile manifesto. The core goal of agile project management is to be able
+to react to changes in the environment and the requirements, by plan-
+ning less and working in self-organizing teams.
+The best-known and most widely used agile methodology is Scrum,
+defined in the Scrum Guide by Schwaber and Sutherland. In Scrum,
+there is no project manager but a self-organizing development team,
+supported by a “Scrum master” and a “product owner”.
+In Scrum, iterations are called sprints and contain four events, called
+sprint planning, daily scrum meetings, sprint review, and sprint retro-
+spective. In sprint planning, the collection of work to be done as docu-
+mented in the product backlog is analyzed, and the entries with highest
+priorities are transferred to the sprint backlog, documenting that this
+work should be done in the next sprint.
+Depending on the type of project and its environment, plan-driven
+project management approaches such as different variations of the
+waterfall model or the V-shaped model, are also commonly used in IT.
+116
+
+
